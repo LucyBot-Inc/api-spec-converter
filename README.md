@@ -44,10 +44,10 @@ Can be converted from:
 ### RAML (raml)
 Not yet implemented
 
-### API Blueprint
+### API Blueprint (api_blueprint)
 Not yet implemented
 
-### I/O Docs (iodocs)
+### I/O Docs (io_docs)
 Not yet implemented
 
 ## Contributing
