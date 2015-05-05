@@ -20,7 +20,8 @@ Converter.convert({
   to: 'swagger_2',
   url: 'https://api.gettyimages.com/swagger/api-docs',
 }, function(err, converted) {
-  FS.writeFileSync('swagger2.json', converted);
+  console.log(converted.spec);
+  FS.writeFileSync('swagger2.json', converted.stringify());
 })
 
 ```
