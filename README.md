@@ -1,5 +1,12 @@
 # AnyAPI
+
+## Installation
 **Note: AnyAPI is still in alpha. The API is not stable.**
+
+```bash
+npm instal any-api
+```
+
 Convert between API description formats such as Swagger and RAML
 
 ## Usage
