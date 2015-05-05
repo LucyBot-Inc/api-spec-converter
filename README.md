@@ -1,6 +1,6 @@
 # AnyAPI
 
-Convert between API description formats such as Swagger and RAML
+Convert between API description formats such as [Swagger](http://swagger.io/) and [RAML](http://raml.org/)
 
 Currently only supports conversion from Swagger 1.x to Swagger 2.0
 
