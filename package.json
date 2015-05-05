@@ -1,5 +1,5 @@
 {
-  "name": "any-api",
+  "name": "api-spec-converter",
   "version": "0.0.1",
   "description": " Convert between API description formats such as Swagger and RAML",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lucybot/any-api.git"
+    "url": "https://github.com/lucybot/api-spec-converter.git"
   },
   "keywords": [
     "API",
@@ -20,9 +20,9 @@
   "author": "Bobby Brennan <bobby@lucybot.com> (https://lucybot.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lucybot/any-api/issues"
+    "url": "https://github.com/lucybot/api-spec-converter/issues"
   },
-  "homepage": "https://github.com/lucybot/any-api",
+  "homepage": "https://github.com/lucybot/api-spec-converter",
   "dependencies": {
     "async": "^0.9.0",
     "swagger-converter": "^0.1.0",

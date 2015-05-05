@@ -4,7 +4,7 @@
 **Note: AnyAPI is still in alpha. The API is not stable.**
 
 ```bash
-npm instal any-api
+npm instal api-spec-converter
 ```
 
 Convert between API description formats such as Swagger and RAML
@@ -12,7 +12,7 @@ Convert between API description formats such as Swagger and RAML
 ## Usage
 
 ```js
-var AnyAPI = require('any-api');
+var AnyAPI = require('api-spec-converter');
 AnyAPI.convert({
   from: 'swagger_1',
   to: 'swagger_2',
