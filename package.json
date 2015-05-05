@@ -1,0 +1,26 @@
+{
+  "name": "any-api",
+  "version": "0.0.1",
+  "description": " Convert between API description formats such as Swagger and RAML",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lucybot/any-api.git"
+  },
+  "keywords": [
+    "API",
+    "Swagger",
+    "RAML",
+    "API",
+    "Blueprint"
+  ],
+  "author": "Bobby Brennan <bobby@lucybot.com> (https://lucybot.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lucybot/any-api/issues"
+  },
+  "homepage": "https://github.com/lucybot/any-api"
+}
