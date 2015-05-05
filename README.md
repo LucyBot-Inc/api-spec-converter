@@ -29,15 +29,11 @@ Converter.convert({
 ## Supported Types
 
 ### Swagger 1.x (swagger_1)
+
 Can be converted to:
 * swagger_2
 
-Can be converted from:
-* (none)
-
 ### Swagger 2.0 (swagger_2)
-Can be converted to:
-* (none)
 
 Can be converted from:
 * swagger_1
