@@ -12,8 +12,8 @@ describe('Converter', function() {
       from: 'swagger_1',
       to: 'swagger_2',
       url: 'https://api.gettyimages.com/swagger/api-docs',
-    }, function(spec) {
-      console.log('got spec');
+    }, function(err, spec) {
+      Expect(err).to.equal(null);
       if (process.env.WRITE_GOLDEN) {
         FS.writeFileSync(GETTY_GOLDEN, spec);
       } else {
