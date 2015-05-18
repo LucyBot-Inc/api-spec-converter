@@ -8,7 +8,7 @@ Currently only supports conversion from Swagger 1.x to Swagger 2.0
 **Note: api-spec-converter is still in alpha. The API is not stable.**
 
 ```bash
-npm instal api-spec-converter
+npm install api-spec-converter
 ```
 
 ## Usage
