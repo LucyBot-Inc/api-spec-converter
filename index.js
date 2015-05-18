@@ -1,3 +1,4 @@
+var FS = require('fs');
 var Request = require('request');
 var Types = require('./lib/types.js');
 
@@ -6,7 +7,7 @@ var Converter = module.exports = {};
 Converter.convert = function(options, callback) {
   var makeSpec = function() {
     var fromSpec = Types.build(options.spec, options.from);
-    fromSpec.resolveResources(options.url, function() {
+    fromSpec.resolveResources(options, function() {
       var toSpec = fromSpec.convertTo(options.to);
       callback(null, toSpec);
     });
@@ -17,6 +18,11 @@ Converter.convert = function(options, callback) {
       options.spec = body;
       makeSpec();
     });
+  } else if (options.file) {
+    FS.readFile(options.file, 'utf8', function(err, body) {
+      options.spec = body;
+      makeSpec();
+    })
   } else {
     makeSpec();
   }

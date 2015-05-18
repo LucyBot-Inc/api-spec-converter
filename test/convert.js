@@ -3,7 +3,8 @@ var Expect = require('chai').expect;
 
 var Converter = require('../index.js');
 
-var GETTY_GOLDEN = __dirname + '/golden/getty.swagger_2';
+var SWAGGER_1 = __dirname + '/input/index.json';
+var GOLDEN = __dirname + '/golden/petstore.json';
 
 describe('Converter', function() {
   it('should convert swagger_1 to swagger_2', function(done) {
@@ -11,16 +12,16 @@ describe('Converter', function() {
     Converter.convert({
       from: 'swagger_1',
       to: 'swagger_2',
-      url: 'https://api.gettyimages.com/swagger/api-docs',
+      file: SWAGGER_1,
     }, function(err, spec) {
       Expect(err).to.equal(null);
       spec = spec.stringify();
       if (process.env.WRITE_GOLDEN) {
-        FS.writeFileSync(GETTY_GOLDEN, spec);
+        FS.writeFileSync(GOLDEN, spec);
       } else {
-        Expect(spec).to.equal(FS.readFileSync(GETTY_GOLDEN, 'utf8'));
+        Expect(spec).to.equal(FS.readFileSync(GOLDEN, 'utf8'));
       }
       done();
     })
   })
-})
+});
