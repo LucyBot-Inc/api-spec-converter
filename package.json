@@ -25,6 +25,7 @@
   "homepage": "https://github.com/lucybot/api-spec-converter",
   "dependencies": {
     "async": "^0.9.0",
+    "request": "^2.55.0",
     "swagger-converter": "^0.1.1",
     "yamljs": "^0.2.2"
   },
