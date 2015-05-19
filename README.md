@@ -49,4 +49,3 @@ Not yet implemented
 
 ## Contributing
 Contributions are welcome. I'll try to respond to pull requests within 24 hours.
-
