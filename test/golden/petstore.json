@@ -587,7 +587,6 @@
   ],
   "definitions": {
     "Tag": {
-      "id": "Tag",
       "properties": {
         "id": {
           "type": "integer",
@@ -599,7 +598,6 @@
       }
     },
     "Pet": {
-      "id": "Pet",
       "required": [
         "id",
         "name"
@@ -643,7 +641,6 @@
       }
     },
     "Category": {
-      "id": "Category",
       "properties": {
         "id": {
           "type": "integer",
@@ -655,7 +652,6 @@
       }
     },
     "Animal": {
-      "id": "Animal",
       "required": [
         "id",
         "type"
@@ -671,7 +667,6 @@
       "discriminator": "type"
     },
     "Cat": {
-      "id": "Cat",
       "required": [
         "likesMilk"
       ],
@@ -687,7 +682,6 @@
       ]
     },
     "User": {
-      "id": "User",
       "properties": {
         "id": {
           "type": "integer",
@@ -724,7 +718,6 @@
       }
     },
     "Order": {
-      "id": "Order",
       "properties": {
         "id": {
           "type": "integer",
