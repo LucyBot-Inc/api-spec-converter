@@ -65,4 +65,4 @@ Contributions are welcome. I'll try to respond to pull requests within 24 hours.
 [deps-image]: https://img.shields.io/david/lucybot/api-spec-converter.svg
 [deps-link]: https://david-dm.org/lucybot/api-spec-converter
 [devdeps-image]: https://img.shields.io/david/dev/lucybot/api-spec-converter.svg
-[devdeps-link]: https://david-dm.org/lucybot/api-spec-converter#info=peerDependencies
+[devdeps-link]: https://david-dm.org/lucybot/api-spec-converter#info=devDependencies
