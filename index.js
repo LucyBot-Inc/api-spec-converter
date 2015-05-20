@@ -1,5 +1,5 @@
-var FS = require('fs');
-var Request = require('request');
+'use strict';
+
 var Types = require('./lib/types/types.js');
 
 var Converter = module.exports = {};
