@@ -23,11 +23,15 @@
     "url": "https://github.com/lucybot/api-spec-converter/issues"
   },
   "homepage": "https://github.com/lucybot/api-spec-converter",
+  "bin": {
+    "api-spec-converter": "./bin/api-spec-converter"
+  },
   "dependencies": {
     "async": "^0.9.0",
     "request": "^2.55.0",
     "swagger-converter": "^0.1.1",
-    "yamljs": "^0.2.2"
+    "yamljs": "^0.2.2",
+    "commander": "^2.8.1"
   },
   "devDependencies": {
     "chai": "^2.3.0",
