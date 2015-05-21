@@ -34,26 +34,20 @@ Converter.convert({
 ## Supported Types
 
 ### Swagger 1.x (swagger_1)
-Can be converted to:
-* swagger_2
-
 ### Swagger 2.0 (swagger_2)
-Can be converted from:
-* swagger_1
-
 ### API Blueprint (api_blueprint)
-Can be converted to:
-* swagger_2
-
 ### I/O Docs (io_docs)
-Can be converted to:
-* swagger_2
-
 ### RAML (raml)
 Not yet implemented
-
 ### Google API Discovery (google)
 Not yet implemented
+
+
+## Conversion Table
+
+|from:       |swagger_1|swagger_2|io_docs|api_blueprint|google|raml|
+-------------|:-------:|:-------:|:-----:|:-----------:|:----:|:--:|
+|to swagger_2|   X     |    X    |   X   |      X      |      |    |
 
 ## Contributing
 Contributions are welcome. I'll try to respond to pull requests within 24 hours.
