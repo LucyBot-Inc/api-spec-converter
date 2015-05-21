@@ -8,10 +8,9 @@
 
 Convert between API description formats such as [Swagger](http://swagger.io/) and [RAML](http://raml.org/)
 
-Currently only supports conversion from Swagger 1.x and API Blueprint to Swagger 2.0
+Currently only supports conversion to Swagger 2.0
 
 ## Installation
-**Note: api-spec-converter is still in alpha. The API is not stable.**
 
 ```bash
 npm install --save api-spec-converter
@@ -35,23 +34,25 @@ Converter.convert({
 ## Supported Types
 
 ### Swagger 1.x (swagger_1)
-
 Can be converted to:
 * swagger_2
 
 ### Swagger 2.0 (swagger_2)
-
 Can be converted from:
 * swagger_1
-
-### RAML (raml)
-Not yet implemented
 
 ### API Blueprint (api_blueprint)
 Can be converted to:
 * swagger_2
 
 ### I/O Docs (io_docs)
+Can be converted to:
+* swagger_2
+
+### RAML (raml)
+Not yet implemented
+
+### Google API Discovery (google)
 Not yet implemented
 
 ## Contributing

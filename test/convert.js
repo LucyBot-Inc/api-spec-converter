@@ -1,4 +1,5 @@
 var FS = require('fs');
+var Async = require('async');
 var Expect = require('chai').expect;
 
 var Converter = require('../index.js');
@@ -21,6 +22,19 @@ var POLLS_API = {
 var PARAMETERS = {
   in: __dirname + '/input/api_blueprint/parameters.md',
   out: __dirname + '/golden/parameters.json',
+}
+
+var IODOCS_FILES = ['usatoday', 'egnyte', 'foursquare', 'klout']
+var IODOCS_TESTS = IODOCS_FILES.map(function(file) {
+  return {
+    in: __dirname + '/input/io_docs/' + file + '.json',
+    out: __dirname + '/golden/' + file + '.json',
+  }
+})
+
+var IODOCS_TO_SWAGGER = {
+  in: __dirname + '/input/io_docs/usatoday.json',
+  out: __dirname + '/golden/usatoday.json'
 }
 
 var success = function(outfile, done) {
@@ -71,5 +85,22 @@ describe('Converter', function() {
       to: 'swagger_2',
       file: files.in,
     }, success(files.out, done));
+  });
+
+  it('should convert io_docs to swagger_2', function(done) {
+    var conversions = IODOCS_TESTS.map(function(test) {
+      return {
+        from: 'io_docs',
+        to: 'swagger_2',
+        file: test.in,
+      }
+    });
+    Async.map(conversions, Converter.convert, function(err, swaggers) {
+      Async.parallel(IODOCS_TESTS.map(function(test, idx) {
+        return function(callback) {
+          success(test.out, callback)(null, swaggers[idx]);
+        }
+      }), done);
+    });
   });
 });
