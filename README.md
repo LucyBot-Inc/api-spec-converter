@@ -33,21 +33,24 @@ Converter.convert({
 
 ## Supported Types
 
-### Swagger 1.x (swagger_1)
-### Swagger 2.0 (swagger_2)
-### API Blueprint (api_blueprint)
-### I/O Docs (io_docs)
-### RAML (raml)
-Not yet implemented
-### Google API Discovery (google)
-Not yet implemented
+* Swagger 1.x (swagger_1)
+* Swagger 2.0 (swagger_2)
+* API Blueprint (api_blueprint)
+* I/O Docs (io_docs)
+* RAML (raml) **Not yet implemented**
+* Google API Discovery (google) **Not yet implemented**
 
 
 ## Conversion Table
 
-|from:       |swagger_1|swagger_2|io_docs|api_blueprint|google|raml|
--------------|:-------:|:-------:|:-----:|:-----------:|:----:|:--:|
-|to swagger_2|   X     |    X    |   X   |      X      |      |    |
+|from:             |swagger_1|swagger_2|io_docs|api_blueprint|google|raml|
+-------------------|:-------:|:-------:|:-----:|:-----------:|:----:|:--:|
+|to swagger_1      |  n/a    |         |       |             |      |    |
+|to swagger_2      |   X     |    n/a  |   X   |      X      |      |    |
+|to io_docs        |         |         |  n/a  |             |      |    |
+|to api_blueprint  |         |         |       |    n/a      |      |    |
+|to google         |         |         |       |             |  n/a |    |
+|to raml           |         |         |       |             |      | n/a|
 
 ## Contributing
 Contributions are welcome. I'll try to respond to pull requests within 24 hours.
