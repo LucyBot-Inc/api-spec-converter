@@ -19,6 +19,16 @@
         "description": "",
         "tags": [
           "Messages"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "An unique identifier of the message.",
+            "required": true,
+            "default": "",
+            "type": "number"
+          }
         ]
       },
       "put": {
@@ -33,6 +43,16 @@
         "description": "",
         "tags": [
           "Messages"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "An unique identifier of the message.",
+            "required": true,
+            "default": "",
+            "type": "number"
+          }
         ]
       }
     },

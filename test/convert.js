@@ -71,5 +71,5 @@ describe('Converter', function() {
       to: 'swagger_2',
       file: files.in,
     }, success(files.out, done));
-  })
+  });
 });

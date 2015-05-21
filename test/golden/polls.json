@@ -24,7 +24,8 @@
         "description": "",
         "tags": [
           ""
-        ]
+        ],
+        "parameters": []
       }
     },
     "/questions/{question_id}": {
@@ -40,6 +41,16 @@
         "description": "",
         "tags": [
           "Question"
+        ],
+        "parameters": [
+          {
+            "name": "question_id",
+            "in": "path",
+            "description": "ID of the Question in form of an integer",
+            "required": true,
+            "default": "",
+            "type": "number"
+          }
         ]
       }
     },
@@ -56,6 +67,24 @@
         "description": "This action allows you to vote on a question's choice.\n\n",
         "tags": [
           "Question"
+        ],
+        "parameters": [
+          {
+            "name": "question_id",
+            "in": "path",
+            "description": "ID of the Question in form of an integer",
+            "required": true,
+            "default": "",
+            "type": "number"
+          },
+          {
+            "name": "choice_id",
+            "in": "path",
+            "description": "ID of the Choice in form of an integer",
+            "required": true,
+            "default": "",
+            "type": "number"
+          }
         ]
       }
     },
@@ -72,6 +101,16 @@
         "description": "",
         "tags": [
           "Question"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "The page of questions to return",
+            "required": false,
+            "default": "",
+            "type": "number"
+          }
         ]
       },
       "post": {
@@ -86,6 +125,16 @@
         "description": "You may create your own question using this action. It takes a JSON object containing a question and a collection of answers in the form of choices.\n\n+ question (string) - The question\n\n+ choices (array[string]) - A collection of choices.\n\n",
         "tags": [
           "Question"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "The page of questions to return",
+            "required": false,
+            "default": "",
+            "type": "number"
+          }
         ]
       }
     }
