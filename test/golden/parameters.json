@@ -1,0 +1,66 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Parameters API",
+    "version": "",
+    "description": "In this installment of the API Blueprint course we will discuss how to describe URI parameters.\n\nBut first let's add more messages to our system. For that we would need introduce an message identifier – id. This id will be our parameter when communicating with our API about messages.\n\n## API Blueprint\n\n+ [Previous: Requests](06.%20Requests.md)\n\n+ [This: Raw API Blueprint](https://raw.github.com/apiaryio/api-blueprint/master/examples/07.%20Parameters.md)\n\n+ [Next: Attributes](08.%20Attributes.md)\n\n"
+  },
+  "paths": {
+    "/message/{id}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {},
+            "examples": {}
+          }
+        },
+        "summary": "Retrieve a Message",
+        "description": "",
+        "tags": [
+          "Messages"
+        ]
+      },
+      "put": {
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "headers": {},
+            "examples": {}
+          }
+        },
+        "summary": "Update a Message",
+        "description": "",
+        "tags": [
+          "Messages"
+        ]
+      }
+    },
+    "/messages": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {},
+            "examples": {}
+          }
+        },
+        "summary": "Retrieve all Messages",
+        "description": "",
+        "tags": [
+          "Messages"
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The maximum number of results to return.",
+            "required": false,
+            "default": "20",
+            "type": "number"
+          }
+        ]
+      }
+    }
+  }
+}

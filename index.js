@@ -11,7 +11,6 @@ Converter.convert = function(options, callback) {
       callback(error, null);
       return;
     }
-    var toSpec = fromSpec.convertTo(options.to);
-    callback(null, toSpec);
+    var toSpec = fromSpec.convertTo(options.to, callback);
   });
 }

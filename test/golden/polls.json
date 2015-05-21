@@ -1,0 +1,93 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Polls",
+    "version": "",
+    "description": "Polls is a simple API allowing consumers to view polls and vote in them. You can view this documentation over at [Apiary](http://docs.pollsapi.apiary.io).\n\n"
+  },
+  "host": "polls.apiblueprint.org",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {},
+            "examples": {}
+          }
+        },
+        "summary": "Retrieve the Entry Point",
+        "description": "",
+        "tags": [
+          ""
+        ]
+      }
+    },
+    "/questions/{question_id}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {},
+            "examples": {}
+          }
+        },
+        "summary": "View a Questions Detail",
+        "description": "",
+        "tags": [
+          "Question"
+        ]
+      }
+    },
+    "/questions/{question_id}/choices/{choice_id}": {
+      "post": {
+        "responses": {
+          "201": {
+            "description": "Created",
+            "headers": {},
+            "examples": {}
+          }
+        },
+        "summary": "Vote on a Choice",
+        "description": "This action allows you to vote on a question's choice.\n\n",
+        "tags": [
+          "Question"
+        ]
+      }
+    },
+    "/questions": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {},
+            "examples": {}
+          }
+        },
+        "summary": "List All Questions",
+        "description": "",
+        "tags": [
+          "Question"
+        ]
+      },
+      "post": {
+        "responses": {
+          "201": {
+            "description": "Created",
+            "headers": {},
+            "examples": {}
+          }
+        },
+        "summary": "Create a New Question",
+        "description": "You may create your own question using this action. It takes a JSON object containing a question and a collection of answers in the form of choices.\n\n+ question (string) - The question\n\n+ choices (array[string]) - A collection of choices.\n\n",
+        "tags": [
+          "Question"
+        ]
+      }
+    }
+  }
+}
