@@ -33,12 +33,12 @@ Converter.convert({
 
 ## Supported Types
 
-* Swagger 1.x (swagger_1)
-* Swagger 2.0 (swagger_2)
-* API Blueprint (api_blueprint)
+* [Swagger 1.x](https://github.com/swagger-api/swagger-spec/blob/master/versions/1.2.md) (swagger_1)
+* [Swagger 2.0](https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md) (swagger_2)
+* [API Blueprint](https://github.com/apiaryio/api-blueprint/blob/master/API%20Blueprint%20Specification.md) (api_blueprint)
 * I/O Docs (io_docs)
-* RAML (raml) **Not yet implemented**
-* Google API Discovery (google) **Not yet implemented**
+* [RAML](http://raml.org/spec.html) (raml) **Not yet implemented**
+* [Google API Discovery](https://developers.google.com/discovery/v1/reference/apis) (google) **Not yet implemented**
 
 
 ## Conversion Table
