@@ -39,18 +39,20 @@ Converter.convert({
 * I/O Docs (io_docs)
 * [RAML](http://raml.org/spec.html) (raml) **Not yet implemented**
 * [Google API Discovery](https://developers.google.com/discovery/v1/reference/apis) (google) **Not yet implemented**
+* [WADL](http://www.w3.org/Submission/wadl/) (wadl) **Not yet implemented**
 
 
 ## Conversion Table
 
-|from:             |swagger_1|swagger_2|io_docs|api_blueprint|google|raml|
--------------------|:-------:|:-------:|:-----:|:-----------:|:----:|:--:|
-|to swagger_1      |  n/a    |         |       |             |      |    |
-|to swagger_2      |   X     |    n/a  |   X   |      X      |      |    |
-|to io_docs        |         |         |  n/a  |             |      |    |
-|to api_blueprint  |         |         |       |    n/a      |      |    |
-|to google         |         |         |       |             |  n/a |    |
-|to raml           |         |         |       |             |      | n/a|
+|from:             |swagger_1|swagger_2|io_docs|api_blueprint|google|raml|wadl|
+-------------------|:-------:|:-------:|:-----:|:-----------:|:----:|:--:|:--:|
+|to swagger_1      |  n/a    |         |       |             |      |    |    |
+|to swagger_2      |   X     |    n/a  |   X   |      X      |      |    |    |
+|to io_docs        |         |         |  n/a  |             |      |    |    |
+|to api_blueprint  |         |         |       |    n/a      |      |    |    |
+|to google         |         |         |       |             |  n/a |    |    |
+|to raml           |         |         |       |             |      | n/a|    |
+|to wadl           |         |         |       |             |      |    | n/a|
 
 ## Contributing
 Contributions are welcome. I'll try to respond to pull requests within 24 hours.
