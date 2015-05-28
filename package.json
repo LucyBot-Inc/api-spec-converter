@@ -12,9 +12,10 @@
   },
   "keywords": [
     "API",
+    "REST",
+    "Restful",
     "Swagger",
     "RAML",
-    "API",
     "Blueprint"
   ],
   "author": "Bobby Brennan <bobby@lucybot.com> (https://lucybot.com)",
