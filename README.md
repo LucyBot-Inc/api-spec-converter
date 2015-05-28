@@ -35,10 +35,10 @@ Converter.convert({
 
 * [Swagger 1.x](https://github.com/swagger-api/swagger-spec/blob/master/versions/1.2.md) (swagger_1)
 * [Swagger 2.0](https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md) (swagger_2)
-* [API Blueprint](https://github.com/apiaryio/api-blueprint/blob/master/API%20Blueprint%20Specification.md) (api_blueprint)
 * [I/O Docs](https://github.com/mashery/iodocs) (io_docs)
+* [API Blueprint](https://github.com/apiaryio/api-blueprint/blob/master/API%20Blueprint%20Specification.md) (api_blueprint)
+* [Google API Discovery](https://developers.google.com/discovery/v1/reference/apis) (google)
 * [RAML](http://raml.org/spec.html) (raml) **Not yet implemented**
-* [Google API Discovery](https://developers.google.com/discovery/v1/reference/apis) (google) **Not yet implemented**
 * [WADL](http://www.w3.org/Submission/wadl/) (wadl) **Not yet implemented**
 
 
@@ -47,7 +47,7 @@ Converter.convert({
 |from:             |swagger_1|swagger_2|io_docs|api_blueprint|google|raml|wadl|
 -------------------|:-------:|:-------:|:-----:|:-----------:|:----:|:--:|:--:|
 |to swagger_1      |  n/a    |         |       |             |      |    |    |
-|to swagger_2      |   X     |    n/a  |   X   |      X      |      |    |    |
+|to swagger_2      |   X     |    n/a  |   X   |      X      |  X   |    |    |
 |to io_docs        |         |         |  n/a  |             |      |    |    |
 |to api_blueprint  |         |         |       |    n/a      |      |    |    |
 |to google         |         |         |       |             |  n/a |    |    |
