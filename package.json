@@ -16,7 +16,8 @@
     "Restful",
     "Swagger",
     "RAML",
-    "Blueprint"
+    "Blueprint",
+    "GoogleDiscovery"
   ],
   "author": "Bobby Brennan <bobby@lucybot.com> (https://lucybot.com)",
   "license": "MIT",
@@ -35,7 +36,8 @@
     "protagonist": "^0.19.6",
     "request": "^2.55.0",
     "swagger-converter": "^0.1.1",
-    "yamljs": "^0.2.2"
+    "yamljs": "^0.2.2",
+    "google-discovery-to-swagger": "^0.0.2"
   },
   "devDependencies": {
     "chai": "^2.3.0",

@@ -32,6 +32,11 @@ var IODOCS_TESTS = IODOCS_FILES.map(function(file) {
   }
 })
 
+var GOOGLE_TO_SWAGGER_2 = {
+  in: __dirname + '/input/google/youtube.json',
+  out: __dirname + '/golden/youtube.json'
+}
+
 var IODOCS_TO_SWAGGER = {
   in: __dirname + '/input/io_docs/usatoday.json',
   out: __dirname + '/golden/usatoday.json'
@@ -102,5 +107,14 @@ describe('Converter', function() {
         }
       }), done);
     });
+  });
+
+  it('should convert google parameters to swagger_2', function(done) {
+    var files = GOOGLE_TO_SWAGGER_2;
+    Converter.convert({
+      from: 'google',
+      to: 'swagger_2',
+      file: files.in,
+    }, success(files.out, done));
   });
 });
