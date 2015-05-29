@@ -37,7 +37,8 @@
     "request": "^2.55.0",
     "swagger-converter": "^0.1.2",
     "yamljs": "^0.2.2",
-    "google-discovery-to-swagger": "^0.0.2"
+    "google-discovery-to-swagger": "^0.0.2",
+    "URIjs": "^1.15.1"
   },
   "devDependencies": {
     "chai": "^2.3.0",
