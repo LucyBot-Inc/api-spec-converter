@@ -15,9 +15,7 @@ Converter.getSpec = function (source, format, callback) {
 }
 
 Converter.convert = function(options, callback) {
-  //TODO: remove hack.
-  var source = options.url || options.file || options.spec;
-  Converter.getSpec(source, options.from, function(error, fromSpec) {
+  Converter.getSpec(options.source, options.from, function(error, fromSpec) {
     if (error) {
       callback(error, null);
       return;

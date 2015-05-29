@@ -18,7 +18,7 @@ function main(url, options) {
     Program.help();
 
   Converter.convert({
-    url: url,
+    source: url,
     from: options.from,
     to: options.to
   }, function(err, spec) {

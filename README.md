@@ -23,7 +23,7 @@ var Converter = require('api-spec-converter');
 Converter.convert({
   from: 'swagger_1',
   to: 'swagger_2',
-  url: 'https://api.gettyimages.com/swagger/api-docs',
+  source: 'https://api.gettyimages.com/swagger/api-docs',
 }, function(err, converted) {
   console.log(converted.spec);
   FS.writeFileSync('swagger2.json', converted.stringify());

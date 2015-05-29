@@ -61,7 +61,7 @@ describe('Converter', function() {
     Converter.convert({
       from: 'swagger_1',
       to: 'swagger_2',
-      file: files.in,
+      source: files.in,
     }, success(files.out, done));
   });
 
@@ -70,7 +70,7 @@ describe('Converter', function() {
     Converter.convert({
       from: 'api_blueprint',
       to: 'swagger_2',
-      file: files.in,
+      source: files.in,
     }, success(files.out, done));
   });
 
@@ -79,7 +79,7 @@ describe('Converter', function() {
     Converter.convert({
       from: 'api_blueprint',
       to: 'swagger_2',
-      file: files.in,
+      source: files.in,
     }, success(files.out, done));
   });
 
@@ -88,7 +88,7 @@ describe('Converter', function() {
     Converter.convert({
       from: 'api_blueprint',
       to: 'swagger_2',
-      file: files.in,
+      source: files.in,
     }, success(files.out, done));
   });
 
@@ -97,7 +97,7 @@ describe('Converter', function() {
       return {
         from: 'io_docs',
         to: 'swagger_2',
-        file: test.in,
+        source: test.in,
       }
     });
     Async.map(conversions, Converter.convert, function(err, swaggers) {
@@ -114,7 +114,7 @@ describe('Converter', function() {
     Converter.convert({
       from: 'google',
       to: 'swagger_2',
-      file: files.in,
+      source: files.in,
     }, success(files.out, done));
   });
 });
