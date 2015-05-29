@@ -667,17 +667,19 @@
       "discriminator": "type"
     },
     "Cat": {
-      "required": [
-        "likesMilk"
-      ],
-      "properties": {
-        "likesMilk": {
-          "type": "boolean"
-        }
-      },
       "allOf": [
         {
           "$ref": "#/definitions/Animal"
+        },
+        {
+          "required": [
+            "likesMilk"
+          ],
+          "properties": {
+            "likesMilk": {
+              "type": "boolean"
+            }
+          }
         }
       ]
     },

@@ -29,15 +29,16 @@
     "api-spec-converter": "./bin/api-spec-converter"
   },
   "dependencies": {
-    "apib2swagger": "https://github.com/bobby-brennan/apib2swagger/tarball/master",
+    "apib2swagger": "^0.2.0",
     "async": "^0.9.0",
     "commander": "^2.8.1",
     "lodash": "^3.9.1",
     "protagonist": "^0.19.6",
     "request": "^2.55.0",
-    "swagger-converter": "^0.1.1",
+    "swagger-converter": "^0.1.2",
     "yamljs": "^0.2.2",
-    "google-discovery-to-swagger": "^0.0.2"
+    "google-discovery-to-swagger": "^0.0.2",
+    "URIjs": "^1.15.1"
   },
   "devDependencies": {
     "chai": "^2.3.0",
