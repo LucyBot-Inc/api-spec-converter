@@ -30,12 +30,12 @@
   },
   "dependencies": {
     "apib2swagger": "^0.2.0",
-    "async": "^0.9.0",
+    "async": "^1.1.0",
     "commander": "^2.8.1",
     "lodash": "^3.9.1",
-    "protagonist": "^0.19.6",
+    "protagonist": "^0.20.0",
     "request": "^2.55.0",
-    "swagger-converter": "^0.1.2",
+    "swagger-converter": "^0.1.3",
     "yamljs": "^0.2.2",
     "google-discovery-to-swagger": "^0.0.2",
     "URIjs": "^1.15.1"
