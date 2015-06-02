@@ -28,6 +28,9 @@
           }
         },
         "description": "",
+        "tags": [
+          "pet"
+        ],
         "summary": "Update an existing pet",
         "operationId": "updatePet",
         "produces": [
@@ -57,6 +60,9 @@
           }
         },
         "description": "",
+        "tags": [
+          "pet"
+        ],
         "summary": "Finds Pets by status",
         "operationId": "findPetsByStatus",
         "produces": [
@@ -84,6 +90,9 @@
           }
         },
         "description": "",
+        "tags": [
+          "pet"
+        ],
         "summary": "Finds Pets by tags",
         "operationId": "findPetsByTags",
         "produces": [
@@ -111,6 +120,9 @@
           }
         },
         "description": "",
+        "tags": [
+          "pet"
+        ],
         "summary": "Updates a pet in the store with form data",
         "operationId": "updatePetWithForm",
         "produces": [
@@ -150,9 +162,17 @@
           },
           "404": {
             "description": "Pet not found"
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Pet"
+            }
           }
         },
         "description": "",
+        "tags": [
+          "pet"
+        ],
         "summary": "Find pet by ID",
         "operationId": "getPetById",
         "produces": [
@@ -181,6 +201,9 @@
           }
         },
         "description": "",
+        "tags": [
+          "pet"
+        ],
         "summary": "Deletes a pet",
         "operationId": "deletePet",
         "produces": [
@@ -206,6 +229,9 @@
           }
         },
         "description": "",
+        "tags": [
+          "pet"
+        ],
         "summary": "partial updates to a pet",
         "operationId": "partialUpdate",
         "produces": [
@@ -242,6 +268,9 @@
           }
         },
         "description": "",
+        "tags": [
+          "pet"
+        ],
         "summary": "uploads an image",
         "operationId": "uploadFile",
         "produces": [
@@ -276,6 +305,9 @@
           }
         },
         "description": "",
+        "tags": [
+          "user"
+        ],
         "summary": "Creates list of users with given input array",
         "operationId": "createUsersWithArrayInput",
         "produces": [
@@ -303,6 +335,9 @@
           }
         },
         "description": "",
+        "tags": [
+          "user"
+        ],
         "summary": "Creates list of users with given list input",
         "operationId": "createUsersWithListInput",
         "produces": [
@@ -333,6 +368,9 @@
           }
         },
         "description": "",
+        "tags": [
+          "user"
+        ],
         "summary": "Updated user",
         "operationId": "updateUser",
         "produces": [
@@ -367,6 +405,9 @@
           }
         },
         "description": "",
+        "tags": [
+          "user"
+        ],
         "summary": "Delete user",
         "operationId": "deleteUser",
         "produces": [
@@ -389,9 +430,17 @@
           },
           "404": {
             "description": "User not found"
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
           }
         },
         "description": "",
+        "tags": [
+          "user"
+        ],
         "summary": "Get user by user name",
         "operationId": "getUserByName",
         "produces": [
@@ -416,6 +465,9 @@
           }
         },
         "description": "",
+        "tags": [
+          "user"
+        ],
         "summary": "Logs user into the system",
         "operationId": "loginUser",
         "produces": [
@@ -447,6 +499,9 @@
           }
         },
         "description": "",
+        "tags": [
+          "user"
+        ],
         "summary": "Logs out current logged in user session",
         "operationId": "logoutUser",
         "produces": [
@@ -462,6 +517,9 @@
           }
         },
         "description": "",
+        "tags": [
+          "user"
+        ],
         "summary": "Create user",
         "operationId": "createUser",
         "produces": [
@@ -488,6 +546,9 @@
           }
         },
         "description": "",
+        "tags": [
+          "store"
+        ],
         "summary": "Place an order for a pet",
         "operationId": "placeOrder",
         "produces": [
@@ -517,6 +578,9 @@
           }
         },
         "description": "",
+        "tags": [
+          "store"
+        ],
         "summary": "Delete purchase order by ID",
         "operationId": "deleteOrder",
         "produces": [
@@ -539,9 +603,17 @@
           },
           "404": {
             "description": "Order not found"
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Order"
+            }
           }
         },
         "description": "",
+        "tags": [
+          "store"
+        ],
         "summary": "Find purchase order by ID",
         "operationId": "getOrderById",
         "produces": [
@@ -580,6 +652,20 @@
       }
     }
   },
+  "tags": [
+    {
+      "name": "pet",
+      "description": "Operations about pets"
+    },
+    {
+      "name": "user",
+      "description": "Operations about user"
+    },
+    {
+      "name": "store",
+      "description": "Operations about store"
+    }
+  ],
   "host": "petstore.swagger.wordnik.com",
   "basePath": "/api",
   "schemes": [
@@ -658,7 +744,7 @@
       ],
       "properties": {
         "id": {
-          "type": "long"
+          "$ref": "#/definitions/long"
         },
         "type": {
           "type": "string"
