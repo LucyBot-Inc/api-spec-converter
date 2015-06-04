@@ -1,6 +1,6 @@
 {
   "name": "api-spec-converter",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": " Convert between API description formats such as Swagger and RAML",
   "main": "index.js",
   "scripts": {
