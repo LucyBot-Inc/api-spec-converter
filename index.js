@@ -1,11 +1,12 @@
 'use strict';
 
 var Types = require('./lib/types/types.js');
+var _ = require('lodash');
 
 var Converter = module.exports = {};
 
-Converter.getSpec = function (source, format, callback) {
-  var spec = new Types[format]();
+Converter.getSpec = function (source, type, callback) {
+  var spec = new Types[type]();
   spec.resolveResources(source, function(error) {
     if (error)
       callback(error, null);
@@ -13,6 +14,16 @@ Converter.getSpec = function (source, format, callback) {
       callback(null, spec);
   });
 }
+
+Converter.getTypeName = function (name, version) {
+  var result;
+  _.each(Types, function (type, typeName) {
+    type = type.prototype;
+    if (type.formatName === name && type.supportedVersions.indexOf(version) !== -1)
+      result = typeName;
+  });
+  return result;
+};
 
 Converter.convert = function(options, callback) {
   Converter.getSpec(options.source, options.from, function(error, fromSpec) {
