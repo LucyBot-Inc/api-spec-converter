@@ -30,18 +30,18 @@
   },
   "dependencies": {
     "apib2swagger": "^0.2.0",
-    "async": "^1.1.0",
+    "async": "^1.2.1",
     "commander": "^2.8.1",
-    "lodash": "^3.9.1",
-    "protagonist": "^0.20.0",
-    "request": "^2.55.0",
+    "lodash": "^3.9.3",
+    "protagonist": "^0.20.1",
+    "request": "^2.57.0",
     "swagger-converter": "^0.1.5",
-    "yamljs": "^0.2.2",
+    "yamljs": "^0.2.3",
     "google-discovery-to-swagger": "^0.0.3",
     "URIjs": "^1.15.1"
   },
   "devDependencies": {
-    "chai": "^2.3.0",
+    "chai": "^3.0.0",
     "mocha": "^2.2.5"
   }
 }
