@@ -5,6 +5,8 @@ var _ = require('lodash');
 
 var Converter = module.exports = {};
 
+Converter.Types = Types;
+
 Converter.getSpec = function (source, type, callback) {
   var spec = new Types[type]();
   spec.resolveResources(source, function(error) {
