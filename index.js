@@ -6,6 +6,7 @@ var _ = require('lodash');
 var Converter = module.exports = {};
 
 Converter.Types = Types;
+Converter.BaseType = require('./lib/types/base-type.js');
 
 Converter.getSpec = function (source, type, callback) {
   var spec = new Types[type]();
