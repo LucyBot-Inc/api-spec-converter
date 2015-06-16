@@ -188,7 +188,7 @@
               "allowMultiple": false,
               "minimum": "1.0",
               "maximum": "100000.0",
-              "defaultValue": "-1"
+              "defaultValue": "1"
             }
           ],
           "responseMessages": [
@@ -357,7 +357,7 @@
           "description": "unique identifier for the pet",
           "minimum": "0.0",
           "maximum": "100.0",
-          "defaultValue": "-1"
+          "defaultValue": "1"
         },
         "category": {
           "$ref": "Category"
@@ -408,7 +408,7 @@
       ],
       "properties": {
         "id": {
-          "type": "long"
+          "type": "integer"
         },
         "type": {
           "type": "string"
