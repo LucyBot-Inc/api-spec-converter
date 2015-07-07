@@ -24,6 +24,11 @@ var PARAMETERS = {
   out: __dirname + '/golden/parameters.json',
 }
 
+var WADL_TO_SWAGGER_2 = {
+  in: __dirname + '/input/wadl/facebook.xml',
+  out: __dirname + '/golden/facebook.json',
+}
+
 var IODOCS_FILES = ['usatoday', 'egnyte', 'foursquare', 'klout']
 var IODOCS_TESTS = IODOCS_FILES.map(function(file) {
   return {
@@ -115,6 +120,15 @@ describe('Converter', function() {
     var files = GOOGLE_TO_SWAGGER_2;
     Converter.convert({
       from: 'google',
+      to: 'swagger_2',
+      source: files.in,
+    }, success(files.out, done));
+  });
+
+  it('should convert wadl to swagger_2', function(done) {
+    var files = WADL_TO_SWAGGER_2;
+    Converter.convert({
+      from: 'wadl',
       to: 'swagger_2',
       source: files.in,
     }, success(files.out, done));
