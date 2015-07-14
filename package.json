@@ -37,7 +37,7 @@
     "request": "^2.57.0",
     "swagger-converter": "apigee-127/swagger-converter",
     "yamljs": "^0.2.3",
-    "google-discovery-to-swagger": "^0.0.3",
+    "google-discovery-to-swagger": "^0.0.4",
     "URIjs": "^1.15.1"
   },
   "devDependencies": {
