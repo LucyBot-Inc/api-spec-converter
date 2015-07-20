@@ -1,3 +1,4167 @@
 {
-  "swagger": "2.0"
+  "swagger": "2.0",
+  "host": "graph.facebook.com",
+  "info": {
+    "title": "graph.facebook.com"
+  },
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/search": {
+      "parameters": [],
+      "get": {
+        "parameters": [
+          {
+            "name": "q",
+            "default": "apigee",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "The search string"
+          },
+          {
+            "name": "type",
+            "default": "post",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Supports these types of objects: All public posts (post), people (user), pages (page), events\n                            (event), groups (group), check-ins (checkin)\n                        ",
+            "enum": [
+              "post",
+              "user",
+              "page",
+              "event",
+              "group",
+              "checkin"
+            ]
+          }
+        ],
+        "description": "Search over all public objects in the social graph",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{album}": {
+      "parameters": [
+        {
+          "name": "album",
+          "default": "99394368305",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the album object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "A photo album",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{album}/photos": {
+      "parameters": [
+        {
+          "name": "album",
+          "default": "99394368305",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the album object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The photos contained in this album",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "message",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Photo description"
+          }
+        ],
+        "description": "Adds a photo to the album",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{album}/likes": {
+      "parameters": [
+        {
+          "name": "album",
+          "default": "99394368305",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the album object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The likes made on this album",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [],
+        "description": "Likes the album",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "delete": {
+        "parameters": [],
+        "description": "Unlikes the album",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{album}/comments": {
+      "parameters": [
+        {
+          "name": "album",
+          "default": "99394368305",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the album object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The comments made on this album",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "message",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "Comment text"
+          }
+        ],
+        "description": "Posts a comment on the album",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{album}/picture": {
+      "parameters": [
+        {
+          "name": "album",
+          "default": "99394368305",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the album object."
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "name": "type",
+            "default": "small",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "One of square (50x50), small (50 pixels wide, variable height), and large (about 200 pixels wide,\n                            variable height)\n                        ",
+            "enum": [
+              "square",
+              "small",
+              "large"
+            ]
+          }
+        ],
+        "description": "The album's cover photo; the first picture uploaded to an album becomes the cover photo for the album.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{application}": {
+      "parameters": [
+        {
+          "name": "application",
+          "default": "2439131959",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the application object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "An application's profile",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{application}/accounts": {
+      "parameters": [
+        {
+          "name": "application",
+          "default": "2439131959",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the application object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "Test User accounts associated with the application.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{application}/accounts/test-users": {
+      "parameters": [
+        {
+          "name": "application",
+          "default": "2439131959",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the application object."
+        }
+      ],
+      "post": {
+        "parameters": [
+          {
+            "name": "installed",
+            "required": false,
+            "type": "boolean",
+            "in": "query",
+            "description": "Install app for the test user upon creation"
+          },
+          {
+            "name": "permissions",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "List of extended permissions app granted for the new test user if installed is true"
+          },
+          {
+            "name": "name",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "A name for the test user. The specified name will also be used in the email address assigned to the test user."
+          }
+        ],
+        "description": "Creates a test account for the application",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{application}/albums": {
+      "parameters": [
+        {
+          "name": "application",
+          "default": "2439131959",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the application object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The photo albums this application has created.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{application}/feed": {
+      "parameters": [
+        {
+          "name": "application",
+          "default": "2439131959",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the application object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The application's wall.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "message",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "Status Message content"
+          }
+        ],
+        "description": "Posts a status message on the application's profile page",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{application}/insights": {
+      "parameters": [
+        {
+          "name": "application",
+          "default": "2439131959",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the application object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "Usage metrics for this application",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{application}/links": {
+      "parameters": [
+        {
+          "name": "application",
+          "default": "2439131959",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the application object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The application's posted links.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "link",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "Link URL"
+          },
+          {
+            "name": "message",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Link message"
+          }
+        ],
+        "description": "Posts a link on the application's profile page",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{application}/picture": {
+      "parameters": [
+        {
+          "name": "application",
+          "default": "2439131959",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the application object."
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "name": "type",
+            "default": "small",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "One of square (50x50), small (50 pixels wide, variable height), and large (about 200 pixels wide,\n                            variable height)\n                        ",
+            "enum": [
+              "square",
+              "small",
+              "large"
+            ]
+          }
+        ],
+        "description": "The application's logo",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{application}/posts": {
+      "parameters": [
+        {
+          "name": "application",
+          "default": "2439131959",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the application object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The application's own posts.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{application}/reviews": {
+      "parameters": [
+        {
+          "name": "application",
+          "default": "2439131959",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the application object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "Reviews of this application",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{application}/staticresources": {
+      "parameters": [
+        {
+          "name": "application",
+          "default": "2439131959",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the application object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "Usage stats about the canvas application's static resources, such as javascript and CSS, and which ones are being flushed to browsers early.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{application}/statuses": {
+      "parameters": [
+        {
+          "name": "application",
+          "default": "2439131959",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the application object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The application's status updates",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "message",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "Status Message content"
+          }
+        ],
+        "description": "Posts a status message on the application's profile page",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{application}/subscriptions": {
+      "parameters": [
+        {
+          "name": "application",
+          "default": "2439131959",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the application object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "All of the subscriptions this application has for real-time notifications.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "object",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "Object to monitor - `user`, `permissions`, or `page`.",
+            "enum": [
+              "user",
+              "permissions",
+              "page"
+            ]
+          },
+          {
+            "name": "fields",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "List of properties for the `object` to monitor."
+          },
+          {
+            "name": "callback_url",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "A callback URL to which Facebook will post subscription updates."
+          },
+          {
+            "name": "verify_token",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Token sent in the verification request."
+          }
+        ],
+        "description": "Adds a real-time notification subscription for this application.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "delete": {
+        "parameters": [
+          {
+            "name": "object",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Object to monitor - `user`, `permissions`, or `page`. If no object is specified all subscriptions are deleted.",
+            "enum": [
+              "user",
+              "permissions",
+              "page"
+            ]
+          }
+        ],
+        "description": "Deletes a real-time notification subscription for this application.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{application}/tagged": {
+      "parameters": [
+        {
+          "name": "application",
+          "default": "2439131959",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the application object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The photos, videos, and posts in which this application has been tagged.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{application}/translations": {
+      "parameters": [
+        {
+          "name": "application",
+          "default": "2439131959",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the application object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The translated strings for this application.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "native_strings",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "A JSON-encoded array of strings to translate. Each element of the string array is an object, with text storing the actual string, description storing the description of the text."
+          }
+        ],
+        "description": "Uploads translated strings for this application.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "delete": {
+        "parameters": [
+          {
+            "name": "native_hashes",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "An array of native hashes. The native hash is a unique identifier of the native string and a description and is generated by the Translations application."
+          }
+        ],
+        "description": "Deletes a translation string for this application.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{application}/scores": {
+      "parameters": [
+        {
+          "name": "application",
+          "default": "2439131959",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the application object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "Scores for the user and their friends.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "delete": {
+        "parameters": [],
+        "description": "Deletes all the scores for the application.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{application}/achievements": {
+      "parameters": [
+        {
+          "name": "application",
+          "default": "2439131959",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the application object."
+        }
+      ],
+      "post": {
+        "parameters": [
+          {
+            "name": "achievement",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "Unique URL to the achievement."
+          },
+          {
+            "name": "display_order",
+            "required": true,
+            "type": "integer",
+            "in": "query",
+            "description": "Order of this achievement as it shows up in the achievement stories UI (low to high). For example a display order of 100 will be displayed in the UI before 200. We use this value to surface achievements according to the order the developer has specified. Please make sure this value is unique and increments in the correct order for your achievements."
+          }
+        ],
+        "description": "Registers an achievement for the application",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "delete": {
+        "parameters": [
+          {
+            "name": "achievement",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "Unique URL to the achievement."
+          }
+        ],
+        "description": "Unregisters an achievement for the application",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{checkin}": {
+      "parameters": [
+        {
+          "name": "checkin",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the checkin object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "Represents a single visit by a user to a location",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{checkin}/comments": {
+      "parameters": [
+        {
+          "name": "checkin",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the checkin object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "All of the comments on this checkin.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "message",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "Comment text"
+          }
+        ],
+        "description": "Posts a comment to this checkin.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{checkin}/likes": {
+      "parameters": [
+        {
+          "name": "checkin",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the checkin object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "Users who like this checkin.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [],
+        "description": "Likes this checkin.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "delete": {
+        "parameters": [],
+        "description": "Unlikes this checkin.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{comment}": {
+      "parameters": [
+        {
+          "name": "comment",
+          "default": "19292868552_475058873552_14173716",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the comment object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "Returns a comment",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "delete": {
+        "parameters": [],
+        "description": "Deletes a comment",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{comment}/likes": {
+      "parameters": [
+        {
+          "name": "comment",
+          "default": "19292868552_475058873552_14173716",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the comment object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "All the likes on this comment",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [],
+        "description": "Likes the comment",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "delete": {
+        "parameters": [],
+        "description": "Unlikes the comment",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{event}": {
+      "parameters": [
+        {
+          "name": "event",
+          "default": "331218348435",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the event object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "Specifies information about an event, including the location, event name, and which invitees plan to attend.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{event}/feed": {
+      "parameters": [
+        {
+          "name": "event",
+          "default": "331218348435",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the event object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "This event's wall",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "message",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "Status Message content"
+          }
+        ],
+        "description": "Posts a status message on this event's wall",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{event}/noreply": {
+      "parameters": [
+        {
+          "name": "event",
+          "default": "331218348435",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the event object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "All of the users who have been not yet responded to their invitation to this event",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{event}/maybe": {
+      "parameters": [
+        {
+          "name": "event",
+          "default": "331218348435",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the event object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "All of the users who have been responded \"Maybe\" to their invitation to this event",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [],
+        "description": "RSVPs the user as a 'maybe' for the event",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{event}/invited": {
+      "parameters": [
+        {
+          "name": "event",
+          "default": "331218348435",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the event object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "All of the users who have been invited to this event",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{event}/attending": {
+      "parameters": [
+        {
+          "name": "event",
+          "default": "331218348435",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the event object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "All of the users who are attending this event",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [],
+        "description": "RSVPs the user as 'attending' for the event",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{event}/declined": {
+      "parameters": [
+        {
+          "name": "event",
+          "default": "331218348435",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the event object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "All of the users who declined their invitation to this event",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [],
+        "description": "RSVPs the user as 'declined' for the event",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{event}/picture": {
+      "parameters": [
+        {
+          "name": "event",
+          "default": "331218348435",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the event object."
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "name": "type",
+            "default": "small",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "One of square (50x50), small (50 pixels wide, variable height), and large (about 200 pixels wide,\n                            variable height)\n                        ",
+            "enum": [
+              "square",
+              "small",
+              "large"
+            ]
+          }
+        ],
+        "description": "The event's profile picture",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{friendlist}": {
+      "parameters": [
+        {
+          "name": "friendlist",
+          "default": "",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the FriendList object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "A Facebook friend list. This object represents the list itself and not the members of the list.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "delete": {
+        "parameters": [],
+        "description": "Deletes the FriendList.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{friendlist}/members": {
+      "parameters": [
+        {
+          "name": "friendlist",
+          "default": "",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the FriendList object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "All of the users who are members of this list.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{friendlist}/members/{user}": {
+      "parameters": [
+        {
+          "name": "friendlist",
+          "default": "",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the FriendList object."
+        },
+        {
+          "name": "user",
+          "default": "",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the User to add to or remove from the friend list."
+        }
+      ],
+      "post": {
+        "parameters": [],
+        "description": "Adds a user to the friend list",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "delete": {
+        "parameters": [],
+        "description": "Removes a user from the friend list",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{group}": {
+      "parameters": [
+        {
+          "name": "group",
+          "default": "2204501798",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the group object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "A Facebook group",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{group}/feed": {
+      "parameters": [
+        {
+          "name": "group",
+          "default": "2204501798",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the group object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "This group's wall",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "message",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "Status Message content"
+          }
+        ],
+        "description": "Posts a status message on this group's wall",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{group}/members": {
+      "parameters": [
+        {
+          "name": "group",
+          "default": "2204501798",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the group object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "All of the users who are members of this group",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{group}/picture": {
+      "parameters": [
+        {
+          "name": "group",
+          "default": "2204501798",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the group object."
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "name": "type",
+            "default": "small",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "One of square (50x50), small (50 pixels wide, variable height), and large (about 200 pixels wide,\n                            variable height)\n                        ",
+            "enum": [
+              "square",
+              "small",
+              "large"
+            ]
+          }
+        ],
+        "description": "The profile picture of this group",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{group}/docs": {
+      "parameters": [
+        {
+          "name": "group",
+          "default": "2204501798",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the group object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The docs in this group",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{link}": {
+      "parameters": [
+        {
+          "name": "link",
+          "default": "114961875194024",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the link object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "A link shared on a user's wall",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{link}/comments": {
+      "parameters": [
+        {
+          "name": "link",
+          "default": "114961875194024",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the link object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "All of the comments on this link.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "message",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "Comment text"
+          }
+        ],
+        "description": "Posts a comment to this link.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{link}/likes": {
+      "parameters": [
+        {
+          "name": "link",
+          "default": "114961875194024",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the link object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "Users who like this link.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [],
+        "description": "Likes this link.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "delete": {
+        "parameters": [],
+        "description": "Unlikes this link.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{note}": {
+      "parameters": [
+        {
+          "name": "note",
+          "default": "122788341354",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the note object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "A Facebook note",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{note}/comments": {
+      "parameters": [
+        {
+          "name": "note",
+          "default": "122788341354",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the note object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "All of the comments on this note.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "message",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "Comment text"
+          }
+        ],
+        "description": "Posts a comment to this note.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{note}/likes": {
+      "parameters": [
+        {
+          "name": "note",
+          "default": "122788341354",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the note object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "Users who like this note.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [],
+        "description": "Likes this note.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "delete": {
+        "parameters": [],
+        "description": "Unlikes this note.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{page}": {
+      "parameters": [
+        {
+          "name": "page",
+          "default": "platform",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the page object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "Returns a Page",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{page}/feed": {
+      "parameters": [
+        {
+          "name": "page",
+          "default": "platform",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the page object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "This page's wall",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "message",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "Status Message content"
+          }
+        ],
+        "description": "Posts a status message on this page's wall",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{page}/picture": {
+      "parameters": [
+        {
+          "name": "page",
+          "default": "platform",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the page object."
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "name": "type",
+            "default": "small",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "One of square (50x50), small (50 pixels wide, variable height), and large (about 200 pixels wide,\n                            variable height)\n                        ",
+            "enum": [
+              "square",
+              "small",
+              "large"
+            ]
+          }
+        ],
+        "description": "The page's profile picture",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{page}/settings": {
+      "parameters": [
+        {
+          "name": "page",
+          "default": "platform",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the page object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The page's post permission settings",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "setting",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "Which single setting to update: USERS_CAN_POST, USERS_CAN_POST_PHOTOS, USERS_CAN_TAG_PHOTOS, USERS_CAN_POST_VIDEOS",
+            "enum": [
+              "USERS_CAN_POST",
+              "USERS_CAN_POST_PHOTOS",
+              "USERS_CAN_TAG_PHOTOS",
+              "USERS_CAN_POST_VIDEOS"
+            ]
+          },
+          {
+            "name": "value",
+            "required": true,
+            "type": "boolean",
+            "in": "query"
+          }
+        ],
+        "description": "The page's post permission settings",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{page}/tagged": {
+      "parameters": [
+        {
+          "name": "page",
+          "default": "platform",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the page object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The photos, videos, and posts in which this page has been tagged",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{page}/links": {
+      "parameters": [
+        {
+          "name": "page",
+          "default": "platform",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the page object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The page's posted links",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "link",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "Link URL"
+          },
+          {
+            "name": "message",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Link message"
+          }
+        ],
+        "description": "Posts a link on the page",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{page}/photos": {
+      "parameters": [
+        {
+          "name": "page",
+          "default": "platform",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the page object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The photos contained on this page",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "message",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Photo description"
+          }
+        ],
+        "description": "Adds a photo to the page",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{page}/groups": {
+      "parameters": [
+        {
+          "name": "page",
+          "default": "platform",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the page object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The groups this page is a member of",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{page}/albums": {
+      "parameters": [
+        {
+          "name": "page",
+          "default": "platform",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the page object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The photo albums this Page has uploaded",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{page}/statuses": {
+      "parameters": [
+        {
+          "name": "page",
+          "default": "platform",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the page object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The page's status updates",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "message",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "Status Message content"
+          }
+        ],
+        "description": "Posts a status message on the page",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{page}/videos": {
+      "parameters": [
+        {
+          "name": "page",
+          "default": "platform",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the page object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The videos contained on this page",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "title",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Video title"
+          },
+          {
+            "name": "description",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Video description"
+          }
+        ],
+        "description": "Publishes a video to the page",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{page}/notes": {
+      "parameters": [
+        {
+          "name": "page",
+          "default": "platform",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the page object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The notes contained on this page",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "subject",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "The subject of the Note"
+          },
+          {
+            "name": "message",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Note content"
+          }
+        ],
+        "description": "Creates a note on the page",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{page}/posts": {
+      "parameters": [
+        {
+          "name": "page",
+          "default": "platform",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the page object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The page's own posts",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{page}/events": {
+      "parameters": [
+        {
+          "name": "page",
+          "default": "platform",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the page object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The events the Page is attending",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "name",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "Event name"
+          },
+          {
+            "name": "start_time",
+            "required": true,
+            "type": "long",
+            "in": "query",
+            "description": "Event start time"
+          },
+          {
+            "name": "end_time",
+            "required": false,
+            "type": "long",
+            "in": "query",
+            "description": "Event end time"
+          },
+          {
+            "name": "message",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Event description"
+          },
+          {
+            "name": "location",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Event location"
+          },
+          {
+            "name": "privacy_type",
+            "default": "OPEN",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Event privacy setting",
+            "enum": [
+              "OPEN",
+              "CLOSED",
+              "SECRET"
+            ]
+          }
+        ],
+        "description": "Creates an event for the page",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{page}/checkins": {
+      "parameters": [
+        {
+          "name": "page",
+          "default": "platform",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the page object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "Checkins made to this Place Page by the current user, and friends of the current user",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{page}/tabs": {
+      "parameters": [
+        {
+          "name": "page",
+          "default": "platform",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the page object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The page's profile tabs",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "app_id",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "ID of the application for which to install the tab"
+          }
+        ],
+        "description": "Installs a profile tab at the end of the current list of installed tabs for the page",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{page}/tabs/{tab}": {
+      "parameters": [
+        {
+          "name": "page",
+          "default": "platform",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the page object."
+        },
+        {
+          "name": "tab",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the tab."
+        }
+      ],
+      "post": {
+        "parameters": [
+          {
+            "name": "position",
+            "required": false,
+            "type": "integer",
+            "in": "query",
+            "description": "Order in which the tab will appear on the profile. Must be after permanent tabs and less than the number of installed tabs. Index starts at 0"
+          },
+          {
+            "name": "custom_name",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Name to be used for the tab. If this is set to an empty string, the tab will use the application’s default tab name."
+          },
+          {
+            "name": "is_non_connection_landing_tab",
+            "required": false,
+            "type": "boolean",
+            "in": "query",
+            "description": "Set this tab as the default landing tab for users who have not liked and are not admins of the Page. If provided, value must be true."
+          }
+        ],
+        "description": "Updates an installed profile tab for a page",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "delete": {
+        "parameters": [],
+        "description": "Deletes an installed profile tab (where is_permanent is not true) for a page",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{page}/admins": {
+      "parameters": [
+        {
+          "name": "page",
+          "default": "platform",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the page object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "A list of the Page's admins.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{page}/blocked": {
+      "parameters": [
+        {
+          "name": "page",
+          "default": "platform",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the page object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "A list of the users blocked from the page.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "uids",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "Comma-separated list of the user IDs you wish to block"
+          }
+        ],
+        "description": "Blocks a user (or users) from posting content to the page",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "delete": {
+        "parameters": [
+          {
+            "name": "uids",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "Comma-separated list of the user IDs you wish to unblock"
+          }
+        ],
+        "description": "Unblocks a user (or users) for the page",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{page}/blocked/{user}": {
+      "parameters": [
+        {
+          "name": "page",
+          "default": "platform",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the page object."
+        },
+        {
+          "name": "user",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of a user."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "Checks if a user is blocked from the page",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{photo}": {
+      "parameters": [
+        {
+          "name": "photo",
+          "default": "98423808305",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the photo object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "An individual photo",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{photo}/comments": {
+      "parameters": [
+        {
+          "name": "photo",
+          "default": "98423808305",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the photo object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "All of the comments on this photo.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "message",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "Comment text"
+          }
+        ],
+        "description": "Posts a comment to this photo.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{photo}/likes": {
+      "parameters": [
+        {
+          "name": "photo",
+          "default": "98423808305",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the photo object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "Users who like this photo.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [],
+        "description": "Likes this photo.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "delete": {
+        "parameters": [],
+        "description": "Unlikes this photo.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{photo}/picture": {
+      "parameters": [
+        {
+          "name": "photo",
+          "default": "98423808305",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the photo object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The album-sized view of the photo",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{photo}/tags": {
+      "parameters": [
+        {
+          "name": "photo",
+          "default": "98423808305",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the photo object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "Tags for this photo.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "to",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "USER_ID of the User to tag; can also be provided in URL path"
+          },
+          {
+            "name": "x",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "x coordinate of tag, as a percentage offset from the left edge of the picture"
+          },
+          {
+            "name": "y",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "y coordinate of tag, as a percentage offset from the top edge of the picture"
+          }
+        ],
+        "description": "Creates a tag on this photo.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{photo}/tags/{user}": {
+      "parameters": [
+        {
+          "name": "photo",
+          "default": "98423808305",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the photo object."
+        },
+        {
+          "name": "user",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user."
+        }
+      ],
+      "post": {
+        "parameters": [
+          {
+            "name": "x",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "x coordinate of tag, as a percentage offset from the left edge of the picture"
+          },
+          {
+            "name": "y",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "y coordinate of tag, as a percentage offset from the top edge of the picture"
+          }
+        ],
+        "description": "Updates the position of a tag on this photo for the user.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{post}": {
+      "parameters": [
+        {
+          "name": "post",
+          "default": "122788341354",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the post object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "A Facebook post",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{post}/comments": {
+      "parameters": [
+        {
+          "name": "post",
+          "default": "122788341354",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the post object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "All of the comments on this post.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "message",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "Comment text"
+          }
+        ],
+        "description": "Posts a comment to this post.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{post}/likes": {
+      "parameters": [
+        {
+          "name": "post",
+          "default": "122788341354",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the post object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "Users who like this post.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [],
+        "description": "Likes this post.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "delete": {
+        "parameters": [],
+        "description": "Unlikes this post.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{status}": {
+      "parameters": [
+        {
+          "name": "status",
+          "default": "122788341354",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the status object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "A Facebook status",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{status}/comments": {
+      "parameters": [
+        {
+          "name": "status",
+          "default": "122788341354",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the status object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "All of the comments on this status.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "message",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "Comment text"
+          }
+        ],
+        "description": "Posts a comment to this status.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{status}/likes": {
+      "parameters": [
+        {
+          "name": "status",
+          "default": "122788341354",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the status object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "Users who like this status.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [],
+        "description": "Likes this status.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "delete": {
+        "parameters": [],
+        "description": "Unlikes this status.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "{user}",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "name": "fields",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "The fields to return"
+          }
+        ],
+        "description": "A user profile.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/accounts": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "{user}",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The Facebook apps and pages owned by the current user",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/achievements": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "{user}",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "post": {
+        "parameters": [
+          {
+            "name": "achievement",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "The unique URL of the achievement which the user achieved."
+          }
+        ],
+        "description": "Posts an achievement for the user",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "delete": {
+        "parameters": [
+          {
+            "name": "achievement",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "The unique URL of the achievement you wish to delete."
+          }
+        ],
+        "description": "Deletes an achievement for the user",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/activities": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "{user}",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The activities listed on the user's profile",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/albums": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "{user}",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The photo albums this user has created",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "name",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "Album name"
+          },
+          {
+            "name": "message",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Album description"
+          },
+          {
+            "name": "privacy",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Privacy settings for the Album. Format: A JSON-encoded object that defines the privacy setting for the album, for example: {\"value\":\"SELF\"}. Only the user can specify the privacy settings for the post."
+          }
+        ],
+        "description": "Creates an album for the user",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/apprequests": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "{user}",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The user's outstanding requests from an app.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/books": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "{user}",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The books listed on the user's profile.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/checkins": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "{user}",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The places that the user has checked-into",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "place",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "Checkin Place ID; for example 110506962309835 for Facebook HQ"
+          },
+          {
+            "name": "coordinates",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "The user's location, as a string containing latitude and longitude: {\"latitude\":\"...\", \"longitude\": \"...\"}"
+          },
+          {
+            "name": "tags",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Comma-separated list of tagged friends' user IDs"
+          },
+          {
+            "name": "message",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Checkin description"
+          },
+          {
+            "name": "link",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Checkin link"
+          },
+          {
+            "name": "picture",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Checkin picture"
+          }
+        ],
+        "description": "Checks the user into a place",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/events": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "{user}",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The events this user is attending.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "name",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "Event name"
+          },
+          {
+            "name": "start_time",
+            "required": true,
+            "type": "long",
+            "in": "query",
+            "description": "Event start time"
+          },
+          {
+            "name": "end_time",
+            "required": false,
+            "type": "long",
+            "in": "query",
+            "description": "Event end time"
+          },
+          {
+            "name": "message",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Event description"
+          },
+          {
+            "name": "location",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Event location"
+          },
+          {
+            "name": "privacy_type",
+            "default": "OPEN",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Event privacy setting",
+            "enum": [
+              "OPEN",
+              "CLOSED",
+              "SECRET"
+            ]
+          }
+        ],
+        "description": "Creates an event for the user",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/feed": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "2204501798",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "This user's wall",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "message",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "Status Message content"
+          }
+        ],
+        "description": "Posts a status message on this user's wall",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/friendlists": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "2204501798",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "post": {
+        "parameters": [
+          {
+            "name": "name",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "Friend list name"
+          }
+        ],
+        "description": "Creates a FriendList for the user",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/friends": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "{user}",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The user's friends",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/friends/{friend}": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "{user}",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        },
+        {
+          "name": "friend",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user's friend."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "Checks if the given user is a friend of the current user",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/games": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "{user}",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "Games the user has added to the Arts and Entertainment section of their profile.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/groups": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "{user}",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The Groups that the user belongs to.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/home": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "{user}",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The user's news feed",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/inbox": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "{user}",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The threads in this user's inbox.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/interests": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "{user}",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The interests listed on the user's profile",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/likes": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "{user}",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "All the pages this user has liked.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/likes/{page}": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "{user}",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        },
+        {
+          "name": "page",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the page."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "Checks if the user likes the given page.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/links": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "{user}",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The user's posted links.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "link",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "Link URL"
+          },
+          {
+            "name": "message",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Link message"
+          }
+        ],
+        "description": "Posts a link on the user's profile page",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/movies": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "{user}",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The movies listed on the user's profile",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/music": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "{user}",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The music listed on the user's profile",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/notes": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "platform",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The user's notes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "subject",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "The subject of the Note"
+          },
+          {
+            "name": "message",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Note content"
+          }
+        ],
+        "description": "Creates a note on behalf of the user",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/notifications": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "platform",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "name": "include_read",
+            "default": "false",
+            "required": false,
+            "type": "boolean",
+            "in": "query",
+            "description": "Enables you to see notifications that the user has already read in addition to the ones which are unread"
+          }
+        ],
+        "description": "The user's notifications",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/outbox": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "{user}",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The messages in this user's outbox.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/payments": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "{user}",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The transactions the user placed with an application.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/permissions": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "platform",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The permissions that user has granted the application.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "delete": {
+        "parameters": [
+          {
+            "name": "permission",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "The permission you wish to revoke. If you don't specify a permission then this will de-authorize the application completely."
+          }
+        ],
+        "description": "De-authorizes an application or revokes a specific extended permissions on behalf of a user",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/photos": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "99394368305",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The photos the user is tagged in",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "message",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Photo description"
+          }
+        ],
+        "description": "Posts a photo to the user's Wall",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/picture": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "{user}",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "name": "type",
+            "default": "small",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "One of square (50x50), small (50 pixels wide, variable height), and large (about 200 pixels wide,\n                            variable height)\n                        ",
+            "enum": [
+              "square",
+              "small",
+              "large"
+            ]
+          }
+        ],
+        "description": "The user's profile picture",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/pokes": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "{user}",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The user's pokes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/posts": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "{user}",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The user's posts",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "message",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "Post message"
+          },
+          {
+            "name": "link",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "Post URL"
+          },
+          {
+            "name": "picture",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Post thumbnail image"
+          },
+          {
+            "name": "name",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Post name"
+          },
+          {
+            "name": "caption",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Post caption"
+          },
+          {
+            "name": "description",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Post description"
+          },
+          {
+            "name": "actions",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Post actions"
+          },
+          {
+            "name": "privacy",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Post privacy settings"
+          },
+          {
+            "name": "object_attachment",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Facebook ID for an existing picture in the User's photo albums to use as the thumbnail image. The User must be the owner of the photo, and the photo cannot be part of a message attachment."
+          }
+        ],
+        "description": "Creates a post on behalf of the user",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/scores": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "{user}",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The scores for the user",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "score",
+            "required": true,
+            "type": "integer",
+            "in": "query",
+            "description": "Numeric score with value < 0."
+          }
+        ],
+        "description": "Posts a score for the user",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/statuses": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "{user}",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The user's status updates",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "message",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "Status Message content"
+          }
+        ],
+        "description": "Posts a status message on the user",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/tagged": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "{user}",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "Posts the user is tagged in",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/television": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "{user}",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The television listed on the user's profile",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/updates": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "{user}",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The updates in this user's inbox.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/videos": {
+      "parameters": [
+        {
+          "name": "user",
+          "default": "{user}",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the user object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The videos this user has been tagged in",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "title",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Video title"
+          },
+          {
+            "name": "description",
+            "required": false,
+            "type": "string",
+            "in": "query",
+            "description": "Video description"
+          }
+        ],
+        "description": "Publishes a video on behalf of the user",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{notification}": {
+      "parameters": [
+        {
+          "name": "notification",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the notification."
+        }
+      ],
+      "post": {
+        "parameters": [
+          {
+            "name": "unread",
+            "default": "0",
+            "required": true,
+            "type": "boolean",
+            "in": "query"
+          }
+        ],
+        "description": "Marks the notification as read",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{video}": {
+      "parameters": [
+        {
+          "name": "video",
+          "default": "2031763147233",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the video object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "An individual video",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{video}/comments": {
+      "parameters": [
+        {
+          "name": "video",
+          "default": "2031763147233",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the video object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "All of the comments on this video.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "message",
+            "required": true,
+            "type": "string",
+            "in": "query",
+            "description": "Comment text"
+          }
+        ],
+        "description": "Posts a comment to this video.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{video}/likes": {
+      "parameters": [
+        {
+          "name": "video",
+          "default": "2031763147233",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the video object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "Users who like this video.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [],
+        "description": "Likes this video.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "delete": {
+        "parameters": [],
+        "description": "Unlikes this video.",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{video}/picture": {
+      "parameters": [
+        {
+          "name": "video",
+          "default": "2031763147233",
+          "required": true,
+          "type": "string",
+          "in": "path",
+          "description": "Represents the ID of the video object."
+        }
+      ],
+      "get": {
+        "parameters": [],
+        "description": "The image which represents the content of the video",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    }
+  }
 }
