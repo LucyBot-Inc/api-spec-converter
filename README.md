@@ -30,7 +30,7 @@ api-spec-converter <URL|filename> --from type_1 --to type_2 > output_spec
 ```
 e.g.
 ```bash
-api-spec-converter https://api.gettyimages.com/swagger/api-docs --from swagger_1 --to swagger_2 > swagger.json
+api-spec-converter https://api.gettyimages.com/swagger/api-docs --from=swagger_1 --to=swagger_2 > swagger.json
 ```
 
 ### NodeJS
