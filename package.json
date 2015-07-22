@@ -36,6 +36,7 @@
     "google-discovery-to-swagger": "^0.0.10",
     "lodash": "^3.9.3",
     "protagonist": "^0.20.1",
+    "raml-parser": "^0.8.11",
     "request": "^2.57.0",
     "swagger-converter": "apigee-127/swagger-converter",
     "sway": "^0.3.3",
