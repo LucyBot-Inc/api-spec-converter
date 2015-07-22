@@ -14,8 +14,11 @@ Program
   .parse(process.argv);
 
 function main(url, options) {
-  if (!options.from || !options.to)
+  if (!options.from)
     Program.help();
+
+  if (!options.to)
+    options.to = options.from;
 
   Converter.convert({
     source: url,
