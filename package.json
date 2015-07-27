@@ -29,16 +29,16 @@
     "api-spec-converter": "./bin/api-spec-converter"
   },
   "dependencies": {
+    "URIjs": "^1.15.1",
     "apib2swagger": "^0.2.0",
     "async": "^1.2.1",
     "commander": "^2.8.1",
+    "google-discovery-to-swagger": "^0.0.4",
     "lodash": "^3.9.3",
     "protagonist": "^0.20.1",
     "request": "^2.57.0",
     "swagger-converter": "apigee-127/swagger-converter",
-    "yamljs": "^0.2.3",
-    "google-discovery-to-swagger": "^0.0.4",
-    "URIjs": "^1.15.1"
+    "yamljs": "^0.2.3"
   },
   "devDependencies": {
     "chai": "^3.0.0",
