@@ -9,6 +9,7 @@ Program
   .version(Package.version)
   .option('-f, --from <type>', 'Specifies type to convert')
   .option('-t, --to <type>', 'Specifies output type')
+  .option('-c, --check', 'Check if result is valid spec')
   .arguments('<URL>')
   .action(main)
   .parse(process.argv);
@@ -29,6 +30,20 @@ function main(url, options) {
        console.error(err);
        process.exit(255);
     }
+
     console.log(spec.stringify())
+    if (options.check) {
+      spec.validate(function (errors, warnings) {
+        if (errors) {
+          process.exitCode = 255;
+          console.error('Errors: ');
+          console.error(errors);
+        }
+        if (warnings) {
+          console.error('Warnings: ');
+          console.error(warnings);
+        }
+      });
+    }
   });
 }
