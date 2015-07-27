@@ -38,6 +38,7 @@
     "protagonist": "^0.20.1",
     "request": "^2.57.0",
     "swagger-converter": "apigee-127/swagger-converter",
+    "swagger-tools": "^0.9.0",
     "yamljs": "^0.2.3"
   },
   "devDependencies": {
