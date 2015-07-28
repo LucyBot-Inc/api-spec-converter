@@ -36,12 +36,12 @@ function main(url, options) {
       spec.validate(function (errors, warnings) {
         if (errors) {
           process.exitCode = 255;
-          console.error('Errors: ');
-          console.error(errors);
+          console.error('\nErrors:\n');
+          console.error(JSON.stringify(errors, null, 2));
         }
         if (warnings) {
-          console.error('Warnings: ');
-          console.error(warnings);
+          console.error('\nWarnings:\n');
+          console.error(JSON.stringify(warnings, null, 2));
         }
       });
     }
