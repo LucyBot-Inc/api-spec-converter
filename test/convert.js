@@ -45,11 +45,13 @@ var IODOCS_TO_SWAGGER = {
 var success = function(outfile, done) {
   return function(err, spec) {
     Expect(err).to.equal(null);
-    spec = spec.stringify();
     if (process.env.WRITE_GOLDEN) {
-      FS.writeFileSync(outfile, spec);
+      FS.writeFileSync(outfile, spec.stringify());
     } else {
-      Expect(spec).to.equal(FS.readFileSync(outfile, 'utf8'));
+      var golden = JSON.parse(FS.readFileSync(outfile, 'utf8'));
+      //FIXME: workaround to get rid of 'undefined' inside spec
+      var result = JSON.parse(JSON.stringify(spec.spec));
+      Expect(result).to.deep.equal(golden);
     }
     done();
   }
