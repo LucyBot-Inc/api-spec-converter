@@ -58,7 +58,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "A photo album",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/album"
@@ -82,7 +81,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The photos contained in this album",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/album"
@@ -126,7 +124,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The likes made on this album",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/album"
@@ -138,7 +135,6 @@
         }
       },
       "post": {
-        "parameters": [],
         "description": "Likes the album",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/album"
@@ -150,7 +146,6 @@
         }
       },
       "delete": {
-        "parameters": [],
         "description": "Unlikes the album",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/album"
@@ -174,7 +169,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The comments made on this album",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/album"
@@ -256,7 +250,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "An application's profile",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
@@ -280,7 +273,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "Test User accounts associated with the application.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
@@ -350,7 +342,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The photo albums this application has created.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
@@ -374,7 +365,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The application's wall.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
@@ -418,7 +408,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "Usage metrics for this application",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
@@ -442,7 +431,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The application's posted links.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
@@ -531,7 +519,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The application's own posts.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
@@ -555,7 +542,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "Reviews of this application",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
@@ -579,7 +565,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "Usage stats about the canvas application's static resources, such as javascript and CSS, and which ones are being flushed to browsers early.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
@@ -603,7 +588,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The application's status updates",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
@@ -647,7 +631,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "All of the subscriptions this application has for real-time notifications.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
@@ -742,7 +725,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The photos, videos, and posts in which this application has been tagged.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
@@ -766,7 +748,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The translated strings for this application.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
@@ -830,7 +811,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "Scores for the user and their friends.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
@@ -842,7 +822,6 @@
         }
       },
       "delete": {
-        "parameters": [],
         "description": "Deletes all the scores for the application.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
@@ -924,7 +903,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "Represents a single visit by a user to a location",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/checkin"
@@ -947,7 +925,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "All of the comments on this checkin.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/checkin"
@@ -990,7 +967,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "Users who like this checkin.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/checkin"
@@ -1002,7 +978,6 @@
         }
       },
       "post": {
-        "parameters": [],
         "description": "Likes this checkin.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/checkin"
@@ -1014,7 +989,6 @@
         }
       },
       "delete": {
-        "parameters": [],
         "description": "Unlikes this checkin.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/checkin"
@@ -1038,7 +1012,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "Returns a comment",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/comment"
@@ -1050,7 +1023,6 @@
         }
       },
       "delete": {
-        "parameters": [],
         "description": "Deletes a comment",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/comment"
@@ -1074,7 +1046,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "All the likes on this comment",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/comment"
@@ -1086,7 +1057,6 @@
         }
       },
       "post": {
-        "parameters": [],
         "description": "Likes the comment",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/comment"
@@ -1098,7 +1068,6 @@
         }
       },
       "delete": {
-        "parameters": [],
         "description": "Unlikes the comment",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/comment"
@@ -1122,7 +1091,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "Specifies information about an event, including the location, event name, and which invitees plan to attend.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/event"
@@ -1146,7 +1114,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "This event's wall",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/event"
@@ -1190,7 +1157,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "All of the users who have been not yet responded to their invitation to this event",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/event"
@@ -1214,7 +1180,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "All of the users who have been responded \"Maybe\" to their invitation to this event",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/event"
@@ -1226,7 +1191,6 @@
         }
       },
       "post": {
-        "parameters": [],
         "description": "RSVPs the user as a 'maybe' for the event",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/event"
@@ -1250,7 +1214,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "All of the users who have been invited to this event",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/event"
@@ -1274,7 +1237,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "All of the users who are attending this event",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/event"
@@ -1286,7 +1248,6 @@
         }
       },
       "post": {
-        "parameters": [],
         "description": "RSVPs the user as 'attending' for the event",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/event"
@@ -1310,7 +1271,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "All of the users who declined their invitation to this event",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/event"
@@ -1322,7 +1282,6 @@
         }
       },
       "post": {
-        "parameters": [],
         "description": "RSVPs the user as 'declined' for the event",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/event"
@@ -1384,7 +1343,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "A Facebook friend list. This object represents the list itself and not the members of the list.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/friendlist"
@@ -1396,7 +1354,6 @@
         }
       },
       "delete": {
-        "parameters": [],
         "description": "Deletes the FriendList.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/friendlist"
@@ -1420,7 +1377,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "All of the users who are members of this list.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/friendlist"
@@ -1452,7 +1408,6 @@
         }
       ],
       "post": {
-        "parameters": [],
         "description": "Adds a user to the friend list",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/friendlist"
@@ -1464,7 +1419,6 @@
         }
       },
       "delete": {
-        "parameters": [],
         "description": "Removes a user from the friend list",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/friendlist"
@@ -1488,7 +1442,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "A Facebook group",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/group"
@@ -1512,7 +1465,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "This group's wall",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/group"
@@ -1556,7 +1508,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "All of the users who are members of this group",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/group"
@@ -1618,7 +1569,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The docs in this group",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/group"
@@ -1642,7 +1592,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "A link shared on a user's wall",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/link"
@@ -1666,7 +1615,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "All of the comments on this link.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/link"
@@ -1710,7 +1658,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "Users who like this link.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/link"
@@ -1722,7 +1669,6 @@
         }
       },
       "post": {
-        "parameters": [],
         "description": "Likes this link.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/link"
@@ -1734,7 +1680,6 @@
         }
       },
       "delete": {
-        "parameters": [],
         "description": "Unlikes this link.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/link"
@@ -1758,7 +1703,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "A Facebook note",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/note"
@@ -1782,7 +1726,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "All of the comments on this note.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/note"
@@ -1826,7 +1769,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "Users who like this note.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/note"
@@ -1838,7 +1780,6 @@
         }
       },
       "post": {
-        "parameters": [],
         "description": "Likes this note.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/note"
@@ -1850,7 +1791,6 @@
         }
       },
       "delete": {
-        "parameters": [],
         "description": "Unlikes this note.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/note"
@@ -1874,7 +1814,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "Returns a Page",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
@@ -1898,7 +1837,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "This page's wall",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
@@ -1980,7 +1918,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The page's post permission settings",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
@@ -2036,7 +1973,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The photos, videos, and posts in which this page has been tagged",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
@@ -2060,7 +1996,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The page's posted links",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
@@ -2111,7 +2046,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The photos contained on this page",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
@@ -2155,7 +2089,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The groups this page is a member of",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
@@ -2179,7 +2112,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The photo albums this Page has uploaded",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
@@ -2203,7 +2135,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The page's status updates",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
@@ -2247,7 +2178,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The videos contained on this page",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
@@ -2298,7 +2228,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The notes contained on this page",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
@@ -2349,7 +2278,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The page's own posts",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
@@ -2373,7 +2301,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The events the Page is attending",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
@@ -2462,7 +2389,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "Checkins made to this Place Page by the current user, and friends of the current user",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
@@ -2486,7 +2412,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The page's profile tabs",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
@@ -2571,7 +2496,6 @@
         }
       },
       "delete": {
-        "parameters": [],
         "description": "Deletes an installed profile tab (where is_permanent is not true) for a page",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
@@ -2595,7 +2519,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "A list of the Page's admins.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
@@ -2619,7 +2542,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "A list of the users blocked from the page.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
@@ -2690,7 +2612,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "Checks if a user is blocked from the page",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
@@ -2714,7 +2635,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "An individual photo",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/photo"
@@ -2738,7 +2658,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "All of the comments on this photo.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/photo"
@@ -2782,7 +2701,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "Users who like this photo.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/photo"
@@ -2794,7 +2712,6 @@
         }
       },
       "post": {
-        "parameters": [],
         "description": "Likes this photo.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/photo"
@@ -2806,7 +2723,6 @@
         }
       },
       "delete": {
-        "parameters": [],
         "description": "Unlikes this photo.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/photo"
@@ -2830,7 +2746,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The album-sized view of the photo",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/photo"
@@ -2854,7 +2769,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "Tags for this photo.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/photo"
@@ -2958,7 +2872,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "A Facebook post",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/post"
@@ -2982,7 +2895,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "All of the comments on this post.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/post"
@@ -3026,7 +2938,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "Users who like this post.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/post"
@@ -3038,7 +2949,6 @@
         }
       },
       "post": {
-        "parameters": [],
         "description": "Likes this post.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/post"
@@ -3050,7 +2960,6 @@
         }
       },
       "delete": {
-        "parameters": [],
         "description": "Unlikes this post.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/post"
@@ -3074,7 +2983,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "A Facebook status",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/status"
@@ -3098,7 +3006,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "All of the comments on this status.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/status"
@@ -3142,7 +3049,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "Users who like this status.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/status"
@@ -3154,7 +3060,6 @@
         }
       },
       "post": {
-        "parameters": [],
         "description": "Likes this status.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/status"
@@ -3166,7 +3071,6 @@
         }
       },
       "delete": {
-        "parameters": [],
         "description": "Unlikes this status.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/status"
@@ -3222,7 +3126,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The Facebook apps and pages owned by the current user",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
@@ -3298,7 +3201,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The activities listed on the user's profile",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
@@ -3322,7 +3224,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The photo albums this user has created",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
@@ -3380,7 +3281,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The user's outstanding requests from an app.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
@@ -3404,7 +3304,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The books listed on the user's profile.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
@@ -3428,7 +3327,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The places that the user has checked-into",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/api#places"
@@ -3507,7 +3405,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The events this user is attending.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
@@ -3596,7 +3493,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "This user's wall",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
@@ -3672,7 +3568,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The user's friends",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
@@ -3703,7 +3598,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "Checks if the given user is a friend of the current user",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
@@ -3727,7 +3621,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "Games the user has added to the Arts and Entertainment section of their profile.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
@@ -3751,7 +3644,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The Groups that the user belongs to.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
@@ -3775,7 +3667,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The user's news feed",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
@@ -3799,7 +3690,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The threads in this user's inbox.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
@@ -3823,7 +3713,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The interests listed on the user's profile",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
@@ -3847,7 +3736,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "All the pages this user has liked.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
@@ -3878,7 +3766,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "Checks if the user likes the given page.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
@@ -3902,7 +3789,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The user's posted links.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
@@ -3953,7 +3839,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The movies listed on the user's profile",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
@@ -3977,7 +3862,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The music listed on the user's profile",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
@@ -4001,7 +3885,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The user's notes",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
@@ -4085,7 +3968,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The messages in this user's outbox.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
@@ -4109,7 +3991,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The transactions the user placed with an application.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
@@ -4133,7 +4014,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The permissions that user has granted the application.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
@@ -4177,7 +4057,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The photos the user is tagged in",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
@@ -4259,7 +4138,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The user's pokes",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
@@ -4283,7 +4161,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The user's posts",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
@@ -4383,7 +4260,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The scores for the user",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
@@ -4427,7 +4303,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The user's status updates",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
@@ -4471,7 +4346,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "Posts the user is tagged in",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
@@ -4495,7 +4369,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The television listed on the user's profile",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
@@ -4519,7 +4392,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The updates in this user's inbox.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
@@ -4543,7 +4415,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The videos this user has been tagged in",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
@@ -4625,7 +4496,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "An individual video",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/video"
@@ -4649,7 +4519,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "All of the comments on this video.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/video"
@@ -4693,7 +4562,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "Users who like this video.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/video"
@@ -4705,7 +4573,6 @@
         }
       },
       "post": {
-        "parameters": [],
         "description": "Likes this video.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/video"
@@ -4717,7 +4584,6 @@
         }
       },
       "delete": {
-        "parameters": [],
         "description": "Unlikes this video.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/video"
@@ -4741,7 +4607,6 @@
         }
       ],
       "get": {
-        "parameters": [],
         "description": "The image which represents the content of the video",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/video"
