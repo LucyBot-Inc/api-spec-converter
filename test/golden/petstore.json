@@ -735,22 +735,22 @@
   "securityDefinitions": {
     "oauth2_implicit": {
       "type": "oauth2",
-      "scopes": {
-        "write:pets": "Modify pets in your account",
-        "read:pets": "Read your pets"
-      },
       "flow": "implicit",
-      "authorizationUrl": "http://petstore.swagger.wordnik.com/api/oauth/dialog"
-    },
-    "oauth2_accessCode": {
-      "type": "oauth2",
+      "authorizationUrl": "http://petstore.swagger.wordnik.com/api/oauth/dialog",
       "scopes": {
         "write:pets": "Modify pets in your account",
         "read:pets": "Read your pets"
-      },
+      }
+    },
+    "oauth2_authorization_code": {
+      "type": "oauth2",
       "flow": "accessCode",
+      "authorizationUrl": "http://petstore.swagger.wordnik.com/api/oauth/requestToken",
       "tokenUrl": "http://petstore.swagger.wordnik.com/api/oauth/token",
-      "authorizationUrl": "http://petstore.swagger.wordnik.com/api/oauth/requestToken"
+      "scopes": {
+        "write:pets": "Modify pets in your account",
+        "read:pets": "Read your pets"
+      }
     }
   },
   "definitions": {

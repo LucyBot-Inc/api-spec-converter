@@ -4730,7 +4730,8 @@
         },
         "description": {
           "type": "string",
-          "description": "The description of the resource primarily associated with the activity."
+          "description": "The description of the resource primarily associated with the activity.",
+          "annotations": {}
         },
         "groupId": {
           "type": "string",
@@ -4778,7 +4779,8 @@
         },
         "id": {
           "type": "string",
-          "description": "The ID that YouTube uses to uniquely identify the caption track."
+          "description": "The ID that YouTube uses to uniquely identify the caption track.",
+          "annotations": {}
         },
         "kind": {
           "type": "string",
@@ -4865,7 +4867,8 @@
         },
         "language": {
           "type": "string",
-          "description": "The language of the caption track. The property value is a BCP-47 language tag."
+          "description": "The language of the caption track. The property value is a BCP-47 language tag.",
+          "annotations": {}
         },
         "lastUpdated": {
           "type": "string",
@@ -4874,7 +4877,8 @@
         },
         "name": {
           "type": "string",
-          "description": "The name of the caption track. The name is intended to be visible to the user as an option during playback."
+          "description": "The name of the caption track. The name is intended to be visible to the user as an option during playback.",
+          "annotations": {}
         },
         "status": {
           "type": "string",
@@ -4896,7 +4900,8 @@
         },
         "videoId": {
           "type": "string",
-          "description": "The ID that YouTube uses to uniquely identify the video associated with the caption track."
+          "description": "The ID that YouTube uses to uniquely identify the video associated with the caption track.",
+          "annotations": {}
         }
       }
     },
@@ -4906,7 +4911,8 @@
       "properties": {
         "format": {
           "type": "string",
-          "description": "The format of the video stream that you are sending to Youtube."
+          "description": "The format of the video stream that you are sending to Youtube.",
+          "annotations": {}
         },
         "ingestionInfo": {
           "$ref": "#/definitions/IngestionInfo",
@@ -4918,7 +4924,8 @@
           "enum": [
             "dash",
             "rtmp"
-          ]
+          ],
+          "annotations": {}
         }
       }
     },
@@ -7078,7 +7085,8 @@
         },
         "id": {
           "type": "string",
-          "description": "The ID that YouTube assigns to uniquely identify the broadcast."
+          "description": "The ID that YouTube assigns to uniquely identify the broadcast.",
+          "annotations": {}
         },
         "kind": {
           "type": "string",
@@ -7109,15 +7117,18 @@
         },
         "enableContentEncryption": {
           "type": "boolean",
-          "description": "This setting indicates whether YouTube should enable content encryption for the broadcast."
+          "description": "This setting indicates whether YouTube should enable content encryption for the broadcast.",
+          "annotations": {}
         },
         "enableDvr": {
           "type": "boolean",
-          "description": "This setting determines whether viewers can access DVR controls while watching the video. DVR controls enable the viewer to control the video playback experience by pausing, rewinding, or fast forwarding content. The default value for this property is true.\n\n\n\nImportant: You must set the value to true and also set the enableArchive property's value to true if you want to make playback available immediately after the broadcast ends."
+          "description": "This setting determines whether viewers can access DVR controls while watching the video. DVR controls enable the viewer to control the video playback experience by pausing, rewinding, or fast forwarding content. The default value for this property is true.\n\n\n\nImportant: You must set the value to true and also set the enableArchive property's value to true if you want to make playback available immediately after the broadcast ends.",
+          "annotations": {}
         },
         "enableEmbed": {
           "type": "boolean",
-          "description": "This setting indicates whether the broadcast video can be played in an embedded player. If you choose to archive the video (using the enableArchive property), this setting will also apply to the archived video."
+          "description": "This setting indicates whether the broadcast video can be played in an embedded player. If you choose to archive the video (using the enableArchive property), this setting will also apply to the archived video.",
+          "annotations": {}
         },
         "monitorStream": {
           "$ref": "#/definitions/MonitorStreamInfo",
@@ -7125,11 +7136,13 @@
         },
         "recordFromStart": {
           "type": "boolean",
-          "description": "Automatically start recording after the event goes live. The default value for this property is true.\n\n\n\nImportant: You must also set the enableDvr property's value to true if you want the playback to be available immediately after the broadcast ends. If you set this property's value to true but do not also set the enableDvr property to true, there may be a delay of around one day before the archived video will be available for playback."
+          "description": "Automatically start recording after the event goes live. The default value for this property is true.\n\n\n\nImportant: You must also set the enableDvr property's value to true if you want the playback to be available immediately after the broadcast ends. If you set this property's value to true but do not also set the enableDvr property to true, there may be a delay of around one day before the archived video will be available for playback.",
+          "annotations": {}
         },
         "startWithSlate": {
           "type": "boolean",
-          "description": "This setting indicates whether the broadcast should automatically begin with an in-stream slate when you update the broadcast's status to live. After updating the status, you then need to send a liveCuepoints.insert request that sets the cuepoint's eventState to end to remove the in-stream slate and make your broadcast stream visible to viewers."
+          "description": "This setting indicates whether the broadcast should automatically begin with an in-stream slate when you update the broadcast's status to live. After updating the status, you then need to send a liveCuepoints.insert request that sets the cuepoint's eventState to end to remove the in-stream slate and make your broadcast stream visible to viewers.",
+          "annotations": {}
         }
       }
     },
@@ -7208,12 +7221,14 @@
         "scheduledEndTime": {
           "type": "string",
           "description": "The date and time that the broadcast is scheduled to end. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.",
-          "format": "date-time"
+          "format": "date-time",
+          "annotations": {}
         },
         "scheduledStartTime": {
           "type": "string",
           "description": "The date and time that the broadcast is scheduled to start. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.",
-          "format": "date-time"
+          "format": "date-time",
+          "annotations": {}
         },
         "thumbnails": {
           "$ref": "#/definitions/ThumbnailDetails",
@@ -7221,7 +7236,8 @@
         },
         "title": {
           "type": "string",
-          "description": "The broadcast's title. Note that the broadcast represents exactly one YouTube video. You can set this field by modifying the broadcast resource or by setting the title field of the corresponding video resource."
+          "description": "The broadcast's title. Note that the broadcast represents exactly one YouTube video. You can set this field by modifying the broadcast resource or by setting the title field of the corresponding video resource.",
+          "annotations": {}
         }
       }
     },
@@ -7261,7 +7277,8 @@
             "private",
             "public",
             "unlisted"
-          ]
+          ],
+          "annotations": {}
         },
         "recordingStatus": {
           "type": "string",
@@ -7292,7 +7309,8 @@
         },
         "id": {
           "type": "string",
-          "description": "The ID that YouTube assigns to uniquely identify the stream."
+          "description": "The ID that YouTube assigns to uniquely identify the stream.",
+          "annotations": {}
         },
         "kind": {
           "type": "string",
@@ -7476,7 +7494,8 @@
         },
         "title": {
           "type": "string",
-          "description": "The stream's title. The value must be between 1 and 128 characters long."
+          "description": "The stream's title. The value must be between 1 and 128 characters long.",
+          "annotations": {}
         }
       }
     },
@@ -7536,7 +7555,8 @@
         "broadcastStreamDelayMs": {
           "type": "integer",
           "description": "If you have set the enableMonitorStream property to true, then this property determines the length of the live broadcast delay.",
-          "format": "uint32"
+          "format": "uint32",
+          "annotations": {}
         },
         "embedHtml": {
           "type": "string",
@@ -7544,7 +7564,8 @@
         },
         "enableMonitorStream": {
           "type": "boolean",
-          "description": "This value determines whether the monitor stream is enabled for the broadcast. If the monitor stream is enabled, then YouTube will broadcast the event content on a special stream intended only for the broadcaster's consumption. The broadcaster can use the stream to review the event content and also to identify the optimal times to insert cuepoints.\n\nYou need to set this value to true if you intend to have a broadcast delay for your event.\n\nNote: This property cannot be updated once the broadcast is in the testing or live state."
+          "description": "This value determines whether the monitor stream is enabled for the broadcast. If the monitor stream is enabled, then YouTube will broadcast the event content on a special stream intended only for the broadcaster's consumption. The broadcaster can use the stream to review the event content and also to identify the optimal times to insert cuepoints.\n\nYou need to set this value to true if you intend to have a broadcast delay for your event.\n\nNote: This property cannot be updated once the broadcast is in the testing or live state.",
+          "annotations": {}
         }
       }
     },
@@ -7730,7 +7751,8 @@
         },
         "playlistId": {
           "type": "string",
-          "description": "The ID that YouTube uses to uniquely identify the playlist that the playlist item is in."
+          "description": "The ID that YouTube uses to uniquely identify the playlist that the playlist item is in.",
+          "annotations": {}
         },
         "position": {
           "type": "integer",
@@ -7744,7 +7766,8 @@
         },
         "resourceId": {
           "$ref": "#/definitions/ResourceId",
-          "description": "The id object contains information that can be used to uniquely identify the resource that is included in the playlist as the playlist item."
+          "description": "The id object contains information that can be used to uniquely identify the resource that is included in the playlist as the playlist item.",
+          "annotations": {}
         },
         "thumbnails": {
           "$ref": "#/definitions/ThumbnailDetails",
@@ -7879,7 +7902,8 @@
         },
         "title": {
           "type": "string",
-          "description": "The playlist's title."
+          "description": "The playlist's title.",
+          "annotations": {}
         }
       }
     },
@@ -8209,7 +8233,8 @@
         },
         "resourceId": {
           "$ref": "#/definitions/ResourceId",
-          "description": "The id object contains information about the channel that the user subscribed to."
+          "description": "The id object contains information about the channel that the user subscribed to.",
+          "annotations": {}
         },
         "thumbnails": {
           "$ref": "#/definitions/ThumbnailDetails",
@@ -8348,7 +8373,8 @@
         },
         "id": {
           "type": "string",
-          "description": "The ID that YouTube uses to uniquely identify the video."
+          "description": "The ID that YouTube uses to uniquely identify the video.",
+          "annotations": {}
         },
         "kind": {
           "type": "string",
