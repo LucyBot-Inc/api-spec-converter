@@ -46,7 +46,6 @@
         ],
         "operationId": "updatePet",
         "summary": "Update an existing pet",
-        "description": "",
         "parameters": [
           {
             "in": "body",
@@ -177,7 +176,6 @@
         ],
         "operationId": "updatePetWithForm",
         "summary": "Updates a pet in the store with form data",
-        "description": "",
         "consumes": [
           "application/x-www-form-urlencoded"
         ],
@@ -266,7 +264,6 @@
         ],
         "operationId": "deletePet",
         "summary": "Deletes a pet",
-        "description": "",
         "parameters": [
           {
             "in": "path",
@@ -295,7 +292,6 @@
         ],
         "operationId": "partialUpdate",
         "summary": "partial updates to a pet",
-        "description": "",
         "consumes": [
           "application/json",
           "application/xml"
@@ -347,7 +343,6 @@
         ],
         "operationId": "uploadFile",
         "summary": "uploads an image",
-        "description": "",
         "consumes": [
           "multipart/form-data"
         ],
@@ -384,7 +379,6 @@
         ],
         "operationId": "createUsersWithArrayInput",
         "summary": "Creates list of users with given input array",
-        "description": "",
         "parameters": [
           {
             "in": "body",
@@ -416,7 +410,6 @@
         ],
         "operationId": "createUsersWithListInput",
         "summary": "Creates list of users with given list input",
-        "description": "",
         "parameters": [
           {
             "in": "body",
@@ -519,7 +512,6 @@
         ],
         "operationId": "getUserByName",
         "summary": "Get user by user name",
-        "description": "",
         "parameters": [
           {
             "in": "path",
@@ -555,7 +547,6 @@
         ],
         "operationId": "loginUser",
         "summary": "Logs user into the system",
-        "description": "",
         "parameters": [
           {
             "in": "query",
@@ -595,7 +586,6 @@
         ],
         "operationId": "logoutUser",
         "summary": "Logs out current logged in user session",
-        "description": "",
         "responses": {
           "200": {
             "description": "No response was specified"
@@ -642,7 +632,6 @@
         ],
         "operationId": "placeOrder",
         "summary": "Place an order for a pet",
-        "description": "",
         "parameters": [
           {
             "in": "body",
