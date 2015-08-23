@@ -46,7 +46,7 @@ var success = function(outfile, done) {
   return function(err, spec) {
     Expect(err).to.equal(null);
     if (process.env.WRITE_GOLDEN) {
-      FS.writeFileSync(outfile, spec.stringify());
+      FS.writeFileSync(outfile, spec.stringify() + '\n');
     } else {
       var golden = JSON.parse(FS.readFileSync(outfile, 'utf8'));
       //FIXME: workaround to get rid of 'undefined' inside spec
