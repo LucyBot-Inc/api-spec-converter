@@ -209,7 +209,19 @@
           "405": {
             "description": "Invalid input"
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2_implicit": [
+              "write:pets"
+            ]
+          },
+          {
+            "oauth2_accessCode": [
+              "write:pets"
+            ]
+          }
+        ]
       },
       "get": {
         "produces": [
@@ -280,7 +292,19 @@
           "400": {
             "description": "Invalid pet value"
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2_implicit": [
+              "write:pets"
+            ]
+          },
+          {
+            "oauth2_accessCode": [
+              "write:pets"
+            ]
+          }
+        ]
       },
       "patch": {
         "produces": [
@@ -327,7 +351,19 @@
           "400": {
             "description": "Invalid tag value"
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2_implicit": [
+              "write:pets"
+            ]
+          },
+          {
+            "oauth2_accessCode": [
+              "write:pets"
+            ]
+          }
+        ]
       }
     },
     "/pet/uploadImage": {
@@ -366,7 +402,21 @@
           "200": {
             "description": "No response was specified"
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2_implicit": [
+              "write:pets",
+              "read:pets"
+            ]
+          },
+          {
+            "oauth2_accessCode": [
+              "write:pets",
+              "read:pets"
+            ]
+          }
+        ]
       }
     },
     "/user/createWithArray": {
@@ -397,7 +447,19 @@
           "200": {
             "description": "No response was specified"
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2_implicit": [
+              "test:anything"
+            ]
+          },
+          {
+            "oauth2_accessCode": [
+              "test:anything"
+            ]
+          }
+        ]
       }
     },
     "/user/createWithList": {
@@ -428,7 +490,19 @@
           "200": {
             "description": "No response was specified"
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2_implicit": [
+              "test:anything"
+            ]
+          },
+          {
+            "oauth2_accessCode": [
+              "test:anything"
+            ]
+          }
+        ]
       }
     },
     "/user/{username}": {
@@ -470,7 +544,19 @@
           "404": {
             "description": "User not found"
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2_implicit": [
+              "test:anything"
+            ]
+          },
+          {
+            "oauth2_accessCode": [
+              "test:anything"
+            ]
+          }
+        ]
       },
       "delete": {
         "produces": [
@@ -501,7 +587,19 @@
           "404": {
             "description": "User not found"
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2_implicit": [
+              "test:anything"
+            ]
+          },
+          {
+            "oauth2_accessCode": [
+              "test:anything"
+            ]
+          }
+        ]
       },
       "get": {
         "produces": [
@@ -619,7 +717,19 @@
           "200": {
             "description": "No response was specified"
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2_implicit": [
+              "test:anything"
+            ]
+          },
+          {
+            "oauth2_accessCode": [
+              "test:anything"
+            ]
+          }
+        ]
       }
     },
     "/store/order": {
@@ -650,7 +760,19 @@
           "400": {
             "description": "Invalid order"
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2_implicit": [
+              "write:pets"
+            ]
+          },
+          {
+            "oauth2_accessCode": [
+              "write:pets"
+            ]
+          }
+        ]
       }
     },
     "/store/order/{orderId}": {
@@ -683,7 +805,19 @@
           "404": {
             "description": "Order not found"
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2_implicit": [
+              "write:pets"
+            ]
+          },
+          {
+            "oauth2_accessCode": [
+              "write:pets"
+            ]
+          }
+        ]
       },
       "get": {
         "produces": [
