@@ -1,3 +1,6 @@
 language: node_js
 node_js:
-  - "stable"
+# Protagonist doesn't build on node 4.0 see this:
+# https://github.com/apiaryio/protagonist/issues/81
+#  - "stable"
+  - "0.12"
