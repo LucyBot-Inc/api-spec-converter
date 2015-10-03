@@ -1,5 +1,7 @@
 # api-spec-converter
 
+[![Join the chat at https://gitter.im/lucybot/api-spec-converter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/lucybot/api-spec-converter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![NPM version][npm-image]][npm-link]
 [![Build status][travis-image]][travis-link]
 [![Code climate][climate-image]][climate-link]
