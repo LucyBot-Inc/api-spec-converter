@@ -33,7 +33,7 @@
     "apib2swagger": "^0.2.0",
     "async": "^1.2.1",
     "commander": "^2.8.1",
-    "google-discovery-to-swagger": "^0.0.6",
+    "google-discovery-to-swagger": "^0.0.9",
     "lodash": "^3.9.3",
     "protagonist": "^0.20.1",
     "request": "^2.57.0",
