@@ -13,7 +13,6 @@
   "basePath": "/",
   "definitions": {
     "MoveFileOrFolder": {
-      "id": "MoveFileOrFolder",
       "type": "object",
       "properties": {
         "action": {
@@ -29,7 +28,6 @@
       }
     },
     "CreateFolder": {
-      "id": "CreateFolder",
       "type": "object",
       "properties": {
         "action": {
@@ -45,7 +43,6 @@
       }
     },
     "CopyFileorFolder": {
-      "id": "CopyFileorFolder",
       "type": "object",
       "properties": {
         "action": {
@@ -61,7 +58,6 @@
       }
     },
     "CreateLink": {
-      "id": "CreateLink",
       "type": "object",
       "properties": {
         "path": {
@@ -134,7 +130,6 @@
       }
     },
     "CreateSingleUser": {
-      "id": "CreateSingleUser",
       "type": "object",
       "properties": {
         "userName": {
