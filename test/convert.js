@@ -47,6 +47,11 @@ var IODOCS_TO_SWAGGER = {
   out: __dirname + '/golden/usatoday.json'
 }
 
+var RAML_TO_SWAGGER_2 = {
+  in: __dirname + '/input/raml/XKCD/api.raml',
+  out: __dirname + '/golden/XKCD.json'
+}
+
 var success = function(outfile, done) {
   return function(err, spec) {
     Expect(err).to.equal(null);
@@ -129,6 +134,15 @@ describe('Converter', function() {
     var files = WADL_TO_SWAGGER_2;
     Converter.convert({
       from: 'wadl',
+      to: 'swagger_2',
+      source: files.in,
+    }, success(files.out, done));
+  });
+
+  it('should convert raml to swagger_2', function(done) {
+    var files = RAML_TO_SWAGGER_2;
+    Converter.convert({
+      from: 'raml',
       to: 'swagger_2',
       source: files.in,
     }, success(files.out, done));

@@ -1,0 +1,87 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "XKCD"
+  },
+  "host": "xkcd.com",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/{comicId}/info.0.json": {
+      "get": {
+        "description": "Fetch comics and metadata  by comic id.\n",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/comic"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "comicId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/info.0.json": {
+      "get": {
+        "description": "Fetch current comic and metadata.\n",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/comic"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "comic": {
+      "type": "object",
+      "properties": {
+        "month": {
+          "type": "string"
+        },
+        "num": {
+          "type": "number"
+        },
+        "link": {
+          "type": "string"
+        },
+        "year": {
+          "type": "string"
+        },
+        "news": {
+          "type": "string"
+        },
+        "safe_title": {
+          "type": "string"
+        },
+        "transcript": {
+          "type": "string"
+        },
+        "alt": {
+          "type": "string"
+        },
+        "img": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "day": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
