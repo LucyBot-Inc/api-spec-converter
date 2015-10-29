@@ -1,0 +1,51 @@
+{
+  "required" : true ,
+  "$schema" : "http://json-schema.org/draft-03/schema" ,
+  "type" : "object" ,
+  "properties" : {
+    "month" : {
+      "type" : "string" ,
+      "required" : false
+    } ,
+    "num" : {
+      "type" : "number" ,
+      "required" : false
+    } ,
+    "link" : {
+      "type" : "string" ,
+      "required" : false
+    } ,
+    "year" : {
+      "type" : "string" ,
+      "required" : false
+    } ,
+    "news" : {
+      "type" : "string" ,
+      "required" : false
+    } ,
+    "safe_title" : {
+      "type" : "string" ,
+      "required" : false
+    } ,
+    "transcript" : {
+      "type" : "string" ,
+      "required" : false
+    } ,
+    "alt" : {
+      "type" : "string" ,
+      "required" : false
+    } ,
+    "img" : {
+      "type" : "string" ,
+      "required" : false
+    } ,
+    "title" : {
+      "type" : "string" ,
+      "required" : false
+    } ,
+    "day" : {
+      "type" : "string" ,
+      "required" : false
+    }
+  }
+}
