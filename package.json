@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "urijs": "^1.16.1",
-    "apib2swagger": "^0.2.0",
+    "apib2swagger": "^0.3.1",
     "async": "^1.2.1",
     "commander": "^2.8.1",
     "google-discovery-to-swagger": "^0.0.10",
