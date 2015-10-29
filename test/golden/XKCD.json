@@ -8,6 +8,7 @@
   "schemes": [
     "http"
   ],
+  "securityDefinitions": {},
   "paths": {
     "/{comicId}/info.0.json": {
       "get": {

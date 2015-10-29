@@ -37,7 +37,7 @@
     "lodash": "^3.10.1",
     "protagonist": "^0.20.1",
     "raml-parser": "^0.8.11",
-    "raml-to-swagger": "^0.0.4",
+    "raml-to-swagger": "^0.0.6",
     "request": "^2.57.0",
     "swagger-converter": "apigee-127/swagger-converter",
     "sway": "^0.3.3",
