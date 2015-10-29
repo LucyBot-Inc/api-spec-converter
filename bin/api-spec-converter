@@ -27,7 +27,7 @@ function main(url, options) {
     to: options.to
   }, function(err, spec) {
     if (err) {
-       console.error(err);
+       console.error(err.stack);
        process.exit(255);
     }
 

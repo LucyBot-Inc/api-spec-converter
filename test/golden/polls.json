@@ -23,7 +23,7 @@
         "summary": "Retrieve the Entry Point",
         "description": "",
         "tags": [
-          ""
+          "(no tags)"
         ],
         "parameters": []
       }
@@ -48,7 +48,6 @@
             "in": "path",
             "description": "ID of the Question in form of an integer",
             "required": true,
-            "default": "",
             "type": "number"
           }
         ]
@@ -74,7 +73,6 @@
             "in": "path",
             "description": "ID of the Question in form of an integer",
             "required": true,
-            "default": "",
             "type": "number"
           },
           {
@@ -82,7 +80,6 @@
             "in": "path",
             "description": "ID of the Choice in form of an integer",
             "required": true,
-            "default": "",
             "type": "number"
           }
         ]
@@ -108,7 +105,6 @@
             "in": "query",
             "description": "The page of questions to return",
             "required": false,
-            "default": "",
             "type": "number"
           }
         ]
@@ -132,11 +128,11 @@
             "in": "query",
             "description": "The page of questions to return",
             "required": false,
-            "default": "",
             "type": "number"
           }
         ]
       }
     }
-  }
+  },
+  "definitions": {}
 }

@@ -26,7 +26,6 @@
             "in": "path",
             "description": "An unique identifier of the message.",
             "required": true,
-            "default": "",
             "type": "number"
           }
         ]
@@ -50,7 +49,6 @@
             "in": "path",
             "description": "An unique identifier of the message.",
             "required": true,
-            "default": "",
             "type": "number"
           }
         ]
@@ -76,11 +74,12 @@
             "in": "query",
             "description": "The maximum number of results to return.",
             "required": false,
-            "default": "20",
-            "type": "number"
+            "type": "number",
+            "default": 20
           }
         ]
       }
     }
-  }
+  },
+  "definitions": {}
 }

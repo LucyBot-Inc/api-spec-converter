@@ -55,7 +55,7 @@ Converter.convert({
 * [I/O Docs](https://github.com/mashery/iodocs) (io_docs)
 * [API Blueprint](https://github.com/apiaryio/api-blueprint/blob/master/API%20Blueprint%20Specification.md) (api_blueprint)
 * [Google API Discovery](https://developers.google.com/discovery/v1/reference/apis) (google)
-* [RAML](http://raml.org/spec.html) (raml) **Not yet implemented**
+* [RAML](http://raml.org/spec.html) (raml)
 * [WADL](http://www.w3.org/Submission/wadl/) (wadl)
 
 
@@ -64,7 +64,7 @@ Converter.convert({
 |from:             |swagger_1|swagger_2|io_docs|api_blueprint|google|raml|wadl|
 -------------------|:-------:|:-------:|:-----:|:-----------:|:----:|:--:|:--:|
 |to swagger_1      |  n/a    |         |       |             |      |    |    |
-|to swagger_2      | :white_check_mark: |    n/a  | :white_check_mark: | :white_check_mark: | :white_check_mark: |    | :white_check_mark: |
+|to swagger_2      | :white_check_mark: |    n/a  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |to io_docs        |         |         |  n/a  |             |      |    |    |
 |to api_blueprint  |         |         |       |    n/a      |      |    |    |
 |to google         |         |         |       |             |  n/a |    |    |
