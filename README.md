@@ -12,6 +12,8 @@ Convert between API description formats such as [Swagger](http://swagger.io/) an
 
 Currently only supports conversion to Swagger 2.0
 
+You can also use the online version at http://lucybot.github.io/api-spec-converter
+
 ## Installation
 
 ### Command Line
