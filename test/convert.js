@@ -54,14 +54,16 @@ var RAML_TO_SWAGGER_2 = {
 
 var success = function(outfile, done) {
   return function(err, spec) {
-    Expect(err).to.equal(null);
-    if (process.env.WRITE_GOLDEN) {
-      FS.writeFileSync(outfile, spec.stringify() + '\n');
-    } else {
-      var golden = JSON.parse(FS.readFileSync(outfile, 'utf8'));
-      //FIXME: workaround to get rid of 'undefined' inside spec
-      var result = JSON.parse(JSON.stringify(spec.spec));
-      Expect(result).to.deep.equal(golden);
+    try {
+      Expect(err).to.equal(null);
+      if (process.env.WRITE_GOLDEN) {
+        FS.writeFileSync(outfile, spec.stringify() + '\n');
+      } else {
+        var golden = JSON.parse(FS.readFileSync(outfile, 'utf8'));
+        Expect(spec.spec).to.deep.equal(golden);
+      }
+    } catch (e) {
+      return done(e);
     }
     done();
   }
