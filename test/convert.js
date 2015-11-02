@@ -54,8 +54,10 @@ var RAML_TO_SWAGGER_2 = {
 
 var success = function(outfile, done) {
   return function(err, spec) {
+    if (err)
+      return done(err);
+
     try {
-      Expect(err).to.equal(null);
       if (process.env.WRITE_GOLDEN) {
         FS.writeFileSync(outfile, spec.stringify() + '\n');
       } else {
