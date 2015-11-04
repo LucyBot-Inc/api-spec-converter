@@ -33,7 +33,7 @@
     "apib2swagger": "^0.3.1",
     "async": "^1.2.1",
     "commander": "^2.8.1",
-    "drafter.js": "^2.0.0-pre.0",
+    "drafter.js": "^2.0.0-pre.1",
     "google-discovery-to-swagger": "^0.0.10",
     "lodash": "^3.10.1",
     "raml-parser": "^0.8.11",
