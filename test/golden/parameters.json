@@ -81,5 +81,8 @@
       }
     }
   },
-  "definitions": {}
+  "definitions": {
+    "My Message": {},
+    "All My Messages": {}
+  }
 }

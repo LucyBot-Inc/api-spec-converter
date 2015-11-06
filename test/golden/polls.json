@@ -134,5 +134,10 @@
       }
     }
   },
-  "definitions": {}
+  "definitions": {
+    "Polls API Root": {},
+    "Question": {},
+    "Choice": {},
+    "Questions Collection": {}
+  }
 }
