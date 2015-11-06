@@ -29,12 +29,12 @@
     "api-spec-converter": "./bin/api-spec-converter"
   },
   "dependencies": {
-    "urijs": "^1.16.1",
     "apib2swagger": "^0.3.1",
     "async": "^1.2.1",
     "commander": "^2.8.1",
     "drafter.js": "^2.0.0-pre.1",
     "google-discovery-to-swagger": "^0.0.10",
+    "js-yaml": "^3.4.3",
     "lodash": "^3.10.1",
     "raml-parser": "^0.8.11",
     "raml-to-swagger": "^0.0.6",
@@ -42,8 +42,8 @@
     "swagger-converter": "apigee-127/swagger-converter",
     "sway": "^0.3.3",
     "traverse": "^0.6.6",
-    "xml2js": "^0.4.9",
-    "yamljs": "^0.2.3"
+    "urijs": "^1.16.1",
+    "xml2js": "^0.4.9"
   },
   "devDependencies": {
     "chai": "^3.0.0",
