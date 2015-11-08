@@ -1,2 +1,2 @@
 #! /bin/sh
-browserify index.js -o dist/api-spec-converter.js
+browserify browser.js -o dist/api-spec-converter.js

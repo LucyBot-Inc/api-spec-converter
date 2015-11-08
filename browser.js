@@ -1,2 +1,2 @@
-window.APISpecConverter = require('./index.js);
+window.APISpecConverter = require('./index.js');
 
