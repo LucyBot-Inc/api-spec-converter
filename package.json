@@ -39,7 +39,7 @@
     "raml-parser": "^0.8.11",
     "raml-to-swagger": "^0.0.6",
     "request": "^2.57.0",
-    "swagger-converter": "apigee-127/swagger-converter",
+    "swagger-converter": "^1.0.1",
     "sway": "^0.5.1",
     "traverse": "^0.6.6",
     "urijs": "^1.16.1",
