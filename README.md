@@ -48,6 +48,7 @@ Converter.convert({
   console.log(converted.spec);
   FS.writeFileSync('swagger2.json', converted.stringify());
 })
+```
 
 ### Browser
 We're in the process of adding browser compatibility using Browserify. Currently only WADL, Swagger 1.x, and Swagger 2.0 are supported.
@@ -56,8 +57,6 @@ You can find the latest browser version in [dist/api-spec-converter.js](dist/api
 
 ```js
 APISpecConverter.convert(...)
-```
-
 ```
 
 ## Supported Types
