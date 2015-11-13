@@ -5,10 +5,10 @@ module.exports = function (grunt) {
 
         browserify: {
             main: {
-                src: ['browser.js'],
+                src: ['index.js'],
                 dest: '<%= outputFolder %>/<%= pkg.name %>.js',
                 options: {
-                    browserifyOptions: { standalone: '<%= pkg.name %>' },
+                    browserifyOptions: { standalone: 'APISpecConverter' },
                     banner: '/*! <%= pkg.name %> <%= pkg.version %> */\n',
                     ignore: [
                       './lib/types/io_docs.js',
