@@ -4,6 +4,7 @@
   "description": " Convert between API description formats such as Swagger and RAML",
   "main": "index.js",
   "scripts": {
+    "browserify": "grunt browserify",
     "test": "mocha"
   },
   "repository": {
@@ -49,6 +50,7 @@
     "chai": "^3.0.0",
     "grunt": "^0.4.5",
     "grunt-browserify": "^4.0.1",
+    "grunt-cli": "^0.1.13",
     "mocha": "^2.2.5"
   }
 }
