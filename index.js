@@ -1,12 +1,12 @@
 'use strict';
 
-var Types = require('./lib/types/types.js');
+var Types = require('./lib/types.js');
 var _ = require('lodash');
 
 var Converter = module.exports = {};
 
 Converter.Types = Types;
-Converter.BaseType = require('./lib/types/base-type.js');
+Converter.BaseType = require('./lib/base-type.js');
 
 Converter.getSpec = function (source, type, callback) {
   var spec = new Types[type]();
