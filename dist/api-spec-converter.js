@@ -320,7 +320,7 @@ Swagger2.prototype.fixSpec = function () {
 
   var basePath = swagger.basePath
   if (_.isString(basePath))
-    swagger.basePath = URI().path(basePath).normalize().toString();
+    swagger.basePath = URI().path(basePath).normalize().path();
 
   _.each(swagger.definitions, function (schema) {
     if (!_.isUndefined(schema.id))
@@ -20367,8 +20367,7 @@ module.exports={
     }
   ],
   "directories": {},
-  "_resolved": "https://registry.npmjs.org/elliptic/-/elliptic-6.0.2.tgz",
-  "readme": "ERROR: No README data found!"
+  "_resolved": "https://registry.npmjs.org/elliptic/-/elliptic-6.0.2.tgz"
 }
 
 },{}],88:[function(require,module,exports){
@@ -71490,63 +71489,53 @@ module.exports = require('./db.json')
   // Unique ID creation requires a high quality random # generator.  We feature
   // detect to determine the best RNG source, normalizing to a function that
   // returns 128-bits of randomness, since that's what's usually required
-  var _rng, _mathRNG, _nodeRNG, _whatwgRNG, _previousRoot;
+  var _rng, _mathRNG, _nodeRNG, _whatwgRNG;
 
-  function setupBrowser() {
-    // Allow for MSIE11 msCrypto
-    var _crypto = _window.crypto || _window.msCrypto;
+  // Allow for MSIE11 msCrypto
+  var _crypto = _window.crypto || _window.msCrypto;
 
-    if (!_rng && _crypto && _crypto.getRandomValues) {
-      // WHATWG crypto-based RNG - http://wiki.whatwg.org/wiki/Crypto
-      //
-      // Moderately fast, high quality
-      try {
-        var _rnds8 = new Uint8Array(16);
-        _whatwgRNG = _rng = function whatwgRNG() {
-          _crypto.getRandomValues(_rnds8);
-          return _rnds8;
-        };
-        _rng();
-      } catch(e) {}
-    }
-
-    if (!_rng) {
-      // Math.random()-based (RNG)
-      //
-      // If all else fails, use Math.random().  It's fast, but is of unspecified
-      // quality.
-      var  _rnds = new Array(16);
-      _mathRNG = _rng = function() {
-        for (var i = 0, r; i < 16; i++) {
-          if ((i & 0x03) === 0) { r = Math.random() * 0x100000000; }
-          _rnds[i] = r >>> ((i & 0x03) << 3) & 0xff;
-        }
-
-        return _rnds;
-      };
-      if ('undefined' !== typeof console && console.warn) {
-        console.warn("[SECURITY] node-uuid: crypto not usable, falling back to insecure Math.random()");
-      }
-    }
+  // Node.js crypto-based RNG - http://nodejs.org/docs/v0.6.2/api/crypto.html
+  //
+  // Moderately fast, high quality
+  if ('function' === typeof require) {
+    try {
+      var _rb = require('crypto').randomBytes;
+      _nodeRNG = _rng = _rb && function() {return _rb(16);};
+      _rng();
+    } catch(e) {}
   }
 
-  function setupNode() {
-    // Node.js crypto-based RNG - http://nodejs.org/docs/v0.6.2/api/crypto.html
+  if (!_rng && _crypto && _crypto.getRandomValues) {
+    // WHATWG crypto-based RNG - http://wiki.whatwg.org/wiki/Crypto
     //
     // Moderately fast, high quality
-    if ('function' === typeof require) {
-      try {
-        var _rb = require('crypto').randomBytes;
-        _nodeRNG = _rng = _rb && function() {return _rb(16);};
-        _rng();
-      } catch(e) {}
-    }
+    try {
+      var _rnds8 = new Uint8Array(16);
+      _whatwgRNG = _rng = function whatwgRNG() {
+        _crypto.getRandomValues(_rnds8);
+        return _rnds8;
+      };
+      _rng();
+    } catch(e) {}
   }
 
-  if (_window) {
-    setupBrowser();
-  } else {
-    setupNode();
+  if (!_rng) {
+    // Math.random()-based (RNG)
+    //
+    // If all else fails, use Math.random().  It's fast, but is of unspecified
+    // quality.
+    var  _rnds = new Array(16);
+    _mathRNG = _rng = function() {
+      for (var i = 0, r; i < 16; i++) {
+        if ((i & 0x03) === 0) { r = Math.random() * 0x100000000; }
+        _rnds[i] = r >>> ((i & 0x03) << 3) & 0xff;
+      }
+
+      return _rnds;
+    };
+    if ('undefined' !== typeof console && console.warn) {
+      console.warn("[SECURITY] node-uuid: crypto not usable, falling back to insecure Math.random()");
+    }
   }
 
   // Buffer class to use
@@ -71729,17 +71718,17 @@ module.exports = require('./db.json')
   uuid._nodeRNG = _nodeRNG;
   uuid._whatwgRNG = _whatwgRNG;
 
-  if (('undefined' !== typeof module) && module.exports) {
+  if (typeof(module) != 'undefined' && module.exports) {
     // Publish as node.js module
     module.exports = uuid;
-  } else if (typeof define === 'function' && define.amd) {
+  } else  if (typeof define === 'function' && define.amd) {
     // Publish as AMD module
     define(function() {return uuid;});
 
 
   } else {
     // Publish as global (in browsers)
-    _previousRoot = _window.uuid;
+    var _previousRoot = _window.uuid;
 
     // **`noConflict()` - (browser only) to reset global 'uuid' var**
     uuid.noConflict = function() {
@@ -71749,7 +71738,7 @@ module.exports = require('./db.json')
 
     _window.uuid = uuid;
   }
-})('undefined' !== typeof window ? window : null);
+})('undefined' !== typeof window ? window : {});
 
 }).call(this,require("buffer").Buffer)
 },{"buffer":25,"crypto":29}],433:[function(require,module,exports){
@@ -76638,10 +76627,17 @@ prototype.buildOperation = function(oldOperation, operationDefaults) {
     parameters.push(this.buildParameter(oldParameter));
   });
 
+  /*
+   * Merges the tags from the resourceListing and the ones specified in the apiDeclaration.
+   */
+  var tags = (operationDefaults.tags || []).concat(oldOperation.tags || []);
+  tags = removeDuplicates(tags);
+
   return extend({}, operationDefaults, {
     operationId: oldOperation.nickname,
     summary: oldOperation.summary,
     description: oldOperation.description || oldOperation.notes,
+    tags: undefinedIfEmpty(tags),
     deprecated: fixNonStringValue(oldOperation.deprecated),
     produces: oldOperation.produces,
     consumes: oldOperation.consumes,
@@ -77043,6 +77039,18 @@ function fixNonStringValue(value, skipError) {
   }
 }
 
+/*
+ * Remove duplicates of an array
+ * @params collection {array}
+ * @returns {array} - collection without duplicates
+ */
+
+function removeDuplicates(collection) {
+  return collection.filter(function(e, i, arr) {
+    return arr.lastIndexOf(e) === i;
+  });
+}
+
 },{"assert":10,"urijs":1447}],449:[function(require,module,exports){
 /*
  * The MIT License (MIT)
@@ -77220,14 +77228,12 @@ var ZSchema = require('z-schema');
 var draft04Json = require('./json-schema-draft-04.json');
 var draft04Url = 'http://json-schema.org/draft-04/schema';
 
-function normalizeError (obj) {
-  // Remove fields that are not important or are not a part of the exposed contract
+function removeValidationErrorParams (obj) {
   delete obj.params;
-  delete obj.schemaId;
 
   if (obj.inner) {
     _.each(obj.inner, function (nObj) {
-      normalizeError(nObj);
+      removeValidationErrorParams(nObj);
     });
   }
 }
@@ -77310,7 +77316,7 @@ module.exports.validateAgainstSchema = function (validator, schema, value) {
 
   if (!validator.validate(value, schema)) {
     response.errors = _.map(validator.getLastErrors(), function (err) {
-      normalizeError(err);
+      removeValidationErrorParams(err);
 
       return err;
     });
@@ -77552,11 +77558,13 @@ function SwaggerApi (plugin, definition, resolved, references, options) {
   this.customValidators = [];
   this.definition = definition;
   this.documentation = plugin.documentation;
+  this.errors = undefined;
   this.options = options;
   this.plugin = plugin;
   this.references = references;
   this.resolved = resolved;
   this.version = plugin.version;
+  this.warnings = undefined;
 
   // Assign Swagger definition properties to the api for easy access
   _.assign(this, definition);
@@ -77568,6 +77576,24 @@ function SwaggerApi (plugin, definition, resolved, references, options) {
   // Register custom validators
   _.forEach(options.validators, this.registerValidator);
 }
+
+/**
+ * Returns the errors from the last validate call.
+ *
+ * @returns {object[]} The errors from the previous call to validate or undefined if validate was never called
+ */
+SwaggerApi.prototype.getLastErrors = function () {
+  return this.errors;
+};
+
+/**
+ * Returns the warnings from the last validate call.
+ *
+ * @returns {object[]} The warnings from the previous call to validate or undefined if validate was never called
+ */
+SwaggerApi.prototype.getLastWarnings = function () {
+  return this.warnings;
+};
 
 /**
  * Returns the operation for the given path and operation.
@@ -77705,37 +77731,24 @@ SwaggerApi.prototype.registerValidator = function (validator) {
 /**
  * Performs validation of the Swagger API document(s).
  *
- * @returns {object} The validation results.  This object should contain two properties: `errors` and `warnings`.  Each
- *                   of these property values should be an array of objects that have at minimum the following
- *                   properties:
- *
- *                     * code: The code used to identify the error/warning
- *                     * [errors]: The nested error(s) encountered during validation
- *                       * code: The code used to identify the error/warning
- *                       * message: The human readable message for the error/warning
- *                       * path: The path to the failure or [] for the value itself being invalid
- *                     * message: The human readable message for the error/warning
- *                     * [name]: The header name when the error is a header validation error
- *                     * path: The array of path segments to portion of the document associated with the error/warning
- *
- *                   Any other properties can be added to the error/warning objects as well but these must be there.
+ * @returns {boolean} True if all validators produce zero errors and false otherwise
  */
 SwaggerApi.prototype.validate = function () {
-  var results = {
-    errors: [],
-    warnings: []
-  };
   var self = this;
 
-  function doValidation (validator) {
-    var vResults = validator(self);
+  // Reset the errors and warnings
+  this.errors = [];
+  this.warnings = [];
 
-    if (vResults.errors.length > 0) {
-      results.errors.push.apply(results.errors, vResults.errors);
+  function doValidation (validator) {
+    var results = validator(self);
+
+    if (results.errors.length > 0) {
+      self.errors = self.errors.concat(results.errors);
     }
 
-    if (vResults.warnings.length > 0) {
-      results.warnings.push.apply(results.warnings, vResults.warnings);
+    if (results.warnings.length > 0) {
+      self.warnings = self.warnings.concat(results.warnings);
     }
   }
 
@@ -77743,7 +77756,7 @@ SwaggerApi.prototype.validate = function () {
   doValidation(this.plugin.getJSONSchemaValidator());
 
   // Perform remaining validation only if the document is structurally valid
-  if (results.errors.length === 0) {
+  if (this.errors.length === 0) {
     // Run plugin validators
     _.forEach(this.plugin.getSemanticValidators(), doValidation);
 
@@ -77751,7 +77764,7 @@ SwaggerApi.prototype.validate = function () {
     _.forEach(this.customValidators, doValidation);
   }
 
-  return results;
+  return this.errors.length === 0;
 };
 
 module.exports = SwaggerApi;
@@ -77785,33 +77798,7 @@ module.exports = SwaggerApi;
 
 var _ = require('lodash');
 var debug = require('debug')('sway:operation');
-var sHelpers = require('../helpers');
 var YAML = require('js-yaml');
-
-/**
- * Validates the content type.
- *
- * @param {string} contentType - The Content-Type value of the request/response
- * @param {string[]} supportedTypes - The supported (declared) Content-Type values for the request/response
- * @param {object} results - The results object to update in the event of an invalid content type
- */
-function validateContentType (contentType, supportedTypes, results) {
-  var rawContentType = contentType;
-
-  if (!_.isUndefined(contentType)) {
-    // http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17
-    contentType = contentType.split(';')[0]; // Strip the parameter(s) from the content type
-  }
-
-  // Check for exact match or mime-type only match
-  if (_.indexOf(supportedTypes, rawContentType) === -1 && _.indexOf(supportedTypes, contentType) === -1) {
-    results.errors.push({
-      code: 'INVALID_CONTENT_TYPE',
-      message: 'Invalid Content-Type (' + contentType + ').  These are supported: ' + supportedTypes.join(', '),
-      path: []
-    });
-  }
-}
 
 /**
  * The Swagger Operation object.
@@ -77826,8 +77813,6 @@ function validateContentType (contentType, supportedTypes, results) {
  * @param {string} method - The operation method
  * @param {string} ptr - The JSON Pointer to the operation
  * @param {object} definition - The operation definition
- * @param {string[]} consumes - The mime types this operation consumes
- * @param {string[]} produces - The mime types this operation produces
  *
  * @property {SwaggerApi} api - The Swagger API object
  * @property {object} definition - The operation definition
@@ -77839,7 +77824,7 @@ function validateContentType (contentType, supportedTypes, results) {
  *
  * @constructor
  */
-function Operation (api, pathObject, method, ptr, definition, consumes, produces) {
+function Operation (api, pathObject, method, ptr, definition) {
   this.api = api;
   this.pathObject = pathObject;
   this.method = method;
@@ -77848,10 +77833,6 @@ function Operation (api, pathObject, method, ptr, definition, consumes, produces
 
   // Assign Swagger definition properties to the operation for easy access
   _.assign(this, definition);
-
-  // Assign consumes/produces after merging properties
-  this.consumes = consumes;
-  this.produces = produces;
 
   debug('Found operation at %s', ptr);
 
@@ -77898,7 +77879,7 @@ Operation.prototype.getResponseExample = function (codeOrMimeType, mimeType) {
     codeOrMimeType = 'default';
   }
 
-  response = this.api.plugin.getOperationResponse(this, codeOrMimeType);
+  response = this.definition.responses[codeOrMimeType];
 
   if (!_.isUndefined(response) && _.isPlainObject(response.examples)) {
     example = response.examples[mimeType];
@@ -77926,7 +77907,15 @@ Operation.prototype.getResponseExample = function (codeOrMimeType, mimeType) {
  *                 is required due to undefined being a valid response schema indicating a void response)
  */
 Operation.prototype.getResponseSchema = function (code) {
-  var response = this.api.plugin.getOperationResponse(this, code);
+  var response;
+
+  if (_.isUndefined(code)) {
+    code = 'default';
+  } else if (_.isNumber(code)) {
+    code = (Math.floor(100 * code) / 100).toFixed(); // Overly cautious but oh well...
+  }
+
+  response = this.definition.responses[code];
 
   if (_.isUndefined(response)) {
     throw new Error('This operation does not have a defined \'' + code + '\' response code');
@@ -77956,235 +77945,9 @@ Operation.prototype.getResponseSample = function (code) {
   return sample;
 };
 
-/**
- * Validates the request.
- *
- * **Note:** Below is the list of `req` properties used *(req should be an `http.ClientRequest` or equivalent)*:
- *
- * * `body`: Used for `body` and `formData` parameters
- * * `files`: Used for `formData` parameters whose `type` is `file`
- * * `headers`: Used for `header` parameters and consumes
- * * `query`: Used for `query` parameters
- * * `url`: used for `path` parameters
- *
- * For `path` parameters, we will use the operation's `regexp` property to parse out path parameters using the `url`
- * property.
- *
- * *(See: {@link https://nodejs.org/api/http.html#http_class_http_clientrequest})*
- *
- * @param {object} req - The http client request *(or equivalent)*
- *
- * @returns {object} The validation results.  This object should contain two properties: `errors` and `warnings`.  Each
- *                   of these property values should be an array of objects that have at minimum the following
- *                   properties:
- *
- *                     * code: The code used to identify the error/warning
- *                     * [errors]: The error(s) encountered during validation
- *                       * code: The code used to identify the error/warning
- *                       * [in]: The parameter location when the errors is a parameter validation error
- *                       * message: The human readable message for the error/warning
- *                       * [name]: The parameter name when the error is a parameter validation error
- *                       * path: The path to the failure or [] for the value itself being invalid
- *                     * message: The human readable message for the error/warning
- *
- *                   Any other properties can be added to the error/warning objects as well but these must be there.
- */
-Operation.prototype.validateRequest = function (req) {
-  var results = {
-    errors: [],
-    warnings: []
-  };
-
-  // Validate the Content-Type but only for POST and PUT (The rest do not have bodies)
-  if (['post', 'put'].indexOf(this.method) > -1) {
-    // Defaults to application/octet-stream per http://www.w3.org/Protocols/rfc2616/rfc2616-sec7.html#sec7.2.1
-    validateContentType(req.headers['content-type'] || 'application/octet-stream', this.consumes, results);
-  }
-
-  // Validate the parameters
-  _.each(this.getParameters(), function (param) {
-    var paramValue = param.getValue(req);
-    var vErr;
-
-    if (!paramValue.valid) {
-      vErr = {
-        code: 'INVALID_REQUEST_PARAMETER',
-        errors: paramValue.error.errors || [
-          {
-            code: paramValue.error.code,
-            message: paramValue.error.message,
-            path: paramValue.error.path
-          }
-        ],
-        in: paramValue.parameterObject.in,
-        // Report the actual error if there is only one error.  Otherwise, report a JSON Schema validation error.
-        message: 'Invalid parameter (' + param.name + '): ' + ((paramValue.errors || []).length > 1 ?
-                                                               'Value failed JSON Schema validation' :
-                                                               paramValue.error.message),
-        name: paramValue.parameterObject.name,
-        path: paramValue.error.path
-      };
-
-      results.errors.push(vErr);
-    }
-  });
-
-  return results;
-};
-
-/**
- * Validates the response.
- *
- * **Note:** We are not using an `http.ServerResponse` or equivalent because to do so would require an opinionated
- *           interaction flow and we do not want to have to impose any restrictions.  We also do not validate the
- *           `Content-Type` or body for void, 204 or 304 responses.
- *
- * @param {number} statusCode - The response status code *(`undefined` will map to the `default` response)*
- * @param {object} headers - The response headers
- * @param {*} body - The response body
- * @param {string} [encoding] - The encoding of the body when the body is a `Buffer`
- *
- * @returns {object} The validation results.  This object should contain two properties: `errors` and `warnings`.  Each
- *                   of these property values should be an array of objects that have at minimum the following
- *                   properties:
- *
- *                     * code: The code used to identify the error/warning
- *                     * [errors]: The nested error(s) encountered during validation
- *                       * code: The code used to identify the error/warning
- *                       * message: The human readable message for the error/warning
- *                       * path: The path to the failure or [] for the value itself being invalid
- *                     * message: The human readable message for the error/warning
- *                     * [name]: The header name when the error is a header validation error
- *                     * [path]: The array of path segments to portion of the document associated with the error/warning
- *
- *                   Any other properties can be added to the error/warning objects as well but these must be there.
- */
-Operation.prototype.validateResponse = function (statusCode, headers, body, encoding) {
-  var results = {
-    errors: [],
-    warnings: []
-  };
-  var realStatusCode = statusCode || 'default';
-  var response = this.api.plugin.getOperationResponse(this, realStatusCode);
-  var that = this;
-  var bodyValue;
-  var bvResults;
-
-  if (_.isUndefined(response)) {
-    // If there is no response for the requested status, use the default if there is one (This is Swagger's approach)
-    response = this.api.plugin.getOperationResponse(this, 'default');
-
-    if (_.isUndefined(response)) {
-      results.errors.push({
-        code: 'INVALID_RESPONSE_CODE',
-        message: 'This operation does not have a defined \'' + (realStatusCode === 'default' ?
-                                                                realStatusCode :
-                                                                realStatusCode + '\' or \'default') + '\' response code',
-        path: []
-      });
-
-      return results;
-    }
-  }
-
-  // Validate the Content-Type except for void responses, 204 responses and 304 responses as they have no body
-  if (!_.isUndefined(response.schema) && _.indexOf([204, 304], statusCode) === -1) {
-    validateContentType(headers['content-type'], this.produces, results);
-  }
-
-  // Validate the response headers
-  _.forEach(response.headers, function (schema, name) {
-    var headerValue;
-    var hvResults;
-
-    try {
-      headerValue = that.api.plugin.convertValue(schema,
-                                                 {
-                                                   collectionFormat: schema.collectionFormat
-                                                 },
-                                                 // Most Node.js environment lowercase the header but just in case...
-                                                 headers[name.toLowerCase()] || headers[name] || schema.default);
-    } catch (err) {
-      results.errors.push({
-        code: 'INVALID_RESPONSE_HEADER',
-        errors: err.errors || [
-          {
-            code: err.code,
-            message: err.message,
-            path: err.path
-          }
-        ],
-        message: 'Invalid header (' + name + '): ' + err.message,
-        name: name,
-        path: err.path
-      });
-    }
-
-    // Due to ambiguity in the Swagger 2.0 Specification (https://github.com/swagger-api/swagger-spec/issues/321), it
-    // is probably not a good idea to do requiredness checks for response headers.  This means we will validate
-    // existing headers but will not throw an error if a header is defined in a response schema but not in the response.
-    //
-    // We also do not want to validate date objects because it is redundant.  If we have already converted the value
-    // from a string+format to a date, we know it passes schema validation.
-    if (!_.isUndefined(headerValue) && !_.isDate(headerValue)) {
-      hvResults = sHelpers.validateAgainstSchema(sHelpers.createJSONValidator({
-        formatValidators: that.api.plugin.customFormatValidators
-      }), schema, headerValue);
-
-      if (hvResults.errors.length > 0) {
-        results.errors.push({
-          code: 'INVALID_RESPONSE_HEADER',
-          errors: hvResults.errors,
-          // Report the actual error if there is only one error.  Otherwise, report a JSON Schema validation error.
-          message: 'Invalid header (' + name + '): ' + (hvResults.errors.length > 1 ?
-                                                        'Value failed JSON Schema validation' :
-                                                        hvResults.errors[0].message),
-          name: name,
-          path: []
-        });
-      }
-    }
-  });
-
-  // Validate response for non-void responses
-  if (!_.isUndefined(response.schema) && _.indexOf([204, 304], statusCode) === -1) {
-    try {
-      bodyValue = that.api.plugin.convertValue(response.schema, {
-        encoding: encoding
-      }, body);
-      bvResults = sHelpers.validateAgainstSchema(sHelpers.createJSONValidator({
-        formatValidators: that.api.plugin.customFormatValidators
-      }), response.schema, bodyValue);
-    } catch (err) {
-      bvResults = {
-        errors: [
-          {
-            code: err.code,
-            message: err.message,
-            path: err.path
-          }
-        ]
-      };
-    }
-
-    if (bvResults.errors.length > 0) {
-      results.errors.push({
-        code: 'INVALID_RESPONSE_BODY',
-        errors: bvResults.errors,
-        message: 'Invalid body: ' + (bvResults.errors.length > 1 ?
-                                     'Value failed JSON Schema validation' :
-                                     bvResults.errors[0].message),
-        path: []
-      });
-    }
-  }
-
-  return results;
-};
-
 module.exports = Operation;
 
-},{"../helpers":450,"debug":463,"js-yaml":263,"lodash":297}],454:[function(require,module,exports){
+},{"debug":463,"js-yaml":263,"lodash":297}],454:[function(require,module,exports){
 /*
  * The MIT License (MIT)
  *
@@ -78224,11 +77987,9 @@ var JsonRefs = require('json-refs');
  * @param {*} raw - The original/raw value
  *
  * @property {Error} error - The error(s) encountered during processing/validating the paramter value
- * @property {Parameter} parameterObject - The Parameter object
  * @property {*} raw - The original parameter value *(Does not take default values into account)*
  * @property {boolean} valid - Whether or not this parameter is valid based on its JSON Schema
  * @property {*} value - The processed value *(Takes default values into account and does type coercion when necessary)*
- *                       or `undefined` in the event that processing the value is impossible (invalid types, etc.).
  *
  * @constructor
  */
@@ -78241,7 +78002,6 @@ function ParameterValue (parameter, raw) {
   var isValid;
   var processedValue;
 
-  this.parameterObject = parameter;
   this.raw = raw;
 
   // Use Object.defineProperty for 'value' to allow for lazy processing of the raw value
@@ -78264,7 +78024,6 @@ function ParameterValue (parameter, raw) {
           errors: [],
           warnings: []
         };
-        var skipValidation = false;
         var value;
         var vError;
 
@@ -78288,23 +78047,9 @@ function ParameterValue (parameter, raw) {
               //   * The schema explicitly allows empty values and the value is empty
               //   * The schema allow optional values and the value is undefined
               //   * The schema defines a file parameter
-              //   * The schema is for a string type with date/date-time format and the value is a date
-              //   * The schema is for a string type and the value is a Buffer
-              if (parameter.required === false && _.isUndefined(value)) {
-                skipValidation = true;
-              } else if (schema.allowEmptyValue === true && value === '') {
-                skipValidation = true;
-              } else if (parameter.type === 'file') {
-                skipValidation = true;
-              } else if (schema.type === 'string') {
-                if (['date', 'date-time'].indexOf(schema.format) > -1 && _.isDate(value)) {
-                  skipValidation = true;
-                } else if (schema.type === 'string' && _.isFunction(value.readUInt8)) {
-                  skipValidation = true;
-                }
-              }
-
-              if (!skipValidation) {
+              if ((parameter.required === true || !_.isUndefined(value)) &&
+                  (schema.allowEmptyValue !== true && value !== '') &&
+                  parameter.type !== 'file') {
                 // Validate against JSON Schema
                 result = helpers.validateAgainstSchema(helpers.createJSONValidator({
                   formatValidators: plugin.customFormatValidators
@@ -78343,9 +78088,7 @@ function ParameterValue (parameter, raw) {
           } else {
             // Convert/Coerce the raw value from the request object
             try {
-              processedValue = plugin.convertValue(schema, {
-                collectionFormat: parameter.collectionFormat
-              }, raw);
+              processedValue = plugin.convertValue(schema, parameter.collectionFormat, raw);
             } catch (err) {
               error = err;
             }
@@ -78490,7 +78233,7 @@ Parameter.prototype.getSample = function () {
  *
  * * `body`: Used for `body` and `formData` parameters
  * * `files`: Used for `formData` parameters whose `type` is `file`
- * * `headers`: Used for `header` parameters
+ * * `header`: Used for `header` parameters
  * * `query`: Used for `query` parameters
  * * `url`: used for `path` parameters
  *
@@ -78918,12 +78661,9 @@ var parameterLocations = ['body', 'formData', 'header', 'path', 'query'];
 var types = ['array', 'boolean', 'integer', 'object', 'number', 'string'];
 var version = '2.0';
 
-function realConvertValue (schema, options, value) {
+function realConvertValue (schema, collectionFormat, value) {
   var originalValue = value; // Used in error reporting for invalid values
   var type = _.isPlainObject(schema) ? (schema.type || 'object') : undefined;
-  var pValue = value;
-  var pType = typeof pValue;
-  var err;
 
   if (types.indexOf(type) === -1) {
     throw new TypeError('Invalid \'type\' value: ' + type);
@@ -78934,13 +78674,6 @@ function realConvertValue (schema, options, value) {
     return value;
   }
 
-  // Convert Buffer value to String
-  // (We use this type of check to identify Buffer objects.  The browser does not have a Buffer type and to avoid having
-  //  import the browserify buffer module, we just do a simple check.  This is brittle but should work.)
-  if (_.isFunction(value.readUInt8)) {
-    value = value.toString(options.encoding);
-  }
-
   // If the value is empty and empty is allowed, use it
   if (schema.allowEmptyValue && value === '') {
     return value;
@@ -78949,11 +78682,11 @@ function realConvertValue (schema, options, value) {
   switch (type) {
   case 'array':
     if (_.isString(value)) {
-      if (collectionFormats.indexOf(options.collectionFormat) === -1) {
-        throw new TypeError('Invalid \'collectionFormat\' value: ' + options.collectionFormat);
+      if (collectionFormats.indexOf(collectionFormat) === -1) {
+        throw new TypeError('Invalid \'collectionFormat\' value: ' + collectionFormat);
       }
 
-      switch (options.collectionFormat) {
+      switch (collectionFormat) {
       case 'csv':
       case undefined:
         value = value.split(',');
@@ -78977,7 +78710,7 @@ function realConvertValue (schema, options, value) {
 
     if (_.isArray(value)) {
       value = _.map(value, function (item, index) {
-        return realConvertValue(_.isArray(schema.items) ? schema.items[index] : schema.items, options, item);
+        return realConvertValue(_.isArray(schema.items) ? schema.items[index] : schema.items, collectionFormat, item);
       });
     } else {
       // Assume the value provided was intended to be an array
@@ -78992,7 +78725,7 @@ function realConvertValue (schema, options, value) {
       } else if (value === 'false') {
         value = false;
       } else {
-        err = new TypeError('Not a valid boolean: ' + value);
+        throw new TypeError('Not a valid boolean: ' + value);
       }
     }
 
@@ -79006,7 +78739,7 @@ function realConvertValue (schema, options, value) {
       value = Number(value);
 
       if (_.isNaN(value)) {
-        err = new TypeError('Not a valid integer: ' + originalValue);
+        throw new TypeError('Not a valid integer: ' + originalValue);
       }
     }
 
@@ -79016,7 +78749,7 @@ function realConvertValue (schema, options, value) {
       if (_.isString(value)) {
         value = JSON.parse(value);
       } else {
-        err = new TypeError('Not a valid object: ' + JSON.stringify(originalValue));
+        throw new TypeError('Not a valid object: ' + JSON.stringify(originalValue));
       }
     }
 
@@ -79030,7 +78763,7 @@ function realConvertValue (schema, options, value) {
       value = Number(value);
 
       if (_.isNaN(value)) {
-        err = new TypeError('Not a valid number: ' + originalValue);
+        throw new TypeError('Not a valid number: ' + originalValue);
       }
     }
     break;
@@ -79041,33 +78774,15 @@ function realConvertValue (schema, options, value) {
       }
 
       if (!_.isDate(value) || value.toString() === 'Invalid Date') {
-        err = new TypeError('Not a valid ' + schema.format + ' string: ' + originalValue);
-
-        err.code = 'INVALID_FORMAT';
+        throw new TypeError('Not a valid ' + schema.format + ' string: ' + originalValue);
       }
     } else if (!_.isString(value)) {
-      err = new TypeError('Not a valid string: ' + value);
+      throw new TypeError('Not a valid string: ' + value);
     }
 
     break;
 
     // no default
-  }
-
-  if (!_.isUndefined(err)) {
-    // Convert the error to be more like a JSON Schema validation error
-    if (_.isUndefined(err.code)) {
-      err.code = 'INVALID_TYPE';
-      err.message = 'Expected type ' + type + ' but found type ' + pType;
-    } else {
-      err.message = 'Object didn\'t pass validation for format ' + schema.format + ': ' + pValue;
-    }
-
-    // Format and type errors resemble JSON Schema validation errors
-    err.failedValidation = true;
-    err.path = [];
-
-    throw err;
   }
 
   return value;
@@ -79103,15 +78818,13 @@ module.exports.canProcess = function (definition) {
  * Converts a raw JavaScript value to a JSON Schema value based on its schema.
  *
  * @param {object} schema - The schema for the value
- * @param {object} options - The conversion options
- * @param {string} [options.collectionFormat] - The collection format
- * @param {string} [options.encoding] - The encoding if the raw value is a `Buffer`
+ * @param {string} collectionFormat - The collection format
  * @param {*} value - The value to convert
  *
  * @returns {*} The converted value
  */
-module.exports.convertValue = function (schema, options, value) {
-  return realConvertValue(schema, options, value);
+module.exports.convertValue = function (schema, collectionFormat, value) {
+  return realConvertValue(schema, collectionFormat, value);
 };
 
 /**
@@ -79217,13 +78930,7 @@ module.exports.getOperations = function (pathObject) {
       cOperation.security = pathObject.api.resolved.security;
     }
 
-    operations.push(new Operation(pathObject.api,
-                                  pathObject,
-                                  method,
-                                  JsonRefs.pathToPointer(oPath),
-                                  cOperation,
-                                  cOperation.consumes || pathObject.api.resolved.consumes || [],
-                                  cOperation.produces || pathObject.api.resolved.produces || []));
+    operations.push(new Operation(pathObject.api, pathObject, method, JsonRefs.pathToPointer(oPath), cOperation));
   });
 
   return operations;
@@ -79297,24 +79004,6 @@ module.exports.getPaths = function (api) {
                     pathToRegexp(basePathPrefix + path.replace(/\{/g, ':').replace(/\}/g, '')));
 
   });
-};
-
-/**
- * Returns the response definition for the operation and code.
- *
- * @param {Operation} operation - The Operation object
- * @param {number|string} [code=default] - The response code
- *
- * @returns {object} The response definition or `undefined` if there is none
- */
-module.exports.getOperationResponse = function (operation, code) {
-  if (_.isUndefined(code)) {
-    code = 'default';
-  } else if (_.isNumber(code)) {
-    code = (Math.floor(100 * code) / 100).toFixed(); // Overly cautious but oh well...
-  }
-
-  return operation.definition.responses[code];
 };
 
 /**
@@ -81011,7 +80700,7 @@ function walkSchema (api, blacklist, schema, path, handlers, response) {
     if (_.isArray(schema.items)) {
       walker(schema.items, path.concat('items'));
     } else {
-      walkSchema(api, blacklist, schema.items, path.concat('items'), handlers, response);
+      walkSchema(api,blacklist, schema.items, path.concat('items'), handlers, response);
     }
   } else if (type === 'object') {
     if (!_.isUndefined(schema.additionalProperties)) {
@@ -81129,26 +80818,12 @@ function validateSchemaProperties (api, response, schema, path) {
  * @returns {object} Object containing the errors and warnings of the validation
  */
 function validateReferences (api) {
-  var inheritanceDetails = {};
   var referenceable = [];
   var references = {};
   var response = {
     errors: [],
     warnings: []
   };
-
-  function addAncestor (dsc, anc) {
-    if (!_.has(inheritanceDetails, dsc)) {
-      inheritanceDetails[dsc] = {
-        lineage: [],
-        parents: [
-          anc
-        ]
-      };
-    } else {
-      inheritanceDetails[dsc].parents.push(anc);
-    }
-  }
 
   function addReference (ref, ptr) {
     if (_.indexOf(references, ref) === -1) {
@@ -81201,20 +80876,6 @@ function validateReferences (api) {
     };
   }
 
-  function walkLineage (root, id, lineage) {
-    var details = inheritanceDetails[id || root];
-
-    if (details) {
-      _.each(details.parents, function (parent) {
-        lineage.push(parent);
-
-        if (root !== parent) {
-          walkLineage(root, parent, lineage);
-        }
-      });
-    }
-  }
-
   // Identify referenceable definitions
   _.forEach(api.resolved.definitions, function (def, name) {
     referenceable.push(JsonRefs.pathToPointer(['definitions', name]));
@@ -81242,10 +80903,9 @@ function validateReferences (api) {
     });
   });
 
-  // Identify references, build inheritance model and validate missing references for JSON References
+  // Identify references and validate circular inheritance and missing references for JSON References
   _.forEach(api.references, function (metadata, ptr) {
-    var ptrPath = JsonRefs.pathFromPointer(ptr);
-    var realPath = ptrPath.concat('$ref');
+    var realPath = JsonRefs.pathFromPointer(ptr).concat('$ref');
     var realPtr = JsonRefs.pathToPointer(realPath);
     var err;
 
@@ -81262,27 +80922,15 @@ function validateReferences (api) {
 
       response.errors.push(err);
     } else {
-      addReference(metadata.ref, realPtr);
-
-      if (ptrPath[ptrPath.length - 2] === 'allOf') {
-        addAncestor(JsonRefs.pathToPointer(ptrPath.slice(0, ptrPath.length - 2)), metadata.ref);
+      if (metadata.circular && ptr.indexOf('allOf') > -1) {
+        response.errors.push({
+          code: 'CIRCULAR_INHERITANCE',
+          message: 'Schema object inherits from itself: ' + metadata.ref,
+          path: realPath
+        });
       }
-    }
-  });
 
-
-  // Identify circular inheritance
-  _.forEach(inheritanceDetails, function (details, ptr) {
-    walkLineage(ptr, undefined, details.lineage);
-
-    if (details.lineage.length > 1 && details.lineage[details.lineage.length - 1] === ptr ||
-        details.parents[0] === ptr) {
-      response.errors.push({
-        code: 'CIRCULAR_INHERITANCE',
-        lineage: [ptr].concat(details.lineage),
-        message: 'Schema object inherits from itself: ' + ptr,
-        path: JsonRefs.pathFromPointer(ptr)
-      });
+      addReference(metadata.ref, realPtr);
     }
   });
 
@@ -81428,7 +81076,6 @@ function validateSchemaObjects (api) {
  * * Ensure that an operation has only a body or formData parameter but not both
  * * Ensure that all operation parameters are unique (in + name)
  * * Ensure that all operation ids are unique
- * * Ensure that path parameters have a name
  *
  * @param {SwaggerApi} api - The SwaggerApi object
  *
@@ -81469,15 +81116,6 @@ function validatePathsAndOperations (api) {
       // Update the normalized path
       normalizedPath = normalizedPath.replace(arg, 'arg' + index);
     });
-
-    // Identify paths with empty parameter declarations
-    if (declaredPathParameters.indexOf('') > -1) {
-      response.errors.push({
-        code: 'EMPTY_PATH_PARAMETER_DECLARATION',
-        message: 'Path parameter declaration cannot be empty: ' + path,
-        path: ['paths', path]
-      });
-    }
 
     // Idenfity paths that are functionally the same
     if (_.indexOf(metadata.paths, normalizedPath) > -1) {
