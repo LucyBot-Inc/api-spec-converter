@@ -34,7 +34,7 @@
     "async": "^1.2.1",
     "commander": "^2.8.1",
     "drafter.js": "^2.0.0-pre.1",
-    "google-discovery-to-swagger": "^0.0.10",
+    "google-discovery-to-swagger": "^0.0.13",
     "js-yaml": "^3.4.3",
     "lodash": "^3.10.1",
     "raml-parser": "^0.8.11",
