@@ -1,0 +1,56 @@
+<html>
+<head>
+  <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="/node_modules/mocha/mocha.js"></script>
+  <script src="/node_modules/chai/chai.js"></script>
+  <script src="/test/browser/fn_bind.js"></script>
+  <script src="/dist/api-spec-converter.js"></script>
+  <script src="/test/test-cases.js"></script>
+  <link rel="stylesheet" href="/node_modules/mocha/mocha.css">
+</head>
+<body>
+  <div id="mocha">
+  </div>
+  <script>mocha.setup('bdd')</script>
+  <script>
+    var success = function(golden, done) {
+      return function(err, spec) {
+        if (err) return done(err);
+        $.getJSON(golden)
+        .success(function(data) {
+          chai.expect(spec.spec).to.deep.equal(data);
+        })
+        .fail(function(xhr) {
+          chai.expect(1).to.equal(2);
+        })
+        .always(function() {
+          done();
+        })
+      }
+    }
+    var host = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '')
+    var getFilename = function(testCaseItem) {
+      var file = testCaseItem.type;
+      if (testCaseItem.directory) file += '/' + testCaseItem.directory;
+      file += '/' + testCaseItem.file;
+      return file;
+    }
+    var DISABLED = ['io_docs', 'api_blueprint', 'google', 'raml']
+    describe('Converter', function() {
+      TestCases.forEach(function(testCase) {
+        if (DISABLED.indexOf(testCase.in.type) !== -1) return;
+        it('should convert ' + testCase.in.type + ' to ' + testCase.out.type, function(done) {
+          var infile = host + '/test/input/' + getFilename(testCase.in);
+          var outfile = host + '/test/output/' + getFilename(testCase.out);
+          APISpecConverter.convert({
+            from: testCase.in.type,
+            to: testCase.out.type,
+            source: infile,
+          }, success(outfile, done));
+        })
+      })
+    });
+  </script>
+  <script src="/test/browser/run-mocha.js"></script>
+</body>
+</html>
