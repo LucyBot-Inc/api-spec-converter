@@ -12,7 +12,12 @@
           "200": {
             "description": "OK",
             "headers": {},
-            "examples": {}
+            "examples": {
+              "application/json": {
+                "id": 1,
+                "message": "Hello World!"
+              }
+            }
           }
         },
         "summary": "Retrieve a Message",
@@ -60,7 +65,22 @@
           "200": {
             "description": "OK",
             "headers": {},
-            "examples": {}
+            "examples": {
+              "application/json": [
+                {
+                  "id": 1,
+                  "message": "Hello World!"
+                },
+                {
+                  "id": 2,
+                  "message": "Time is an illusion. Lunchtime doubly so."
+                },
+                {
+                  "id": 3,
+                  "message": "So long, and thanks for all the fish."
+                }
+              ]
+            }
           }
         },
         "summary": "Retrieve all Messages",
