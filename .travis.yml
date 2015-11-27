@@ -4,4 +4,5 @@ node_js:
 # https://github.com/apiaryio/protagonist/issues/81
 #  - "stable"
   - "0.12"
-after_script: npm run test-browser-sauce
+after_script:
+  - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && npm run-script test-browser-sauce || false'
