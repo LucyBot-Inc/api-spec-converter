@@ -3,15 +3,15 @@
   "swaggerVersion": "1.2",
   "apis": [
     {
-      "path": "/pet",
+      "path": "../pet.{format}",
       "description": "Operations about pets"
     },
     {
-      "path": "/user",
+      "path": "../user.{format}",
       "description": "Operations about user"
     },
     {
-      "path": "/store",
+      "path": "../store.{format}",
       "description": "Operations about store"
     }
   ],
