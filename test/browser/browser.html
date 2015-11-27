@@ -35,7 +35,7 @@
       file += '/' + testCaseItem.file;
       return file;
     }
-    var DISABLED = ['io_docs', 'api_blueprint', 'google', 'raml']
+    var DISABLED = ['api_blueprint']
     describe('Converter', function() {
       TestCases.forEach(function(testCase) {
         if (DISABLED.indexOf(testCase.in.type) !== -1) return;
