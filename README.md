@@ -51,7 +51,7 @@ Converter.convert({
 ```
 
 ### Browser
-We're in the process of adding browser compatibility using Browserify. Currently only WADL, Swagger 1.x, and Swagger 2.0 are supported.
+We're in the process of adding browser compatibility using Browserify. Currently we support all format except `API Blueprint`.
 
 You can find the latest browser version in [dist/api-spec-converter.js](dist/api-spec-converter.js)
 
