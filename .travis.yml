@@ -1,7 +1,6 @@
 language: node_js
 node_js:
-# Protagonist doesn't build on node 4.0 see this:
-# https://github.com/apiaryio/protagonist/issues/81
-#  - "stable"
+  - "node"
+  - "4.2"
   - "0.12"
 after_script: '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && npm run test-browser-sauce || true'
