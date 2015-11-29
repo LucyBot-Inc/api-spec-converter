@@ -26,8 +26,18 @@ npm install -g api-spec-converter
 npm install --save api-spec-converter
 ```
 
+### Browser
+```
+bower install --save api-spec-converter
+```
+
 ## Usage
 
+### Options
+* `from` - source format (see types below)
+* `to` - desired format (see types below)
+* `source` - Filename or URL for the source
+ 
 ### Command Line
 ```bash
 api-spec-converter <URL|filename> --from type_1 --to type_2 > output_spec
@@ -51,9 +61,7 @@ Converter.convert({
 ```
 
 ### Browser
-We're in the process of adding browser compatibility using Browserify. Currently we support all format except `API Blueprint`.
-
-You can find the latest browser version in [dist/api-spec-converter.js](dist/api-spec-converter.js)
+**Note:** API Blueprint is not yet supported in the browser
 
 ```js
 APISpecConverter.convert(...)
