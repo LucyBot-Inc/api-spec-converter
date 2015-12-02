@@ -46,7 +46,7 @@
     "js-yaml": "^3.4.6",
     "lodash": "^3.10.1",
     "raml-parser": "^0.8.14",
-    "raml-to-swagger": "^0.0.8",
+    "raml-to-swagger": "^0.0.9",
     "request": "^2.67.0",
     "swagger-converter": "^1.0.1",
     "sway": "^0.6.0",
