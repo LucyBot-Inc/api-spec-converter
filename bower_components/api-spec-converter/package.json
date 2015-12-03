@@ -1,0 +1,68 @@
+{
+  "name": "api-spec-converter",
+  "version": "1.5.0",
+  "description": " Convert between API description formats such as Swagger and RAML",
+  "main": "index.js",
+  "scripts": {
+    "browserify": "grunt browserify",
+    "test": "mocha && grunt test-browser",
+    "test-browser-sauce": "grunt test-browser-sauce"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lucybot/api-spec-converter.git"
+  },
+  "keywords": [
+    "API",
+    "REST",
+    "Restful",
+    "convert",
+    "converter",
+    "Swagger",
+    "RAML",
+    "Blueprint",
+    "GoogleDiscovery",
+    "WADL",
+    "I/O Docs"
+  ],
+  "contributors": [
+    "Bobby Brennan <bobby@lucybot.com> (https://lucybot.com)",
+    "Ivan Goncharov <ivan.goncharov.ua@gmail.com> (http://apis.guru)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lucybot/api-spec-converter/issues"
+  },
+  "homepage": "https://github.com/lucybot/api-spec-converter",
+  "bin": {
+    "api-spec-converter": "./bin/api-spec-converter"
+  },
+  "dependencies": {
+    "apib2swagger": "^0.5.0",
+    "async": "^1.5.0",
+    "commander": "^2.9.0",
+    "drafter.js": "^2.0.1",
+    "google-discovery-to-swagger": "^0.0.14",
+    "js-yaml": "^3.4.6",
+    "lodash": "^3.10.1",
+    "raml-parser": "^0.8.14",
+    "raml-to-swagger": "^0.0.9",
+    "request": "^2.67.0",
+    "swagger-converter": "^1.0.1",
+    "sway": "^0.6.0",
+    "traverse": "^0.6.6",
+    "urijs": "^1.17.0",
+    "xml2js": "^0.4.15"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "grunt": "^0.4.5",
+    "grunt-browserify": "^4.0.1",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-connect": "^0.11.2",
+    "grunt-mocha-phantomjs": "^2.0.1",
+    "grunt-saucelabs": "^8.6.1",
+    "jquery": "^2.1.4",
+    "mocha": "^2.3.4"
+  }
+}

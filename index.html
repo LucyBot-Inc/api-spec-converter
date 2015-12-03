@@ -1,17 +1,73 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <style>
-      html, body, iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-        padding: 0px;
-        margin: 0px;
+<!DOCTYPE html><html lang="en"><head><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script><script src="api-spec-converter.js"></script><script src="bower_components/file-saver.js/FileSaver.js"></script><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"><style>body {
+  background-color: #E4F1FE;
+  padding-top: 20px;
+  font-size: 16px;
+}
+h1 .fa-exchange {
+  color: #EB9532;
+}
+h1 {
+  font-size: 50px;
+  margin-bottom: 80px;
+  margin-top: 50px;
+}
+.example-button {
+  min-width: 150px;
+}
+</style><script>var App = angular.module('App', []);
+App.controller('Body', function($scope) {
+  $scope.formats = {
+    swagger_1: 'Swagger 1.x',
+    swagger_2: 'Swagger 2.0',
+    io_docs: 'I/O Docs',
+    //api_blueprint: 'API Blueprint',
+    google: 'Google Discovery',
+    raml: 'RAML',
+    wadl: 'WADL',
+  }
+
+  $scope.examples = [
+    {from: 'swagger_1', source: 'https://api.gettyimages.com/swagger/api-docs/'},
+    {from: 'wadl', source: 'http://api.apigee.com/v1/consoles/facebook/apidescription?format=wadl'},
+    {from: 'raml', source: 'https://raw.githubusercontent.com/raml-apis/XKCD/master/api.raml'},
+    {from: 'google', source: 'https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest'},
+    //{from: 'api_blueprint', source: 'https://raw.githubusercontent.com/apiaryio/api-blueprint/master/examples/Polls%20API.md'},
+    {from: 'io_docs', source: 'https://raw.githubusercontent.com/lucybot/api-spec-converter/master/test/input/io_docs/foursquare.json'},
+  ]
+
+  $scope.setExample = function(ex) {
+    for (var key in ex) $scope.form[key] = ex[key];
+  }
+
+  $scope.form = {to: 'swagger_2'}
+
+  $scope.download = function() {
+    var blob = new Blob([$scope.spec], {type: 'application/json;charset=utf-8'});
+    saveAs(blob, 'swagger.json');
+  }
+
+  $scope.submit = function() {
+    $scope.error = null;
+    if (!$scope.form.from || !$scope.form.source) {
+      $scope.error = 'Please enter a source URL and specify it\'s format type';
+      return;
+    }
+    $scope.running = true;
+    APISpecConverter.convert($scope.form, function(err, result) {
+      if (err) {
+        $scope.error = err;
+      } else {
+        $scope.spec = JSON.stringify(result.spec, null, 2);
       }
-    </style>
-  </head>
-  <body>
-    <iframe src="http://bbrennan.info/spec-converter"></iframe>
-  </body>
-</html>
+      $scope.running = false;
+      $scope.$apply();
+    })
+  }
+})
+</script></head><body ng-app="App"><div ng-controller="Body" class="container"><div class="col-xs-12 col-md-10 col-md-offset-1"><iframe src="https://ghbtns.com/github-btn.html?user=lucybot&amp;repo=api-spec-converter&amp;type=star&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe><iframe src="https://ghbtns.com/github-btn.html?user=lucybot&amp;repo=api-spec-converter&amp;type=watch&amp;count=true&amp;size=large&amp;v=2" frameborder="0" scrolling="0" width="160px" height="30px"></iframe><h1 class="text-center"><span class="fa fa-exchange"></span><span>&nbsp;&nbsp;</span><span>API Spec Converter</span></h1><p>The goal of this project is to allow API developers to convert between different
+<a target="_blank" href="http://apiux.com/2013/04/09/rest-metadata-formats/">API definition formats</a>.
+This prevents lock-in, and allows developers to take advantage
+of tools that only support particular formats.</p><p>Currently we only support conversion to Swagger 2.0, but our plan is to support conversion
+between any two formats. The project is open sourced under the MIT license, so feel free
+to <a href="https://github.com/lucybot/api-spec-converter/" target="_blank">
+contribute on GitHub</a>!</p><h3>Examples</h3><p ng-repeat="example in examples"><a ng-click="setExample(example)" class="btn btn-sm btn-info example-button">{{ formats[example.from] }}</a></p><hr><form ng-submit="submit()"><div class="form-group"><div class="input-group"><input type="text" placeholder="Source URL" ng-model="form.source" class="form-control"><div class="input-group-btn"><button data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false" class="btn btn-default dropdown-toggle"><span>Source Format: {{ formats[form.from] || '' }}&nbsp;</span><span class="caret"></span></button><ul class="dropdown-menu dropdown-menu-right"><li ng-repeat="(format, label) in formats"><a ng-click="form.from = format" ng-bind="label"></a></li></ul></div></div></div><div class="form-group text-center"><div class="btn-toolbar"><button type="submit" ng-disabled="running" class="btn btn-lg btn-success"><span ng-show="!running"><span class="fa fa-exchange"></span><span>&nbsp;Convert!</span></span><span ng-show="running" class="fa fa-spin fa-refresh"></span></button><a ng-show="spec" ng-click="download()" class="btn btn-lg btn-success"><span class="fa fa-download"></span><span>&nbsp;Download</span></a></div></div></form><div ng-show="error" class="alert alert-danger"><p>{{ error }}</p><p><a href="https://github.com/lucybot/api-spec-converter/issues/new" target="_blank">Open an issue on GitHub</a></p></div><pre ng-show="spec">{{ spec }} </pre><hr><h4>Credits</h4><p><span>Ivan Goncharov</span><span>&nbsp;via&nbsp;</span><a href="http://apis.guru" target="_blank">APIs.guru</a></p><p><span>Bobby Brennan</span><span>&nbsp;via&nbsp;</span><a href="http://lucybot.com" target="_blank">LucyBot</a></p></div></div></body></html>

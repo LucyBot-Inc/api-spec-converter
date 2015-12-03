@@ -1,0 +1,34 @@
+{
+  "name": "api-spec-converter",
+  "homepage": "https://github.com/bobby-brennan/api-spec-converter-browser",
+  "description": "Convert between API description formats such as Swagger and RAML",
+  "main": "api-spec-converter.js",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "keywords": [
+    "API",
+    "REST",
+    "Restful",
+    "convert",
+    "converter",
+    "Swagger",
+    "RAML",
+    "Blueprint",
+    "GoogleDiscovery",
+    "WADL",
+    "I/O Docs"
+  ],
+  "dependencies": {
+    "file-saver.js": "~1.20150507.2",
+    "api-spec-converter": "~1.5.0"
+  }
+}

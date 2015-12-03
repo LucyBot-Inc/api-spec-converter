@@ -1,0 +1,41 @@
+{
+  "name": "api-spec-converter",
+  "description": "Convert between API description formats such as Swagger and RAML",
+  "main": "index.js",
+  "authors": [
+    "Bobby Brennan <bobby@lucybot.com> (https://lucybot.com)",
+    "Ivan Goncharov <ivan.goncharov.ua@gmail.com> (http://apis.guru)"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "API",
+    "REST",
+    "Restful",
+    "Swagger",
+    "RAML",
+    "Blueprint",
+    "GoogleDiscovery"
+  ],
+  "homepage": "https://github.com/lucybot/api-spec-converter",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "version": "1.5.0",
+  "_release": "1.5.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.5.0",
+    "commit": "9f4cfa80b75699c2446849feab6f4579587fc665"
+  },
+  "_source": "git://github.com/lucybot/api-spec-converter.git",
+  "_target": "~1.5.0",
+  "_originalSource": "api-spec-converter",
+  "_direct": true
+}
