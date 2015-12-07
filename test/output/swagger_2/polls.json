@@ -26,9 +26,7 @@
         },
         "summary": "Retrieve the Entry Point",
         "description": "",
-        "tags": [
-          "(no tags)"
-        ],
+        "tags": [],
         "parameters": []
       }
     },
