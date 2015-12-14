@@ -3,11 +3,6 @@
   "info": {
     "title": "XKCD"
   },
-  "host": "xkcd.com",
-  "basePath": "/",
-  "schemes": [
-    "http"
-  ],
   "securityDefinitions": {},
   "paths": {
     "/{comicId}/info.0.json": {
@@ -23,10 +18,10 @@
         },
         "parameters": [
           {
+            "type": "string",
             "name": "comicId",
             "in": "path",
-            "required": true,
-            "type": "string"
+            "required": true
           }
         ]
       }
@@ -84,5 +79,10 @@
         }
       }
     }
-  }
+  },
+  "host": "xkcd.com",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ]
 }
