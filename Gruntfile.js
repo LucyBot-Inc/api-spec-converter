@@ -46,7 +46,7 @@ module.exports = function (grunt) {
             options: {
               urls: ['http://127.0.0.1:3333/test/browser/browser.html'],
               build: process.env.CI_BUILD_NUMBER,
-              testname: 'Sauce Unit Test for bbrennan.info',
+              testname: 'Sauce Unit Test for api-spec-converter',
               browsers: [{
                 browserName: 'firefox',
                 version: '42',
