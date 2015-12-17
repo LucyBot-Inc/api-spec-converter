@@ -96,7 +96,7 @@ APISpecConverter.convert(...)
 Contributions are welcome. I'll try to respond to pull requests within 24 hours.
 
 [twitter-image]: https://img.shields.io/twitter/url/http/lucybot.github.io/api-spec-converter.svg?style=social
-[twitter-link]: https://twitter.com/intent/tweet?text=Wow:&url=http%3A%2F%2Flucybot.github.io%2Fapi-spec-converter
+[twitter-link]: https://twitter.com/intent/tweet?text=Convert+between+API+description+formats+such+as+Swagger+and+RAML:&url=http%3A%2F%2Flucybot.github.io%2Fapi-spec-converter
 [gitter-image]: https://img.shields.io/gitter/room/lucybot/api-spec-converter.svg
 [gitter-link]: https://gitter.im/lucybot/api-spec-converter
 [npm-image]: https://img.shields.io/npm/v/api-spec-converter.svg
