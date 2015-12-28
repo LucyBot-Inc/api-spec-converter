@@ -12,7 +12,8 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "search"
         },
         "parameters": [
           {
@@ -40,10 +41,10 @@
             ]
           }
         ],
-        "description": "Search over all public objects in the social graph",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/api"
-        }
+        },
+        "description": "Search over all public objects in the social graph"
       }
     },
     "/{album}": {
@@ -61,12 +62,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getalbum"
         },
-        "description": "A photo album",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/album"
-        }
+        },
+        "description": "A photo album"
       }
     },
     "/{album}/photos": {
@@ -84,18 +86,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getalbumphotos"
         },
-        "description": "The photos contained in this album",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/album"
-        }
+        },
+        "description": "The photos contained in this album"
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postalbumphotos"
         },
         "parameters": [
           {
@@ -106,10 +110,10 @@
             "description": "Photo description"
           }
         ],
-        "description": "Adds a photo to the album",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/album"
-        }
+        },
+        "description": "Adds a photo to the album"
       }
     },
     "/{album}/likes": {
@@ -127,34 +131,37 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getalbumlikes"
         },
-        "description": "The likes made on this album",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/album"
-        }
+        },
+        "description": "The likes made on this album"
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postalbumlikes"
         },
-        "description": "Likes the album",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/album"
-        }
+        },
+        "description": "Likes the album"
       },
       "delete": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "deletealbumlikes"
         },
-        "description": "Unlikes the album",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/album"
-        }
+        },
+        "description": "Unlikes the album"
       }
     },
     "/{album}/comments": {
@@ -172,18 +179,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getalbumcomments"
         },
-        "description": "The comments made on this album",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/album"
-        }
+        },
+        "description": "The comments made on this album"
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postalbumcomments"
         },
         "parameters": [
           {
@@ -194,10 +203,10 @@
             "description": "Comment text"
           }
         ],
-        "description": "Posts a comment on the album",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/album"
-        }
+        },
+        "description": "Posts a comment on the album"
       }
     },
     "/{album}/picture": {
@@ -215,7 +224,8 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getalbumpicture"
         },
         "parameters": [
           {
@@ -232,10 +242,10 @@
             ]
           }
         ],
-        "description": "The album's cover photo; the first picture uploaded to an album becomes the cover photo for the album.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/album"
-        }
+        },
+        "description": "The album's cover photo; the first picture uploaded to an album becomes the cover photo for the album."
       }
     },
     "/{application}": {
@@ -253,12 +263,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getapplication"
         },
-        "description": "An application's profile",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
-        }
+        },
+        "description": "An application's profile"
       }
     },
     "/{application}/accounts": {
@@ -276,12 +287,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getapplicationaccounts"
         },
-        "description": "Test User accounts associated with the application.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
-        }
+        },
+        "description": "Test User accounts associated with the application."
       }
     },
     "/{application}/accounts/test-users": {
@@ -299,7 +311,8 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postapplicationaccounts"
         },
         "parameters": [
           {
@@ -324,10 +337,10 @@
             "description": "A name for the test user. The specified name will also be used in the email address assigned to the test user."
           }
         ],
-        "description": "Creates a test account for the application",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
-        }
+        },
+        "description": "Creates a test account for the application"
       }
     },
     "/{application}/albums": {
@@ -345,12 +358,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getapplicationalbums"
         },
-        "description": "The photo albums this application has created.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
-        }
+        },
+        "description": "The photo albums this application has created."
       }
     },
     "/{application}/feed": {
@@ -368,18 +382,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getapplicationfeed"
         },
-        "description": "The application's wall.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
-        }
+        },
+        "description": "The application's wall."
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postapplicationfeedstatus"
         },
         "parameters": [
           {
@@ -390,10 +406,10 @@
             "description": "Status Message content"
           }
         ],
-        "description": "Posts a status message on the application's profile page",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
-        }
+        },
+        "description": "Posts a status message on the application's profile page"
       }
     },
     "/{application}/insights": {
@@ -411,12 +427,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getapplicationinsights"
         },
-        "description": "Usage metrics for this application",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
-        }
+        },
+        "description": "Usage metrics for this application"
       }
     },
     "/{application}/links": {
@@ -434,18 +451,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getapplicationlinks"
         },
-        "description": "The application's posted links.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
-        }
+        },
+        "description": "The application's posted links."
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postapplicationlinks"
         },
         "parameters": [
           {
@@ -463,10 +482,10 @@
             "description": "Link message"
           }
         ],
-        "description": "Posts a link on the application's profile page",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
-        }
+        },
+        "description": "Posts a link on the application's profile page"
       }
     },
     "/{application}/picture": {
@@ -484,7 +503,8 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getapplicationpicture"
         },
         "parameters": [
           {
@@ -501,10 +521,10 @@
             ]
           }
         ],
-        "description": "The application's logo",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
-        }
+        },
+        "description": "The application's logo"
       }
     },
     "/{application}/posts": {
@@ -522,12 +542,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getapplicationposts"
         },
-        "description": "The application's own posts.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
-        }
+        },
+        "description": "The application's own posts."
       }
     },
     "/{application}/reviews": {
@@ -545,12 +566,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getapplicationreviews"
         },
-        "description": "Reviews of this application",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
-        }
+        },
+        "description": "Reviews of this application"
       }
     },
     "/{application}/staticresources": {
@@ -568,12 +590,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getapplicationstaticresources"
         },
-        "description": "Usage stats about the canvas application's static resources, such as javascript and CSS, and which ones are being flushed to browsers early.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
-        }
+        },
+        "description": "Usage stats about the canvas application's static resources, such as javascript and CSS, and which ones are being flushed to browsers early."
       }
     },
     "/{application}/statuses": {
@@ -591,18 +614,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getapplicationstatuses"
         },
-        "description": "The application's status updates",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
-        }
+        },
+        "description": "The application's status updates"
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postapplicationstatuses"
         },
         "parameters": [
           {
@@ -613,10 +638,10 @@
             "description": "Status Message content"
           }
         ],
-        "description": "Posts a status message on the application's profile page",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
-        }
+        },
+        "description": "Posts a status message on the application's profile page"
       }
     },
     "/{application}/subscriptions": {
@@ -634,18 +659,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getapplicationsubscriptions"
         },
-        "description": "All of the subscriptions this application has for real-time notifications.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
-        }
+        },
+        "description": "All of the subscriptions this application has for real-time notifications."
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postapplicationsubscriptions"
         },
         "parameters": [
           {
@@ -682,16 +709,17 @@
             "description": "Token sent in the verification request."
           }
         ],
-        "description": "Adds a real-time notification subscription for this application.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
-        }
+        },
+        "description": "Adds a real-time notification subscription for this application."
       },
       "delete": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "deleteapplicationsubscriptions"
         },
         "parameters": [
           {
@@ -707,10 +735,10 @@
             ]
           }
         ],
-        "description": "Deletes a real-time notification subscription for this application.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
-        }
+        },
+        "description": "Deletes a real-time notification subscription for this application."
       }
     },
     "/{application}/tagged": {
@@ -728,12 +756,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getapplicationtagged"
         },
-        "description": "The photos, videos, and posts in which this application has been tagged.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
-        }
+        },
+        "description": "The photos, videos, and posts in which this application has been tagged."
       }
     },
     "/{application}/translations": {
@@ -751,18 +780,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getapplicationtranslations"
         },
-        "description": "The translated strings for this application.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
-        }
+        },
+        "description": "The translated strings for this application."
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postapplicationtranslations"
         },
         "parameters": [
           {
@@ -773,16 +804,17 @@
             "description": "A JSON-encoded array of strings to translate. Each element of the string array is an object, with text storing the actual string, description storing the description of the text."
           }
         ],
-        "description": "Uploads translated strings for this application.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
-        }
+        },
+        "description": "Uploads translated strings for this application."
       },
       "delete": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "deleteapplicationtranslations"
         },
         "parameters": [
           {
@@ -793,10 +825,10 @@
             "description": "An array of native hashes. The native hash is a unique identifier of the native string and a description and is generated by the Translations application."
           }
         ],
-        "description": "Deletes a translation string for this application.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
-        }
+        },
+        "description": "Deletes a translation string for this application."
       }
     },
     "/{application}/scores": {
@@ -814,23 +846,25 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getapplicationscores"
         },
-        "description": "Scores for the user and their friends.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
-        }
+        },
+        "description": "Scores for the user and their friends."
       },
       "delete": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "deleteapplicationscores"
         },
-        "description": "Deletes all the scores for the application.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
-        }
+        },
+        "description": "Deletes all the scores for the application."
       }
     },
     "/{application}/achievements": {
@@ -848,7 +882,8 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postapplicationachievements"
         },
         "parameters": [
           {
@@ -866,16 +901,17 @@
             "description": "Order of this achievement as it shows up in the achievement stories UI (low to high). For example a display order of 100 will be displayed in the UI before 200. We use this value to surface achievements according to the order the developer has specified. Please make sure this value is unique and increments in the correct order for your achievements."
           }
         ],
-        "description": "Registers an achievement for the application",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
-        }
+        },
+        "description": "Registers an achievement for the application"
       },
       "delete": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "deleteapplicationachievements"
         },
         "parameters": [
           {
@@ -886,10 +922,10 @@
             "description": "Unique URL to the achievement."
           }
         ],
-        "description": "Unregisters an achievement for the application",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/application"
-        }
+        },
+        "description": "Unregisters an achievement for the application"
       }
     },
     "/{checkin}": {
@@ -906,12 +942,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getcheckin"
         },
-        "description": "Represents a single visit by a user to a location",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/checkin"
-        }
+        },
+        "description": "Represents a single visit by a user to a location"
       }
     },
     "/{checkin}/comments": {
@@ -928,18 +965,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getcheckincomments"
         },
-        "description": "All of the comments on this checkin.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/checkin"
-        }
+        },
+        "description": "All of the comments on this checkin."
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postcheckincomments"
         },
         "parameters": [
           {
@@ -950,10 +989,10 @@
             "description": "Comment text"
           }
         ],
-        "description": "Posts a comment to this checkin.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/checkin"
-        }
+        },
+        "description": "Posts a comment to this checkin."
       }
     },
     "/{checkin}/likes": {
@@ -970,34 +1009,37 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getcheckinlikes"
         },
-        "description": "Users who like this checkin.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/checkin"
-        }
+        },
+        "description": "Users who like this checkin."
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postcheckinlikes"
         },
-        "description": "Likes this checkin.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/checkin"
-        }
+        },
+        "description": "Likes this checkin."
       },
       "delete": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "deletecheckinlikes"
         },
-        "description": "Unlikes this checkin.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/checkin"
-        }
+        },
+        "description": "Unlikes this checkin."
       }
     },
     "/{comment}": {
@@ -1015,23 +1057,25 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getcomment"
         },
-        "description": "Returns a comment",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/comment"
-        }
+        },
+        "description": "Returns a comment"
       },
       "delete": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "deletecomment"
         },
-        "description": "Deletes a comment",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/comment"
-        }
+        },
+        "description": "Deletes a comment"
       }
     },
     "/{comment}/likes": {
@@ -1049,34 +1093,37 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getcommentlikes"
         },
-        "description": "All the likes on this comment",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/comment"
-        }
+        },
+        "description": "All the likes on this comment"
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postcommentlikes"
         },
-        "description": "Likes the comment",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/comment"
-        }
+        },
+        "description": "Likes the comment"
       },
       "delete": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "deletecommentlikes"
         },
-        "description": "Unlikes the comment",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/comment"
-        }
+        },
+        "description": "Unlikes the comment"
       }
     },
     "/{event}": {
@@ -1094,12 +1141,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getevent"
         },
-        "description": "Specifies information about an event, including the location, event name, and which invitees plan to attend.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/event"
-        }
+        },
+        "description": "Specifies information about an event, including the location, event name, and which invitees plan to attend."
       }
     },
     "/{event}/feed": {
@@ -1117,18 +1165,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "geteventfeed"
         },
-        "description": "This event's wall",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/event"
-        }
+        },
+        "description": "This event's wall"
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "posteventfeedstatus"
         },
         "parameters": [
           {
@@ -1139,10 +1189,10 @@
             "description": "Status Message content"
           }
         ],
-        "description": "Posts a status message on this event's wall",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/event"
-        }
+        },
+        "description": "Posts a status message on this event's wall"
       }
     },
     "/{event}/noreply": {
@@ -1160,12 +1210,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "geteventnoreply"
         },
-        "description": "All of the users who have been not yet responded to their invitation to this event",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/event"
-        }
+        },
+        "description": "All of the users who have been not yet responded to their invitation to this event"
       }
     },
     "/{event}/maybe": {
@@ -1183,23 +1234,25 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "geteventmaybe"
         },
-        "description": "All of the users who have been responded \"Maybe\" to their invitation to this event",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/event"
-        }
+        },
+        "description": "All of the users who have been responded \"Maybe\" to their invitation to this event"
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "posteventmaybe"
         },
-        "description": "RSVPs the user as a 'maybe' for the event",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/event"
-        }
+        },
+        "description": "RSVPs the user as a 'maybe' for the event"
       }
     },
     "/{event}/invited": {
@@ -1217,12 +1270,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "geteventinvited"
         },
-        "description": "All of the users who have been invited to this event",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/event"
-        }
+        },
+        "description": "All of the users who have been invited to this event"
       }
     },
     "/{event}/attending": {
@@ -1240,23 +1294,25 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "geteventattending"
         },
-        "description": "All of the users who are attending this event",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/event"
-        }
+        },
+        "description": "All of the users who are attending this event"
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "posteventattending"
         },
-        "description": "RSVPs the user as 'attending' for the event",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/event"
-        }
+        },
+        "description": "RSVPs the user as 'attending' for the event"
       }
     },
     "/{event}/declined": {
@@ -1274,23 +1330,25 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "geteventdeclined"
         },
-        "description": "All of the users who declined their invitation to this event",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/event"
-        }
+        },
+        "description": "All of the users who declined their invitation to this event"
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "posteventdeclined"
         },
-        "description": "RSVPs the user as 'declined' for the event",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/event"
-        }
+        },
+        "description": "RSVPs the user as 'declined' for the event"
       }
     },
     "/{event}/picture": {
@@ -1308,7 +1366,8 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "geteventpicture"
         },
         "parameters": [
           {
@@ -1325,10 +1384,10 @@
             ]
           }
         ],
-        "description": "The event's profile picture",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/event"
-        }
+        },
+        "description": "The event's profile picture"
       }
     },
     "/{friendlist}": {
@@ -1346,23 +1405,25 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getfriendlist"
         },
-        "description": "A Facebook friend list. This object represents the list itself and not the members of the list.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/friendlist"
-        }
+        },
+        "description": "A Facebook friend list. This object represents the list itself and not the members of the list."
       },
       "delete": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "deletefriendlist"
         },
-        "description": "Deletes the FriendList.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/friendlist"
-        }
+        },
+        "description": "Deletes the FriendList."
       }
     },
     "/{friendlist}/members": {
@@ -1380,12 +1441,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getfriendlistmembers"
         },
-        "description": "All of the users who are members of this list.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/friendlist"
-        }
+        },
+        "description": "All of the users who are members of this list."
       }
     },
     "/{friendlist}/members/{user}": {
@@ -1411,23 +1473,25 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postfriendlistmembersuser"
         },
-        "description": "Adds a user to the friend list",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/friendlist"
-        }
+        },
+        "description": "Adds a user to the friend list"
       },
       "delete": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "deletefriendlistmembersuser"
         },
-        "description": "Removes a user from the friend list",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/friendlist"
-        }
+        },
+        "description": "Removes a user from the friend list"
       }
     },
     "/{group}": {
@@ -1445,12 +1509,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getgroup"
         },
-        "description": "A Facebook group",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/group"
-        }
+        },
+        "description": "A Facebook group"
       }
     },
     "/{group}/feed": {
@@ -1468,18 +1533,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getgroupfeed"
         },
-        "description": "This group's wall",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/group"
-        }
+        },
+        "description": "This group's wall"
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postgroupfeedstatus"
         },
         "parameters": [
           {
@@ -1490,10 +1557,10 @@
             "description": "Status Message content"
           }
         ],
-        "description": "Posts a status message on this group's wall",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/group"
-        }
+        },
+        "description": "Posts a status message on this group's wall"
       }
     },
     "/{group}/members": {
@@ -1511,12 +1578,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getgroupmembers"
         },
-        "description": "All of the users who are members of this group",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/group"
-        }
+        },
+        "description": "All of the users who are members of this group"
       }
     },
     "/{group}/picture": {
@@ -1534,7 +1602,8 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getgrouppicture"
         },
         "parameters": [
           {
@@ -1551,10 +1620,10 @@
             ]
           }
         ],
-        "description": "The profile picture of this group",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/group"
-        }
+        },
+        "description": "The profile picture of this group"
       }
     },
     "/{group}/docs": {
@@ -1572,12 +1641,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getgroupdocs"
         },
-        "description": "The docs in this group",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/group"
-        }
+        },
+        "description": "The docs in this group"
       }
     },
     "/{link}": {
@@ -1595,12 +1665,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getlink"
         },
-        "description": "A link shared on a user's wall",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/link"
-        }
+        },
+        "description": "A link shared on a user's wall"
       }
     },
     "/{link}/comments": {
@@ -1618,18 +1689,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getlinkcomments"
         },
-        "description": "All of the comments on this link.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/link"
-        }
+        },
+        "description": "All of the comments on this link."
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postlinkcomments"
         },
         "parameters": [
           {
@@ -1640,10 +1713,10 @@
             "description": "Comment text"
           }
         ],
-        "description": "Posts a comment to this link.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/link"
-        }
+        },
+        "description": "Posts a comment to this link."
       }
     },
     "/{link}/likes": {
@@ -1661,34 +1734,37 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getlinklikes"
         },
-        "description": "Users who like this link.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/link"
-        }
+        },
+        "description": "Users who like this link."
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postlinklikes"
         },
-        "description": "Likes this link.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/link"
-        }
+        },
+        "description": "Likes this link."
       },
       "delete": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "deletelinklikes"
         },
-        "description": "Unlikes this link.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/link"
-        }
+        },
+        "description": "Unlikes this link."
       }
     },
     "/{note}": {
@@ -1706,12 +1782,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getnote"
         },
-        "description": "A Facebook note",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/note"
-        }
+        },
+        "description": "A Facebook note"
       }
     },
     "/{note}/comments": {
@@ -1729,18 +1806,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getnotecomments"
         },
-        "description": "All of the comments on this note.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/note"
-        }
+        },
+        "description": "All of the comments on this note."
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postnotecomments"
         },
         "parameters": [
           {
@@ -1751,10 +1830,10 @@
             "description": "Comment text"
           }
         ],
-        "description": "Posts a comment to this note.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/note"
-        }
+        },
+        "description": "Posts a comment to this note."
       }
     },
     "/{note}/likes": {
@@ -1772,34 +1851,37 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getnotelikes"
         },
-        "description": "Users who like this note.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/note"
-        }
+        },
+        "description": "Users who like this note."
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postnotelikes"
         },
-        "description": "Likes this note.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/note"
-        }
+        },
+        "description": "Likes this note."
       },
       "delete": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "deletenotelikes"
         },
-        "description": "Unlikes this note.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/note"
-        }
+        },
+        "description": "Unlikes this note."
       }
     },
     "/{page}": {
@@ -1817,12 +1899,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getpage"
         },
-        "description": "Returns a Page",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
-        }
+        },
+        "description": "Returns a Page"
       }
     },
     "/{page}/feed": {
@@ -1840,18 +1923,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getpagefeed"
         },
-        "description": "This page's wall",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
-        }
+        },
+        "description": "This page's wall"
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postpagefeedstatus"
         },
         "parameters": [
           {
@@ -1862,10 +1947,10 @@
             "description": "Status Message content"
           }
         ],
-        "description": "Posts a status message on this page's wall",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
-        }
+        },
+        "description": "Posts a status message on this page's wall"
       }
     },
     "/{page}/picture": {
@@ -1883,7 +1968,8 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getpagepicture"
         },
         "parameters": [
           {
@@ -1900,10 +1986,10 @@
             ]
           }
         ],
-        "description": "The page's profile picture",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
-        }
+        },
+        "description": "The page's profile picture"
       }
     },
     "/{page}/settings": {
@@ -1921,18 +2007,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getpagesettings"
         },
-        "description": "The page's post permission settings",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
-        }
+        },
+        "description": "The page's post permission settings"
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postpagesettings"
         },
         "parameters": [
           {
@@ -1955,10 +2043,10 @@
             "type": "boolean"
           }
         ],
-        "description": "The page's post permission settings",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
-        }
+        },
+        "description": "The page's post permission settings"
       }
     },
     "/{page}/tagged": {
@@ -1976,12 +2064,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getpagetagged"
         },
-        "description": "The photos, videos, and posts in which this page has been tagged",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
-        }
+        },
+        "description": "The photos, videos, and posts in which this page has been tagged"
       }
     },
     "/{page}/links": {
@@ -1999,18 +2088,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getpagelinks"
         },
-        "description": "The page's posted links",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
-        }
+        },
+        "description": "The page's posted links"
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postpagelinks"
         },
         "parameters": [
           {
@@ -2028,10 +2119,10 @@
             "description": "Link message"
           }
         ],
-        "description": "Posts a link on the page",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
-        }
+        },
+        "description": "Posts a link on the page"
       }
     },
     "/{page}/photos": {
@@ -2049,18 +2140,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getpagephotos"
         },
-        "description": "The photos contained on this page",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
-        }
+        },
+        "description": "The photos contained on this page"
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postpagephotos"
         },
         "parameters": [
           {
@@ -2071,10 +2164,10 @@
             "description": "Photo description"
           }
         ],
-        "description": "Adds a photo to the page",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
-        }
+        },
+        "description": "Adds a photo to the page"
       }
     },
     "/{page}/groups": {
@@ -2092,12 +2185,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getpagegroups"
         },
-        "description": "The groups this page is a member of",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
-        }
+        },
+        "description": "The groups this page is a member of"
       }
     },
     "/{page}/albums": {
@@ -2115,12 +2209,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getpagealbums"
         },
-        "description": "The photo albums this Page has uploaded",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
-        }
+        },
+        "description": "The photo albums this Page has uploaded"
       }
     },
     "/{page}/statuses": {
@@ -2138,18 +2233,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getpagestatuses"
         },
-        "description": "The page's status updates",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
-        }
+        },
+        "description": "The page's status updates"
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postpagestatuses"
         },
         "parameters": [
           {
@@ -2160,10 +2257,10 @@
             "description": "Status Message content"
           }
         ],
-        "description": "Posts a status message on the page",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
-        }
+        },
+        "description": "Posts a status message on the page"
       }
     },
     "/{page}/videos": {
@@ -2181,18 +2278,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getpagevideos"
         },
-        "description": "The videos contained on this page",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
-        }
+        },
+        "description": "The videos contained on this page"
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postpagevideos"
         },
         "parameters": [
           {
@@ -2210,10 +2309,10 @@
             "description": "Video description"
           }
         ],
-        "description": "Publishes a video to the page",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
-        }
+        },
+        "description": "Publishes a video to the page"
       }
     },
     "/{page}/notes": {
@@ -2231,18 +2330,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getpagenotes"
         },
-        "description": "The notes contained on this page",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
-        }
+        },
+        "description": "The notes contained on this page"
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postpagenotes"
         },
         "parameters": [
           {
@@ -2260,10 +2361,10 @@
             "description": "Note content"
           }
         ],
-        "description": "Creates a note on the page",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
-        }
+        },
+        "description": "Creates a note on the page"
       }
     },
     "/{page}/posts": {
@@ -2281,12 +2382,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getpageposts"
         },
-        "description": "The page's own posts",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
-        }
+        },
+        "description": "The page's own posts"
       }
     },
     "/{page}/events": {
@@ -2304,18 +2406,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getpageevents"
         },
-        "description": "The events the Page is attending",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
-        }
+        },
+        "description": "The events the Page is attending"
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postpageevents"
         },
         "parameters": [
           {
@@ -2371,10 +2475,10 @@
             ]
           }
         ],
-        "description": "Creates an event for the page",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
-        }
+        },
+        "description": "Creates an event for the page"
       }
     },
     "/{page}/checkins": {
@@ -2392,12 +2496,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getpagecheckins"
         },
-        "description": "Checkins made to this Place Page by the current user, and friends of the current user",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
-        }
+        },
+        "description": "Checkins made to this Place Page by the current user, and friends of the current user"
       }
     },
     "/{page}/tabs": {
@@ -2415,18 +2520,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getpagetabs"
         },
-        "description": "The page's profile tabs",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
-        }
+        },
+        "description": "The page's profile tabs"
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postpagetabs"
         },
         "parameters": [
           {
@@ -2437,10 +2544,10 @@
             "description": "ID of the application for which to install the tab"
           }
         ],
-        "description": "Installs a profile tab at the end of the current list of installed tabs for the page",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
-        }
+        },
+        "description": "Installs a profile tab at the end of the current list of installed tabs for the page"
       }
     },
     "/{page}/tabs/{tab}": {
@@ -2465,7 +2572,8 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postpagetabstab"
         },
         "parameters": [
           {
@@ -2490,21 +2598,22 @@
             "description": "Set this tab as the default landing tab for users who have not liked and are not admins of the Page. If provided, value must be true."
           }
         ],
-        "description": "Updates an installed profile tab for a page",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
-        }
+        },
+        "description": "Updates an installed profile tab for a page"
       },
       "delete": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "deletepagetabs"
         },
-        "description": "Deletes an installed profile tab (where is_permanent is not true) for a page",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
-        }
+        },
+        "description": "Deletes an installed profile tab (where is_permanent is not true) for a page"
       }
     },
     "/{page}/admins": {
@@ -2522,12 +2631,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getpageadmins"
         },
-        "description": "A list of the Page's admins.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
-        }
+        },
+        "description": "A list of the Page's admins."
       }
     },
     "/{page}/blocked": {
@@ -2545,18 +2655,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getpageblocked"
         },
-        "description": "A list of the users blocked from the page.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
-        }
+        },
+        "description": "A list of the users blocked from the page."
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postpageblocked"
         },
         "parameters": [
           {
@@ -2567,16 +2679,17 @@
             "description": "Comma-separated list of the user IDs you wish to block"
           }
         ],
-        "description": "Blocks a user (or users) from posting content to the page",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
-        }
+        },
+        "description": "Blocks a user (or users) from posting content to the page"
       },
       "delete": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "deletepageblocked"
         },
         "parameters": [
           {
@@ -2587,10 +2700,10 @@
             "description": "Comma-separated list of the user IDs you wish to unblock"
           }
         ],
-        "description": "Unblocks a user (or users) for the page",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
-        }
+        },
+        "description": "Unblocks a user (or users) for the page"
       }
     },
     "/{page}/blocked/{user}": {
@@ -2615,12 +2728,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getpageblockeduser"
         },
-        "description": "Checks if a user is blocked from the page",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/page"
-        }
+        },
+        "description": "Checks if a user is blocked from the page"
       }
     },
     "/{photo}": {
@@ -2638,12 +2752,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getphoto"
         },
-        "description": "An individual photo",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/photo"
-        }
+        },
+        "description": "An individual photo"
       }
     },
     "/{photo}/comments": {
@@ -2661,18 +2776,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getphotocomments"
         },
-        "description": "All of the comments on this photo.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/photo"
-        }
+        },
+        "description": "All of the comments on this photo."
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postphotocomments"
         },
         "parameters": [
           {
@@ -2683,10 +2800,10 @@
             "description": "Comment text"
           }
         ],
-        "description": "Posts a comment to this photo.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/photo"
-        }
+        },
+        "description": "Posts a comment to this photo."
       }
     },
     "/{photo}/likes": {
@@ -2704,34 +2821,37 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getphotolikes"
         },
-        "description": "Users who like this photo.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/photo"
-        }
+        },
+        "description": "Users who like this photo."
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postphotolikes"
         },
-        "description": "Likes this photo.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/photo"
-        }
+        },
+        "description": "Likes this photo."
       },
       "delete": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "deletephotolikes"
         },
-        "description": "Unlikes this photo.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/photo"
-        }
+        },
+        "description": "Unlikes this photo."
       }
     },
     "/{photo}/picture": {
@@ -2749,12 +2869,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getphotopicture"
         },
-        "description": "The album-sized view of the photo",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/photo"
-        }
+        },
+        "description": "The album-sized view of the photo"
       }
     },
     "/{photo}/tags": {
@@ -2772,18 +2893,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getphototags"
         },
-        "description": "Tags for this photo.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/photo"
-        }
+        },
+        "description": "Tags for this photo."
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postphototags"
         },
         "parameters": [
           {
@@ -2808,10 +2931,10 @@
             "description": "y coordinate of tag, as a percentage offset from the top edge of the picture"
           }
         ],
-        "description": "Creates a tag on this photo.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/photo"
-        }
+        },
+        "description": "Creates a tag on this photo."
       }
     },
     "/{photo}/tags/{user}": {
@@ -2836,7 +2959,8 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postphototagsuser"
         },
         "parameters": [
           {
@@ -2854,10 +2978,10 @@
             "description": "y coordinate of tag, as a percentage offset from the top edge of the picture"
           }
         ],
-        "description": "Updates the position of a tag on this photo for the user.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/photo"
-        }
+        },
+        "description": "Updates the position of a tag on this photo for the user."
       }
     },
     "/{post}": {
@@ -2875,12 +2999,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getpost"
         },
-        "description": "A Facebook post",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/post"
-        }
+        },
+        "description": "A Facebook post"
       }
     },
     "/{post}/comments": {
@@ -2898,18 +3023,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getpostcomments"
         },
-        "description": "All of the comments on this post.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/post"
-        }
+        },
+        "description": "All of the comments on this post."
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postpostcomments"
         },
         "parameters": [
           {
@@ -2920,10 +3047,10 @@
             "description": "Comment text"
           }
         ],
-        "description": "Posts a comment to this post.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/post"
-        }
+        },
+        "description": "Posts a comment to this post."
       }
     },
     "/{post}/likes": {
@@ -2941,34 +3068,37 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getpostlikes"
         },
-        "description": "Users who like this post.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/post"
-        }
+        },
+        "description": "Users who like this post."
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postpostlikes"
         },
-        "description": "Likes this post.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/post"
-        }
+        },
+        "description": "Likes this post."
       },
       "delete": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "deletepostlikes"
         },
-        "description": "Unlikes this post.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/post"
-        }
+        },
+        "description": "Unlikes this post."
       }
     },
     "/{status}": {
@@ -2986,12 +3116,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getstatus"
         },
-        "description": "A Facebook status",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/status"
-        }
+        },
+        "description": "A Facebook status"
       }
     },
     "/{status}/comments": {
@@ -3009,18 +3140,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getstatuscomments"
         },
-        "description": "All of the comments on this status.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/status"
-        }
+        },
+        "description": "All of the comments on this status."
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "poststatuscomments"
         },
         "parameters": [
           {
@@ -3031,10 +3164,10 @@
             "description": "Comment text"
           }
         ],
-        "description": "Posts a comment to this status.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/status"
-        }
+        },
+        "description": "Posts a comment to this status."
       }
     },
     "/{status}/likes": {
@@ -3052,34 +3185,37 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getstatuslikes"
         },
-        "description": "Users who like this status.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/status"
-        }
+        },
+        "description": "Users who like this status."
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "poststatuslikes"
         },
-        "description": "Likes this status.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/status"
-        }
+        },
+        "description": "Likes this status."
       },
       "delete": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "deletestatuslikes"
         },
-        "description": "Unlikes this status.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/status"
-        }
+        },
+        "description": "Unlikes this status."
       }
     },
     "/{user}": {
@@ -3097,7 +3233,8 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getuser"
         },
         "parameters": [
           {
@@ -3108,10 +3245,10 @@
             "description": "The fields to return"
           }
         ],
-        "description": "A user profile.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "A user profile."
       }
     },
     "/{user}/accounts": {
@@ -3129,12 +3266,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getuseraccounts"
         },
-        "description": "The Facebook apps and pages owned by the current user",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "The Facebook apps and pages owned by the current user"
       }
     },
     "/{user}/achievements": {
@@ -3152,7 +3290,8 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postuserachievements"
         },
         "parameters": [
           {
@@ -3163,16 +3302,17 @@
             "description": "The unique URL of the achievement which the user achieved."
           }
         ],
-        "description": "Posts an achievement for the user",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "Posts an achievement for the user"
       },
       "delete": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "deleteuserachievements"
         },
         "parameters": [
           {
@@ -3183,10 +3323,10 @@
             "description": "The unique URL of the achievement you wish to delete."
           }
         ],
-        "description": "Deletes an achievement for the user",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "Deletes an achievement for the user"
       }
     },
     "/{user}/activities": {
@@ -3204,12 +3344,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getuseractivities"
         },
-        "description": "The activities listed on the user's profile",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "The activities listed on the user's profile"
       }
     },
     "/{user}/albums": {
@@ -3227,18 +3368,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getuseralbums"
         },
-        "description": "The photo albums this user has created",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "The photo albums this user has created"
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postuseralbums"
         },
         "parameters": [
           {
@@ -3263,10 +3406,10 @@
             "description": "Privacy settings for the Album. Format: A JSON-encoded object that defines the privacy setting for the album, for example: {\"value\":\"SELF\"}. Only the user can specify the privacy settings for the post."
           }
         ],
-        "description": "Creates an album for the user",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "Creates an album for the user"
       }
     },
     "/{user}/apprequests": {
@@ -3284,12 +3427,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getuserapprequests"
         },
-        "description": "The user's outstanding requests from an app.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "The user's outstanding requests from an app."
       }
     },
     "/{user}/books": {
@@ -3307,12 +3451,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getuserbooks"
         },
-        "description": "The books listed on the user's profile.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "The books listed on the user's profile."
       }
     },
     "/{user}/checkins": {
@@ -3330,18 +3475,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getusercheckins"
         },
-        "description": "The places that the user has checked-into",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/api#places"
-        }
+        },
+        "description": "The places that the user has checked-into"
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postusercheckins"
         },
         "parameters": [
           {
@@ -3387,10 +3534,10 @@
             "description": "Checkin picture"
           }
         ],
-        "description": "Checks the user into a place",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/api#places"
-        }
+        },
+        "description": "Checks the user into a place"
       }
     },
     "/{user}/events": {
@@ -3408,18 +3555,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getuserevents"
         },
-        "description": "The events this user is attending.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "The events this user is attending."
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postuserevents"
         },
         "parameters": [
           {
@@ -3475,10 +3624,10 @@
             ]
           }
         ],
-        "description": "Creates an event for the user",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "Creates an event for the user"
       }
     },
     "/{user}/feed": {
@@ -3496,18 +3645,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getuserfeed"
         },
-        "description": "This user's wall",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "This user's wall"
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postuserfeedstatus"
         },
         "parameters": [
           {
@@ -3518,10 +3669,10 @@
             "description": "Status Message content"
           }
         ],
-        "description": "Posts a status message on this user's wall",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "Posts a status message on this user's wall"
       }
     },
     "/{user}/friendlists": {
@@ -3539,7 +3690,8 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postuserfriendlists"
         },
         "parameters": [
           {
@@ -3550,10 +3702,10 @@
             "description": "Friend list name"
           }
         ],
-        "description": "Creates a FriendList for the user",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "Creates a FriendList for the user"
       }
     },
     "/{user}/friends": {
@@ -3571,12 +3723,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getuserfriends"
         },
-        "description": "The user's friends",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "The user's friends"
       }
     },
     "/{user}/friends/{friend}": {
@@ -3601,12 +3754,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getuserfriendsfriend"
         },
-        "description": "Checks if the given user is a friend of the current user",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "Checks if the given user is a friend of the current user"
       }
     },
     "/{user}/games": {
@@ -3624,12 +3778,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getusergames"
         },
-        "description": "Games the user has added to the Arts and Entertainment section of their profile.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "Games the user has added to the Arts and Entertainment section of their profile."
       }
     },
     "/{user}/groups": {
@@ -3647,12 +3802,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getusergroups"
         },
-        "description": "The Groups that the user belongs to.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "The Groups that the user belongs to."
       }
     },
     "/{user}/home": {
@@ -3670,12 +3826,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getusersearch"
         },
-        "description": "The user's news feed",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "The user's news feed"
       }
     },
     "/{user}/inbox": {
@@ -3693,12 +3850,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getuserinbox"
         },
-        "description": "The threads in this user's inbox.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "The threads in this user's inbox."
       }
     },
     "/{user}/interests": {
@@ -3716,12 +3874,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getuserinterests"
         },
-        "description": "The interests listed on the user's profile",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "The interests listed on the user's profile"
       }
     },
     "/{user}/likes": {
@@ -3739,12 +3898,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getuserlikes"
         },
-        "description": "All the pages this user has liked.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "All the pages this user has liked."
       }
     },
     "/{user}/likes/{page}": {
@@ -3769,12 +3929,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getuserlikespage"
         },
-        "description": "Checks if the user likes the given page.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "Checks if the user likes the given page."
       }
     },
     "/{user}/links": {
@@ -3792,18 +3953,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getuserlinks"
         },
-        "description": "The user's posted links.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "The user's posted links."
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postuserlinks"
         },
         "parameters": [
           {
@@ -3821,10 +3984,10 @@
             "description": "Link message"
           }
         ],
-        "description": "Posts a link on the user's profile page",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "Posts a link on the user's profile page"
       }
     },
     "/{user}/movies": {
@@ -3842,12 +4005,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getusermovies"
         },
-        "description": "The movies listed on the user's profile",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "The movies listed on the user's profile"
       }
     },
     "/{user}/music": {
@@ -3865,12 +4029,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getusermusic"
         },
-        "description": "The music listed on the user's profile",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "The music listed on the user's profile"
       }
     },
     "/{user}/notes": {
@@ -3888,18 +4053,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getusernotes"
         },
-        "description": "The user's notes",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "The user's notes"
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postusernotes"
         },
         "parameters": [
           {
@@ -3917,10 +4084,10 @@
             "description": "Note content"
           }
         ],
-        "description": "Creates a note on behalf of the user",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "Creates a note on behalf of the user"
       }
     },
     "/{user}/notifications": {
@@ -3938,7 +4105,8 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getusernotifications"
         },
         "parameters": [
           {
@@ -3950,10 +4118,10 @@
             "description": "Enables you to see notifications that the user has already read in addition to the ones which are unread"
           }
         ],
-        "description": "The user's notifications",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "The user's notifications"
       }
     },
     "/{user}/outbox": {
@@ -3971,12 +4139,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getuseroutbox"
         },
-        "description": "The messages in this user's outbox.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "The messages in this user's outbox."
       }
     },
     "/{user}/payments": {
@@ -3994,12 +4163,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getuserpayments"
         },
-        "description": "The transactions the user placed with an application.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "The transactions the user placed with an application."
       }
     },
     "/{user}/permissions": {
@@ -4017,18 +4187,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getuserpermissions"
         },
-        "description": "The permissions that user has granted the application.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "The permissions that user has granted the application."
       },
       "delete": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "deleteuserpermissions"
         },
         "parameters": [
           {
@@ -4039,10 +4211,10 @@
             "description": "The permission you wish to revoke. If you don't specify a permission then this will de-authorize the application completely."
           }
         ],
-        "description": "De-authorizes an application or revokes a specific extended permissions on behalf of a user",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "De-authorizes an application or revokes a specific extended permissions on behalf of a user"
       }
     },
     "/{user}/photos": {
@@ -4060,18 +4232,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getuserphotos"
         },
-        "description": "The photos the user is tagged in",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "The photos the user is tagged in"
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postuserphotos"
         },
         "parameters": [
           {
@@ -4082,10 +4256,10 @@
             "description": "Photo description"
           }
         ],
-        "description": "Posts a photo to the user's Wall",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "Posts a photo to the user's Wall"
       }
     },
     "/{user}/picture": {
@@ -4103,7 +4277,8 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getuserpicture"
         },
         "parameters": [
           {
@@ -4120,10 +4295,10 @@
             ]
           }
         ],
-        "description": "The user's profile picture",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "The user's profile picture"
       }
     },
     "/{user}/pokes": {
@@ -4141,12 +4316,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getuserpokes"
         },
-        "description": "The user's pokes",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "The user's pokes"
       }
     },
     "/{user}/posts": {
@@ -4164,18 +4340,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getuserposts"
         },
-        "description": "The user's posts",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "The user's posts"
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postuserposts"
         },
         "parameters": [
           {
@@ -4242,10 +4420,10 @@
             "description": "Facebook ID for an existing picture in the User's photo albums to use as the thumbnail image. The User must be the owner of the photo, and the photo cannot be part of a message attachment."
           }
         ],
-        "description": "Creates a post on behalf of the user",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "Creates a post on behalf of the user"
       }
     },
     "/{user}/scores": {
@@ -4263,18 +4441,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getuserscores"
         },
-        "description": "The scores for the user",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "The scores for the user"
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postuserscores"
         },
         "parameters": [
           {
@@ -4285,10 +4465,10 @@
             "description": "Numeric score with value < 0."
           }
         ],
-        "description": "Posts a score for the user",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "Posts a score for the user"
       }
     },
     "/{user}/statuses": {
@@ -4306,18 +4486,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getuserstatuses"
         },
-        "description": "The user's status updates",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "The user's status updates"
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postuserstatuses"
         },
         "parameters": [
           {
@@ -4328,10 +4510,10 @@
             "description": "Status Message content"
           }
         ],
-        "description": "Posts a status message on the user",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "Posts a status message on the user"
       }
     },
     "/{user}/tagged": {
@@ -4349,12 +4531,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getusertagged"
         },
-        "description": "Posts the user is tagged in",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "Posts the user is tagged in"
       }
     },
     "/{user}/television": {
@@ -4372,12 +4555,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getusertelevision"
         },
-        "description": "The television listed on the user's profile",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "The television listed on the user's profile"
       }
     },
     "/{user}/updates": {
@@ -4395,12 +4579,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getuserupdates"
         },
-        "description": "The updates in this user's inbox.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "The updates in this user's inbox."
       }
     },
     "/{user}/videos": {
@@ -4418,18 +4603,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getuservideos"
         },
-        "description": "The videos this user has been tagged in",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "The videos this user has been tagged in"
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postuservideos"
         },
         "parameters": [
           {
@@ -4447,10 +4634,10 @@
             "description": "Video description"
           }
         ],
-        "description": "Publishes a video on behalf of the user",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/user"
-        }
+        },
+        "description": "Publishes a video on behalf of the user"
       }
     },
     "/{notification}": {
@@ -4467,7 +4654,8 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postnotification"
         },
         "parameters": [
           {
@@ -4478,10 +4666,10 @@
             "default": 0
           }
         ],
-        "description": "Marks the notification as read",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/notification"
-        }
+        },
+        "description": "Marks the notification as read"
       }
     },
     "/{video}": {
@@ -4499,12 +4687,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getvideo"
         },
-        "description": "An individual video",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/video"
-        }
+        },
+        "description": "An individual video"
       }
     },
     "/{video}/comments": {
@@ -4522,18 +4711,20 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getvideocomments"
         },
-        "description": "All of the comments on this video.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/video"
-        }
+        },
+        "description": "All of the comments on this video."
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postvideocomments"
         },
         "parameters": [
           {
@@ -4544,10 +4735,10 @@
             "description": "Comment text"
           }
         ],
-        "description": "Posts a comment to this video.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/video"
-        }
+        },
+        "description": "Posts a comment to this video."
       }
     },
     "/{video}/likes": {
@@ -4565,34 +4756,37 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getvideolikes"
         },
-        "description": "Users who like this video.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/video"
-        }
+        },
+        "description": "Users who like this video."
       },
       "post": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "postvideolikes"
         },
-        "description": "Likes this video.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/video"
-        }
+        },
+        "description": "Likes this video."
       },
       "delete": {
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "deletevideolikes"
         },
-        "description": "Unlikes this video.",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/video"
-        }
+        },
+        "description": "Unlikes this video."
       }
     },
     "/{video}/picture": {
@@ -4610,12 +4804,13 @@
         "responses": {
           "200": {
             "description": "Successful Response"
-          }
+          },
+          "operationId": "getvideopicture"
         },
-        "description": "The image which represents the content of the video",
         "externalDocs": {
           "url": "http://developers.facebook.com/docs/reference/api/video"
-        }
+        },
+        "description": "The image which represents the content of the video"
       }
     }
   }
