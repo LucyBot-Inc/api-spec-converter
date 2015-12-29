@@ -1,26 +1,26 @@
 {
-  "swagger": "2.0",
+  "definitions": {},
   "info": {
+    "description": "This is one of the simplest APIs written in the **API Blueprint**.\nOne plain resource combined with a method and that's it! We will explain what is going on in the next installment - [Resource and Actions](02.%20Resource%20and%20Actions.md).\n\n**Note:** As we progress through the examples, do not also forget to view the [Raw](https://raw.github.com/apiaryio/api-blueprint/master/examples/01.%20Simplest%20API.md) code to see what is really going on in the API Blueprint, as opposed to just seeing the output of the Github Markdown parser.\n\nAlso please keep in mind that every single example in this course is a **real API Blueprint** and as such you can **parse** it with the [API Blueprint parser](https://github.com/apiaryio/drafter) or one of its [bindings](https://github.com/apiaryio/drafter#bindings).\n\n## API Blueprint\n\n+ [This: Raw API Blueprint](https://raw.github.com/apiaryio/api-blueprint/master/examples/01.%20Simplest%20API.md)\n\n+ [Next: Resource and Actions](02.%20Resource%20and%20Actions.md)\n\n",
     "title": "The Simplest API",
-    "version": "",
-    "description": "This is one of the simplest APIs written in the **API Blueprint**.\nOne plain resource combined with a method and that's it! We will explain what is going on in the next installment - [Resource and Actions](02.%20Resource%20and%20Actions.md).\n\n**Note:** As we progress through the examples, do not also forget to view the [Raw](https://raw.github.com/apiaryio/api-blueprint/master/examples/01.%20Simplest%20API.md) code to see what is really going on in the API Blueprint, as opposed to just seeing the output of the Github Markdown parser.\n\nAlso please keep in mind that every single example in this course is a **real API Blueprint** and as such you can **parse** it with the [API Blueprint parser](https://github.com/apiaryio/drafter) or one of its [bindings](https://github.com/apiaryio/drafter#bindings).\n\n## API Blueprint\n\n+ [This: Raw API Blueprint](https://raw.github.com/apiaryio/api-blueprint/master/examples/01.%20Simplest%20API.md)\n\n+ [Next: Resource and Actions](02.%20Resource%20and%20Actions.md)\n\n"
+    "version": ""
   },
   "paths": {
     "/message": {
       "get": {
+        "description": "",
+        "parameters": [],
         "responses": {
           "200": {
             "description": "OK",
-            "headers": {},
-            "examples": {}
+            "examples": {},
+            "headers": {}
           }
         },
         "summary": "",
-        "description": "",
-        "tags": [],
-        "parameters": []
+        "tags": []
       }
     }
   },
-  "definitions": {}
+  "swagger": "2.0"
 }
