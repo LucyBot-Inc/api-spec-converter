@@ -1,769 +1,769 @@
 {
-  "swagger": "2.0",
-  "info": {
-    "title": "Foursquare (OAuth 2.0 Auth Code)"
-  },
-  "schemes": [
-    "https:"
-  ],
+  "basePath": "/",
   "host": [
     "api.foursquare.com"
   ],
-  "basePath": "/",
+  "info": {
+    "title": "Foursquare (OAuth 2.0 Auth Code)"
+  },
   "paths": {
-    "/users/{USER_ID}/approve": {
-      "post": {
-        "responses": {
-          "200": {
-            "description": "success"
-          }
-        },
-        "parameters": [
-          {
-            "name": "USER_ID",
-            "in": "path",
-            "default": "1297336",
-            "description": "The user ID of a pending friend.",
-            "type": "integer"
-          },
-          {
-            "name": "v",
-            "in": "query",
-            "default": "20140717",
-            "description": "version",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/users/{USER_ID}/deny": {
-      "post": {
-        "responses": {
-          "200": {
-            "description": "success"
-          }
-        },
-        "parameters": [
-          {
-            "name": "USER_ID",
-            "in": "path",
-            "default": "1297336",
-            "description": "The user ID of a pending friend.",
-            "type": "integer"
-          },
-          {
-            "name": "v",
-            "in": "query",
-            "default": "20140717",
-            "description": "version",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/users/{USER_ID}/unfriend": {
-      "post": {
-        "responses": {
-          "200": {
-            "description": "success"
-          }
-        },
-        "parameters": [
-          {
-            "name": "USER_ID",
-            "in": "path",
-            "default": "1297336",
-            "description": "Identity of the user to unfriend.",
-            "type": "integer"
-          },
-          {
-            "name": "v",
-            "in": "query",
-            "default": "20140717",
-            "description": "version",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/users/{USER_ID}/request": {
-      "post": {
-        "responses": {
-          "200": {
-            "description": "success"
-          }
-        },
-        "parameters": [
-          {
-            "name": "USER_ID",
-            "in": "path",
-            "default": "1297336",
-            "description": "The user ID to which a request will be sent.",
-            "type": "integer"
-          },
-          {
-            "name": "v",
-            "in": "query",
-            "default": "20140717",
-            "description": "version",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/users/{USER_ID}/setpings": {
-      "post": {
-        "responses": {
-          "200": {
-            "description": "success"
-          }
-        },
-        "parameters": [
-          {
-            "name": "USER_ID",
-            "in": "path",
-            "default": "1297336",
-            "description": "The user ID of a friend.",
-            "type": "integer"
-          },
-          {
-            "name": "value",
-            "in": "query",
-            "default": "false",
-            "description": "True or false.",
-            "type": "boolean"
-          },
-          {
-            "name": "v",
-            "in": "query",
-            "default": "20140717",
-            "description": "version",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/users/{USER_ID}/friends": {
+    "/users/leaderboard": {
       "get": {
+        "parameters": [
+          {
+            "default": "2",
+            "description": "The number of friends' scores to return.",
+            "in": "query",
+            "name": "neighbors",
+            "type": "integer"
+          },
+          {
+            "default": "20140717",
+            "description": "version",
+            "in": "query",
+            "name": "v",
+            "type": "string"
+          }
+        ],
         "responses": {
           "200": {
             "description": "success"
           }
-        },
-        "parameters": [
-          {
-            "name": "USER_ID",
-            "in": "path",
-            "default": "1297336",
-            "description": "A foursquare user id (e.g. 1297336)",
-            "type": "integer"
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "default": "100",
-            "description": "Number of results to return, up to 500.",
-            "type": "integer"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "default": "100",
-            "description": "Used to page through results.",
-            "type": "integer"
-          },
-          {
-            "name": "v",
-            "in": "query",
-            "default": "20140717",
-            "description": "version",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/users/{USER_ID}/mayorships": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "success"
-          }
-        },
-        "parameters": [
-          {
-            "name": "USER_ID",
-            "in": "query",
-            "default": "1297336",
-            "description": "A foursquare user id (e.g. 1297336).",
-            "type": "integer"
-          },
-          {
-            "name": "v",
-            "in": "query",
-            "default": "20140717",
-            "description": "version",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/users/{USER_ID}/photos": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "success"
-          }
-        },
-        "parameters": [
-          {
-            "name": "USER_ID",
-            "in": "query",
-            "default": "self",
-            "description": "For now, only self is supported.",
-            "type": "integer"
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "default": "100",
-            "description": "Number of results to return, up to 500.",
-            "type": "integer"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "default": "100",
-            "description": "Used to page through results.",
-            "type": "integer"
-          },
-          {
-            "name": "v",
-            "in": "query",
-            "default": "20140717",
-            "description": "version",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/users/{USER_ID}/badges": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "success"
-          }
-        },
-        "parameters": [
-          {
-            "name": "USER_ID",
-            "in": "path",
-            "default": "1297336",
-            "description": "A foursquare user id (e.g. 1297336)",
-            "type": "integer"
-          },
-          {
-            "name": "v",
-            "in": "query",
-            "default": "20140717",
-            "description": "version",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/users/{USER_ID}/checkins": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "success"
-          }
-        },
-        "parameters": [
-          {
-            "name": "USER_ID",
-            "in": "path",
-            "default": "self",
-            "description": "A foursquare user id (e.g. 1297336)",
-            "type": "integer"
-          },
-          {
-            "name": "afterTimestamp",
-            "in": "query",
-            "default": "1279044824",
-            "description": "Retrieve the first results to follow these seconds since epoch. This should be useful for paging forward in time, or when polling for changes. To avoid missing results when polling, we recommend subtracting several seconds from the last poll time and then de-duplicating.",
-            "type": "integer"
-          },
-          {
-            "name": "beforeTimestamp",
-            "in": "query",
-            "default": "1279044824",
-            "description": "Retrieve the first results prior to these seconds since epoch. Useful for paging backward in time.",
-            "type": "integer"
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "default": "100",
-            "description": "Number of results to return, up to 250.",
-            "type": "integer"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "default": "100",
-            "description": "The number of results to skip. Used to page through results.",
-            "type": "integer"
-          },
-          {
-            "name": "sort",
-            "in": "query",
-            "default": "newestfirst",
-            "description": "How to sort the returned checkins. Can be newestfirst or oldestfirst.",
-            "type": "string"
-          },
-          {
-            "name": "v",
-            "in": "query",
-            "default": "20140717",
-            "description": "version",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/users/{USER_ID}/venuehistory": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "success"
-          }
-        },
-        "parameters": [
-          {
-            "name": "USER_ID",
-            "in": "query",
-            "default": "self",
-            "description": "For now, only self is supported.",
-            "type": "integer"
-          },
-          {
-            "name": "afterTimestamp",
-            "in": "query",
-            "default": "123456789",
-            "description": "Seconds since epoch.",
-            "type": "integer"
-          },
-          {
-            "name": "beforeTimestamp",
-            "in": "query",
-            "default": "123456789",
-            "description": "Seconds since epoch.",
-            "type": "integer"
-          },
-          {
-            "name": "categoryId",
-            "in": "query",
-            "default": "asad13242ljla",
-            "description": "Limits returned venues to those in this category. If specifying a top-level category, all sub-categories will also match the query.",
-            "type": "string"
-          },
-          {
-            "name": "v",
-            "in": "query",
-            "default": "20140717",
-            "description": "version",
-            "type": "string"
-          }
-        ]
+        }
       }
     },
     "/users/search": {
       "get": {
+        "parameters": [
+          {
+            "default": "foo@bar.com,alice@baz.com",
+            "description": "A comma-delimited list of email addresses to look for.",
+            "in": "query",
+            "name": "email",
+            "type": "string"
+          },
+          {
+            "default": "123,456",
+            "description": "A comma-delimited list of Facebook ID's to look for.",
+            "in": "query",
+            "name": "fbid",
+            "type": "integer"
+          },
+          {
+            "default": "91712344567,123450",
+            "description": "A comma-delimited list of phone numbers to look for.",
+            "in": "query",
+            "name": "phone",
+            "type": "integer"
+          },
+          {
+            "default": "Fred Fredrickson",
+            "description": "A single string to search for in users' titles.",
+            "in": "query",
+            "name": "title",
+            "type": "string"
+          },
+          {
+            "default": "dens,sesamestreet",
+            "description": "A comma-delimited list of Twitter handles to look for.",
+            "in": "query",
+            "name": "twitter",
+            "type": "string"
+          },
+          {
+            "default": "krave",
+            "description": "A single Twitter handle. Results will be users that this handle follows on Twitter who use Foursquare.",
+            "in": "query",
+            "name": "twitterSource",
+            "type": "string"
+          },
+          {
+            "default": "20140717",
+            "description": "version",
+            "in": "query",
+            "name": "v",
+            "type": "string"
+          }
+        ],
         "responses": {
           "200": {
             "description": "success"
           }
-        },
-        "parameters": [
-          {
-            "name": "email",
-            "in": "query",
-            "default": "foo@bar.com,alice@baz.com",
-            "description": "A comma-delimited list of email addresses to look for.",
-            "type": "string"
-          },
-          {
-            "name": "fbid",
-            "in": "query",
-            "default": "123,456",
-            "description": "A comma-delimited list of Facebook ID's to look for.",
-            "type": "integer"
-          },
-          {
-            "name": "phone",
-            "in": "query",
-            "default": "91712344567,123450",
-            "description": "A comma-delimited list of phone numbers to look for.",
-            "type": "integer"
-          },
-          {
-            "name": "title",
-            "in": "query",
-            "default": "Fred Fredrickson",
-            "description": "A single string to search for in users' titles.",
-            "type": "string"
-          },
-          {
-            "name": "twitter",
-            "in": "query",
-            "default": "dens,sesamestreet",
-            "description": "A comma-delimited list of Twitter handles to look for.",
-            "type": "string"
-          },
-          {
-            "name": "twitterSource",
-            "in": "query",
-            "default": "krave",
-            "description": "A single Twitter handle. Results will be users that this handle follows on Twitter who use Foursquare.",
-            "type": "string"
-          },
-          {
-            "name": "v",
-            "in": "query",
-            "default": "20140717",
-            "description": "version",
-            "type": "string"
-          }
-        ]
+        }
       }
     },
     "/users/{USER_ID}": {
       "get": {
-        "responses": {
-          "200": {
-            "description": "success"
-          }
-        },
         "parameters": [
           {
-            "name": "USER_ID",
-            "in": "path",
             "default": "1297336",
             "description": "A foursquare user id (e.g. 1297336)",
+            "in": "path",
+            "name": "USER_ID",
             "type": "integer"
           },
           {
-            "name": "v",
-            "in": "query",
             "default": "20140717",
             "description": "version",
+            "in": "query",
+            "name": "v",
             "type": "string"
           }
-        ]
-      }
-    },
-    "/users/leaderboard": {
-      "get": {
+        ],
         "responses": {
           "200": {
             "description": "success"
           }
-        },
+        }
+      }
+    },
+    "/users/{USER_ID}/approve": {
+      "post": {
         "parameters": [
           {
-            "name": "neighbors",
-            "in": "query",
-            "default": "2",
-            "description": "The number of friends' scores to return.",
+            "default": "1297336",
+            "description": "The user ID of a pending friend.",
+            "in": "path",
+            "name": "USER_ID",
             "type": "integer"
           },
           {
-            "name": "v",
-            "in": "query",
             "default": "20140717",
             "description": "version",
+            "in": "query",
+            "name": "v",
             "type": "string"
           }
-        ]
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/users/{USER_ID}/badges": {
+      "get": {
+        "parameters": [
+          {
+            "default": "1297336",
+            "description": "A foursquare user id (e.g. 1297336)",
+            "in": "path",
+            "name": "USER_ID",
+            "type": "integer"
+          },
+          {
+            "default": "20140717",
+            "description": "version",
+            "in": "query",
+            "name": "v",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/users/{USER_ID}/checkins": {
+      "get": {
+        "parameters": [
+          {
+            "default": "self",
+            "description": "A foursquare user id (e.g. 1297336)",
+            "in": "path",
+            "name": "USER_ID",
+            "type": "integer"
+          },
+          {
+            "default": "1279044824",
+            "description": "Retrieve the first results to follow these seconds since epoch. This should be useful for paging forward in time, or when polling for changes. To avoid missing results when polling, we recommend subtracting several seconds from the last poll time and then de-duplicating.",
+            "in": "query",
+            "name": "afterTimestamp",
+            "type": "integer"
+          },
+          {
+            "default": "1279044824",
+            "description": "Retrieve the first results prior to these seconds since epoch. Useful for paging backward in time.",
+            "in": "query",
+            "name": "beforeTimestamp",
+            "type": "integer"
+          },
+          {
+            "default": "100",
+            "description": "Number of results to return, up to 250.",
+            "in": "query",
+            "name": "limit",
+            "type": "integer"
+          },
+          {
+            "default": "100",
+            "description": "The number of results to skip. Used to page through results.",
+            "in": "query",
+            "name": "offset",
+            "type": "integer"
+          },
+          {
+            "default": "newestfirst",
+            "description": "How to sort the returned checkins. Can be newestfirst or oldestfirst.",
+            "in": "query",
+            "name": "sort",
+            "type": "string"
+          },
+          {
+            "default": "20140717",
+            "description": "version",
+            "in": "query",
+            "name": "v",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/users/{USER_ID}/deny": {
+      "post": {
+        "parameters": [
+          {
+            "default": "1297336",
+            "description": "The user ID of a pending friend.",
+            "in": "path",
+            "name": "USER_ID",
+            "type": "integer"
+          },
+          {
+            "default": "20140717",
+            "description": "version",
+            "in": "query",
+            "name": "v",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/users/{USER_ID}/friends": {
+      "get": {
+        "parameters": [
+          {
+            "default": "1297336",
+            "description": "A foursquare user id (e.g. 1297336)",
+            "in": "path",
+            "name": "USER_ID",
+            "type": "integer"
+          },
+          {
+            "default": "100",
+            "description": "Number of results to return, up to 500.",
+            "in": "query",
+            "name": "limit",
+            "type": "integer"
+          },
+          {
+            "default": "100",
+            "description": "Used to page through results.",
+            "in": "query",
+            "name": "offset",
+            "type": "integer"
+          },
+          {
+            "default": "20140717",
+            "description": "version",
+            "in": "query",
+            "name": "v",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/users/{USER_ID}/mayorships": {
+      "get": {
+        "parameters": [
+          {
+            "default": "1297336",
+            "description": "A foursquare user id (e.g. 1297336).",
+            "in": "query",
+            "name": "USER_ID",
+            "type": "integer"
+          },
+          {
+            "default": "20140717",
+            "description": "version",
+            "in": "query",
+            "name": "v",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/users/{USER_ID}/photos": {
+      "get": {
+        "parameters": [
+          {
+            "default": "self",
+            "description": "For now, only self is supported.",
+            "in": "query",
+            "name": "USER_ID",
+            "type": "integer"
+          },
+          {
+            "default": "100",
+            "description": "Number of results to return, up to 500.",
+            "in": "query",
+            "name": "limit",
+            "type": "integer"
+          },
+          {
+            "default": "100",
+            "description": "Used to page through results.",
+            "in": "query",
+            "name": "offset",
+            "type": "integer"
+          },
+          {
+            "default": "20140717",
+            "description": "version",
+            "in": "query",
+            "name": "v",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/users/{USER_ID}/request": {
+      "post": {
+        "parameters": [
+          {
+            "default": "1297336",
+            "description": "The user ID to which a request will be sent.",
+            "in": "path",
+            "name": "USER_ID",
+            "type": "integer"
+          },
+          {
+            "default": "20140717",
+            "description": "version",
+            "in": "query",
+            "name": "v",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/users/{USER_ID}/setpings": {
+      "post": {
+        "parameters": [
+          {
+            "default": "1297336",
+            "description": "The user ID of a friend.",
+            "in": "path",
+            "name": "USER_ID",
+            "type": "integer"
+          },
+          {
+            "default": "false",
+            "description": "True or false.",
+            "in": "query",
+            "name": "value",
+            "type": "boolean"
+          },
+          {
+            "default": "20140717",
+            "description": "version",
+            "in": "query",
+            "name": "v",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/users/{USER_ID}/unfriend": {
+      "post": {
+        "parameters": [
+          {
+            "default": "1297336",
+            "description": "Identity of the user to unfriend.",
+            "in": "path",
+            "name": "USER_ID",
+            "type": "integer"
+          },
+          {
+            "default": "20140717",
+            "description": "version",
+            "in": "query",
+            "name": "v",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/users/{USER_ID}/venuehistory": {
+      "get": {
+        "parameters": [
+          {
+            "default": "self",
+            "description": "For now, only self is supported.",
+            "in": "query",
+            "name": "USER_ID",
+            "type": "integer"
+          },
+          {
+            "default": "123456789",
+            "description": "Seconds since epoch.",
+            "in": "query",
+            "name": "afterTimestamp",
+            "type": "integer"
+          },
+          {
+            "default": "123456789",
+            "description": "Seconds since epoch.",
+            "in": "query",
+            "name": "beforeTimestamp",
+            "type": "integer"
+          },
+          {
+            "default": "asad13242ljla",
+            "description": "Limits returned venues to those in this category. If specifying a top-level category, all sub-categories will also match the query.",
+            "in": "query",
+            "name": "categoryId",
+            "type": "string"
+          },
+          {
+            "default": "20140717",
+            "description": "version",
+            "in": "query",
+            "name": "v",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
       }
     },
     "/venues/add": {
       "post": {
+        "parameters": [
+          {
+            "default": "1313 Mockingbird Lane",
+            "description": "The address of the venue.",
+            "in": "query",
+            "name": "address",
+            "type": "string"
+          },
+          {
+            "default": "New York",
+            "description": "The city name where this venue is.",
+            "in": "query",
+            "name": "city",
+            "type": "string"
+          },
+          {
+            "default": "at Fulton St",
+            "description": "The nearest intersecting street or streets.",
+            "in": "query",
+            "name": "crossStreet",
+            "type": "string"
+          },
+          {
+            "default": "We are a business...",
+            "description": "A freeform description of the venue, up to 300 characters.",
+            "in": "query",
+            "name": "description",
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "A boolean flag telling the server to ignore duplicates and force the addition of this venue.",
+            "in": "query",
+            "name": "ignoreDuplicates",
+            "type": "boolean"
+          },
+          {
+            "default": "bb29f248166648fb51d8d92b1740444c",
+            "description": "Required if ignoreDuplicates is true. This key will be available in the response of the HTTP 409 error of the first (failed) attempt to add venue.",
+            "in": "query",
+            "name": "ignoreDuplicatesKey",
+            "type": "string"
+          },
+          {
+            "default": "44.3, 37.2",
+            "description": "Latitude and longitude of the venue, as accurate as is known.",
+            "in": "query",
+            "name": "ll",
+            "type": "integer"
+          },
+          {
+            "default": "",
+            "description": "The phone number of the venue.",
+            "in": "query",
+            "name": "phone",
+            "type": "integer"
+          },
+          {
+            "default": "4bf58dd8d48988d1d4941735",
+            "description": "The ID of the category to which you want to assign this venue.",
+            "in": "query",
+            "name": "primaryCategoryId",
+            "type": "string"
+          },
+          {
+            "default": "New York",
+            "description": "The nearest state or province to the venue.",
+            "in": "query",
+            "name": "state",
+            "type": "string"
+          },
+          {
+            "default": "eathabana",
+            "description": "The twitter handle of the venue.",
+            "in": "query",
+            "name": "twitter",
+            "type": "string"
+          },
+          {
+            "default": "http://www.mercurylounge.com",
+            "description": "The url of the homepage of the venue.",
+            "in": "query",
+            "name": "url",
+            "type": "string"
+          },
+          {
+            "default": "Habana Output",
+            "description": "The name of the venue.",
+            "in": "query",
+            "name": "venueName",
+            "type": "string"
+          },
+          {
+            "default": "20140717",
+            "description": "version",
+            "in": "query",
+            "name": "v",
+            "type": "string"
+          },
+          {
+            "default": "",
+            "description": "The zip or postal code for the venue.",
+            "in": "query",
+            "name": "zip",
+            "type": "integer"
+          }
+        ],
         "responses": {
           "200": {
             "description": "success"
           }
-        },
-        "parameters": [
-          {
-            "name": "address",
-            "in": "query",
-            "default": "1313 Mockingbird Lane",
-            "description": "The address of the venue.",
-            "type": "string"
-          },
-          {
-            "name": "city",
-            "in": "query",
-            "default": "New York",
-            "description": "The city name where this venue is.",
-            "type": "string"
-          },
-          {
-            "name": "crossStreet",
-            "in": "query",
-            "default": "at Fulton St",
-            "description": "The nearest intersecting street or streets.",
-            "type": "string"
-          },
-          {
-            "name": "description",
-            "in": "query",
-            "default": "We are a business...",
-            "description": "A freeform description of the venue, up to 300 characters.",
-            "type": "string"
-          },
-          {
-            "name": "ignoreDuplicates",
-            "in": "query",
-            "default": true,
-            "description": "A boolean flag telling the server to ignore duplicates and force the addition of this venue.",
-            "type": "boolean"
-          },
-          {
-            "name": "ignoreDuplicatesKey",
-            "in": "query",
-            "default": "bb29f248166648fb51d8d92b1740444c",
-            "description": "Required if ignoreDuplicates is true. This key will be available in the response of the HTTP 409 error of the first (failed) attempt to add venue.",
-            "type": "string"
-          },
-          {
-            "name": "ll",
-            "in": "query",
-            "default": "44.3, 37.2",
-            "description": "Latitude and longitude of the venue, as accurate as is known.",
-            "type": "integer"
-          },
-          {
-            "name": "phone",
-            "in": "query",
-            "default": "",
-            "description": "The phone number of the venue.",
-            "type": "integer"
-          },
-          {
-            "name": "primaryCategoryId",
-            "in": "query",
-            "default": "4bf58dd8d48988d1d4941735",
-            "description": "The ID of the category to which you want to assign this venue.",
-            "type": "string"
-          },
-          {
-            "name": "state",
-            "in": "query",
-            "default": "New York",
-            "description": "The nearest state or province to the venue.",
-            "type": "string"
-          },
-          {
-            "name": "twitter",
-            "in": "query",
-            "default": "eathabana",
-            "description": "The twitter handle of the venue.",
-            "type": "string"
-          },
-          {
-            "name": "url",
-            "in": "query",
-            "default": "http://www.mercurylounge.com",
-            "description": "The url of the homepage of the venue.",
-            "type": "string"
-          },
-          {
-            "name": "venueName",
-            "in": "query",
-            "default": "Habana Output",
-            "description": "The name of the venue.",
-            "type": "string"
-          },
-          {
-            "name": "v",
-            "in": "query",
-            "default": "20140717",
-            "description": "version",
-            "type": "string"
-          },
-          {
-            "name": "zip",
-            "in": "query",
-            "default": "",
-            "description": "The zip or postal code for the venue.",
-            "type": "integer"
-          }
-        ]
+        }
       }
     },
     "/venues/explore": {
       "get": {
+        "parameters": [
+          {
+            "default": "0",
+            "description": "Altitude of the user's location, in meters.",
+            "in": "query",
+            "name": "alt",
+            "type": "integer"
+          },
+          {
+            "default": "10000.0",
+            "description": "Accuracy of the user's altitude, in meters.",
+            "in": "query",
+            "name": "altAcc",
+            "type": "number"
+          },
+          {
+            "default": "any",
+            "description": "Pass any to retrieve results for any day of the week. Omitting this parameter returns results targeted to the current day of the week.",
+            "in": "query",
+            "name": "day",
+            "type": "string"
+          },
+          {
+            "default": "visited",
+            "description": "Pass visited or notvisited to limit results to places the acting user's friends have or haven't been, respectively. Omitting this parameter returns a mixture of venues to which the user's friends have or haven't been.",
+            "in": "query",
+            "name": "friendVisits",
+            "type": "string"
+          },
+          {
+            "default": "4ef0e7cf7beb5932d5bdeb4e",
+            "description": "A venue ID to use in combination with the intent=nextVenues parameter, which returns venues users often visit after a given venue. If intent=nextVenues is specified but lastVenue is not, the user's last check-in will be used if it is within 2 hours. If the user has not checked in within the last 2 hours, no results will be returned.",
+            "in": "query",
+            "name": "lastVenue",
+            "type": "string"
+          },
+          {
+            "default": "10",
+            "description": "Number of results to return, up to 50.",
+            "in": "query",
+            "name": "limit",
+            "type": "integer"
+          },
+          {
+            "default": "44.3,37.2",
+            "description": "Required unless near is provided. Latitude and longitude of the user's location.",
+            "in": "query",
+            "name": "ll",
+            "type": "string"
+          },
+          {
+            "default": "10000.0",
+            "description": "Accuracy of latitude and longitude, in meters.",
+            "in": "query",
+            "name": "llAcc",
+            "type": "number"
+          },
+          {
+            "default": "Chicago, IL",
+            "description": "Required unless ll is provided. A string naming a place in the world. If the near string is not geocodable, returns a failed_geocode error. Otherwise, searches within the bounds of the geocode and adds a geocode object to the response.",
+            "in": "query",
+            "name": "near",
+            "type": "string"
+          },
+          {
+            "default": "new",
+            "description": "Pass new or old to limit results to places the acting user hasn't been or has been, respectively. Omitting this parameter returns a mixture of old and new venues.",
+            "in": "query",
+            "name": "novelty",
+            "type": "string"
+          },
+          {
+            "default": "20",
+            "description": "Used to page through results.",
+            "in": "query",
+            "name": "offset",
+            "type": "integer"
+          },
+          {
+            "default": "donuts",
+            "description": "A term to be searched against a venue's tips, category, etc. The query parameter has no effect when a section is specified.",
+            "in": "query",
+            "name": "query",
+            "type": "string"
+          },
+          {
+            "default": "250",
+            "description": "Radius to search within, in meters. If radius is not specified, a suggested radius will be used based on the density of venues in the area.",
+            "in": "query",
+            "name": "radius",
+            "type": "integer"
+          },
+          {
+            "default": "food",
+            "description": "One of food, drinks, coffee, shops, arts, outdoors, sights, trending or specials, nextVenues (venues frequently visited after a given venue), or topPicks (a mix of recommendations generated without a query from the user). Choosing one of these limits results to venues with the specified category or property.",
+            "in": "query",
+            "name": "section",
+            "type": "string"
+          },
+          {
+            "default": "any",
+            "description": "Pass any to retrieve results for any time of day. Omitting this parameter returns results targeted to the current time of day.",
+            "in": "query",
+            "name": "time",
+            "type": "string"
+          },
+          {
+            "default": "1",
+            "description": "Boolean flag to include a photo in the response for each venue, if one is available. Default is 0 (no photos). Photos are returned as part of the venue JSON object.",
+            "in": "query",
+            "name": "venuePhotos",
+            "type": "integer"
+          },
+          {
+            "default": "20140717",
+            "description": "version",
+            "in": "query",
+            "name": "v",
+            "type": "string"
+          }
+        ],
         "responses": {
           "200": {
             "description": "success"
           }
-        },
-        "parameters": [
-          {
-            "name": "alt",
-            "in": "query",
-            "default": "0",
-            "description": "Altitude of the user's location, in meters.",
-            "type": "integer"
-          },
-          {
-            "name": "altAcc",
-            "in": "query",
-            "default": "10000.0",
-            "description": "Accuracy of the user's altitude, in meters.",
-            "type": "number"
-          },
-          {
-            "name": "day",
-            "in": "query",
-            "default": "any",
-            "description": "Pass any to retrieve results for any day of the week. Omitting this parameter returns results targeted to the current day of the week.",
-            "type": "string"
-          },
-          {
-            "name": "friendVisits",
-            "in": "query",
-            "default": "visited",
-            "description": "Pass visited or notvisited to limit results to places the acting user's friends have or haven't been, respectively. Omitting this parameter returns a mixture of venues to which the user's friends have or haven't been.",
-            "type": "string"
-          },
-          {
-            "name": "lastVenue",
-            "in": "query",
-            "default": "4ef0e7cf7beb5932d5bdeb4e",
-            "description": "A venue ID to use in combination with the intent=nextVenues parameter, which returns venues users often visit after a given venue. If intent=nextVenues is specified but lastVenue is not, the user's last check-in will be used if it is within 2 hours. If the user has not checked in within the last 2 hours, no results will be returned.",
-            "type": "string"
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "default": "10",
-            "description": "Number of results to return, up to 50.",
-            "type": "integer"
-          },
-          {
-            "name": "ll",
-            "in": "query",
-            "default": "44.3,37.2",
-            "description": "Required unless near is provided. Latitude and longitude of the user's location.",
-            "type": "string"
-          },
-          {
-            "name": "llAcc",
-            "in": "query",
-            "default": "10000.0",
-            "description": "Accuracy of latitude and longitude, in meters.",
-            "type": "number"
-          },
-          {
-            "name": "near",
-            "in": "query",
-            "default": "Chicago, IL",
-            "description": "Required unless ll is provided. A string naming a place in the world. If the near string is not geocodable, returns a failed_geocode error. Otherwise, searches within the bounds of the geocode and adds a geocode object to the response.",
-            "type": "string"
-          },
-          {
-            "name": "novelty",
-            "in": "query",
-            "default": "new",
-            "description": "Pass new or old to limit results to places the acting user hasn't been or has been, respectively. Omitting this parameter returns a mixture of old and new venues.",
-            "type": "string"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "default": "20",
-            "description": "Used to page through results.",
-            "type": "integer"
-          },
-          {
-            "name": "query",
-            "in": "query",
-            "default": "donuts",
-            "description": "A term to be searched against a venue's tips, category, etc. The query parameter has no effect when a section is specified.",
-            "type": "string"
-          },
-          {
-            "name": "radius",
-            "in": "query",
-            "default": "250",
-            "description": "Radius to search within, in meters. If radius is not specified, a suggested radius will be used based on the density of venues in the area.",
-            "type": "integer"
-          },
-          {
-            "name": "section",
-            "in": "query",
-            "default": "food",
-            "description": "One of food, drinks, coffee, shops, arts, outdoors, sights, trending or specials, nextVenues (venues frequently visited after a given venue), or topPicks (a mix of recommendations generated without a query from the user). Choosing one of these limits results to venues with the specified category or property.",
-            "type": "string"
-          },
-          {
-            "name": "time",
-            "in": "query",
-            "default": "any",
-            "description": "Pass any to retrieve results for any time of day. Omitting this parameter returns results targeted to the current time of day.",
-            "type": "string"
-          },
-          {
-            "name": "venuePhotos",
-            "in": "query",
-            "default": "1",
-            "description": "Boolean flag to include a photo in the response for each venue, if one is available. Default is 0 (no photos). Photos are returned as part of the venue JSON object.",
-            "type": "integer"
-          },
-          {
-            "name": "v",
-            "in": "query",
-            "default": "20140717",
-            "description": "version",
-            "type": "string"
-          }
-        ]
+        }
       }
     },
     "/venues/managed": {
       "get": {
+        "parameters": [
+          {
+            "default": "100",
+            "description": "Number of managed venues to return. Defaults to 100, maximum is 1000.",
+            "in": "query",
+            "name": "limit",
+            "type": "integer"
+          },
+          {
+            "default": "500",
+            "description": "Number of venues to skip over for paging. Defaults to 0.",
+            "in": "query",
+            "name": "offset",
+            "type": "integer"
+          },
+          {
+            "default": "20140717",
+            "description": "version",
+            "in": "query",
+            "name": "v",
+            "type": "string"
+          }
+        ],
         "responses": {
           "200": {
             "description": "success"
           }
-        },
-        "parameters": [
-          {
-            "name": "limit",
-            "in": "query",
-            "default": "100",
-            "description": "Number of managed venues to return. Defaults to 100, maximum is 1000.",
-            "type": "integer"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "default": "500",
-            "description": "Number of venues to skip over for paging. Defaults to 0.",
-            "type": "integer"
-          },
-          {
-            "name": "v",
-            "in": "query",
-            "default": "20140717",
-            "description": "version",
-            "type": "string"
-          }
-        ]
+        }
       }
     }
-  }
+  },
+  "schemes": [
+    "https:"
+  ],
+  "swagger": "2.0"
 }

@@ -1,378 +1,378 @@
 {
-  "swagger": "2.0",
+  "basePath": "/",
+  "definitions": {
+    "CopyFileorFolder": {
+      "properties": {
+        "action": {
+          "default": "copy",
+          "description": "Copies a file or folder.",
+          "type": "string"
+        },
+        "destination": {
+          "default": "Shared/Documents/Example",
+          "description": "The absolute path of the destination folder.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "CreateFolder": {
+      "properties": {
+        "action": {
+          "default": "add_folder",
+          "description": "Creates a folder.",
+          "type": "string"
+        },
+        "destination": {
+          "default": "Shared/Documents/Example",
+          "description": "The absolute path of the destination folder.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "CreateLink": {
+      "properties": {
+        "accessibility": {
+          "default": "anyone",
+          "description": "Determines who a link is accessible by. Choose from 'anyone', 'password', 'domain', or 'recipients'.",
+          "required": true,
+          "type": "string"
+        },
+        "copy_me": {
+          "default": false,
+          "description": "If 'true' is set, send a copy of the link message to the link creator. Only applies if 'send_email' is 'true'.",
+          "required": false,
+          "type": "boolean"
+        },
+        "expiry_clicks": {
+          "default": "3",
+          "description": "The number of clicks the link is valid for. Value must be between 1 and 10.",
+          "required": false,
+          "type": "integer"
+        },
+        "expiry_date": {
+          "default": "",
+          "description": "The expiry date for the link. Date must be in the future. If 'expiry_date' is specified, 'expiry_clicks' cannot be set.",
+          "format": "date",
+          "required": false,
+          "type": "string"
+        },
+        "link_to_current": {
+          "default": false,
+          "description": "If 'true' is set, link will always refer to current version of file. Only applicable for file links.",
+          "required": false,
+          "type": "boolean"
+        },
+        "message": {
+          "default": "Please review this file.",
+          "description": "Personal message to be sent in link email.",
+          "required": false,
+          "type": "string"
+        },
+        "notify": {
+          "default": false,
+          "description": "If 'true' is set, link creator will be notified via email when link is accessed.",
+          "required": false,
+          "type": "boolean"
+        },
+        "path": {
+          "default": "/Shared/Documents/Links/links.txt",
+          "description": "The absolute path of the destination file or folder. A target file must include the filename.",
+          "required": true,
+          "type": "string"
+        },
+        "recipients": {
+          "default": "",
+          "description": "List email addresses of recipients of the link. Only required if the link will be sent via email by Egnyte.",
+          "required": false,
+          "type": "string"
+        },
+        "send_email": {
+          "default": false,
+          "description": "If 'true' is set, link will be sent via email.",
+          "required": false,
+          "type": "boolean"
+        },
+        "type": {
+          "default": "file",
+          "description": "Choose 'file' or 'folder'.",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "CreateSingleUser": {
+      "properties": {
+        "active": {
+          "default": "true",
+          "description": "Determines whether the user is active or inactive.",
+          "required": true,
+          "type": "boolean"
+        },
+        "authType": {
+          "default": "egnyte",
+          "description": "The authentication type for the user. Possible values are 'ad' (Active Directory), 'sso' (SAML SSO), and 'egnyte' (Internal Egnyte).",
+          "required": true,
+          "type": "string"
+        },
+        "email": {
+          "default": "",
+          "description": "The email address of the user.",
+          "required": true,
+          "type": "string"
+        },
+        "externalId": {
+          "default": "",
+          "description": "This is an immutable unique identifier provided by the API consumer.",
+          "required": true,
+          "type": "string"
+        },
+        "familyName": {
+          "default": "",
+          "description": "The last name of the user.",
+          "required": true,
+          "type": "string"
+        },
+        "givenName": {
+          "default": "",
+          "description": "The first name of the user.",
+          "required": true,
+          "type": "string"
+        },
+        "idpUserId": {
+          "default": "",
+          "description": "This is how the user is identified within the SAML Response from an SSO Identity Provider, i.e. the SAML Subject. Only required if the user is SSO authenticated and not using default user mapping. Do not specify if user is not SSO authenticated.",
+          "required": false,
+          "type": "string"
+        },
+        "sendInvite": {
+          "default": "true",
+          "description": "If set to true when creating a user, an invitation email will be sent (if the user is created as 'active').",
+          "required": true,
+          "type": "boolean"
+        },
+        "userName": {
+          "default": "",
+          "description": "The Egnyte username for the user.",
+          "required": true,
+          "type": "string"
+        },
+        "userPrincipalName": {
+          "default": "",
+          "description": "Used to bind child authentication policies to a user when using Active Directory authentication in a multi-domain setup. Do not specify if user is not AD authenticated.",
+          "required": false,
+          "type": "string"
+        },
+        "userType": {
+          "default": "power",
+          "description": "The Egnyte role for the user. Possible values are 'admin' (Administrator), 'power' (Power User), and 'standard' (Standard User).",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "MoveFileOrFolder": {
+      "properties": {
+        "action": {
+          "default": "move",
+          "description": "Must be 'move'.",
+          "required": true,
+          "type": "string"
+        },
+        "destination": {
+          "description": "The absolute path of the destination folder.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "host": [
+    "apidemo.egnyte.com"
+  ],
   "info": {
     "description": "Covers all filesystem actions, link creation and deletion, and user management.",
     "title": "Egnyte APIs"
   },
-  "schemes": [
-    "https:"
-  ],
-  "host": [
-    "apidemo.egnyte.com"
-  ],
-  "basePath": "/",
-  "definitions": {
-    "MoveFileOrFolder": {
-      "type": "object",
-      "properties": {
-        "action": {
-          "type": "string",
-          "required": true,
-          "description": "Must be 'move'.",
-          "default": "move"
-        },
-        "destination": {
-          "type": "string",
-          "description": "The absolute path of the destination folder."
+  "paths": {
+    "/pubapi/v1/fs-content/Path": {
+      "get": {
+        "parameters": [
+          {
+            "default": "",
+            "description": "OAuth2 access token",
+            "in": "header",
+            "name": "Authorization",
+            "type": "string"
+          },
+          {
+            "default": "Shared/Documents/example.txt",
+            "description": "The full absolute path of the file.",
+            "in": "path",
+            "name": "Path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "default": "",
+            "description": "OAuth2 access token",
+            "in": "header",
+            "name": "Authorization",
+            "type": "string"
+          },
+          {
+            "default": "Shared/Documents/example.txt",
+            "description": "The full absolute path of the file.",
+            "in": "path",
+            "name": "Path",
+            "type": "string"
+          },
+          {
+            "default": "{\"placeholder\":\"contents\"}",
+            "description": "File contents placeholder  (do not modify)",
+            "in": "body",
+            "name": "requestBody",
+            "type": "string"
+          },
+          {
+            "default": "text/plain",
+            "description": "Content type of the payload",
+            "in": "header",
+            "name": "Content-Type",
+            "type": "string"
+          },
+          {
+            "default": "",
+            "description": "Content length of the payload",
+            "in": "header",
+            "name": "Content-Length",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
         }
       }
     },
-    "CreateFolder": {
-      "type": "object",
-      "properties": {
-        "action": {
-          "type": "string",
-          "description": "Creates a folder.",
-          "default": "add_folder"
-        },
-        "destination": {
-          "type": "string",
-          "description": "The absolute path of the destination folder.",
-          "default": "Shared/Documents/Example"
+    "/pubapi/v1/fs/:Path": {
+      "post": {
+        "parameters": [
+          {
+            "default": "Shared/Documents/example",
+            "description": "The full absolute path of the folder.",
+            "in": "path",
+            "name": "Path",
+            "type": "string"
+          },
+          {
+            "default": "application/json",
+            "description": "Content type of the payload",
+            "in": "header",
+            "name": "Content-Type",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
         }
       }
     },
-    "CopyFileorFolder": {
-      "type": "object",
-      "properties": {
-        "action": {
-          "type": "string",
-          "description": "Copies a file or folder.",
-          "default": "copy"
-        },
-        "destination": {
-          "type": "string",
-          "description": "The absolute path of the destination folder.",
-          "default": "Shared/Documents/Example"
+    "/pubapi/v1/fs/Path": {
+      "delete": {
+        "parameters": [
+          {
+            "default": "Shared/Documents/example.txt",
+            "description": "OAuth2 access token",
+            "in": "header",
+            "name": "Authorization",
+            "type": "string"
+          },
+          {
+            "default": "Shared",
+            "description": "The full absolute path of the file or folder.",
+            "in": "path",
+            "name": "Path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
         }
-      }
-    },
-    "CreateLink": {
-      "type": "object",
-      "properties": {
-        "path": {
-          "type": "string",
-          "required": true,
-          "description": "The absolute path of the destination file or folder. A target file must include the filename.",
-          "default": "/Shared/Documents/Links/links.txt"
-        },
-        "type": {
-          "type": "string",
-          "required": true,
-          "description": "Choose 'file' or 'folder'.",
-          "default": "file"
-        },
-        "accessibility": {
-          "type": "string",
-          "required": true,
-          "description": "Determines who a link is accessible by. Choose from 'anyone', 'password', 'domain', or 'recipients'.",
-          "default": "anyone"
-        },
-        "send_email": {
-          "type": "boolean",
-          "required": false,
-          "description": "If 'true' is set, link will be sent via email.",
-          "default": false
-        },
-        "recipients": {
-          "type": "string",
-          "required": false,
-          "description": "List email addresses of recipients of the link. Only required if the link will be sent via email by Egnyte.",
-          "default": ""
-        },
-        "message": {
-          "type": "string",
-          "required": false,
-          "description": "Personal message to be sent in link email.",
-          "default": "Please review this file."
-        },
-        "copy_me": {
-          "type": "boolean",
-          "required": false,
-          "description": "If 'true' is set, send a copy of the link message to the link creator. Only applies if 'send_email' is 'true'.",
-          "default": false
-        },
-        "notify": {
-          "type": "boolean",
-          "required": false,
-          "description": "If 'true' is set, link creator will be notified via email when link is accessed.",
-          "default": false
-        },
-        "link_to_current": {
-          "type": "boolean",
-          "required": false,
-          "description": "If 'true' is set, link will always refer to current version of file. Only applicable for file links.",
-          "default": false
-        },
-        "expiry_date": {
-          "type": "string",
-          "format": "date",
-          "required": false,
-          "description": "The expiry date for the link. Date must be in the future. If 'expiry_date' is specified, 'expiry_clicks' cannot be set.",
-          "default": ""
-        },
-        "expiry_clicks": {
-          "type": "integer",
-          "required": false,
-          "description": "The number of clicks the link is valid for. Value must be between 1 and 10.",
-          "default": "3"
+      },
+      "get": {
+        "parameters": [
+          {
+            "default": "",
+            "description": "OAuth2 access token",
+            "in": "header",
+            "name": "Authorization",
+            "type": "string"
+          },
+          {
+            "default": "Shared/Documents",
+            "description": "The full absolute path of the file or folder.",
+            "in": "path",
+            "name": "Path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
         }
-      }
-    },
-    "CreateSingleUser": {
-      "type": "object",
-      "properties": {
-        "userName": {
-          "type": "string",
-          "required": true,
-          "description": "The Egnyte username for the user.",
-          "default": ""
-        },
-        "externalId": {
-          "type": "string",
-          "required": true,
-          "description": "This is an immutable unique identifier provided by the API consumer.",
-          "default": ""
-        },
-        "email": {
-          "type": "string",
-          "required": true,
-          "description": "The email address of the user.",
-          "default": ""
-        },
-        "familyName": {
-          "type": "string",
-          "required": true,
-          "description": "The last name of the user.",
-          "default": ""
-        },
-        "givenName": {
-          "type": "string",
-          "required": true,
-          "description": "The first name of the user.",
-          "default": ""
-        },
-        "active": {
-          "type": "boolean",
-          "required": true,
-          "description": "Determines whether the user is active or inactive.",
-          "default": "true"
-        },
-        "sendInvite": {
-          "type": "boolean",
-          "required": true,
-          "description": "If set to true when creating a user, an invitation email will be sent (if the user is created as 'active').",
-          "default": "true"
-        },
-        "authType": {
-          "type": "string",
-          "required": true,
-          "description": "The authentication type for the user. Possible values are 'ad' (Active Directory), 'sso' (SAML SSO), and 'egnyte' (Internal Egnyte).",
-          "default": "egnyte"
-        },
-        "userType": {
-          "type": "string",
-          "required": true,
-          "description": "The Egnyte role for the user. Possible values are 'admin' (Administrator), 'power' (Power User), and 'standard' (Standard User).",
-          "default": "power"
-        },
-        "idpUserId": {
-          "type": "string",
-          "required": false,
-          "description": "This is how the user is identified within the SAML Response from an SSO Identity Provider, i.e. the SAML Subject. Only required if the user is SSO authenticated and not using default user mapping. Do not specify if user is not SSO authenticated.",
-          "default": ""
-        },
-        "userPrincipalName": {
-          "type": "string",
-          "required": false,
-          "description": "Used to bind child authentication policies to a user when using Active Directory authentication in a multi-domain setup. Do not specify if user is not AD authenticated.",
-          "default": ""
+      },
+      "post": {
+        "parameters": [
+          {
+            "default": "Shared/Documents/example.txt",
+            "description": "OAuth2 access token",
+            "in": "header",
+            "name": "Authorization",
+            "type": "string"
+          },
+          {
+            "default": "",
+            "description": "The full absolute path of the file or folder.",
+            "in": "path",
+            "name": "Path",
+            "type": "string"
+          },
+          {
+            "default": "application/json",
+            "description": "Content type of the payload",
+            "in": "header",
+            "name": "Content-Type",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
         }
       }
     }
   },
-  "paths": {
-    "/pubapi/v1/fs/:Path": {
-      "post": {
-        "responses": {
-          "200": {
-            "description": "success"
-          }
-        },
-        "parameters": [
-          {
-            "name": "Path",
-            "in": "path",
-            "default": "Shared/Documents/example",
-            "description": "The full absolute path of the folder.",
-            "type": "string"
-          },
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "default": "application/json",
-            "description": "Content type of the payload",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/pubapi/v1/fs-content/Path": {
-      "post": {
-        "responses": {
-          "200": {
-            "description": "success"
-          }
-        },
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "default": "",
-            "description": "OAuth2 access token",
-            "type": "string"
-          },
-          {
-            "name": "Path",
-            "in": "path",
-            "default": "Shared/Documents/example.txt",
-            "description": "The full absolute path of the file.",
-            "type": "string"
-          },
-          {
-            "name": "requestBody",
-            "in": "body",
-            "default": "{\"placeholder\":\"contents\"}",
-            "description": "File contents placeholder  (do not modify)",
-            "type": "string"
-          },
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "default": "text/plain",
-            "description": "Content type of the payload",
-            "type": "string"
-          },
-          {
-            "name": "Content-Length",
-            "in": "header",
-            "default": "",
-            "description": "Content length of the payload",
-            "type": "string"
-          }
-        ]
-      },
-      "get": {
-        "responses": {
-          "200": {
-            "description": "success"
-          }
-        },
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "default": "",
-            "description": "OAuth2 access token",
-            "type": "string"
-          },
-          {
-            "name": "Path",
-            "in": "path",
-            "default": "Shared/Documents/example.txt",
-            "description": "The full absolute path of the file.",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/pubapi/v1/fs/Path": {
-      "post": {
-        "responses": {
-          "200": {
-            "description": "success"
-          }
-        },
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "default": "Shared/Documents/example.txt",
-            "description": "OAuth2 access token",
-            "type": "string"
-          },
-          {
-            "name": "Path",
-            "in": "path",
-            "default": "",
-            "description": "The full absolute path of the file or folder.",
-            "type": "string"
-          },
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "default": "application/json",
-            "description": "Content type of the payload",
-            "type": "string"
-          }
-        ]
-      },
-      "get": {
-        "responses": {
-          "200": {
-            "description": "success"
-          }
-        },
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "default": "",
-            "description": "OAuth2 access token",
-            "type": "string"
-          },
-          {
-            "name": "Path",
-            "in": "path",
-            "default": "Shared/Documents",
-            "description": "The full absolute path of the file or folder.",
-            "type": "string"
-          }
-        ]
-      },
-      "delete": {
-        "responses": {
-          "200": {
-            "description": "success"
-          }
-        },
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "default": "Shared/Documents/example.txt",
-            "description": "OAuth2 access token",
-            "type": "string"
-          },
-          {
-            "name": "Path",
-            "in": "path",
-            "default": "Shared",
-            "description": "The full absolute path of the file or folder.",
-            "type": "string"
-          }
-        ]
-      }
-    }
-  }
+  "schemes": [
+    "https:"
+  ],
+  "swagger": "2.0"
 }
