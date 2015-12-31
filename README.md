@@ -63,8 +63,6 @@ Converter.convert({
 ```
 
 ### Browser
-**Note:** API Blueprint is not yet supported in the browser
-
 ```js
 APISpecConverter.convert(...)
 ```
