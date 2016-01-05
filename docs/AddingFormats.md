@@ -76,15 +76,15 @@ var Swagger1 = module.exports = function() {
 
 ## Internal Types
 If you're adding your type inside this package, you should:
-* Write your type's logic in `./lib/types/type_name.js'
+* Write your type's logic in `./lib/types/<type_name>.js'
 * Add your type to `./lib/types.js`
 * Update README.md
 
 ## External Types
 If you're adding a type from outside this repository (e.g. a proprietary type), you should:
-* Write your type's logic in `type_name.js` inside your repository
-* Set `require('api-spec-converter').Types.type_name = require('./type_name.js')
+* Write your type's logic in `<type_name>.js` inside your repository
+* Set `require('api-spec-converter').Types["<type_name>"] = require('./<type_name>.js')
 
-Then you can call `Converter.convert()` with `type_name` just as you would with other format names.
+Then you can call `Converter.convert()` with `<type_name>` just as you would with other format names.
 
 See [kaltura-spec-converter](https://github.com/bobby-brennan/kaltura-spec-converter/blob/master/index.js) for an example.
