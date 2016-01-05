@@ -49,6 +49,8 @@ Additionally, types MAY override the following functions and fields:
 Generally speaking, different versions of the same format belong in the same type (e.g. RAML 0.8 and RAML 1.0).
 However, if there are substantial changes between versions (such as with Swagger 1.x and Swagger 2.0), or if there's a need to be able to convert between different versions of the same format, you can create a separate type.
 
+This is why we have separate keys for swagger_1 and swagger_2, but only one key (raml) for RAML 0.8 and RAML 1.0
+
 ## Creating Conversions
 Conversion functions should be declared in your type's constructor as `this.converters[to_type]`.
 You should have one conversion function for each type you will convert to.
