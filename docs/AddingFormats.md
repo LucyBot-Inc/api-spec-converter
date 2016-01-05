@@ -37,7 +37,7 @@ All types MUST:
 * Call util.inherits(myType, BaseType)
 
 Additionally, types MAY override the following functions and fields:
-* `formatName` - A versionless name for this format (e.g. 'swagger')
+* `formatName` - A versionless name for this format (e.g. 'swagger'). This is useful if different versions of a single format are handled by separate types in api-spec-converter (as swagger_1 and swagger_2 are)
 * `supportedVersions` - An array of version strings. If getFormatVersion() returns something other than what's in this array, an error will be throw
 * `getFormatVersion` - returns the format version that the spec being converted was written in (e.g. Swagger 2.0, RAML 1.0)
 * `parsers` - An array of functions that will parse this format from a string into a JS object. Each function should have the footprint `function(data, callback)`, where `callback` has the footprint `function(err, parsed)`. Each parser will be tried in-order until one returns successfully.
