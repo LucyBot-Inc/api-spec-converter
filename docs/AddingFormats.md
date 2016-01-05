@@ -2,7 +2,7 @@ These are instructions for adding new formats to api-spec-converter.
 New formats can be created inside this repository, or added from an external project that depends on api-spec-converter
 
 If the format you're adding is a popular/open format like Swagger or RAML, please contribute your work to this repository.
-If you're adding a proprietary format, please create a separate package that depends on api-spec-converter.
+If you're adding a proprietary format, please create a separate package that depends on api-spec-converter (see the last section of this document).
 
 ## Creating the Type
 api-spec-converter exposes a BaseType, which is extended by all other types.
@@ -34,7 +34,7 @@ All types MUST:
 * Supply a constructor that
   * calls super_.apply(this, arguments)
   * sets this.type to the type's key (e.g. swagger_2, api_blueprint)
-* Call Inherits(myType, BaseType)
+* Call util.inherits(myType, BaseType)
 
 Additionally, types MAY override the following functions and fields:
 * `formatName` - A versionless name for this format (e.g. 'swagger')
@@ -45,4 +45,44 @@ Additionally, types MAY override the following functions and fields:
 * `validate` - A function with footprint `function(callback)` that checks to make sure the parsed spec is valid. The callback has footprint `function(errors, warnings)`
 * `listSubResources` - A function that returns an array URLs or filenames from the parsed spec which should also be resolved and parsed. These resources will be made available in the `type.subResources` field.
 
+## Creating Conversions
+Conversion functions should be declared in your type's constructor as `this.converters[to_type]`.
+You should have one conversion function for each type you will convert to.
+Each converter has a footprint `function(fromSpec, callback)`, where callback has the footprint `function(err, converted)`
 
+For example, here's the swagger_1 -> swagger_2 conversion, inside `./lib/types/swagger_1.js`:
+
+```js
+var SwaggerConverter = require('swagger-converter');
+var Swagger1 = module.exports = function() {
+  Swagger1.super_.apply(this, arguments);
+  this.type = 'swagger_1';
+
+  this.converters.swagger_2 = function(swagger1, callback) {
+    try {
+      var swagger2 = SwaggerConverter.convert(swagger1.spec, swagger1.subResources);
+
+      if (swagger2.info.title === 'Title was not specified')
+        swagger2.info.title = swagger2.host;
+    } catch(e) {
+      return callback(e);
+    }
+    return callback(null, swagger2);
+  }
+}
+```
+
+## Internal Types
+If you're adding your type inside this package, you should:
+* Write your type's logic in `./lib/types/type_name.js'
+* Add your type to `./lib/types.js`
+* Update README.md
+
+## External Types
+If you're adding a type from outside this repository (e.g. a proprietary type), you should:
+* Write your type's logic in `type_name.js` inside your repository
+* Set `require('api-spec-converter').Types.type_name = require('./type_name.js')
+
+Then you can call `Converter.convert()` with `type_name` just as you would with other format names.
+
+See [kaltura-spec-converter](https://github.com/bobby-brennan/kaltura-spec-converter/blob/master/index.js) for an example.
