@@ -45,6 +45,10 @@ Additionally, types MAY override the following functions and fields:
 * `validate` - A function with footprint `function(callback)` that checks to make sure the parsed spec is valid. The callback has footprint `function(errors, warnings)`
 * `listSubResources` - A function that returns an array URLs or filenames from the parsed spec which should also be resolved and parsed. These resources will be made available in the `type.subResources` field.
 
+### Format Versions
+Generally speaking, different versions of the same format belong in the same type (e.g. RAML 0.8 and RAML 1.0).
+However, if there are substantial changes between versions (such as with Swagger 1.x and Swagger 2.0), or if there's a need to be able to convert between different versions of the same format, you can create a separate type.
+
 ## Creating Conversions
 Conversion functions should be declared in your type's constructor as `this.converters[to_type]`.
 You should have one conversion function for each type you will convert to.
