@@ -76,7 +76,7 @@ var Swagger1 = module.exports = function() {
 
 ## Internal Types
 If you're adding your type inside this package, you should:
-* Write your type's logic in `./lib/types/<type_name>.js'
+* Write your type's logic in `./lib/types/<type_name>.js`, where `<type_name>` is an identifier for your type, e.g. swagger_2 or raml
 * Add your type to `./lib/types.js`
 * Update README.md
 
