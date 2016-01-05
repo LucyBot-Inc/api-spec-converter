@@ -43,7 +43,7 @@ Additionally, types MAY override the following functions and fields:
 * `parsers` - An array of functions that will parse this format from a string into a JS object. Each function should have the footprint `function(data, callback)`, where `callback` has the footprint `function(err, parsed)`. Each parser will be tried in-order until one returns successfully.
 * `fixSpec` - A function (with no arguments) that fixes possible validation errors in the parsed spec
 * `validate` - A function with footprint `function(callback)` that checks to make sure the parsed spec is valid. The callback has footprint `function(errors, warnings)`
-* `listSubResources` - A function that returns an array URLs or filenames from the parsed spec which should also be resolved and parsed. These resources will be made available in the `type.subResources` field.
+* `listSubResources` - A function that returns an array URLs or filenames from the parsed spec which should also be resolved and parsed. These resources will be made available in the `type.subResources` field. Some types, like RAML, simply do subresource resolution inside of their `parsers`
 
 ### Format Versions
 Generally speaking, different versions of the same format belong in the same type (e.g. RAML 0.8 and RAML 1.0).
