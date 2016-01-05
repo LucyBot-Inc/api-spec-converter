@@ -50,7 +50,7 @@ Conversion functions should be declared in your type's constructor as `this.conv
 You should have one conversion function for each type you will convert to.
 Each converter has a footprint `function(fromSpec, callback)`, where callback has the footprint `function(err, converted)`
 
-Conversions are generally handled by external libraries, but can also be done inside the conversion function.
+Conversion functions generally rely on external libraries for most of the logic, though this is not necessary.
 
 For example, here's the swagger_1 -> swagger_2 conversion, inside `./lib/types/swagger_1.js`:
 
