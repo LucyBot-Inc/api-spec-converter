@@ -91,7 +91,7 @@ APISpecConverter.convert(...)
 |to wadl           |         |         |       |             |      |    | n/a|
 
 ## Contributing
-Contributions are welcome. I'll try to respond to pull requests within 24 hours.
+Contributions are welcome and encouraged. See [docs/Contributing.md](docs/Contributing.md) for instructions, tips, and starter projects.
 
 [twitter-image]: https://img.shields.io/twitter/url/http/lucybot.github.io/api-spec-converter.svg?style=social
 [twitter-link]: https://twitter.com/intent/tweet?text=Convert+between+API+description+formats+such+as+Swagger+and+RAML:&url=http%3A%2F%2Flucybot.github.io%2Fapi-spec-converter
