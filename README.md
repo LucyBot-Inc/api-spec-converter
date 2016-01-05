@@ -12,7 +12,7 @@
 
 Convert between API description formats such as [Swagger](http://swagger.io/) and [RAML](http://raml.org/)
 
-*Currently only supports conversion to Swagger 2.0*
+**Currently only supports conversion to Swagger 2.0**
 
 You can also use the online version at https://lucybot.github.io/api-spec-converter
 
