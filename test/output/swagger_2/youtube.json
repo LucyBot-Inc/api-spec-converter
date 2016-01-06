@@ -5168,8 +5168,16 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtube.readonly"
             ]
           }
@@ -5231,7 +5239,11 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtube.force-ssl"
             ]
           }
@@ -5280,7 +5292,11 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube.force-ssl",
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -5343,7 +5359,11 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube.force-ssl",
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -5433,7 +5453,11 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube.force-ssl",
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -5500,7 +5524,11 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube.force-ssl",
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -5568,7 +5596,11 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube.force-ssl",
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -5659,8 +5691,16 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtube.upload"
             ]
           }
@@ -5697,8 +5737,16 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -5760,9 +5808,21 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
-              "https://www.googleapis.com/auth/youtube.readonly",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.readonly"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -5836,8 +5896,16 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -5882,8 +5950,16 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -5980,10 +6056,26 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
-              "https://www.googleapis.com/auth/youtube.readonly",
-              "https://www.googleapis.com/auth/youtubepartner",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.readonly"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtubepartner"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner-channel-audit"
             ]
           }
@@ -6051,8 +6143,16 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -6645,9 +6745,21 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
-              "https://www.googleapis.com/auth/youtube.readonly",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.readonly"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -6711,9 +6823,21 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
-              "https://www.googleapis.com/auth/youtube.readonly",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.readonly"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -6777,9 +6901,21 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
-              "https://www.googleapis.com/auth/youtube.readonly",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.readonly"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -6845,7 +6981,11 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtube.force-ssl"
             ]
           }
@@ -6928,8 +7068,16 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtube.readonly"
             ]
           }
@@ -7003,7 +7151,11 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtube.force-ssl"
             ]
           }
@@ -7054,7 +7206,11 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtube.force-ssl"
             ]
           }
@@ -7136,7 +7292,11 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtube.force-ssl"
             ]
           }
@@ -7230,7 +7390,11 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtube.force-ssl"
             ]
           }
@@ -7318,7 +7482,11 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtube.force-ssl"
             ]
           }
@@ -7361,7 +7529,11 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtube.force-ssl"
             ]
           }
@@ -7432,8 +7604,16 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtube.readonly"
             ]
           }
@@ -7507,7 +7687,11 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtube.force-ssl"
             ]
           }
@@ -7558,7 +7742,11 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtube.force-ssl"
             ]
           }
@@ -7589,8 +7777,16 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -7661,9 +7857,21 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
-              "https://www.googleapis.com/auth/youtube.readonly",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.readonly"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -7731,8 +7939,16 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -7771,8 +7987,16 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -7809,8 +8033,16 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -7893,9 +8125,21 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
-              "https://www.googleapis.com/auth/youtube.readonly",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.readonly"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -7969,8 +8213,16 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -8015,8 +8267,16 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -8296,9 +8556,21 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
-              "https://www.googleapis.com/auth/youtube.readonly",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.readonly"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -8352,8 +8624,16 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -8454,9 +8734,21 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
-              "https://www.googleapis.com/auth/youtube.readonly",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.readonly"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -8518,8 +8810,16 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -8587,9 +8887,21 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
-              "https://www.googleapis.com/auth/youtube.upload",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.upload"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -8630,8 +8942,16 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtube.readonly"
             ]
           }
@@ -8707,9 +9027,21 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
-              "https://www.googleapis.com/auth/youtube.readonly",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.readonly"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -8769,8 +9101,16 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -8879,9 +9219,21 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
-              "https://www.googleapis.com/auth/youtube.readonly",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.readonly"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -9063,9 +9415,21 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
-              "https://www.googleapis.com/auth/youtube.upload",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.upload"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -9110,8 +9474,16 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -9151,8 +9523,16 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -9247,8 +9627,16 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -9308,8 +9696,16 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -9381,9 +9777,21 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
-              "https://www.googleapis.com/auth/youtube.upload",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.upload"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
@@ -9443,8 +9851,16 @@
         "security": [
           {
             "Oauth2": [
-              "https://www.googleapis.com/auth/youtube",
-              "https://www.googleapis.com/auth/youtube.force-ssl",
+              "https://www.googleapis.com/auth/youtube"
+            ]
+          },
+          {
+            "Oauth2": [
+              "https://www.googleapis.com/auth/youtube.force-ssl"
+            ]
+          },
+          {
+            "Oauth2": [
               "https://www.googleapis.com/auth/youtubepartner"
             ]
           }
