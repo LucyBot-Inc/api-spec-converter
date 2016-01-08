@@ -1,0 +1,161 @@
+{
+  "basePath": "/resources/v1/",
+  "host": "localhost:8080",
+  "paths": {
+    "/foo1": {
+      "get": {
+        "description": "- 200: OK\n- 204: method successfully executed but no content found with\n                    token\n- 400: bad request - check your parameters",
+        "operationId": "getFoo1",
+        "parameters": [
+          {
+            "description": "a param",
+            "in": "query",
+            "name": "param1",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": []
+    },
+    "/sessions": {
+      "parameters": [],
+      "post": {
+        "description": "create session\n- 201: session created",
+        "operationId": "createSession",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/sessions/{sessionId}/event1": {
+      "delete": {
+        "description": "To notify that event1 is stopped\n- 204 : ok",
+        "operationId": "event1Stopped",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "session id",
+          "in": "path",
+          "name": "sessionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "post": {
+        "description": "To notify that event1 is started\n- 204 : ok",
+        "operationId": "event1Started",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/sessions/{sessionId}/events": {
+      "get": {
+        "description": "Get events list starting from lastEventId. A session has to\n                            be created before\n- 200: OK\n- 204: method successfully executed but no event found\n- 400: bad request - check your parameters",
+        "operationId": "getMediasAndEvents",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "session id",
+          "in": "path",
+          "name": "sessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "description": "last event received, start with 0",
+          "format": "int32",
+          "in": "query",
+          "name": "lastEventId",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    "/sessions/{sessionId}/history": {
+      "get": {
+        "description": "Get session history\n- 200: OK\n- 204: method successfully executed but no history found\n- 400: bad request - check your parameters",
+        "operationId": "getSHistory",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "session id",
+          "in": "path",
+          "name": "sessionId",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    "/sessions/{sessionId}/type1/{CustomType2}": {
+      "delete": {
+        "description": "Stop event 2\n- 204: ok",
+        "operationId": "stopEvent2",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "sessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "in": "path",
+          "name": "CustomType2",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "put": {
+        "description": "Event 2\n- 201: ok",
+        "operationId": "event2",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    }
+  },
+  "schemes": [
+    "http"
+  ],
+  "swagger": "2.0"
+}

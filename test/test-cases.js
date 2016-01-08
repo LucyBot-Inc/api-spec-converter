@@ -25,6 +25,11 @@ TestCases.push({
   out: {type: 'swagger_2', file: 'facebook.json'},
 })
 
+TestCases.push({
+  in: {type: 'wadl', file: 'sample_wadl.wadl'},
+  out: {type: 'swagger_2', file: 'sample_wadl.json'},
+})
+
 var IODOCS_FILES = ['usatoday', 'egnyte', 'foursquare', 'klout'];
 TestCases = TestCases.concat(IODOCS_FILES.map(function(file) {
   return {

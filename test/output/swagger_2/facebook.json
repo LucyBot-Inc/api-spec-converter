@@ -2144,18 +2144,16 @@
           },
           {
             "description": "Event start time",
+            "format": "int64",
             "in": "query",
-            "maximum": 9223372036854776000,
-            "minimum": -9223372036854776000,
             "name": "start_time",
             "required": true,
             "type": "integer"
           },
           {
             "description": "Event end time",
+            "format": "int64",
             "in": "query",
-            "maximum": 9223372036854776000,
-            "minimum": -9223372036854776000,
             "name": "end_time",
             "required": false,
             "type": "integer"
@@ -3607,18 +3605,16 @@
           },
           {
             "description": "Event start time",
+            "format": "int64",
             "in": "query",
-            "maximum": 9223372036854776000,
-            "minimum": -9223372036854776000,
             "name": "start_time",
             "required": true,
             "type": "integer"
           },
           {
             "description": "Event end time",
+            "format": "int64",
             "in": "query",
-            "maximum": 9223372036854776000,
-            "minimum": -9223372036854776000,
             "name": "end_time",
             "required": false,
             "type": "integer"
