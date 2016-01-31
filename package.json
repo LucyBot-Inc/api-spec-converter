@@ -1,7 +1,7 @@
 {
   "name": "api-spec-converter",
   "version": "1.7.0",
-  "description": " Convert between API description formats such as Swagger and RAML",
+  "description": "Convert API descriptions between popular formats such as OpenAPI(fka Swagger), RAML, API Blueprint, WADL, etc.",
   "main": "index.js",
   "scripts": {
     "browserify": "grunt browserify",
@@ -18,9 +18,12 @@
     "Restful",
     "convert",
     "converter",
+    "OpenAPI",
+    "OpenAPI Specification",
     "Swagger",
     "RAML",
     "Blueprint",
+    "API Blueprint",
     "GoogleDiscovery",
     "WADL",
     "I/O Docs"
