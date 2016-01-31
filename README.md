@@ -69,8 +69,8 @@ APISpecConverter.convert(...)
 
 ## Supported Types
 
-* [Swagger 1.x](https://github.com/swagger-api/swagger-spec/blob/master/versions/1.2.md) (swagger_1)
-* [Swagger 2.0](https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md) (swagger_2)
+* [Swagger 1.x](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/1.2.md) (swagger_1)
+* [OpenAPI(fka Swagger) 2.0](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md) (swagger_2)
 * [I/O Docs](https://github.com/mashery/iodocs) (io_docs)
 * [API Blueprint](https://github.com/apiaryio/api-blueprint/blob/master/API%20Blueprint%20Specification.md) (api_blueprint)
 * [Google API Discovery](https://developers.google.com/discovery/v1/reference/apis) (google)
