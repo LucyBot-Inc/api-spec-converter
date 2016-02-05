@@ -9890,5 +9890,70 @@
       "type": "oauth2"
     }
   },
-  "swagger": "2.0"
+  "swagger": "2.0",
+  "tags": [
+    {
+      "name": "activities"
+    },
+    {
+      "name": "captions"
+    },
+    {
+      "name": "channelBanners"
+    },
+    {
+      "name": "channelSections"
+    },
+    {
+      "name": "channels"
+    },
+    {
+      "name": "commentThreads"
+    },
+    {
+      "name": "comments"
+    },
+    {
+      "name": "guideCategories"
+    },
+    {
+      "name": "i18nLanguages"
+    },
+    {
+      "name": "i18nRegions"
+    },
+    {
+      "name": "liveBroadcasts"
+    },
+    {
+      "name": "liveStreams"
+    },
+    {
+      "name": "playlistItems"
+    },
+    {
+      "name": "playlists"
+    },
+    {
+      "name": "search"
+    },
+    {
+      "name": "subscriptions"
+    },
+    {
+      "name": "thumbnails"
+    },
+    {
+      "name": "videoAbuseReportReasons"
+    },
+    {
+      "name": "videoCategories"
+    },
+    {
+      "name": "videos"
+    },
+    {
+      "name": "watermarks"
+    }
+  ]
 }
