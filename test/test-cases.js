@@ -30,6 +30,11 @@ TestCases.push({
   out: {type: 'swagger_2', file: 'sample_wadl.json'},
 })
 
+TestCases.push({
+  in: {type: 'wadl', file: 'OpenStack_example.wadl'},
+  out: {type: 'swagger_2', file: 'OpenStack_example.json'},
+})
+
 var IODOCS_FILES = ['usatoday', 'egnyte', 'foursquare', 'klout'];
 TestCases = TestCases.concat(IODOCS_FILES.map(function(file) {
   return {

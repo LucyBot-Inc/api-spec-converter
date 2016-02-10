@@ -1,0 +1,105 @@
+{
+  "basePath": "/",
+  "host": "localhost:35357",
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "listVersions-v2",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": []
+    },
+    "/v2.0": {
+      "get": {
+        "operationId": "showVersionInfo-v2.0",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": []
+    },
+    "/v2.0/extensions": {
+      "get": {
+        "operationId": "listExtensions-v2",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": []
+    },
+    "/v2.0/extensions/{alias}": {
+      "get": {
+        "operationId": "showExtension-v2",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "alias",
+          "required": false,
+          "type": "string"
+        }
+      ]
+    },
+    "/v2.0/tenants": {
+      "get": {
+        "operationId": "listTenants",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "in": "header",
+          "name": "X-Auth-Token",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "format": "int32",
+          "in": "query",
+          "name": "limit",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "in": "query",
+          "name": "marker",
+          "required": false,
+          "type": "string"
+        }
+      ]
+    },
+    "/v2.0/tokens": {
+      "parameters": [],
+      "post": {
+        "operationId": "authenticate-v2.0",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    }
+  },
+  "schemes": [
+    "http"
+  ],
+  "swagger": "2.0"
+}
