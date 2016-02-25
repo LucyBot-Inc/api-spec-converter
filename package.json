@@ -52,7 +52,7 @@
     "raml-parser": "^0.8.15",
     "raml-to-swagger": "^1.0.0",
     "request": "^2.69.0",
-    "swagger-converter": "^1.1.0",
+    "swagger-converter": "^1.2.0",
     "sway": "^0.6.0",
     "traverse": "^0.6.6",
     "urijs": "^1.17.0",
