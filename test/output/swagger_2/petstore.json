@@ -344,13 +344,13 @@
         },
         "security": [
           {
-            "oauth2_implicit": [
+            "oauth2_accessCode": [
               "write:pets",
               "read:pets"
             ]
           },
           {
-            "oauth2_accessCode": [
+            "oauth2_implicit": [
               "write:pets",
               "read:pets"
             ]
@@ -390,12 +390,12 @@
         },
         "security": [
           {
-            "oauth2_implicit": [
+            "oauth2_accessCode": [
               "write:pets"
             ]
           },
           {
-            "oauth2_accessCode": [
+            "oauth2_implicit": [
               "write:pets"
             ]
           }
@@ -490,12 +490,12 @@
         },
         "security": [
           {
-            "oauth2_implicit": [
+            "oauth2_accessCode": [
               "write:pets"
             ]
           },
           {
-            "oauth2_accessCode": [
+            "oauth2_implicit": [
               "write:pets"
             ]
           }
@@ -549,12 +549,12 @@
         },
         "security": [
           {
-            "oauth2_implicit": [
+            "oauth2_accessCode": [
               "write:pets"
             ]
           },
           {
-            "oauth2_accessCode": [
+            "oauth2_implicit": [
               "write:pets"
             ]
           }
@@ -592,12 +592,12 @@
         },
         "security": [
           {
-            "oauth2_implicit": [
+            "oauth2_accessCode": [
               "write:pets"
             ]
           },
           {
-            "oauth2_accessCode": [
+            "oauth2_implicit": [
               "write:pets"
             ]
           }
@@ -637,12 +637,12 @@
         },
         "security": [
           {
-            "oauth2_implicit": [
+            "oauth2_accessCode": [
               "write:pets"
             ]
           },
           {
-            "oauth2_accessCode": [
+            "oauth2_implicit": [
               "write:pets"
             ]
           }
@@ -712,12 +712,12 @@
         },
         "security": [
           {
-            "oauth2_implicit": [
+            "oauth2_accessCode": [
               "test:anything"
             ]
           },
           {
-            "oauth2_accessCode": [
+            "oauth2_implicit": [
               "test:anything"
             ]
           }
@@ -755,12 +755,12 @@
         },
         "security": [
           {
-            "oauth2_implicit": [
+            "oauth2_accessCode": [
               "test:anything"
             ]
           },
           {
-            "oauth2_accessCode": [
+            "oauth2_implicit": [
               "test:anything"
             ]
           }
@@ -798,12 +798,12 @@
         },
         "security": [
           {
-            "oauth2_implicit": [
+            "oauth2_accessCode": [
               "test:anything"
             ]
           },
           {
-            "oauth2_accessCode": [
+            "oauth2_implicit": [
               "test:anything"
             ]
           }
@@ -899,12 +899,12 @@
         },
         "security": [
           {
-            "oauth2_implicit": [
+            "oauth2_accessCode": [
               "test:anything"
             ]
           },
           {
-            "oauth2_accessCode": [
+            "oauth2_implicit": [
               "test:anything"
             ]
           }
@@ -984,12 +984,12 @@
         },
         "security": [
           {
-            "oauth2_implicit": [
+            "oauth2_accessCode": [
               "test:anything"
             ]
           },
           {
-            "oauth2_accessCode": [
+            "oauth2_implicit": [
               "test:anything"
             ]
           }
