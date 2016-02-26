@@ -4,3 +4,11 @@ node_js:
   - "4.2"
   - "0.12"
 after_script: '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && npm run test-browser-sauce || true'
+deploy:
+  provider: npm
+  email: ivan.goncharov.ua@gmail.com
+  api_key:
+    secure: LAV5GGyHuKsQ9N9PXg5+Pgu83P5BfGVgzoHLklxq8HEavQpNiG7FA/f4ncRqPY623kQYEDN4fcnWK2WGAXMiJ+AZIvCzjPz+6zWSF4IswQwsGyUkOymZGfHQNolBt7asJUKABh7LocoUlCFXzfkW6KMaUecPlc6Mh4d4i7/RP1/F1hjB/+9uT33yX4sZrH7DGRYnCiYL1kdCI46grzbCdgoEE+eyAu/Kq8+Bp5sbH0B2XsEZkFB4xzwMLFCEhU4sPi9MweRXP9Fenyxj7UpyccLq9swP6Rno7P0JXJ40m2zczGIFaegiWlaRfxqCtwO5zPJWOOkFX0HyrPv0k5IDaK5zodKmDcSpE7lHdENYxpbSwgOac9R+BIm26Pj95Y1lMY+X9RjtI34kDGw1/oGeZAtQlYcGmXQeT7or4a/TyESMykRiEoJzpF3cQVP6gzQ5jAv9gMBUjzc6nbnv0foI72GD9PxNkth4fMUd/yUS4nHdvzvWIxehcKTROIIyb6xlw08qQqqKUkvu8gMRjj1gTOf0/+P9KEgb7yKzVUm7RFcriVAkjGtNBmz/wllokq/a4Gp0PS/QlDs9MKNDJ7qFYS3wZftN/YMKnX63pSj1vQYaqcqc3g5/D8vHRZx/AZAYqb31M3z5qq+TqKU2xiBKwJe/BseLZeNZCcBPPR97pTA=
+  on:
+    tags: true
+    repo: APIs-guru/api-spec-converter
