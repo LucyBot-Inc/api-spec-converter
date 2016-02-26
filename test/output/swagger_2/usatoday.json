@@ -1,230 +1,230 @@
 {
-  "swagger": "2.0",
-  "info": {
-    "title": "USA TODAY Census API"
-  },
-  "schemes": [
-    "http:"
-  ],
+  "basePath": "/open",
   "host": [
     "api.usatoday.com"
   ],
-  "basePath": "/open",
+  "info": {
+    "title": "USA TODAY Census API"
+  },
   "paths": {
-    "/census/locations": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "success"
-          }
-        },
-        "parameters": [
-          {
-            "name": "keypat",
-            "in": "query",
-            "default": "",
-            "description": "State abbreviation default, or arbitrary placename if keyname=placename",
-            "type": "string"
-          },
-          {
-            "name": "keyname",
-            "in": "query",
-            "default": "",
-            "description": "[placename, FIPS, GNIS]",
-            "type": "string",
-            "enum": [
-              "placename",
-              "FIPS",
-              "GNIS"
-            ]
-          },
-          {
-            "name": "sumlevid",
-            "in": "query",
-            "default": "2",
-            "description": "Use sumlevid to define what level of census data you would like.",
-            "type": "string",
-            "enum": [
-              "1",
-              "2",
-              "3",
-              "4"
-            ]
-          }
-        ]
-      }
-    },
     "/census/ethnicity": {
       "get": {
-        "responses": {
-          "200": {
-            "description": "success"
-          }
-        },
         "parameters": [
           {
-            "name": "keypat",
-            "in": "query",
             "default": "",
             "description": "State abbreviation default, or arbitrary placename if keyname=placename",
+            "in": "query",
+            "name": "keypat",
             "type": "string"
           },
           {
-            "name": "keyname",
-            "in": "query",
             "default": "",
             "description": "[placename, FIPS, GNIS]",
-            "type": "string",
             "enum": [
               "placename",
               "FIPS",
               "GNIS"
-            ]
+            ],
+            "in": "query",
+            "name": "keyname",
+            "type": "string"
           },
           {
-            "name": "sumlevid",
-            "in": "query",
             "default": "2",
             "description": "Use sumlevid to define what level of census data you would like.",
-            "type": "string",
             "enum": [
               "1",
               "2",
               "3",
               "4"
-            ]
+            ],
+            "in": "query",
+            "name": "sumlevid",
+            "type": "string"
           }
-        ]
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
       }
     },
     "/census/housing": {
       "get": {
-        "responses": {
-          "200": {
-            "description": "success"
-          }
-        },
         "parameters": [
           {
-            "name": "keypat",
-            "in": "query",
             "default": "",
             "description": "State abbreviation default, or arbitrary placename if keyname=placename",
+            "in": "query",
+            "name": "keypat",
             "type": "string"
           },
           {
-            "name": "keyname",
-            "in": "query",
             "default": "",
             "description": "[placename, FIPS, GNIS]",
-            "type": "string",
             "enum": [
               "placename",
               "FIPS",
               "GNIS"
-            ]
+            ],
+            "in": "query",
+            "name": "keyname",
+            "type": "string"
           },
           {
-            "name": "sumlevid",
-            "in": "query",
             "default": "2",
             "description": "Use sumlevid to define what level of census data you would like.",
-            "type": "string",
             "enum": [
               "1",
               "2",
               "3",
               "4"
-            ]
+            ],
+            "in": "query",
+            "name": "sumlevid",
+            "type": "string"
           }
-        ]
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/census/locations": {
+      "get": {
+        "parameters": [
+          {
+            "default": "",
+            "description": "State abbreviation default, or arbitrary placename if keyname=placename",
+            "in": "query",
+            "name": "keypat",
+            "type": "string"
+          },
+          {
+            "default": "",
+            "description": "[placename, FIPS, GNIS]",
+            "enum": [
+              "placename",
+              "FIPS",
+              "GNIS"
+            ],
+            "in": "query",
+            "name": "keyname",
+            "type": "string"
+          },
+          {
+            "default": "2",
+            "description": "Use sumlevid to define what level of census data you would like.",
+            "enum": [
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "in": "query",
+            "name": "sumlevid",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
       }
     },
     "/census/population": {
       "get": {
-        "responses": {
-          "200": {
-            "description": "success"
-          }
-        },
         "parameters": [
           {
-            "name": "keypat",
-            "in": "query",
             "default": "",
             "description": "State abbreviation default, or arbitrary placename if keyname=placename",
+            "in": "query",
+            "name": "keypat",
             "type": "string"
           },
           {
-            "name": "keyname",
-            "in": "query",
             "default": "",
             "description": "[placename, FIPS, GNIS]",
-            "type": "string",
             "enum": [
               "placename",
               "FIPS",
               "GNIS"
-            ]
+            ],
+            "in": "query",
+            "name": "keyname",
+            "type": "string"
           },
           {
-            "name": "sumlevid",
-            "in": "query",
             "default": "2",
             "description": "Use sumlevid to define what level of census data you would like.",
-            "type": "string",
             "enum": [
               "1",
               "2",
               "3",
               "4"
-            ]
+            ],
+            "in": "query",
+            "name": "sumlevid",
+            "type": "string"
           }
-        ]
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
       }
     },
     "/census/race": {
       "get": {
-        "responses": {
-          "200": {
-            "description": "success"
-          }
-        },
         "parameters": [
           {
-            "name": "keypat",
-            "in": "query",
             "default": "",
             "description": "State abbreviation default, or arbitrary placename if keyname=placename",
+            "in": "query",
+            "name": "keypat",
             "type": "string"
           },
           {
-            "name": "keyname",
-            "in": "query",
             "default": "",
             "description": "[placename, FIPS, GNIS]",
-            "type": "string",
             "enum": [
               "placename",
               "FIPS",
               "GNIS"
-            ]
+            ],
+            "in": "query",
+            "name": "keyname",
+            "type": "string"
           },
           {
-            "name": "sumlevid",
-            "in": "query",
             "default": "2",
             "description": "Use sumlevid to define what level of census data you would like.",
-            "type": "string",
             "enum": [
               "1",
               "2",
               "3",
               "4"
-            ]
+            ],
+            "in": "query",
+            "name": "sumlevid",
+            "type": "string"
           }
-        ]
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
       }
     }
-  }
+  },
+  "schemes": [
+    "http:"
+  ],
+  "swagger": "2.0"
 }

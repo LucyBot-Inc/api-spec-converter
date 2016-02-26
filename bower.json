@@ -11,10 +11,14 @@
     "API",
     "REST",
     "Restful",
+    "convert",
+    "converter",
     "Swagger",
     "RAML",
     "Blueprint",
-    "GoogleDiscovery"
+    "GoogleDiscovery",
+    "WADL",
+    "I/O Docs"
   ],
   "homepage": "https://github.com/lucybot/api-spec-converter",
   "moduleType": [

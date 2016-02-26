@@ -15,7 +15,7 @@
   <script>
     var success = function(golden, done) {
       return function(err, spec) {
-        if (err) return done(err);
+        chai.expect(err).to.equal(null);
         $.getJSON(golden)
         .success(function(data) {
           chai.expect(spec.spec).to.deep.equal(data);

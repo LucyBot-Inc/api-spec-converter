@@ -28,7 +28,7 @@ var success = function(outfile, done) {
 
 describe('Converter', function() {
   TestCases.forEach(function(testCase) {
-    it('should convert ' + testCase.in.type + ' to ' + testCase.out.type, function(done) {
+    it('should convert ' + testCase.in.file + ' from ' + testCase.in.type + ' to ' + testCase.out.type, function(done) {
       var infile = Path.join(__dirname, 'input', testCase.in.type, testCase.in.directory || '', testCase.in.file);
       var outfile = Path.join(__dirname, 'output', testCase.out.type, testCase.out.directory || '', testCase.out.file);
       Converter.convert({
