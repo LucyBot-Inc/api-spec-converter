@@ -1,6 +1,10 @@
 {
   "basePath": "/",
   "host": "localhost:35357",
+  "info": {
+    "title": "API Documentation",
+    "version": "1.0"
+  },
   "paths": {
     "/": {
       "get": {
@@ -48,7 +52,7 @@
         {
           "in": "path",
           "name": "alias",
-          "required": false,
+          "required": true,
           "type": "string"
         }
       ]

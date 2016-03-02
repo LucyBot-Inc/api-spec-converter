@@ -1,6 +1,10 @@
 {
   "basePath": "/",
   "host": "graph.facebook.com",
+  "info": {
+    "title": "API Documentation",
+    "version": "1.0"
+  },
   "paths": {
     "/search": {
       "get": {
