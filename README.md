@@ -35,21 +35,45 @@ bower install --save api-spec-converter
 
 ## Usage
 
+### Command Line
+```bash
+$ api-spec-converter -h
+
+  Usage: api-spec-converter [options] <URL|filename>
+
+  Convert API descriptions between popular formats.
+
+  Supported types:
+    * swagger_1
+    * swagger_2
+    * api_blueprint
+    * io_docs
+    * google
+    * raml
+    * wadl
+
+  Options:
+
+    -h, --help         output usage information
+    -V, --version      output the version number
+    -f, --from <type>  Specifies type to convert
+    -t, --to <type>    Specifies output type
+    -c, --check        Check if result is valid spec
+    -d, --dummy        Fill missing required fields with dummy data
+```
+
+Example:
+```bash
+$ api-spec-converter https://api.gettyimages.com/swagger/api-docs --from=swagger_1 --to=swagger_2 > swagger.json
+```
+
+### NodeJS
+
 ### Options
 * `from` - source format (see types below)
 * `to` - desired format (see types below)
 * `source` - Filename or URL for the source
- 
-### Command Line
-```bash
-api-spec-converter <URL|filename> --from type_1 --to type_2 > output_spec
-```
-e.g.
-```bash
-api-spec-converter https://api.gettyimages.com/swagger/api-docs --from=swagger_1 --to=swagger_2 > swagger.json
-```
 
-### NodeJS
 ```js
 var Converter = require('api-spec-converter');
 Converter.convert({

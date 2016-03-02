@@ -1,17 +1,23 @@
 #!/usr/bin/env node
 'use strict';
 
+var _ = require('lodash');
+
 var Program = require('commander');
 var Package = require(__dirname + '/../package.json');
 var Converter = require('..');
 
 Program
   .version(Package.version)
+  .description('Convert API descriptions between popular formats.\n\n  ' +
+               'Supported types: \n    * ' +
+               _(Converter.Types).keys().join('\n    * ')
+              )
   .option('-f, --from <type>', 'Specifies type to convert')
   .option('-t, --to <type>', 'Specifies output type')
   .option('-c, --check', 'Check if result is valid spec')
   .option('-d, --dummy', 'Fill missing required fields with dummy data')
-  .arguments('<URL>')
+  .arguments('<URL|filename>')
   .action(main)
   .parse(process.argv);
 
