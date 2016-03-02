@@ -49,11 +49,6 @@ TestCases.push({
 })
 
 TestCases.push({
-  in: {type: 'io_docs', file: 'usatoday.json'},
-  out: {type: 'swagger_2', file: 'usatoday.json'}
-})
-
-TestCases.push({
   in: {type: 'raml', directory: 'XKCD', file: 'api.raml'},
   out: {type: 'swagger_2', file: 'XKCD.json'}
 })

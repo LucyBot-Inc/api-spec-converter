@@ -10,6 +10,9 @@ var TestCases = require('./test-cases.js');
 var success = function(outfile, done) {
   return function(err, spec) {
     Expect(err).to.equal(null);
+
+    spec.fillMissing();
+
     try {
       if (process.env.WRITE_GOLDEN) {
         FS.writeFileSync(outfile, spec.stringify() + '\n');

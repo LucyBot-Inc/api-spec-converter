@@ -4,7 +4,8 @@
     "api.klout.com"
   ],
   "info": {
-    "title": "Partner API v2"
+    "title": "Partner API v2",
+    "version": "< An API version here >"
   },
   "paths": {
     "/identity.json/gp/{google_plus_id}": {
