@@ -2,8 +2,8 @@
   "basePath": "/",
   "host": "localhost:35357",
   "info": {
-    "title": "API Documentation",
-    "version": "1.0"
+    "title": "< An API title here >",
+    "version": "< An API version here >"
   },
   "paths": {
     "/": {

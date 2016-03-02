@@ -195,7 +195,8 @@
   ],
   "info": {
     "description": "Covers all filesystem actions, link creation and deletion, and user management.",
-    "title": "Egnyte APIs"
+    "title": "Egnyte APIs",
+    "version": "< An API version here >"
   },
   "paths": {
     "/pubapi/v1/fs-content/Path": {

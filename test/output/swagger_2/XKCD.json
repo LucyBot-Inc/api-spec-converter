@@ -42,7 +42,8 @@
   },
   "host": "xkcd.com",
   "info": {
-    "title": "XKCD"
+    "title": "XKCD",
+    "version": "< An API version here >"
   },
   "paths": {
     "/info.0.json": {

@@ -10,6 +10,7 @@ Program
   .option('-f, --from <type>', 'Specifies type to convert')
   .option('-t, --to <type>', 'Specifies output type')
   .option('-c, --check', 'Check if result is valid spec')
+  .option('-d, --dummy', 'Fill missing required fields with dummy data')
   .arguments('<URL>')
   .action(main)
   .parse(process.argv);

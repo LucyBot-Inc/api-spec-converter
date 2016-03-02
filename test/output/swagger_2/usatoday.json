@@ -4,7 +4,8 @@
     "api.usatoday.com"
   ],
   "info": {
-    "title": "USA TODAY Census API"
+    "title": "USA TODAY Census API",
+    "version": "< An API version here >"
   },
   "paths": {
     "/census/ethnicity": {
