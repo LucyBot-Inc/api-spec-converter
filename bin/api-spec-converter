@@ -10,11 +10,11 @@ var Converter = require('..');
 Program
   .version(Package.version)
   .description('Convert API descriptions between popular formats.\n\n  ' +
-               'Supported types: \n    * ' +
+               'Supported formats: \n    * ' +
                _(Converter.Types).keys().join('\n    * ')
               )
-  .option('-f, --from <type>', 'Specifies type to convert')
-  .option('-t, --to <type>', 'Specifies output type')
+  .option('-f, --from <format>', 'Specifies format to convert')
+  .option('-t, --to <format>', 'Specifies output format')
   .option('-c, --check', 'Check if result is valid spec')
   .option('-d, --dummy', 'Fill missing required fields with dummy data')
   .arguments('<URL|filename>')
