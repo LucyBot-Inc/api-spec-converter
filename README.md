@@ -81,6 +81,9 @@ Converter.convert({
   to: 'swagger_2',
   source: 'https://api.gettyimages.com/swagger/api-docs',
 }, function(err, converted) {
+  // [Optional] Fill missing fields with dummy values
+  converted.fillMissing();
+
   console.log(converted.stringify());
   FS.writeFileSync('swagger2.json', converted.stringify());
 })
