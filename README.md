@@ -12,7 +12,7 @@
 
 Convert between API description formats such as [Swagger](http://swagger.io/) and [RAML](http://raml.org/)
 
-**Currently only supports conversion to Swagger 2.0**
+**Currently only supports conversion to OpenAPI(fka Swagger) 2.0 format**
 
 You can also use the online version at https://lucybot.github.io/api-spec-converter
 
@@ -35,21 +35,45 @@ bower install --save api-spec-converter
 
 ## Usage
 
-### Options
-* `from` - source format (see types below)
-* `to` - desired format (see types below)
-* `source` - Filename or URL for the source
- 
 ### Command Line
 ```bash
-api-spec-converter <URL|filename> --from type_1 --to type_2 > output_spec
+$ api-spec-converter -h
+
+  Usage: api-spec-converter [options] <URL|filename>
+
+  Convert API descriptions between popular formats.
+
+  Supported formats:
+    * swagger_1
+    * swagger_2
+    * api_blueprint
+    * io_docs
+    * google
+    * raml
+    * wadl
+
+  Options:
+
+    -h, --help           output usage information
+    -V, --version        output the version number
+    -f, --from <format>  Specifies format to convert
+    -t, --to <format>    Specifies output format
+    -c, --check          Check if result is valid spec
+    -d, --dummy          Fill missing required fields with dummy data
 ```
-e.g.
+
+Example:
 ```bash
-api-spec-converter https://api.gettyimages.com/swagger/api-docs --from=swagger_1 --to=swagger_2 > swagger.json
+$ api-spec-converter https://api.gettyimages.com/swagger/api-docs --from=swagger_1 --to=swagger_2 > swagger.json
 ```
 
 ### NodeJS
+
+### Options
+* `from` - source format (see formats below)
+* `to` - desired format (see formats below)
+* `source` - Filename or URL for the source
+
 ```js
 var Converter = require('api-spec-converter');
 Converter.convert({
@@ -57,6 +81,9 @@ Converter.convert({
   to: 'swagger_2',
   source: 'https://api.gettyimages.com/swagger/api-docs',
 }, function(err, converted) {
+  // [Optional] Fill missing fields with dummy values
+  converted.fillMissing();
+
   console.log(converted.stringify());
   FS.writeFileSync('swagger2.json', converted.stringify());
 })
@@ -67,7 +94,7 @@ Converter.convert({
 APISpecConverter.convert(...)
 ```
 
-## Supported Types
+## Supported Formats
 
 * [Swagger 1.x](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/1.2.md) (swagger_1)
 * [OpenAPI(fka Swagger) 2.0](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md) (swagger_2)
