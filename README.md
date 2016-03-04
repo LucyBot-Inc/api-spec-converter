@@ -74,6 +74,7 @@ $ api-spec-converter https://api.gettyimages.com/swagger/api-docs --from=swagger
 * `to` - desired format (see formats below)
 * `source` - Filename or URL for the source
 
+### Simple example:
 ```js
 var Converter = require('api-spec-converter');
 Converter.convert({
@@ -81,11 +82,31 @@ Converter.convert({
   to: 'swagger_2',
   source: 'https://api.gettyimages.com/swagger/api-docs',
 }, function(err, converted) {
+  console.log(converted.stringify());
+})
+```
+### Advanced features:
+```js
+var Converter = require('api-spec-converter');
+Converter.convert({
+  from: 'swagger_1',
+  to: 'swagger_2',
+  source: 'https://api.gettyimages.com/swagger/api-docs',
+}, function(err, converted) {
+
   // [Optional] Fill missing fields with dummy values
   converted.fillMissing();
 
-  console.log(converted.stringify());
-  FS.writeFileSync('swagger2.json', converted.stringify());
+  // [Optional] Validate converted spec
+  converted.validate(function (errors, warnings) {
+    if (errors)
+      return console.error(JSON.stringify(errors, null, 2));
+    if (warnings)
+      return console.error(JSON.stringify(warnings, null, 2));
+
+    console.log(converted.stringify());
+    FS.writeFileSync('swagger2.json', converted.stringify());
+  });
 })
 ```
 
