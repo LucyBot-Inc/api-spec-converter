@@ -35,6 +35,11 @@ TestCases.push({
   out: {type: 'swagger_2', file: 'OpenStack_example.json'},
 })
 
+TestCases.push({
+  in: {type: 'wadl', file: 'regex_paths.wadl'},
+  out: {type: 'swagger_2', file: 'regex_paths.json'},
+})
+
 var IODOCS_FILES = ['usatoday', 'egnyte', 'foursquare', 'klout'];
 TestCases = TestCases.concat(IODOCS_FILES.map(function(file) {
   return {
@@ -46,11 +51,6 @@ TestCases = TestCases.concat(IODOCS_FILES.map(function(file) {
 TestCases.push({
   in: {type: 'google', file: 'youtube.json'},
   out: {type: 'swagger_2', file: 'youtube.json'}
-})
-
-TestCases.push({
-  in: {type: 'io_docs', file: 'usatoday.json'},
-  out: {type: 'swagger_2', file: 'usatoday.json'}
 })
 
 TestCases.push({

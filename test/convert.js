@@ -9,8 +9,9 @@ var TestCases = require('./test-cases.js');
 
 var success = function(outfile, done) {
   return function(err, spec) {
-    if (err)
-      return done(err);
+    Expect(err).to.equal(null);
+
+    spec.fillMissing();
 
     try {
       if (process.env.WRITE_GOLDEN) {

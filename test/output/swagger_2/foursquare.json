@@ -4,7 +4,8 @@
     "api.foursquare.com"
   ],
   "info": {
-    "title": "Foursquare (OAuth 2.0 Auth Code)"
+    "title": "Foursquare (OAuth 2.0 Auth Code)",
+    "version": "< An API version here >"
   },
   "paths": {
     "/users/leaderboard": {
