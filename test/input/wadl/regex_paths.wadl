@@ -1,0 +1,19 @@
+<!--
+  Jersey use wery strange extension to WADL. See:
+  https://docs.oracle.com/cd/E19776-01/820-4867/6nga7f5nc/index.html
+ -->
+<application xmlns="http://wadl.dev.java.net/2009/02"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xsi:schemaLocation="http://wadl.dev.java.net/2009/02 http://www.w3.org/Submission/wadl/wadl.xsd">
+    <resources base="http://localhost:8080/resources/v1/">
+            <resource path="/{sessionId: \d{1, 10}}" >
+                <method name="GET">
+                </method>
+            </resource>
+            <resource path="/{uuid: \{[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\}}+{id}" >
+                <method name="GET">
+                </method>
+            </resource>
+    </resources>
+</application>

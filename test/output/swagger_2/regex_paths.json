@@ -1,0 +1,34 @@
+{
+  "basePath": "/resources/v1/",
+  "host": "localhost:8080",
+  "info": {
+    "title": "< An API title here >",
+    "version": "< An API version here >"
+  },
+  "paths": {
+    "/{sessionId}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": []
+    },
+    "/{uuid}+{id}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": []
+    }
+  },
+  "schemes": [
+    "http"
+  ],
+  "swagger": "2.0"
+}
