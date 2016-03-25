@@ -5040,8 +5040,7 @@
     },
     "description": "Programmatic access to YouTube features.",
     "title": "YouTube Data API",
-    "version": "v3",
-    "x-serviceName": "youtube"
+    "version": "v3"
   },
   "parameters": {
     "alt": {

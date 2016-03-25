@@ -46,7 +46,7 @@
     "commander": "^2.9.0",
     "deep-sort-object": "^1.0.1",
     "drafter.js": "^2.1.2",
-    "google-discovery-to-swagger": "^1.1.0",
+    "google-discovery-to-swagger": "^2.0.0",
     "js-yaml": "^3.5.2",
     "lodash": "^4.3.0",
     "raml-parser": "^0.8.15",
