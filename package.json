@@ -61,9 +61,9 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "grunt": "^0.4.5",
-    "grunt-browserify": "^4.0.1",
-    "grunt-cli": "^0.1.13",
-    "grunt-contrib-connect": "^0.11.2",
+    "grunt-browserify": "^5.0.0",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-connect": "^1.0.1",
     "grunt-mocha-phantomjs": "^3.0.0",
     "grunt-saucelabs": "^8.6.2",
     "jquery": "^2.2.0",
