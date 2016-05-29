@@ -12,7 +12,8 @@ module.exports = function (grunt) {
                     banner: '/*! <%= pkg.name %> <%= pkg.version %> */\n',
                     ignore: [
                       './lib/types/api_blueprint.js',
-                    ]
+                    ],
+                    transform: [['babelify', {'presets': ['es2015']}]]
                 },
             }
         },

@@ -2,7 +2,6 @@ language: node_js
 node_js:
   - "node"
   - "4.2"
-  - "0.12"
 after_script: '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && npm run test-browser-sauce || true'
 deploy:
   provider: npm

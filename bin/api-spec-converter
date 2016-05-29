@@ -32,25 +32,21 @@ function main(url, options) {
     source: url,
     from: options.from,
     to: options.to
-  }, function(err, spec) {
-    if (err) {
-       console.error(err.stack);
-       process.exit(255);
-    }
-
+  }).then(function (spec) {
     console.log(spec.stringify())
-    if (options.check) {
-      spec.validate(function (errors, warnings) {
-        if (errors) {
+    if (!options.check)
+      return;
+    return spec.validate()
+      .then(function (result) {
+        if (result.errors) {
           process.exitCode = 255;
           console.error('\nErrors:\n');
-          console.error(JSON.stringify(errors, null, 2));
+          console.error(JSON.stringify(result.errors, null, 2));
         }
-        if (warnings) {
+        if (result.warnings) {
           console.error('\nWarnings:\n');
-          console.error(JSON.stringify(warnings, null, 2));
+          console.error(JSON.stringify(result.warnings, null, 2));
         }
       });
-    }
-  });
+  }).done();
 }
