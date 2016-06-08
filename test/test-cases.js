@@ -60,5 +60,6 @@ TestCases.push({
 
 if (typeof module !== 'undefined') {
   module.exports = TestCases;
+} else {
+  window.TestCases = TestCases;
 }
-
