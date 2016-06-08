@@ -3,6 +3,8 @@ node_js:
   - "node"
   - "4.2"
 after_script: '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && npm run test-browser-sauce || true'
+addons:
+  sauce_connect: true
 deploy:
   provider: npm
   email: ivan.goncharov.ua@gmail.com

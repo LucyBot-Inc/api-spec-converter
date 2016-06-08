@@ -8,8 +8,8 @@
   "main": "index.js",
   "scripts": {
     "browserify": "grunt browserify",
-    "test": "mocha && grunt test-browser",
-    "test-browser-sauce": "grunt test-browser-sauce"
+    "test": "mocha && karma start --single-run",
+    "test-browser-sauce": "$SAUCE=true karma start --single-run"
   },
   "repository": {
     "type": "git",
@@ -69,16 +69,12 @@
     "grunt": "^0.4.5",
     "grunt-browserify": "^5.0.0",
     "grunt-cli": "^1.2.0",
-    "grunt-contrib-connect": "^1.0.1",
-    "grunt-karma": "^2.0.0",
-    "grunt-mocha-phantomjs": "^3.0.0",
-    "grunt-saucelabs": "^8.6.2",
-    "jquery": "^2.2.0",
     "karma": "^0.13.22",
     "karma-chai-plugins": "^0.7.0",
     "karma-mocha": "^1.0.1",
     "karma-mocha-reporter": "^2.0.3",
     "karma-phantomjs-launcher": "^1.0.0",
+    "karma-sauce-launcher": "^1.0.0",
     "mocha": "^2.4.5"
   }
 }
