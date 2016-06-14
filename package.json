@@ -8,8 +8,8 @@
   "main": "index.js",
   "scripts": {
     "browserify": "grunt browserify",
-    "test": "mocha && karma start --single-run",
-    "test-browser-sauce": "$SAUCE=true karma start --single-run"
+    "test": "mocha && npm run browserify && karma start --single-run",
+    "test-browser-sauce": "npm run browserify && $SAUCE=true karma start --single-run"
   },
   "repository": {
     "type": "git",
