@@ -7,7 +7,7 @@
   "description": "Convert API descriptions between popular formats such as OpenAPI(fka Swagger), RAML, API Blueprint, WADL, etc.",
   "main": "index.js",
   "scripts": {
-    "browserify": "grunt browserify",
+    "browserify": "mkdir -p dist && browserify -s APISpecConverter -o dist/api-spec-converter.js .",
     "test": "mocha && npm run browserify && karma start --single-run",
     "test-browser-sauce": "npm run browserify && $SAUCE=true karma start --single-run"
   },
@@ -43,6 +43,18 @@
   "bin": {
     "api-spec-converter": "./bin/api-spec-converter"
   },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ]
+    ]
+  },
   "dependencies": {
     "apib2swagger": "^0.5.1",
     "bluebird": "^3.4.0",
@@ -63,13 +75,10 @@
     "xml2js": "^0.4.16"
   },
   "devDependencies": {
-    "babel-polyfill": "^6.9.1",
     "babel-preset-es2015": "^6.9.0",
     "babelify": "^7.3.0",
+    "browserify": "^13.0.1",
     "chai": "^3.5.0",
-    "grunt": "^0.4.5",
-    "grunt-browserify": "^5.0.0",
-    "grunt-cli": "^1.2.0",
     "karma": "^0.13.22",
     "karma-chai-plugins": "^0.7.0",
     "karma-mocha": "^1.0.1",
