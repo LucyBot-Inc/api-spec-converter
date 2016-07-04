@@ -17,4 +17,3 @@ global.WRITE_GOLDEN = process.env.WRITE_GOLDEN;
 global.Converter = require('../../index.js');
 
 global.TestCases = require('./../test-cases.js');
-global.DISABLED = [];

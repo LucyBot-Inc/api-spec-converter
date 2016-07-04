@@ -26,4 +26,3 @@ window.getFile = function(file, cb) {
 window.WRITE_GOLDEN = false;
 window.expect = window.chai.expect;
 window.Converter = APISpecConverter;
-window.DISABLED = ['api_blueprint'];

@@ -3,7 +3,6 @@ if (typeof window !== "object") {
 }
 describe('Converter', function() {
   TestCases.forEach(function(testCase) {
-    if (DISABLED.indexOf(testCase.in.type) !== -1) return;
     it('should convert ' + testCase.in.file + ' from ' + testCase.in.type + ' to ' + testCase.out.type, function() {
       var infile = getFileName('input', testCase.in);
       var outfile = getFileName('output', testCase.out);
