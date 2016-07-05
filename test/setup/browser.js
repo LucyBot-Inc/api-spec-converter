@@ -10,15 +10,11 @@ window.getFileName = function(type, testCaseItem) {
 window.getFile = function(file, cb) {
   var xobj = new XMLHttpRequest();
   xobj.open('GET', file, true);
-  xobj.onreadystatechange = function () {
-    if (xobj.readyState === 4) {
-      if (xobj.status === 200) {
-        var obj = JSON.parse(xobj.response);
-        cb(null, obj);
-      } else {
-        cb(Error(xobj.status + ': Failed to load ' + file));
-      }
-    }
+  xobj.onload = function () {
+    if (xobj.status === 200)
+      cb(null, JSON.parse(xobj.response));
+    else
+      cb(Error(xobj.status + ': Failed to load ' + file));
   };
   xobj.send(null);
 }
