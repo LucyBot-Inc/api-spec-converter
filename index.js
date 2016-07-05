@@ -3,27 +3,27 @@
 var _ = require('lodash');
 var Promise = require('bluebird');
 
-var Types = require('./lib/types.js');
+var Formats = require('./lib/formats.js');
 var Util = require('./lib/util.js');
 
 var Converter = module.exports = {};
-Converter.Types = Types;
-Converter.BaseType = require('./lib/base-type.js');
+Converter.Formats = Formats;
+Converter.BaseFormat = require('./lib/base_format.js');
 Converter.ResourceReaders = Util.resourceReaders;
 
-Converter.getSpec = function (source, type, callback) {
-  var spec = new Types[type]();
+Converter.getSpec = function (source, format, callback) {
+  var spec = new Formats[format]();
   return spec.resolveResources(source)
     .return(spec)
     .asCallback(callback);
 }
 
-Converter.getTypeName = function (name, version) {
+Converter.getFormatName = function (name, version) {
   var result;
-  _.each(Types, function (type, typeName) {
-    type = type.prototype;
-    if (type.formatName === name && type.supportedVersions.indexOf(version) !== -1)
-      result = typeName;
+  _.each(Formats, function (format, formatName) {
+    format = format.prototype;
+    if (format.formatName === name && format.supportedVersions.indexOf(version) !== -1)
+      result = formatName;
   });
   return result;
 };

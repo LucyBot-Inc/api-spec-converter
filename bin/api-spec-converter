@@ -11,7 +11,7 @@ Program
   .version(Package.version)
   .description('Convert API descriptions between popular formats.\n\n  ' +
                'Supported formats: \n    * ' +
-               _(Converter.Types).keys().join('\n    * ')
+               _(Converter.Formats).keys().join('\n    * ')
               )
   .option('-f, --from <format>', 'Specifies format to convert')
   .option('-t, --to <format>', 'Specifies output format')

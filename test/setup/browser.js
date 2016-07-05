@@ -1,10 +1,10 @@
 var host = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '')
 
-window.getFileName = function(type, testCaseItem) {
-  var file = testCaseItem.type;
+window.getFileName = function(dir, testCaseItem) {
+  var file = testCaseItem.format;
   if (testCaseItem.directory) file += '/' + testCaseItem.directory;
   file += '/' + testCaseItem.file;
-  return host + '/test/' + type + '/' +file;
+  return host + '/test/' + dir + '/' + file;
 }
 
 window.getFile = function(file, cb) {

@@ -1,8 +1,8 @@
 var fs = require('fs');
 var path = require('path');
 
-global.getFileName = function(type, testCase) {
-  return path.join(__dirname, '..', type, testCase.type, testCase.directory || '', testCase.file);
+global.getFileName = function(dir, testCase) {
+  return path.join(__dirname, '..', dir, testCase.format, testCase.directory || '', testCase.file);
 }
 
 global.getFile = function(file, cb) {

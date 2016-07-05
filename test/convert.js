@@ -5,8 +5,8 @@ if (typeof window !== "object") {
 function convertFile(testCase) {
   var infile = getFileName('input', testCase.in);
   return Converter.convert({
-    from: testCase.in.type,
-    to: testCase.out.type,
+    from: testCase.in.format,
+    to: testCase.out.format,
     source: infile
   })
   .then(function (spec) {
@@ -18,7 +18,7 @@ function convertFile(testCase) {
 describe('Converter', function() {
   TestCases.forEach(function(testCase) {
     var testName = 'should convert ' + testCase.in.file +
-      ' from ' + testCase.in.type + ' to ' + testCase.out.type;
+      ' from ' + testCase.in.format + ' to ' + testCase.out.format;
 
     it(testName, function(done) {
       convertFile(testCase)
