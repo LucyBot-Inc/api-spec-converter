@@ -6666,7 +6666,6 @@
      "supportsMediaUpload": true,
      "mediaUpload": {
       "accept": [
-       "*/*",
        "application/octet-stream",
        "text/xml"
       ],
@@ -9031,7 +9030,7 @@
      "mediaUpload": {
       "accept": [
        "application/octet-stream",
-       "video/*"
+       "video/raw"
       ],
       "maxSize": "64GB",
       "protocols": {

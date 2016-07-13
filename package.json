@@ -1,12 +1,15 @@
 {
   "name": "api-spec-converter",
-  "version": "1.9.0",
+  "version": "2.0.1",
+  "engines" : {
+    "node" : "^4.2.0"
+  },
   "description": "Convert API descriptions between popular formats such as OpenAPI(fka Swagger), RAML, API Blueprint, WADL, etc.",
   "main": "index.js",
   "scripts": {
-    "browserify": "grunt browserify",
-    "test": "mocha && grunt test-browser",
-    "test-browser-sauce": "grunt test-browser-sauce"
+    "browserify": "mkdir -p dist && browserify -s APISpecConverter -o dist/api-spec-converter.js .",
+    "test": "mocha && npm run browserify && karma start --single-run",
+    "test-browser-sauce": "npm run browserify && $SAUCE=true karma start --single-run"
   },
   "repository": {
     "type": "git",
@@ -40,33 +43,48 @@
   "bin": {
     "api-spec-converter": "./bin/api-spec-converter"
   },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ]
+    ]
+  },
   "dependencies": {
     "apib2swagger": "^0.5.1",
-    "async": "^1.5.2",
+    "bluebird": "^3.4.0",
     "commander": "^2.9.0",
+    "composite-error": "^0.1.1",
     "deep-sort-object": "^1.0.1",
-    "drafter.js": "^2.1.2",
-    "google-discovery-to-swagger": "^1.1.0",
+    "drafter.js": "^2.4.3",
+    "google-discovery-to-swagger": "^2.0.0",
     "js-yaml": "^3.5.2",
     "lodash": "^4.3.0",
     "raml-parser": "^0.8.15",
     "raml-to-swagger": "^1.0.0",
     "request": "^2.69.0",
-    "swagger-converter": "^1.2.0",
-    "sway": "^0.6.0",
+    "swagger-converter": "^1.4.1",
+    "sway": "^1.0.0",
     "traverse": "^0.6.6",
     "urijs": "^1.17.0",
     "xml2js": "^0.4.16"
   },
   "devDependencies": {
+    "babel-preset-es2015": "^6.9.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.0.1",
     "chai": "^3.5.0",
-    "grunt": "^0.4.5",
-    "grunt-browserify": "^4.0.1",
-    "grunt-cli": "^0.1.13",
-    "grunt-contrib-connect": "^0.11.2",
-    "grunt-mocha-phantomjs": "^3.0.0",
-    "grunt-saucelabs": "^8.6.2",
-    "jquery": "^2.2.0",
+    "karma": "^0.13.22",
+    "karma-chai-plugins": "^0.7.0",
+    "karma-mocha": "^1.0.1",
+    "karma-mocha-reporter": "^2.0.3",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-sauce-launcher": "^1.0.0",
     "mocha": "^2.4.5"
   }
 }

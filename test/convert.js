@@ -1,42 +1,45 @@
-var Path = require('path');
-var FS = require('fs');
-var Async = require('async');
-var Expect = require('chai').expect;
+if (typeof window !== "object") {
+  require('./setup/node');
+}
 
-var Converter = require('../index.js');
-
-var TestCases = require('./test-cases.js');
-
-var success = function(outfile, done) {
-  return function(err, spec) {
-    Expect(err).to.equal(null);
-
+function convertFile(testCase) {
+  var infile = getFileName('input', testCase.in);
+  return Converter.convert({
+    from: testCase.in.format,
+    to: testCase.out.format,
+    source: infile
+  })
+  .then(function (spec) {
     spec.fillMissing();
-
-    try {
-      if (process.env.WRITE_GOLDEN) {
-        FS.writeFileSync(outfile, spec.stringify() + '\n');
-      } else {
-        var golden = JSON.parse(FS.readFileSync(outfile, 'utf8'));
-        Expect(spec.spec).to.deep.equal(golden);
-      }
-    } catch (e) {
-      return done(e);
-    }
-    done();
-  }
+    return spec;
+  });
 }
 
 describe('Converter', function() {
   TestCases.forEach(function(testCase) {
-    it('should convert ' + testCase.in.file + ' from ' + testCase.in.type + ' to ' + testCase.out.type, function(done) {
-      var infile = Path.join(__dirname, 'input', testCase.in.type, testCase.in.directory || '', testCase.in.file);
-      var outfile = Path.join(__dirname, 'output', testCase.out.type, testCase.out.directory || '', testCase.out.file);
-      Converter.convert({
-        from: testCase.in.type,
-        to: testCase.out.type,
-        source: infile,
-      }, success(outfile, done))
+    var testName = 'should convert ' + testCase.in.file +
+      ' from ' + testCase.in.format + ' to ' + testCase.out.format;
+
+    it(testName, function(done) {
+      convertFile(testCase)
+        .then(function(spec) {
+          var outfile = getFileName('output', testCase.out);
+
+          if (WRITE_GOLDEN)
+            FS.writeFileSync(outfile, spec.stringify() + '\n');
+
+          getFile(outfile, function(err, golden) {
+            try {
+              expect(spec.spec).to.deep.equal(golden);
+            } catch(e) {
+              return done(e);
+            }
+            done();
+          });
+        })
+        .catch(function (e) {
+           done(e);
+        });
     })
   })
 });
