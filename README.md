@@ -73,10 +73,10 @@ $ api-spec-converter https://api.gettyimages.com/swagger/api-docs --from=swagger
 * `from` - source format (see formats below)
 * `to` - desired format (see formats below)
 * `source` - Filename or URL for the source
-
 ### Simple example:
 ```js
 var Converter = require('api-spec-converter');
+
 Converter.convert({
   from: 'swagger_1',
   to: 'swagger_2',
@@ -85,6 +85,22 @@ Converter.convert({
   console.log(converted.stringify());
 })
 ```
+### Callback vs Promises
+This library has full support for both callback and promises.
+All async fucntion return promises but also will execute callback if provided.
+
+```js
+var Converter = require('api-spec-converter');
+
+Converter.convert({
+  from: 'swagger_1',
+  to: 'swagger_2',
+  source: 'https://api.gettyimages.com/swagger/api-docs',
+})
+  .then(function(converted) {
+    console.log(converted.stringify());
+  });
+```
 ### Advanced features:
 ```js
 var Converter = require('api-spec-converter');
@@ -92,22 +108,23 @@ Converter.convert({
   from: 'swagger_1',
   to: 'swagger_2',
   source: 'https://api.gettyimages.com/swagger/api-docs',
-}, function(err, converted) {
-
-  // [Optional] Fill missing fields with dummy values
-  converted.fillMissing();
-
-  // [Optional] Validate converted spec
-  converted.validate(function (errors, warnings) {
-    if (errors)
-      return console.error(JSON.stringify(errors, null, 2));
-    if (warnings)
-      return console.error(JSON.stringify(warnings, null, 2));
-
-    console.log(converted.stringify());
-    FS.writeFileSync('swagger2.json', converted.stringify());
-  });
 })
+  .then(function(converted) {
+    // [Optional] Fill missing fields with dummy values
+    converted.fillMissing();
+
+    // [Optional] Validate converted spec
+    return converted.validate()
+      .then(function (result) {
+        if (result.errors)
+          return console.error(JSON.stringify(errors, null, 2));
+        if (result.warnings)
+          return console.error(JSON.stringify(warnings, null, 2));
+
+        console.log(converted.stringify());
+        FS.writeFileSync('swagger2.json', converted.stringify());
+      });
+  });
 ```
 
 ### Browser
