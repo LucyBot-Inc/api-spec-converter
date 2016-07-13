@@ -29,6 +29,6 @@
   ],
   "dependencies": {
     "file-saver.js": "~1.20150507.2",
-    "api-spec-converter": "~1.5.0"
+    "api-spec-converter": "^2.0.0"
   }
 }
