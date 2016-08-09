@@ -17,6 +17,9 @@
       "get": {
         "description": "",
         "parameters": [],
+        "produces": [
+          "application/json"
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -43,6 +46,9 @@
             "required": false,
             "type": "number"
           }
+        ],
+        "produces": [
+          "application/json"
         ],
         "responses": {
           "200": {
@@ -97,6 +103,9 @@
             "type": "number"
           }
         ],
+        "produces": [
+          "application/json"
+        ],
         "responses": {
           "201": {
             "description": "Created",
@@ -149,6 +158,9 @@
             "required": true,
             "type": "number"
           }
+        ],
+        "produces": [
+          "application/json"
         ],
         "responses": {
           "200": {

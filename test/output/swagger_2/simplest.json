@@ -10,10 +10,15 @@
       "get": {
         "description": "",
         "parameters": [],
+        "produces": [
+          "text/plain"
+        ],
         "responses": {
           "200": {
             "description": "OK",
-            "examples": {},
+            "examples": {
+              "text/plain": "Hello World!\n"
+            },
             "headers": {}
           }
         },
