@@ -87,7 +87,7 @@ Converter.convert({
 ```
 ### Callback vs Promises
 This library has full support for both callback and promises.
-All async fucntion return promises but also will execute callback if provided.
+All async functions return promises but also will execute callback if provided.
 
 ```js
 var Converter = require('api-spec-converter');
