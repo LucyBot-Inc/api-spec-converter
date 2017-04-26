@@ -8,7 +8,7 @@
   },
   "host": "polls.apiblueprint.org",
   "info": {
-    "description": "Polls is a simple API allowing consumers to view polls and vote in them. You can view this documentation over at [Apiary](http://docs.pollsapi.apiary.io).\n\n",
+    "description": "Polls is a simple API allowing consumers to view polls and vote in them. You can view this documentation over at [Apiary](http://docs.pollsapi.apiary.io).",
     "title": "Polls",
     "version": ""
   },
@@ -93,7 +93,7 @@
         ]
       },
       "post": {
-        "description": "You may create your own question using this action. It takes a JSON object containing a question and a collection of answers in the form of choices.\n\n+ question (string) - The question\n\n+ choices (array[string]) - A collection of choices.\n\n",
+        "description": "You may create your own question using this action. It takes a JSON object containing a question and a collection of answers in the form of choices.\n\n+ question (string) - The question\n\n+ choices (array[string]) - A collection of choices.",
         "parameters": [
           {
             "description": "The page of questions to return",
@@ -205,7 +205,7 @@
     },
     "/questions/{question_id}/choices/{choice_id}": {
       "post": {
-        "description": "This action allows you to vote on a question's choice.\n\n",
+        "description": "This action allows you to vote on a question's choice.",
         "parameters": [
           {
             "description": "ID of the Question in form of an integer",
