@@ -23,14 +23,9 @@ You can also use the online version at https://lucybot.github.io/api-spec-conver
 npm install -g api-spec-converter
 ```
 
-### NodeJS
+### NodeJS/Browser
 ```bash
 npm install --save api-spec-converter
-```
-
-### Browser
-```
-bower install --save api-spec-converter
 ```
 
 ## Usage
@@ -97,9 +92,9 @@ Converter.convert({
   to: 'swagger_2',
   source: 'https://api.gettyimages.com/swagger/api-docs',
 })
-  .then(function(converted) {
-    console.log(converted.stringify());
-  });
+.then(function(converted) {
+  console.log(converted.stringify());
+});
 ```
 ### Advanced features:
 ```js
@@ -129,6 +124,7 @@ Converter.convert({
 
 ### Browser
 ```js
+<script src="node_modules/api-spec-converter/dist/api-spec-converter.js"></script>
 APISpecConverter.convert(...)
 ```
 
