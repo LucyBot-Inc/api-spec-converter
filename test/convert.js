@@ -16,6 +16,7 @@ function convertFile(testCase) {
 }
 
 describe('Converter', function() {
+  this.timeout(10000);
   TestCases.forEach(function(testCase) {
     var testName = 'should convert ' + testCase.in.file +
       ' from ' + testCase.in.format + ' to ' + testCase.out.format;
