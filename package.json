@@ -7,7 +7,7 @@
   "description": "Convert API descriptions between popular formats such as OpenAPI(fka Swagger), RAML, API Blueprint, WADL, etc.",
   "main": "index.js",
   "scripts": {
-    "browserify": "mkdir -p dist && browserify -s APISpecConverter -o dist/api-spec-converter.js .",
+    "browserify": "node node_modules/mkdirp/bin/cmd dist && browserify -s APISpecConverter -o dist/api-spec-converter.js .",
     "test": "mocha && npm run browserify && karma start --single-run",
     "test-browser-sauce": "npm run browserify && $SAUCE=true karma start --single-run"
   },
@@ -85,6 +85,7 @@
     "karma-mocha-reporter": "^2.2.3",
     "karma-phantomjs-launcher": "^1.0.4",
     "karma-sauce-launcher": "^1.1.0",
+    "mkdirp": "^0.5.1",
     "mocha": "^2.5.3"
   }
 }
