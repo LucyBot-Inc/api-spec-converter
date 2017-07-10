@@ -7,12 +7,26 @@ window.getFileName = function(dir, testCaseItem) {
   return host + '/test/' + dir + '/' + file;
 }
 
+// returns file content as a JavaScript
 window.getFile = function(file, cb) {
   var xobj = new XMLHttpRequest();
   xobj.open('GET', file, true);
   xobj.onload = function () {
     if (xobj.status === 200)
       cb(null, JSON.parse(xobj.response));
+    else
+      cb(Error(xobj.status + ': Failed to load ' + file));
+  };
+  xobj.send(null);
+}
+
+// returns file content as a string
+window.getFileRaw = function(file, cb) {
+  var xobj = new XMLHttpRequest();
+  xobj.open('GET', file, true);
+  xobj.onload = function () {
+    if (xobj.status === 200)
+      cb(null, xobj.response);
     else
       cb(Error(xobj.status + ': Failed to load ' + file));
   };
