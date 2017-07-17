@@ -49,17 +49,22 @@ $ api-spec-converter -h
 
   Options:
 
-    -h, --help           output usage information
-    -V, --version        output the version number
-    -f, --from <format>  Specifies format to convert
-    -t, --to <format>    Specifies output format
-    -c, --check          Check if result is valid spec
-    -d, --dummy          Fill missing required fields with dummy data
+    -h, --help            output usage information
+    -V, --version         output the version number
+    -f, --from <format>   Specifies format to convert
+    -t, --to <format>     Specifies output format
+    -s, --syntax <syntax> Specifies output data syntax: json or yaml. Defaults to json
+    -c, --check           Check if result is valid spec
+    -d, --dummy           Fill missing required fields with dummy data
 ```
 
 Example:
 ```bash
+# Json output
 $ api-spec-converter https://api.gettyimages.com/swagger/api-docs --from=swagger_1 --to=swagger_2 > swagger.json
+
+# Yaml output
+$ api-spec-converter https://api.gettyimages.com/swagger/api-docs --from=swagger_1 --to=swagger_2 -syntax=yaml > swagger.yaml
 ```
 
 ### NodeJS
@@ -78,6 +83,8 @@ Converter.convert({
   source: 'https://api.gettyimages.com/swagger/api-docs',
 }, function(err, converted) {
   console.log(converted.stringify());
+  // For yaml output replace above line with
+  // console.log(converted.stringify('yaml'));
 })
 ```
 ### Callback vs Promises

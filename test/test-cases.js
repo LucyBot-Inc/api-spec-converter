@@ -58,8 +58,26 @@ TestCases.push({
   out: {format: 'swagger_2', file: 'XKCD.json'}
 })
 
+//------------------ Json & Yaml test cases -------------------
+
+var SyntaxTestCases = []
+
+SyntaxTestCases.push({
+  in: {format: 'swagger_1', directory: 'petstore', file: 'index.json'},
+  out: {format: 'swagger_2', file: 'petstore.json', syntax: 'json'}
+})
+
+SyntaxTestCases.push({
+  in: {format: 'swagger_1', directory: 'petstore', file: 'index.json'},
+  out: {format: 'swagger_2', file: 'petstore.yaml', syntax: 'yaml'}
+})
+
+//---- exports ----
+
 if (typeof module !== 'undefined') {
-  module.exports = TestCases;
+  module.exports = {TestCases: TestCases, SyntaxTestCases: SyntaxTestCases};
 } else {
+  // TODO I could not test this branch.
+  // It should probably be updated to look like the one in the module block above
   window.TestCases = TestCases;
 }
