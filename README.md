@@ -64,7 +64,7 @@ Example:
 $ api-spec-converter https://api.gettyimages.com/swagger/api-docs --from=swagger_1 --to=swagger_2 > swagger.json
 
 # Yaml output
-$ api-spec-converter https://api.gettyimages.com/swagger/api-docs --from=swagger_1 --to=swagger_2 -syntax=yaml > swagger.yaml
+$ api-spec-converter https://api.gettyimages.com/swagger/api-docs --from=swagger_1 --to=swagger_2 --syntax=yaml > swagger.yaml
 ```
 
 ### NodeJS
