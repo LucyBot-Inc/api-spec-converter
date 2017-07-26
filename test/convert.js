@@ -56,11 +56,10 @@ describe('Converter', function() {
 describe('Converter & Output Syntax', function() {
   this.timeout(10000);
   SyntaxTestCases.forEach(function(testCase) {
-    orderStr = (testCase.out.order == 'oa') ? 'OpenApi' : 'alphabetical'
     var testName = 'should convert ' + testCase.in.file +
       ' from ' + testCase.in.format + ' to ' + testCase.out.format +
       ' and output as ' + testCase.out.syntax +
-      ' with ' + orderStr + ' order';
+      ' with ' + testCase.out.order + ' order';
 
     it(testName, function(done) {
       convertFile(testCase)
