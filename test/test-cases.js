@@ -64,12 +64,17 @@ var SyntaxTestCases = []
 
 SyntaxTestCases.push({
   in: {format: 'swagger_1', directory: 'petstore', file: 'index.json'},
-  out: {format: 'swagger_2', file: 'petstore.json', syntax: 'json'}
+  out: {format: 'swagger_2', file: 'petstore.json', syntax: 'json', order: 'alpha'}
 })
 
 SyntaxTestCases.push({
   in: {format: 'swagger_1', directory: 'petstore', file: 'index.json'},
-  out: {format: 'swagger_2', file: 'petstore.yaml', syntax: 'yaml'}
+  out: {format: 'swagger_2', file: 'petstore.yaml', syntax: 'yaml', order: 'alpha'}
+})
+
+SyntaxTestCases.push({
+  in: {format: 'swagger_1', directory: 'petstore', file: 'index.json'},
+  out: {format: 'swagger_2', file: 'petstore-oa.yaml', syntax: 'yaml', order: 'openapi'}
 })
 
 //---- exports ----

@@ -15,7 +15,8 @@ Program
               )
   .option('-f, --from <format>', 'Specifies format to convert')
   .option('-t, --to <format>', 'Specifies output format')
-  .option('-s, --syntax <outputSyntax>', 'Specifies output data syntax: json or yaml')
+  .option('-s, --syntax [outputSyntax]', 'Specifies output data syntax: json or yaml')
+  .option('-o, --order [sortOrder]', 'Specifies top fields ordering: alpha or default openapi')
   .option('-c, --check', 'Check if result is valid spec')
   .option('-d, --dummy', 'Fill missing required fields with dummy data')
   .arguments('<URL|filename>')
@@ -34,7 +35,7 @@ function main(url, options) {
     from: options.from,
     to: options.to
   }).then(function (spec) {
-    console.log(spec.stringify(options.syntax))
+    console.log(spec.stringify({syntax: options.syntax, order: options.order}))
     if (!options.check)
       return;
     return spec.validate()

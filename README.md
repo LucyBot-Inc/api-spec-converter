@@ -49,13 +49,40 @@ $ api-spec-converter -h
 
   Options:
 
-    -h, --help            output usage information
-    -V, --version         output the version number
-    -f, --from <format>   Specifies format to convert
-    -t, --to <format>     Specifies output format
-    -s, --syntax <syntax> Specifies output data syntax: json or yaml. Defaults to json
-    -c, --check           Check if result is valid spec
-    -d, --dummy           Fill missing required fields with dummy data
+    -h, --help              output usage information
+    -V, --version           output the version number
+    -f, --from <format>     Specifies format to convert
+    -t, --to <format>       Specifies output format
+    -s, --syntax [syntax]   Specifies output data syntax: json or yaml. Defaults to json
+    -o, --order [sortOrder] Specifies top fields ordering: openapi or alpha. Defaults to openapi
+    -c, --check             Check if result is valid spec
+    -d, --dummy             Fill missing required fields with dummy data
+
+  Fields Ordering:
+    By default fields in the output file will be ordered as they appear 
+    in the  OpenApi specification page Swagger Object section.
+    https://swagger.io/specification/#swagger-object-14
+    
+    They can also be alphabetically ordered by using the -o or --order flag.
+    If the flag is set to 'alpha', then the fields will be sorted in the A to Z order.
+    
+    If not set or set to 'openapi' they will be sorted as follow.
+    OpenApi fields order:
+      * swagger
+      * info
+      * host
+      * basePath
+      * schemes
+      * consumes
+      * produces
+      * paths
+      * definitions
+      * parameters
+      * responses
+      * securityDefinitions
+      * security
+      * tags
+      * externalDocs
 ```
 
 Example:
@@ -64,7 +91,10 @@ Example:
 $ api-spec-converter https://api.gettyimages.com/swagger/api-docs --from=swagger_1 --to=swagger_2 > swagger.json
 
 # Yaml output
-$ api-spec-converter https://api.gettyimages.com/swagger/api-docs --from=swagger_1 --to=swagger_2 -syntax=yaml > swagger.yaml
+$ api-spec-converter https://api.gettyimages.com/swagger/api-docs --from=swagger_1 --to=swagger_2 --syntax=yaml > swagger.yaml
+
+# Json output with alpha field order
+$ api-spec-converter https://raw.githubusercontent.com/LucyBot-Inc/api-spec-converter/master/test/input/swagger_1/petstore/pet.json --from=swagger_1 --to=swagger_2 --order=alpha > swagger.json
 ```
 
 ### NodeJS
@@ -83,8 +113,10 @@ Converter.convert({
   source: 'https://api.gettyimages.com/swagger/api-docs',
 }, function(err, converted) {
   console.log(converted.stringify());
-  // For yaml output replace above line with
-  // console.log(converted.stringify('yaml'));
+  // For yaml and/or OpenApi field order output replace above line
+  // with an options object like below
+  //   var  options = {syntax: 'yaml', order: 'openapi'}
+  //   console.log(converted.stringify(options));
 })
 ```
 ### Callback vs Promises

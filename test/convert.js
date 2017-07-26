@@ -47,22 +47,25 @@ describe('Converter', function() {
 
 
 // The "Converter" test suite above validates that all conversions are as expected.
-// It cocuses on validating that the JavaScript object has the right content.
-// It does not check how the object is Marshalled out.
+// It focuses on validating that the JavaScript object has the right content.
+// It does not check how the object is Marshaled out.
 //
 // The "Converter & Output Syntax" suite run a few similar tests
 // but focuses on validating that the output is json or yaml.
+// basically, it tests the various values that can be passed to spec.stringify
 describe('Converter & Output Syntax', function() {
   this.timeout(10000);
   SyntaxTestCases.forEach(function(testCase) {
     var testName = 'should convert ' + testCase.in.file +
       ' from ' + testCase.in.format + ' to ' + testCase.out.format +
-      ' and ouput as ' + testCase.out.syntax;
+      ' and output as ' + testCase.out.syntax +
+      ' with ' + testCase.out.order + ' order';
 
     it(testName, function(done) {
       convertFile(testCase)
         .then(function(spec) {
-          var specAsString = spec.stringify(testCase.out.syntax) + '\n'
+          var  options = {syntax: testCase.out.syntax, order: testCase.out.order}
+          var specAsString = spec.stringify(options) + '\n'
           var outfile = getFileName('output', testCase.out);
 
           if (WRITE_GOLDEN)
