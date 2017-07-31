@@ -12,7 +12,7 @@
 
 Convert between API description formats such as [Swagger](http://swagger.io/) and [RAML](http://raml.org/)
 
-**Currently only supports conversion to OpenAPI(fka Swagger) 2.0 format**
+**Currently only supports conversion to OpenAPI(fka Swagger) 2.0 format, and from OpenAPI 2.0 to OpenAPI 3.0.x**
 
 You can also use the online version at https://lucybot.github.io/api-spec-converter
 
@@ -41,6 +41,7 @@ $ api-spec-converter -h
   Supported formats:
     * swagger_1
     * swagger_2
+    * openapi_3
     * api_blueprint
     * io_docs
     * google
@@ -171,6 +172,7 @@ APISpecConverter.convert(...)
 
 * [Swagger 1.x](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/1.2.md) (swagger_1)
 * [OpenAPI(fka Swagger) 2.0](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md) (swagger_2)
+* [OpenAPI 3.0.x](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md) (openapi_3)
 * [I/O Docs](https://github.com/mashery/iodocs) (io_docs)
 * [API Blueprint](https://github.com/apiaryio/api-blueprint/blob/master/API%20Blueprint%20Specification.md) (api_blueprint)
 * [Google API Discovery](https://developers.google.com/discovery/v1/reference/apis) (google)
@@ -180,15 +182,20 @@ APISpecConverter.convert(...)
 
 ## Conversion Table
 
-|from:             |swagger_1|swagger_2|io_docs|api_blueprint|google|raml|wadl|
--------------------|:-------:|:-------:|:-----:|:-----------:|:----:|:--:|:--:|
-|to swagger_1      |  n/a    |         |       |             |      |    |    |
-|to swagger_2      | :white_check_mark: |    n/a  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-|to io_docs        |         |         |  n/a  |             |      |    |    |
-|to api_blueprint  |         |         |       |    n/a      |      |    |    |
-|to google         |         |         |       |             |  n/a |    |    |
-|to raml           |         |         |       |             |      | n/a|    |
-|to wadl           |         |         |       |             |      |    | n/a|
+|from:             |swagger_1|swagger_2|openapi_3|io_docs|api_blueprint|google|raml|wadl|
+-------------------|:-------:|:-------:|:-----:|:-----:|:-----------:|:----:|:--:|:--:|
+|to swagger_1      |  n/a    |         |       |       |             |      |    |    |
+|to swagger_2      | :white_check_mark: |    n/a  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+|to openapi_3      |   :eight_spoked_asterisk:     | :white_check_mark: |  n/a  |   :eight_spoked_asterisk:  | :eight_spoked_asterisk: |  :eight_spoked_asterisk:   | :eight_spoked_asterisk:  | :eight_spoked_asterisk:  |
+|to io_docs        |         |         |       |  n/a  |             |      |    |    |
+|to api_blueprint  |         |         |       |       |    n/a      |      |    |    |
+|to google         |         |         |       |       |             |  n/a |    |    |
+|to raml           |         |         |       |       |             |      | n/a|    |
+|to wadl           |         |         |       |       |             |      |    | n/a|
+
+#### Key
+* :white_check_mark: - direct conversion
+* :eight_spoked_asterisk: - conversion via swagger_2
 
 ## Contributing
 Contributions are welcome and encouraged. See [docs/Contributing.md](docs/Contributing.md) for instructions, tips, and starter projects.

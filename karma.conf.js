@@ -27,6 +27,7 @@ module.exports = function (config) {
     config.set({
         frameworks: ['mocha', 'chai'],
         files: [
+          { pattern: 'node_modules/babel-polyfill/browser.js', instrument: false},
           'dist/api-spec-converter.js',
           'test/setup/browser.js',
           'test/test-cases.js',
