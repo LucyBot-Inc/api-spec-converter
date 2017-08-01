@@ -58,6 +58,11 @@ TestCases.push({
   out: {format: 'swagger_2', file: 'XKCD.json'}
 })
 
+TestCases.push({
+  in: {format: 'swagger_2', file: 'petstore.json'},
+  out: {format: 'openapi_3', file: 'petstore.json'}
+})
+
 //------------------ Json & Yaml test cases -------------------
 
 var SyntaxTestCases = []

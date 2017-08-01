@@ -69,12 +69,14 @@
     "raml-to-swagger": "^1.1.0",
     "request": "^2.81.0",
     "swagger-converter": "^1.4.1",
+    "swagger2openapi": "^2.6.2",
     "sway": "^1.0.0",
     "traverse": "^0.6.6",
     "urijs": "^1.18.10",
     "xml2js": "^0.4.17"
   },
   "devDependencies": {
+    "babel-polyfill": "^6.23.0",
     "babel-preset-es2015": "^6.24.1",
     "babelify": "^7.3.0",
     "browserify": "^13.3.0",
