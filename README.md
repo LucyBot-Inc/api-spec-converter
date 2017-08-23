@@ -14,7 +14,7 @@ Convert between API description formats such as [Swagger](http://swagger.io/) an
 
 **Currently only supports conversion to OpenAPI(fka Swagger) 2.0 format, and from OpenAPI 2.0 to OpenAPI 3.0.x**
 
-You can also use the online version at https://lucybot.github.io/api-spec-converter
+You can also use the online version at https://lucybot-inc.github.io/api-spec-converter/.
 
 ## Installation
 
