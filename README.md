@@ -208,8 +208,8 @@ Contributions are welcome and encouraged. See [docs/Contributing.md](docs/Contri
 [npm-link]: https://npmjs.org/package/api-spec-converter
 [bower-image]: https://img.shields.io/bower/v/api-spec-converter.svg
 [bower-link]: http://bower.io/
-[travis-image]: https://img.shields.io/travis/lucybot/api-spec-converter.svg
-[travis-link]: https://travis-ci.org/lucybot/api-spec-converter
+[travis-image]: https://img.shields.io/travis/LucyBot-Inc/api-spec-converter.svg
+[travis-link]: https://travis-ci.org/LucyBot-Inc/api-spec-converter
 [climate-image]: https://img.shields.io/codeclimate/github/lucybot/api-spec-converter.svg
 [climate-link]: https://codeclimate.com/github/lucybot/api-spec-converter
 [deps-image]: https://img.shields.io/david/lucybot/api-spec-converter.svg
