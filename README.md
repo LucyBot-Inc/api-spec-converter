@@ -185,7 +185,7 @@ APISpecConverter.convert(...)
 |from:             |swagger_1|swagger_2|openapi_3|io_docs|api_blueprint|google|raml|wadl|
 -------------------|:-------:|:-------:|:-----:|:-----:|:-----------:|:----:|:--:|:--:|
 |to swagger_1      |  n/a    |         |       |       |             |      |    |    |
-|to swagger_2      | :white_check_mark: |    n/a  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+|to swagger_2      | :white_check_mark: |    n/a  |       | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |to openapi_3      |   :eight_spoked_asterisk:     | :white_check_mark: |  n/a  |   :eight_spoked_asterisk:  | :eight_spoked_asterisk: |  :eight_spoked_asterisk:   | :eight_spoked_asterisk:  | :eight_spoked_asterisk:  |
 |to io_docs        |         |         |       |  n/a  |             |      |    |    |
 |to api_blueprint  |         |         |       |       |    n/a      |      |    |    |
