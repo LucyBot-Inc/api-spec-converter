@@ -1,7 +1,4 @@
 {
-  "components": {
-    "schemas": {}
-  },
   "info": {
     "title": "Partner API v2",
     "version": ""
