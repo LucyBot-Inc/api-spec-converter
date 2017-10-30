@@ -27,7 +27,7 @@ describe('Converter', function() {
           var outfile = getFileName('output', testCase.out);
           var order = testCase.out.order || 'alpha';
           if (WRITE_GOLDEN)
-            FS.writeFileSync(outfile, spec.stringify({order}) + '\n');
+            FS.writeFileSync(outfile, spec.stringify({order: order}) + '\n');
 
           getFile(outfile, function(err, golden) {
             try {
