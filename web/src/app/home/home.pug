@@ -1,0 +1,25 @@
+.row
+  .col-xs-12.col-md-10.col-md-offset-1
+    h1
+      span API Spec Converter
+      .btn-toolbar.social-buttons.pull-right
+        a.btn.btn-default([href]="githubLink")
+          i.fa.fa-left.fa-github
+          span View on GitHub
+        a.btn.btn-default(
+          href="https://twitter.com/intent/tweet?text=Convert+between+API+description+formats+such+as+Swagger+and+RAML:&url=http%3A%2F%2Flucybot-inc.github.io%2Fapi-spec-converter")
+          i.fa.fa-left.fa-twitter
+          span Tweet
+    p
+      |The goal of this project is to allow REST API developers to convert between different
+      |<a target="_blank" href="http://apiux.com/2013/04/09/rest-metadata-formats/">API definition formats</a>.
+      |This prevents lock-in, and allows developers to take advantage
+      |of tools that only support particular formats.
+    p.
+      Currently, we only support converting from various formats (e.g. RAML and WADL) to Open API 2.0 (fka Swagger).
+      Open API 3.0 and API Blueprint are not supported in this web app, but are supported using the
+      <a href="{{githubLink}}">command line tool</a>.
+    p.
+      Our plan is to eventually support conversion between any two formats. If you'd like to contribute, you can
+      check out the <a href="{{githubLink}}">open source library on GitHub</a>.
+    spec-converter
