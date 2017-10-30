@@ -60,8 +60,20 @@ TestCases.push({
 
 TestCases.push({
   in: {format: 'swagger_2', file: 'petstore.json'},
-  out: {format: 'openapi_3', file: 'petstore.json'}
+  out: {format: 'openapi_3', file: 'petstore2.json'}
 })
+
+var openapi3Cases = [];
+
+TestCases.forEach(function(testCase) {
+  if (testCase.out.format === 'swagger_2') {
+    var newCase = JSON.parse(JSON.stringify(testCase));
+    newCase.out.format = 'openapi_3';
+    openapi3Cases.push(newCase);
+  }
+})
+
+TestCases = TestCases.concat(openapi3Cases);
 
 //------------------ Json & Yaml test cases -------------------
 
