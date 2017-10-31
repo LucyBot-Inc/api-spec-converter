@@ -101,6 +101,24 @@
             "name": "page",
             "required": false,
             "type": "number"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "choices": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "question": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
           }
         ],
         "produces": [
