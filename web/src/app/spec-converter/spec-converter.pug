@@ -1,0 +1,56 @@
+form((submit)="convert()")
+  .form-group
+    label Specification URL
+    .input-group
+      input.form-control(type="text" placeholder="Source URL" [(ngModel)]="convertSource" name="source")
+      .input-group-btn
+        a.btn.btn-default.dropdown-toggle(data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false")
+          span Examples
+          i.fa.fa-right.fa-caret-down
+        ul.dropdown-menu
+          li(*ngFor="let example of examples")
+            a((click)="setExample(example)")
+              span {{ formatLabels[example.from] || example.from }}
+  .row
+    .col-xs-12.col-sm-4
+      .form-group
+        label Source Format
+        .dropdown
+          button.btn.btn-default.dropdown-toggle(data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false")
+            span {{ formatLabels[convertFrom] || convertFrom }}
+            i.fa.fa-right.fa-caret-down
+          ul.dropdown-menu
+            li(*ngFor="let format of formats" [hidden]="skipFormats.indexOf(format) !== -1")
+              a((click)="convertFrom = format") {{formatLabels[format] || format}}
+    .col-xs-12.col-sm-4
+      .form-group
+        label Destination Format
+        .dropdown
+          button.btn.btn-default.dropdown-toggle(data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false")
+            span {{ formatLabels[convertTo] || convertTo }}
+            i.fa.fa-right.fa-caret-down
+          ul.dropdown-menu
+            li(*ngFor="let format of destinationFormats" [hidden]="skipFormats.indexOf(format) !== -1 || format === convertFrom")
+              a((click)="convertTo = format") {{formatLabels[format] || format}}
+    .col-xs-12.col-sm-4
+      .form-group
+        button.btn.btn-lg.btn-success(type="submit" [disabled]="running || !platform.isBrowser()")
+          span(*ngIf="!running && platform.isBrowser()")
+            span.fa.fa-exchange
+            span &nbsp;Convert!
+          span.fa.fa-spin.fa-refresh(*ngIf="running || !platform.isBrowser()")
+.alert.alert-danger(*ngIf="error")
+  p {{ error }}
+  p
+    a(href="https://github.com/lucybot/api-spec-converter/issues/new" target="_blank") Open an issue on GitHub
+.output-spec(*ngIf="spec")
+  .row
+    .col-xs-9
+      p
+        span Converted to {{ formatLabels[convertTo] || convertTo }}.
+    .col-xs-3.text-right
+      p
+        a((click)="download()")
+          span.fa.fa-left.fa-download
+          span Download
+  pre {{ stringify(spec) }}

@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Angular 4 Template</title><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/x-icon" href="favicon.ico"><link href="styles.782702e99e36e25410ad.bundle.css" rel="stylesheet"></head><body><app-root ng-version="4.4.5">
+      <navbar><nav class="navbar navbar-default"><div class="container"><div class="navbar-header"><button aria-expanded="false" class="navbar-toggle collapsed" data-target="#NavbarCollapse" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i></button><a class="navbar-brand" routerLink="/" href="/angular4-template/">Brand</a></div><div class="collapse navbar-collapse" id="NavbarCollapse"><ul class="nav navbar-nav navbar-right"><li><a class="nav-link" routerLink="/home" href="/angular4-template/home">Home</a></li></ul></div></div></nav></navbar>
+      <div class="container">
+        <router-outlet></router-outlet><home>
+      <h1>Home <i class="fa fa-home"></i></h1>
+      <readme><h1 id="angluar-4-0-template-project">Angluar 4.0 Template Project</h1>
+<p>I use this template as a starter for any new Angular projects.</p>
+<p>Check out <a href="https://bobby-brennan.github.io/angular4-template">the demo</a></p>
+<h4 id="features">Features</h4>
+<ul>
+<li>Angular Universal (prerendering)</li>
+<li><a href="https://pugjs.org">Pug</a> templates instead of HTML</li>
+<li>Bootstrap Sass</li>
+<li>Font Awesome</li>
+<li>Angular HTML5 Router</li>
+<li>Standard navbar/body layout</li>
+</ul>
+<h2 id="running-the-demo">Running the Demo</h2>
+<h4 id="install">Install</h4>
+<pre><code>npm install
+</code></pre><h4 id="run-development-mode-">Run (development mode)</h4>
+<p>Start the server on port 3000:</p>
+<pre><code>npm run start
+</code></pre><h4 id="build-production-">Build (production)</h4>
+<p>Build everything and put it in the <code>dist/</code> folder:</p>
+<pre><code>npm run build
+</code></pre><p>Or build for GitHub pages by copying <code>dist/browser</code> to <code>docs/</code>.
+Be sure to change the settings in your repo to point GitHub pages to
+the <code>docs/</code> folder on the <code>master</code> branch.</p>
+<h2 id="customizing">Customizing</h2>
+<h3 id="base-href">Base href</h3>
+<p>The app uses the base href <code>/</code> for development builds, and <code>/angular4-template</code>
+for production builds (to accomodate GitHub pages, which uses the repository
+name in the URL's path). You will probably want to change the base href in
+<code>./src/environments/environment.prod.ts</code>.</p>
+<h3 id="prerendering">Prerendering</h3>
+<p>Prerendering is a performance optimization - your page's HTML is generated
+at build time, so the user sees a near-instant load of the page, while Angular
+loads in the background.</p>
+<p>In this build, only the homepage is prerendered - you can add other routes
+by editing <code>./static.paths.ts</code>.</p>
+<h2 id="new-components">New Components</h2>
+<p>A helper script for creating new components is in <code>./scripts/new-component.js</code>.</p>
+<pre><code>node ./scripts/new-component.js --name "Widget Viewer"
+</code></pre></readme>
+      </home>
+      </div>
+      </app-root><script type="text/javascript" src="inline.4f2476beaacd439998a5.bundle.js"></script><script type="text/javascript" src="polyfills.c95f56911f1080bda7b0.bundle.js"></script><script type="text/javascript" src="scripts.da6de8bbb6199d9ca04b.bundle.js"></script><script type="text/javascript" src="vendor.c6ecc421af1d4aa3d4e7.bundle.js"></script><script type="text/javascript" src="main.0e55701e69e37474e126.bundle.js"></script></body></html>

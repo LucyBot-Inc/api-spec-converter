@@ -1,0 +1,30 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>API Spec Converter</title><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/x-icon" href="favicon.png"><link href="styles.a04e171bf0772a98c2cc.bundle.css" rel="stylesheet"><style ng-transition="my-app">h1[_ngcontent-c0] {
+        margin-bottom: 50px;
+      }
+      .social-buttons[_ngcontent-c0] {
+        margin-bottom: 20px;
+      }
+      .social-buttons[_ngcontent-c0]   .fa[_ngcontent-c0] {
+        font-size: 18px;
+      }
+      spec-converter[_ngcontent-c0] {
+        display: block;
+        margin-top: 50px;
+      }</style><style ng-transition="my-app">button[type="submit"][_ngcontent-c1] {
+        margin-top: 12px;
+        float: right;
+      }
+
+      .output-spec[_ngcontent-c1] {
+        margin-top: 50px;
+      }</style></head><body><app-root ng-version="4.4.5">
+      <div class="container">
+        <home _nghost-c0=""><div _ngcontent-c0="" class="row"><div _ngcontent-c0="" class="col-xs-12 col-md-10 col-md-offset-1"><h1 _ngcontent-c0=""><span _ngcontent-c0="">API Spec Converter</span><div _ngcontent-c0="" class="btn-toolbar social-buttons pull-right"><a _ngcontent-c0="" class="btn btn-default" href="https://github.com/LucyBot-Inc/api-spec-converter"><i _ngcontent-c0="" class="fa fa-left fa-github"></i><span _ngcontent-c0="">View on GitHub</span></a><a _ngcontent-c0="" class="btn btn-default" href="https://twitter.com/intent/tweet?text=Convert+between+API+description+formats+such+as+Swagger+and+RAML:&amp;url=http%3A%2F%2Flucybot-inc.github.io%2Fapi-spec-converter"><i _ngcontent-c0="" class="fa fa-left fa-twitter"></i><span _ngcontent-c0="">Tweet</span></a></div></h1><p _ngcontent-c0="">The goal of this project is to allow REST API developers to convert between different
+<a _ngcontent-c0="" href="http://apiux.com/2013/04/09/rest-metadata-formats/" target="_blank">API definition formats</a>.
+This prevents lock-in, and allows developers to take advantage
+of tools that only support particular formats.</p><p _ngcontent-c0="">Currently, we only support converting from various formats (e.g. RAML and WADL) to Open API 2.0 (fka Swagger).
+Open API 3.0 and API Blueprint are not supported in this web app, but are supported using the
+<a _ngcontent-c0="" href="https://github.com/LucyBot-Inc/api-spec-converter">command line tool</a>.</p><p _ngcontent-c0="">Our plan is to eventually support conversion between any two formats. If you'd like to contribute, you can
+check out the <a _ngcontent-c0="" href="https://github.com/LucyBot-Inc/api-spec-converter">open source library on GitHub</a>.</p><spec-converter _ngcontent-c0="" _nghost-c1=""><form _ngcontent-c1="" novalidate="" class="ng-untouched ng-pristine ng-valid"><div _ngcontent-c1="" class="form-group"><label _ngcontent-c1="">Specification URL</label><div _ngcontent-c1="" class="input-group"><input _ngcontent-c1="" class="form-control ng-untouched ng-pristine ng-valid" name="source" placeholder="Source URL" type="text" value="https://raw.githubusercontent.com/LucyBot-Inc/api-spec-converter/master/test/input/swagger_1/petstore/index.json"><div _ngcontent-c1="" class="input-group-btn"><a _ngcontent-c1="" aria-expanded="false" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button"><span _ngcontent-c1="">Examples</span><i _ngcontent-c1="" class="fa fa-right fa-caret-down"></i></a><ul _ngcontent-c1="" class="dropdown-menu"><!----><li _ngcontent-c1=""><a _ngcontent-c1=""><span _ngcontent-c1="">Open API 1.x (Swagger)</span></a></li><li _ngcontent-c1=""><a _ngcontent-c1=""><span _ngcontent-c1="">Open API 2.0 (Swagger)</span></a></li><li _ngcontent-c1=""><a _ngcontent-c1=""><span _ngcontent-c1="">WADL</span></a></li><li _ngcontent-c1=""><a _ngcontent-c1=""><span _ngcontent-c1="">RAML</span></a></li><li _ngcontent-c1=""><a _ngcontent-c1=""><span _ngcontent-c1="">Google Discovery</span></a></li><li _ngcontent-c1=""><a _ngcontent-c1=""><span _ngcontent-c1="">I/O Docs</span></a></li></ul></div></div></div><div _ngcontent-c1="" class="row"><div _ngcontent-c1="" class="col-xs-12 col-sm-4"><div _ngcontent-c1="" class="form-group"><label _ngcontent-c1="">Source Format</label><div _ngcontent-c1="" class="dropdown"><button _ngcontent-c1="" aria-expanded="false" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button"><span _ngcontent-c1="">Open API 1.x (Swagger)</span><i _ngcontent-c1="" class="fa fa-right fa-caret-down"></i></button><ul _ngcontent-c1="" class="dropdown-menu"><!----></ul></div></div></div><div _ngcontent-c1="" class="col-xs-12 col-sm-4"><div _ngcontent-c1="" class="form-group"><label _ngcontent-c1="">Destination Format</label><div _ngcontent-c1="" class="dropdown"><button _ngcontent-c1="" aria-expanded="false" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button"><span _ngcontent-c1="">Open API 2.0 (Swagger)</span><i _ngcontent-c1="" class="fa fa-right fa-caret-down"></i></button><ul _ngcontent-c1="" class="dropdown-menu"><!----><li _ngcontent-c1=""><a _ngcontent-c1="">Open API 2.0 (Swagger)</a></li><li _ngcontent-c1=""><a _ngcontent-c1="">Open API 3.0</a></li></ul></div></div></div><div _ngcontent-c1="" class="col-xs-12 col-sm-4"><div _ngcontent-c1="" class="form-group"><button _ngcontent-c1="" class="btn btn-lg btn-success" type="submit"><!----><!----><span _ngcontent-c1="" class="fa fa-spin fa-refresh"></span></button></div></div></div></form><!----><!----></spec-converter></div></div></home>
+      </div>
+      </app-root><script type="text/javascript" src="inline.7c1f4897c3028a8d5fd3.bundle.js"></script><script type="text/javascript" src="polyfills.bb04c5fe04b1b351835b.bundle.js"></script><script type="text/javascript" src="scripts.df9a4e10dd9797df664a.bundle.js"></script><script type="text/javascript" src="vendor.88eab6172d035beda831.bundle.js"></script><script type="text/javascript" src="main.8f562d397b0e5fc178ca.bundle.js"></script></body></html>
