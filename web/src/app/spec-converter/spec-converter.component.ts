@@ -30,8 +30,8 @@ export class SpecConverterComponent {
   convertSource:string;
 
   formats:string[]=[];
-  skipFormats = ['api_blueprint', 'openapi_3'];
-  destinationFormats = ['swagger_2'];
+  skipFormats = ['api_blueprint'];
+  destinationFormats = ['swagger_2', 'openapi_3'];
   formatLabels = {
     swagger_1: 'Open API 1.x (Swagger)',
     swagger_2: 'Open API 2.0 (Swagger)',
@@ -44,7 +44,7 @@ export class SpecConverterComponent {
   };
   examples = [
     {from: 'swagger_1', source: 'https://raw.githubusercontent.com/LucyBot-Inc/api-spec-converter/master/test/input/swagger_1/petstore/index.json'},
-    //{from: 'swagger_2', to: 'openapi_3', source: 'https://api.apis.guru/v2/specs/bufferapp.com/1/swagger.json'},
+    {from: 'swagger_2', to: 'openapi_3', source: 'https://api.apis.guru/v2/specs/bufferapp.com/1/swagger.json'},
     {from: 'wadl', source: 'http://api.apigee.com/v1/consoles/facebook/apidescription?format=wadl'},
     {from: 'raml', source: 'https://raw.githubusercontent.com/raml-apis/XKCD/master/api.raml'},
     {from: 'google', source: 'https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest'},
@@ -73,7 +73,13 @@ export class SpecConverterComponent {
     this.error = this.spec = null;
     this.running = true;
     APISpecConverter.convert({from: this.convertFrom, to: this.convertTo, source: this.convertSource})
-      .then(spec => this.spec = spec.spec, err => this.error = err)
+      .then(
+        spec => this.spec = spec.spec,
+        err => {
+          this.error = err;
+          console.log(err);
+        }
+      )
       .then(_ => this.running = false);
   }
 

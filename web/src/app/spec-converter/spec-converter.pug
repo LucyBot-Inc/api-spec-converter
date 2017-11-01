@@ -30,7 +30,7 @@ form((submit)="convert()")
             span {{ formatLabels[convertTo] || convertTo }}
             i.fa.fa-right.fa-caret-down
           ul.dropdown-menu
-            li(*ngFor="let format of destinationFormats" [hidden]="skipFormats.indexOf(format) !== -1")
+            li(*ngFor="let format of destinationFormats" [hidden]="skipFormats.indexOf(format) !== -1 || format === convertFrom")
               a((click)="convertTo = format") {{formatLabels[format] || format}}
     .col-xs-12.col-sm-4
       .form-group
