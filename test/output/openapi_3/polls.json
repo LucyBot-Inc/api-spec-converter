@@ -1,0 +1,285 @@
+{
+  "components": {
+    "schemas": {
+      "Choice": {},
+      "Polls_API_Root": {},
+      "Question": {},
+      "Questions_Collection": {}
+    }
+  },
+  "info": {
+    "description": "Polls is a simple API allowing consumers to view polls and vote in them. You can view this documentation over at [Apiary](http://docs.pollsapi.apiary.io).",
+    "title": "Polls",
+    "version": ""
+  },
+  "openapi": "3.0.0",
+  "paths": {
+    "/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "response": {
+                    "value": {
+                      "questions_url": "/questions"
+                    }
+                  }
+                }
+              }
+            },
+            "description": "OK",
+            "headers": {}
+          }
+        },
+        "summary": "Retrieve the Entry Point",
+        "tags": []
+      }
+    },
+    "/questions": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "description": "The page of questions to return",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "response": {
+                    "value": [
+                      {
+                        "choices": [
+                          {
+                            "choice": "Swift",
+                            "url": "/questions/1/choices/1",
+                            "votes": 2048
+                          },
+                          {
+                            "choice": "Python",
+                            "url": "/questions/1/choices/2",
+                            "votes": 1024
+                          },
+                          {
+                            "choice": "Objective-C",
+                            "url": "/questions/1/choices/3",
+                            "votes": 512
+                          },
+                          {
+                            "choice": "Ruby",
+                            "url": "/questions/1/choices/4",
+                            "votes": 256
+                          }
+                        ],
+                        "published_at": "2014-11-11T08:40:51.620Z",
+                        "question": "Favourite programming language?",
+                        "url": "/questions/1"
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "description": "OK",
+            "headers": {}
+          }
+        },
+        "summary": "List All Questions",
+        "tags": [
+          "Question"
+        ]
+      },
+      "post": {
+        "description": "You may create your own question using this action. It takes a JSON object containing a question and a collection of answers in the form of choices.\n\n+ question (string) - The question\n\n+ choices (array[string]) - A collection of choices.",
+        "parameters": [
+          {
+            "description": "The page of questions to return",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "choices": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "question": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "response": {
+                    "value": {
+                      "choices": [
+                        {
+                          "choice": "Swift",
+                          "url": "/questions/2/choices/1",
+                          "votes": 0
+                        },
+                        {
+                          "choice": "Python",
+                          "url": "/questions/2/choices/2",
+                          "votes": 0
+                        },
+                        {
+                          "choice": "Objective-C",
+                          "url": "/questions/2/choices/3",
+                          "votes": 0
+                        },
+                        {
+                          "choice": "Ruby",
+                          "url": "/questions/2/choices/4",
+                          "votes": 0
+                        }
+                      ],
+                      "published_at": "2014-11-11T08:40:51.620Z",
+                      "question": "Favourite programming language?",
+                      "url": "/questions/2"
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Created",
+            "headers": {}
+          }
+        },
+        "summary": "Create a New Question",
+        "tags": [
+          "Question"
+        ]
+      }
+    },
+    "/questions/{question_id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "description": "ID of the Question in form of an integer",
+            "in": "path",
+            "name": "question_id",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "response": {
+                    "value": {
+                      "choices": [
+                        {
+                          "choice": "Swift",
+                          "url": "/questions/1/choices/1",
+                          "votes": 2048
+                        },
+                        {
+                          "choice": "Python",
+                          "url": "/questions/1/choices/2",
+                          "votes": 1024
+                        },
+                        {
+                          "choice": "Objective-C",
+                          "url": "/questions/1/choices/3",
+                          "votes": 512
+                        },
+                        {
+                          "choice": "Ruby",
+                          "url": "/questions/1/choices/4",
+                          "votes": 256
+                        }
+                      ],
+                      "published_at": "2014-11-11T08:40:51.620Z",
+                      "question": "Favourite programming language?",
+                      "url": "/questions/1"
+                    }
+                  }
+                }
+              }
+            },
+            "description": "OK",
+            "headers": {}
+          }
+        },
+        "summary": "View a Questions Detail",
+        "tags": [
+          "Question"
+        ]
+      }
+    },
+    "/questions/{question_id}/choices/{choice_id}": {
+      "post": {
+        "description": "This action allows you to vote on a question's choice.",
+        "parameters": [
+          {
+            "description": "ID of the Question in form of an integer",
+            "in": "path",
+            "name": "question_id",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "description": "ID of the Choice in form of an integer",
+            "in": "path",
+            "name": "choice_id",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "headers": {}
+          }
+        },
+        "summary": "Vote on a Choice",
+        "tags": [
+          "Question"
+        ]
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "http://polls.apiblueprint.org/"
+    }
+  ]
+}

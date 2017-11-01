@@ -1,0 +1,142 @@
+{
+  "components": {
+    "schemas": {
+      "All_My_Messages": {},
+      "My_Message": {}
+    }
+  },
+  "info": {
+    "description": "In this installment of the API Blueprint course we will discuss how to describe URI parameters.\n\nBut first let's add more messages to our system. For that we would need introduce an message identifier – id. This id will be our parameter when communicating with our API about messages.\n\n## API Blueprint\n\n+ [Previous: Requests](06.%20Requests.md)\n\n+ [This: Raw API Blueprint](https://raw.github.com/apiaryio/api-blueprint/master/examples/07.%20Parameters.md)\n\n+ [Next: Attributes](08.%20Attributes.md)",
+    "title": "Parameters API",
+    "version": ""
+  },
+  "openapi": "3.0.0",
+  "paths": {
+    "/message/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "description": "An unique identifier of the message.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "response": {
+                    "value": {
+                      "id": 1,
+                      "message": "Hello World!"
+                    }
+                  }
+                }
+              }
+            },
+            "description": "OK",
+            "headers": {}
+          }
+        },
+        "summary": "Retrieve a Message",
+        "tags": [
+          "Messages"
+        ]
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "description": "An unique identifier of the message.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "headers": {}
+          }
+        },
+        "summary": "Update a Message",
+        "tags": [
+          "Messages"
+        ]
+      }
+    },
+    "/messages": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "description": "The maximum number of results to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 20,
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "response": {
+                    "value": [
+                      {
+                        "id": 1,
+                        "message": "Hello World!"
+                      },
+                      {
+                        "id": 2,
+                        "message": "Time is an illusion. Lunchtime doubly so."
+                      },
+                      {
+                        "id": 3,
+                        "message": "So long, and thanks for all the fish."
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "description": "OK",
+            "headers": {}
+          }
+        },
+        "summary": "Retrieve all Messages",
+        "tags": [
+          "Messages"
+        ]
+      }
+    }
+  },
+  "servers": []
+}

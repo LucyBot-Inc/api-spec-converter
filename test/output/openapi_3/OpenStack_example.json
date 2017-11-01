@@ -1,0 +1,115 @@
+{
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "openapi": "3.0.0",
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "listVersions-v2",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": []
+    },
+    "/v2.0": {
+      "get": {
+        "operationId": "showVersionInfo-v2.0",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": []
+    },
+    "/v2.0/extensions": {
+      "get": {
+        "operationId": "listExtensions-v2",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": []
+    },
+    "/v2.0/extensions/{alias}": {
+      "get": {
+        "operationId": "showExtension-v2",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "alias",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/v2.0/tenants": {
+      "get": {
+        "operationId": "listTenants",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "in": "header",
+          "name": "X-Auth-Token",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "query",
+          "name": "limit",
+          "required": false,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "query",
+          "name": "marker",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/v2.0/tokens": {
+      "parameters": [],
+      "post": {
+        "operationId": "authenticate-v2.0",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:35357/"
+    }
+  ]
+}

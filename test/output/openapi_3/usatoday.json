@@ -1,0 +1,259 @@
+{
+  "info": {
+    "title": "USA TODAY Census API",
+    "version": ""
+  },
+  "openapi": "3.0.0",
+  "paths": {
+    "/census/ethnicity": {
+      "get": {
+        "parameters": [
+          {
+            "description": "State abbreviation default, or arbitrary placename if keyname=placename",
+            "in": "query",
+            "name": "keypat",
+            "schema": {
+              "default": "",
+              "type": "string"
+            }
+          },
+          {
+            "description": "[placename, FIPS, GNIS]",
+            "in": "query",
+            "name": "keyname",
+            "schema": {
+              "default": "",
+              "enum": [
+                "placename",
+                "FIPS",
+                "GNIS"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "Use sumlevid to define what level of census data you would like.",
+            "in": "query",
+            "name": "sumlevid",
+            "schema": {
+              "default": "2",
+              "enum": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/census/housing": {
+      "get": {
+        "parameters": [
+          {
+            "description": "State abbreviation default, or arbitrary placename if keyname=placename",
+            "in": "query",
+            "name": "keypat",
+            "schema": {
+              "default": "",
+              "type": "string"
+            }
+          },
+          {
+            "description": "[placename, FIPS, GNIS]",
+            "in": "query",
+            "name": "keyname",
+            "schema": {
+              "default": "",
+              "enum": [
+                "placename",
+                "FIPS",
+                "GNIS"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "Use sumlevid to define what level of census data you would like.",
+            "in": "query",
+            "name": "sumlevid",
+            "schema": {
+              "default": "2",
+              "enum": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/census/locations": {
+      "get": {
+        "parameters": [
+          {
+            "description": "State abbreviation default, or arbitrary placename if keyname=placename",
+            "in": "query",
+            "name": "keypat",
+            "schema": {
+              "default": "",
+              "type": "string"
+            }
+          },
+          {
+            "description": "[placename, FIPS, GNIS]",
+            "in": "query",
+            "name": "keyname",
+            "schema": {
+              "default": "",
+              "enum": [
+                "placename",
+                "FIPS",
+                "GNIS"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "Use sumlevid to define what level of census data you would like.",
+            "in": "query",
+            "name": "sumlevid",
+            "schema": {
+              "default": "2",
+              "enum": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/census/population": {
+      "get": {
+        "parameters": [
+          {
+            "description": "State abbreviation default, or arbitrary placename if keyname=placename",
+            "in": "query",
+            "name": "keypat",
+            "schema": {
+              "default": "",
+              "type": "string"
+            }
+          },
+          {
+            "description": "[placename, FIPS, GNIS]",
+            "in": "query",
+            "name": "keyname",
+            "schema": {
+              "default": "",
+              "enum": [
+                "placename",
+                "FIPS",
+                "GNIS"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "Use sumlevid to define what level of census data you would like.",
+            "in": "query",
+            "name": "sumlevid",
+            "schema": {
+              "default": "2",
+              "enum": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/census/race": {
+      "get": {
+        "parameters": [
+          {
+            "description": "State abbreviation default, or arbitrary placename if keyname=placename",
+            "in": "query",
+            "name": "keypat",
+            "schema": {
+              "default": "",
+              "type": "string"
+            }
+          },
+          {
+            "description": "[placename, FIPS, GNIS]",
+            "in": "query",
+            "name": "keyname",
+            "schema": {
+              "default": "",
+              "enum": [
+                "placename",
+                "FIPS",
+                "GNIS"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "Use sumlevid to define what level of census data you would like.",
+            "in": "query",
+            "name": "sumlevid",
+            "schema": {
+              "default": "2",
+              "enum": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "http:://api.usatoday.com/open"
+    }
+  ]
+}

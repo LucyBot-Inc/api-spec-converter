@@ -1,0 +1,5287 @@
+{
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "openapi": "3.0.0",
+  "paths": {
+    "/search": {
+      "get": {
+        "description": "Search over all public objects in the social graph",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/api"
+        },
+        "operationId": "search",
+        "parameters": [
+          {
+            "description": "The search string",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "schema": {
+              "default": "apigee",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Supports these types of objects: All public posts (post), people (user), pages (page), events\n                            (event), groups (group), check-ins (checkin)",
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "schema": {
+              "default": "post",
+              "enum": [
+                "post",
+                "user",
+                "page",
+                "event",
+                "group",
+                "checkin"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": []
+    },
+    "/{album}": {
+      "get": {
+        "description": "A photo album",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/album"
+        },
+        "operationId": "getalbum",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the album object.",
+          "in": "path",
+          "name": "album",
+          "required": true,
+          "schema": {
+            "default": "99394368305",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{album}/comments": {
+      "get": {
+        "description": "The comments made on this album",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/album"
+        },
+        "operationId": "getalbumcomments",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the album object.",
+          "in": "path",
+          "name": "album",
+          "required": true,
+          "schema": {
+            "default": "99394368305",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Posts a comment on the album",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/album"
+        },
+        "operationId": "postalbumcomments",
+        "parameters": [
+          {
+            "description": "Comment text",
+            "in": "query",
+            "name": "message",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{album}/likes": {
+      "delete": {
+        "description": "Unlikes the album",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/album"
+        },
+        "operationId": "deletealbumlikes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "get": {
+        "description": "The likes made on this album",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/album"
+        },
+        "operationId": "getalbumlikes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the album object.",
+          "in": "path",
+          "name": "album",
+          "required": true,
+          "schema": {
+            "default": "99394368305",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Likes the album",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/album"
+        },
+        "operationId": "postalbumlikes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{album}/photos": {
+      "get": {
+        "description": "The photos contained in this album",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/album"
+        },
+        "operationId": "getalbumphotos",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the album object.",
+          "in": "path",
+          "name": "album",
+          "required": true,
+          "schema": {
+            "default": "99394368305",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Adds a photo to the album",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/album"
+        },
+        "operationId": "postalbumphotos",
+        "parameters": [
+          {
+            "description": "Photo description",
+            "in": "query",
+            "name": "message",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{album}/picture": {
+      "get": {
+        "description": "The album's cover photo; the first picture uploaded to an album becomes the cover photo for the album.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/album"
+        },
+        "operationId": "getalbumpicture",
+        "parameters": [
+          {
+            "description": "One of square (50x50), small (50 pixels wide, variable height), and large (about 200 pixels wide,\n                            variable height)",
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "schema": {
+              "default": "small",
+              "enum": [
+                "square",
+                "small",
+                "large"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the album object.",
+          "in": "path",
+          "name": "album",
+          "required": true,
+          "schema": {
+            "default": "99394368305",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{application}": {
+      "get": {
+        "description": "An application's profile",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/application"
+        },
+        "operationId": "getapplication",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the application object.",
+          "in": "path",
+          "name": "application",
+          "required": true,
+          "schema": {
+            "default": "2439131959",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{application}/accounts": {
+      "get": {
+        "description": "Test User accounts associated with the application.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/application"
+        },
+        "operationId": "getapplicationaccounts",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the application object.",
+          "in": "path",
+          "name": "application",
+          "required": true,
+          "schema": {
+            "default": "2439131959",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{application}/accounts/test-users": {
+      "parameters": [
+        {
+          "description": "Represents the ID of the application object.",
+          "in": "path",
+          "name": "application",
+          "required": true,
+          "schema": {
+            "default": "2439131959",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Creates a test account for the application",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/application"
+        },
+        "operationId": "postapplicationaccounts",
+        "parameters": [
+          {
+            "description": "Install app for the test user upon creation",
+            "in": "query",
+            "name": "installed",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "description": "List of extended permissions app granted for the new test user if installed is true",
+            "in": "query",
+            "name": "permissions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "A name for the test user. The specified name will also be used in the email address assigned to the test user.",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{application}/achievements": {
+      "delete": {
+        "description": "Unregisters an achievement for the application",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/application"
+        },
+        "operationId": "deleteapplicationachievements",
+        "parameters": [
+          {
+            "description": "Unique URL to the achievement.",
+            "in": "query",
+            "name": "achievement",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the application object.",
+          "in": "path",
+          "name": "application",
+          "required": true,
+          "schema": {
+            "default": "2439131959",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Registers an achievement for the application",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/application"
+        },
+        "operationId": "postapplicationachievements",
+        "parameters": [
+          {
+            "description": "Unique URL to the achievement.",
+            "in": "query",
+            "name": "achievement",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Order of this achievement as it shows up in the achievement stories UI (low to high). For example a display order of 100 will be displayed in the UI before 200. We use this value to surface achievements according to the order the developer has specified. Please make sure this value is unique and increments in the correct order for your achievements.",
+            "in": "query",
+            "name": "display_order",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{application}/albums": {
+      "get": {
+        "description": "The photo albums this application has created.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/application"
+        },
+        "operationId": "getapplicationalbums",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the application object.",
+          "in": "path",
+          "name": "application",
+          "required": true,
+          "schema": {
+            "default": "2439131959",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{application}/feed": {
+      "get": {
+        "description": "The application's wall.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/application"
+        },
+        "operationId": "getapplicationfeed",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the application object.",
+          "in": "path",
+          "name": "application",
+          "required": true,
+          "schema": {
+            "default": "2439131959",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Posts a status message on the application's profile page",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/application"
+        },
+        "operationId": "postapplicationfeedstatus",
+        "parameters": [
+          {
+            "description": "Status Message content",
+            "in": "query",
+            "name": "message",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{application}/insights": {
+      "get": {
+        "description": "Usage metrics for this application",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/application"
+        },
+        "operationId": "getapplicationinsights",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the application object.",
+          "in": "path",
+          "name": "application",
+          "required": true,
+          "schema": {
+            "default": "2439131959",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{application}/links": {
+      "get": {
+        "description": "The application's posted links.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/application"
+        },
+        "operationId": "getapplicationlinks",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the application object.",
+          "in": "path",
+          "name": "application",
+          "required": true,
+          "schema": {
+            "default": "2439131959",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Posts a link on the application's profile page",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/application"
+        },
+        "operationId": "postapplicationlinks",
+        "parameters": [
+          {
+            "description": "Link URL",
+            "in": "query",
+            "name": "link",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Link message",
+            "in": "query",
+            "name": "message",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{application}/picture": {
+      "get": {
+        "description": "The application's logo",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/application"
+        },
+        "operationId": "getapplicationpicture",
+        "parameters": [
+          {
+            "description": "One of square (50x50), small (50 pixels wide, variable height), and large (about 200 pixels wide,\n                            variable height)",
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "schema": {
+              "default": "small",
+              "enum": [
+                "square",
+                "small",
+                "large"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the application object.",
+          "in": "path",
+          "name": "application",
+          "required": true,
+          "schema": {
+            "default": "2439131959",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{application}/posts": {
+      "get": {
+        "description": "The application's own posts.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/application"
+        },
+        "operationId": "getapplicationposts",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the application object.",
+          "in": "path",
+          "name": "application",
+          "required": true,
+          "schema": {
+            "default": "2439131959",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{application}/reviews": {
+      "get": {
+        "description": "Reviews of this application",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/application"
+        },
+        "operationId": "getapplicationreviews",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the application object.",
+          "in": "path",
+          "name": "application",
+          "required": true,
+          "schema": {
+            "default": "2439131959",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{application}/scores": {
+      "delete": {
+        "description": "Deletes all the scores for the application.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/application"
+        },
+        "operationId": "deleteapplicationscores",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "get": {
+        "description": "Scores for the user and their friends.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/application"
+        },
+        "operationId": "getapplicationscores",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the application object.",
+          "in": "path",
+          "name": "application",
+          "required": true,
+          "schema": {
+            "default": "2439131959",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{application}/staticresources": {
+      "get": {
+        "description": "Usage stats about the canvas application's static resources, such as javascript and CSS, and which ones are being flushed to browsers early.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/application"
+        },
+        "operationId": "getapplicationstaticresources",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the application object.",
+          "in": "path",
+          "name": "application",
+          "required": true,
+          "schema": {
+            "default": "2439131959",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{application}/statuses": {
+      "get": {
+        "description": "The application's status updates",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/application"
+        },
+        "operationId": "getapplicationstatuses",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the application object.",
+          "in": "path",
+          "name": "application",
+          "required": true,
+          "schema": {
+            "default": "2439131959",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Posts a status message on the application's profile page",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/application"
+        },
+        "operationId": "postapplicationstatuses",
+        "parameters": [
+          {
+            "description": "Status Message content",
+            "in": "query",
+            "name": "message",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{application}/subscriptions": {
+      "delete": {
+        "description": "Deletes a real-time notification subscription for this application.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/application"
+        },
+        "operationId": "deleteapplicationsubscriptions",
+        "parameters": [
+          {
+            "description": "Object to monitor - `user`, `permissions`, or `page`. If no object is specified all subscriptions are deleted.",
+            "in": "query",
+            "name": "object",
+            "required": false,
+            "schema": {
+              "enum": [
+                "user",
+                "permissions",
+                "page"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "get": {
+        "description": "All of the subscriptions this application has for real-time notifications.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/application"
+        },
+        "operationId": "getapplicationsubscriptions",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the application object.",
+          "in": "path",
+          "name": "application",
+          "required": true,
+          "schema": {
+            "default": "2439131959",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Adds a real-time notification subscription for this application.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/application"
+        },
+        "operationId": "postapplicationsubscriptions",
+        "parameters": [
+          {
+            "description": "Object to monitor - `user`, `permissions`, or `page`.",
+            "in": "query",
+            "name": "object",
+            "required": true,
+            "schema": {
+              "enum": [
+                "user",
+                "permissions",
+                "page"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "List of properties for the `object` to monitor.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "A callback URL to which Facebook will post subscription updates.",
+            "in": "query",
+            "name": "callback_url",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Token sent in the verification request.",
+            "in": "query",
+            "name": "verify_token",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{application}/tagged": {
+      "get": {
+        "description": "The photos, videos, and posts in which this application has been tagged.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/application"
+        },
+        "operationId": "getapplicationtagged",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the application object.",
+          "in": "path",
+          "name": "application",
+          "required": true,
+          "schema": {
+            "default": "2439131959",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{application}/translations": {
+      "delete": {
+        "description": "Deletes a translation string for this application.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/application"
+        },
+        "operationId": "deleteapplicationtranslations",
+        "parameters": [
+          {
+            "description": "An array of native hashes. The native hash is a unique identifier of the native string and a description and is generated by the Translations application.",
+            "in": "query",
+            "name": "native_hashes",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "get": {
+        "description": "The translated strings for this application.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/application"
+        },
+        "operationId": "getapplicationtranslations",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the application object.",
+          "in": "path",
+          "name": "application",
+          "required": true,
+          "schema": {
+            "default": "2439131959",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Uploads translated strings for this application.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/application"
+        },
+        "operationId": "postapplicationtranslations",
+        "parameters": [
+          {
+            "description": "A JSON-encoded array of strings to translate. Each element of the string array is an object, with text storing the actual string, description storing the description of the text.",
+            "in": "query",
+            "name": "native_strings",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{checkin}": {
+      "get": {
+        "description": "Represents a single visit by a user to a location",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/checkin"
+        },
+        "operationId": "getcheckin",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the checkin object.",
+          "in": "path",
+          "name": "checkin",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{checkin}/comments": {
+      "get": {
+        "description": "All of the comments on this checkin.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/checkin"
+        },
+        "operationId": "getcheckincomments",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the checkin object.",
+          "in": "path",
+          "name": "checkin",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Posts a comment to this checkin.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/checkin"
+        },
+        "operationId": "postcheckincomments",
+        "parameters": [
+          {
+            "description": "Comment text",
+            "in": "query",
+            "name": "message",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{checkin}/likes": {
+      "delete": {
+        "description": "Unlikes this checkin.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/checkin"
+        },
+        "operationId": "deletecheckinlikes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "get": {
+        "description": "Users who like this checkin.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/checkin"
+        },
+        "operationId": "getcheckinlikes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the checkin object.",
+          "in": "path",
+          "name": "checkin",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Likes this checkin.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/checkin"
+        },
+        "operationId": "postcheckinlikes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{comment}": {
+      "delete": {
+        "description": "Deletes a comment",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/comment"
+        },
+        "operationId": "deletecomment",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "get": {
+        "description": "Returns a comment",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/comment"
+        },
+        "operationId": "getcomment",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the comment object.",
+          "in": "path",
+          "name": "comment",
+          "required": true,
+          "schema": {
+            "default": "19292868552_475058873552_14173716",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{comment}/likes": {
+      "delete": {
+        "description": "Unlikes the comment",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/comment"
+        },
+        "operationId": "deletecommentlikes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "get": {
+        "description": "All the likes on this comment",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/comment"
+        },
+        "operationId": "getcommentlikes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the comment object.",
+          "in": "path",
+          "name": "comment",
+          "required": true,
+          "schema": {
+            "default": "19292868552_475058873552_14173716",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Likes the comment",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/comment"
+        },
+        "operationId": "postcommentlikes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{event}": {
+      "get": {
+        "description": "Specifies information about an event, including the location, event name, and which invitees plan to attend.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/event"
+        },
+        "operationId": "getevent",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the event object.",
+          "in": "path",
+          "name": "event",
+          "required": true,
+          "schema": {
+            "default": "331218348435",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{event}/attending": {
+      "get": {
+        "description": "All of the users who are attending this event",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/event"
+        },
+        "operationId": "geteventattending",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the event object.",
+          "in": "path",
+          "name": "event",
+          "required": true,
+          "schema": {
+            "default": "331218348435",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "RSVPs the user as 'attending' for the event",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/event"
+        },
+        "operationId": "posteventattending",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{event}/declined": {
+      "get": {
+        "description": "All of the users who declined their invitation to this event",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/event"
+        },
+        "operationId": "geteventdeclined",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the event object.",
+          "in": "path",
+          "name": "event",
+          "required": true,
+          "schema": {
+            "default": "331218348435",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "RSVPs the user as 'declined' for the event",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/event"
+        },
+        "operationId": "posteventdeclined",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{event}/feed": {
+      "get": {
+        "description": "This event's wall",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/event"
+        },
+        "operationId": "geteventfeed",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the event object.",
+          "in": "path",
+          "name": "event",
+          "required": true,
+          "schema": {
+            "default": "331218348435",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Posts a status message on this event's wall",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/event"
+        },
+        "operationId": "posteventfeedstatus",
+        "parameters": [
+          {
+            "description": "Status Message content",
+            "in": "query",
+            "name": "message",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{event}/invited": {
+      "get": {
+        "description": "All of the users who have been invited to this event",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/event"
+        },
+        "operationId": "geteventinvited",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the event object.",
+          "in": "path",
+          "name": "event",
+          "required": true,
+          "schema": {
+            "default": "331218348435",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{event}/maybe": {
+      "get": {
+        "description": "All of the users who have been responded \"Maybe\" to their invitation to this event",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/event"
+        },
+        "operationId": "geteventmaybe",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the event object.",
+          "in": "path",
+          "name": "event",
+          "required": true,
+          "schema": {
+            "default": "331218348435",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "RSVPs the user as a 'maybe' for the event",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/event"
+        },
+        "operationId": "posteventmaybe",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{event}/noreply": {
+      "get": {
+        "description": "All of the users who have been not yet responded to their invitation to this event",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/event"
+        },
+        "operationId": "geteventnoreply",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the event object.",
+          "in": "path",
+          "name": "event",
+          "required": true,
+          "schema": {
+            "default": "331218348435",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{event}/picture": {
+      "get": {
+        "description": "The event's profile picture",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/event"
+        },
+        "operationId": "geteventpicture",
+        "parameters": [
+          {
+            "description": "One of square (50x50), small (50 pixels wide, variable height), and large (about 200 pixels wide,\n                            variable height)",
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "schema": {
+              "default": "small",
+              "enum": [
+                "square",
+                "small",
+                "large"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the event object.",
+          "in": "path",
+          "name": "event",
+          "required": true,
+          "schema": {
+            "default": "331218348435",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{friendlist}": {
+      "delete": {
+        "description": "Deletes the FriendList.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/friendlist"
+        },
+        "operationId": "deletefriendlist",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "get": {
+        "description": "A Facebook friend list. This object represents the list itself and not the members of the list.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/friendlist"
+        },
+        "operationId": "getfriendlist",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the FriendList object.",
+          "in": "path",
+          "name": "friendlist",
+          "required": true,
+          "schema": {
+            "default": "",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{friendlist}/members": {
+      "get": {
+        "description": "All of the users who are members of this list.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/friendlist"
+        },
+        "operationId": "getfriendlistmembers",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the FriendList object.",
+          "in": "path",
+          "name": "friendlist",
+          "required": true,
+          "schema": {
+            "default": "",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{friendlist}/members/{user}": {
+      "delete": {
+        "description": "Removes a user from the friend list",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/friendlist"
+        },
+        "operationId": "deletefriendlistmembersuser",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the FriendList object.",
+          "in": "path",
+          "name": "friendlist",
+          "required": true,
+          "schema": {
+            "default": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "Represents the ID of the User to add to or remove from the friend list.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Adds a user to the friend list",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/friendlist"
+        },
+        "operationId": "postfriendlistmembersuser",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{group}": {
+      "get": {
+        "description": "A Facebook group",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/group"
+        },
+        "operationId": "getgroup",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the group object.",
+          "in": "path",
+          "name": "group",
+          "required": true,
+          "schema": {
+            "default": "2204501798",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{group}/docs": {
+      "get": {
+        "description": "The docs in this group",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/group"
+        },
+        "operationId": "getgroupdocs",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the group object.",
+          "in": "path",
+          "name": "group",
+          "required": true,
+          "schema": {
+            "default": "2204501798",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{group}/feed": {
+      "get": {
+        "description": "This group's wall",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/group"
+        },
+        "operationId": "getgroupfeed",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the group object.",
+          "in": "path",
+          "name": "group",
+          "required": true,
+          "schema": {
+            "default": "2204501798",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Posts a status message on this group's wall",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/group"
+        },
+        "operationId": "postgroupfeedstatus",
+        "parameters": [
+          {
+            "description": "Status Message content",
+            "in": "query",
+            "name": "message",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{group}/members": {
+      "get": {
+        "description": "All of the users who are members of this group",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/group"
+        },
+        "operationId": "getgroupmembers",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the group object.",
+          "in": "path",
+          "name": "group",
+          "required": true,
+          "schema": {
+            "default": "2204501798",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{group}/picture": {
+      "get": {
+        "description": "The profile picture of this group",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/group"
+        },
+        "operationId": "getgrouppicture",
+        "parameters": [
+          {
+            "description": "One of square (50x50), small (50 pixels wide, variable height), and large (about 200 pixels wide,\n                            variable height)",
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "schema": {
+              "default": "small",
+              "enum": [
+                "square",
+                "small",
+                "large"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the group object.",
+          "in": "path",
+          "name": "group",
+          "required": true,
+          "schema": {
+            "default": "2204501798",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{link}": {
+      "get": {
+        "description": "A link shared on a user's wall",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/link"
+        },
+        "operationId": "getlink",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the link object.",
+          "in": "path",
+          "name": "link",
+          "required": true,
+          "schema": {
+            "default": "114961875194024",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{link}/comments": {
+      "get": {
+        "description": "All of the comments on this link.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/link"
+        },
+        "operationId": "getlinkcomments",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the link object.",
+          "in": "path",
+          "name": "link",
+          "required": true,
+          "schema": {
+            "default": "114961875194024",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Posts a comment to this link.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/link"
+        },
+        "operationId": "postlinkcomments",
+        "parameters": [
+          {
+            "description": "Comment text",
+            "in": "query",
+            "name": "message",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{link}/likes": {
+      "delete": {
+        "description": "Unlikes this link.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/link"
+        },
+        "operationId": "deletelinklikes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "get": {
+        "description": "Users who like this link.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/link"
+        },
+        "operationId": "getlinklikes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the link object.",
+          "in": "path",
+          "name": "link",
+          "required": true,
+          "schema": {
+            "default": "114961875194024",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Likes this link.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/link"
+        },
+        "operationId": "postlinklikes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{note}": {
+      "get": {
+        "description": "A Facebook note",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/note"
+        },
+        "operationId": "getnote",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the note object.",
+          "in": "path",
+          "name": "note",
+          "required": true,
+          "schema": {
+            "default": "122788341354",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{note}/comments": {
+      "get": {
+        "description": "All of the comments on this note.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/note"
+        },
+        "operationId": "getnotecomments",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the note object.",
+          "in": "path",
+          "name": "note",
+          "required": true,
+          "schema": {
+            "default": "122788341354",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Posts a comment to this note.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/note"
+        },
+        "operationId": "postnotecomments",
+        "parameters": [
+          {
+            "description": "Comment text",
+            "in": "query",
+            "name": "message",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{note}/likes": {
+      "delete": {
+        "description": "Unlikes this note.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/note"
+        },
+        "operationId": "deletenotelikes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "get": {
+        "description": "Users who like this note.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/note"
+        },
+        "operationId": "getnotelikes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the note object.",
+          "in": "path",
+          "name": "note",
+          "required": true,
+          "schema": {
+            "default": "122788341354",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Likes this note.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/note"
+        },
+        "operationId": "postnotelikes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{notification}": {
+      "parameters": [
+        {
+          "description": "Represents the ID of the notification.",
+          "in": "path",
+          "name": "notification",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Marks the notification as read",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/notification"
+        },
+        "operationId": "postnotification",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "unread",
+            "required": true,
+            "schema": {
+              "default": 0,
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{page}": {
+      "get": {
+        "description": "Returns a Page",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/page"
+        },
+        "operationId": "getpage",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the page object.",
+          "in": "path",
+          "name": "page",
+          "required": true,
+          "schema": {
+            "default": "platform",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{page}/admins": {
+      "get": {
+        "description": "A list of the Page's admins.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/page"
+        },
+        "operationId": "getpageadmins",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the page object.",
+          "in": "path",
+          "name": "page",
+          "required": true,
+          "schema": {
+            "default": "platform",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{page}/albums": {
+      "get": {
+        "description": "The photo albums this Page has uploaded",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/page"
+        },
+        "operationId": "getpagealbums",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the page object.",
+          "in": "path",
+          "name": "page",
+          "required": true,
+          "schema": {
+            "default": "platform",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{page}/blocked": {
+      "delete": {
+        "description": "Unblocks a user (or users) for the page",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/page"
+        },
+        "operationId": "deletepageblocked",
+        "parameters": [
+          {
+            "description": "Comma-separated list of the user IDs you wish to unblock",
+            "in": "query",
+            "name": "uids",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "get": {
+        "description": "A list of the users blocked from the page.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/page"
+        },
+        "operationId": "getpageblocked",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the page object.",
+          "in": "path",
+          "name": "page",
+          "required": true,
+          "schema": {
+            "default": "platform",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Blocks a user (or users) from posting content to the page",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/page"
+        },
+        "operationId": "postpageblocked",
+        "parameters": [
+          {
+            "description": "Comma-separated list of the user IDs you wish to block",
+            "in": "query",
+            "name": "uids",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{page}/blocked/{user}": {
+      "get": {
+        "description": "Checks if a user is blocked from the page",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/page"
+        },
+        "operationId": "getpageblockeduser",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the page object.",
+          "in": "path",
+          "name": "page",
+          "required": true,
+          "schema": {
+            "default": "platform",
+            "type": "string"
+          }
+        },
+        {
+          "description": "Represents the ID of a user.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{page}/checkins": {
+      "get": {
+        "description": "Checkins made to this Place Page by the current user, and friends of the current user",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/page"
+        },
+        "operationId": "getpagecheckins",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the page object.",
+          "in": "path",
+          "name": "page",
+          "required": true,
+          "schema": {
+            "default": "platform",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{page}/events": {
+      "get": {
+        "description": "The events the Page is attending",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/page"
+        },
+        "operationId": "getpageevents",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the page object.",
+          "in": "path",
+          "name": "page",
+          "required": true,
+          "schema": {
+            "default": "platform",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Creates an event for the page",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/page"
+        },
+        "operationId": "postpageevents",
+        "parameters": [
+          {
+            "description": "Event name",
+            "in": "query",
+            "name": "name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Event start time",
+            "in": "query",
+            "name": "start_time",
+            "required": true,
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Event end time",
+            "in": "query",
+            "name": "end_time",
+            "required": false,
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Event description",
+            "in": "query",
+            "name": "message",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Event location",
+            "in": "query",
+            "name": "location",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Event privacy setting",
+            "in": "query",
+            "name": "privacy_type",
+            "required": false,
+            "schema": {
+              "default": "OPEN",
+              "enum": [
+                "OPEN",
+                "CLOSED",
+                "SECRET"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{page}/feed": {
+      "get": {
+        "description": "This page's wall",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/page"
+        },
+        "operationId": "getpagefeed",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the page object.",
+          "in": "path",
+          "name": "page",
+          "required": true,
+          "schema": {
+            "default": "platform",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Posts a status message on this page's wall",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/page"
+        },
+        "operationId": "postpagefeedstatus",
+        "parameters": [
+          {
+            "description": "Status Message content",
+            "in": "query",
+            "name": "message",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{page}/groups": {
+      "get": {
+        "description": "The groups this page is a member of",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/page"
+        },
+        "operationId": "getpagegroups",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the page object.",
+          "in": "path",
+          "name": "page",
+          "required": true,
+          "schema": {
+            "default": "platform",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{page}/links": {
+      "get": {
+        "description": "The page's posted links",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/page"
+        },
+        "operationId": "getpagelinks",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the page object.",
+          "in": "path",
+          "name": "page",
+          "required": true,
+          "schema": {
+            "default": "platform",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Posts a link on the page",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/page"
+        },
+        "operationId": "postpagelinks",
+        "parameters": [
+          {
+            "description": "Link URL",
+            "in": "query",
+            "name": "link",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Link message",
+            "in": "query",
+            "name": "message",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{page}/notes": {
+      "get": {
+        "description": "The notes contained on this page",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/page"
+        },
+        "operationId": "getpagenotes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the page object.",
+          "in": "path",
+          "name": "page",
+          "required": true,
+          "schema": {
+            "default": "platform",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Creates a note on the page",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/page"
+        },
+        "operationId": "postpagenotes",
+        "parameters": [
+          {
+            "description": "The subject of the Note",
+            "in": "query",
+            "name": "subject",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Note content",
+            "in": "query",
+            "name": "message",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{page}/photos": {
+      "get": {
+        "description": "The photos contained on this page",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/page"
+        },
+        "operationId": "getpagephotos",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the page object.",
+          "in": "path",
+          "name": "page",
+          "required": true,
+          "schema": {
+            "default": "platform",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Adds a photo to the page",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/page"
+        },
+        "operationId": "postpagephotos",
+        "parameters": [
+          {
+            "description": "Photo description",
+            "in": "query",
+            "name": "message",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{page}/picture": {
+      "get": {
+        "description": "The page's profile picture",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/page"
+        },
+        "operationId": "getpagepicture",
+        "parameters": [
+          {
+            "description": "One of square (50x50), small (50 pixels wide, variable height), and large (about 200 pixels wide,\n                            variable height)",
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "schema": {
+              "default": "small",
+              "enum": [
+                "square",
+                "small",
+                "large"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the page object.",
+          "in": "path",
+          "name": "page",
+          "required": true,
+          "schema": {
+            "default": "platform",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{page}/posts": {
+      "get": {
+        "description": "The page's own posts",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/page"
+        },
+        "operationId": "getpageposts",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the page object.",
+          "in": "path",
+          "name": "page",
+          "required": true,
+          "schema": {
+            "default": "platform",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{page}/settings": {
+      "get": {
+        "description": "The page's post permission settings",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/page"
+        },
+        "operationId": "getpagesettings",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the page object.",
+          "in": "path",
+          "name": "page",
+          "required": true,
+          "schema": {
+            "default": "platform",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "The page's post permission settings",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/page"
+        },
+        "operationId": "postpagesettings",
+        "parameters": [
+          {
+            "description": "Which single setting to update: USERS_CAN_POST, USERS_CAN_POST_PHOTOS, USERS_CAN_TAG_PHOTOS, USERS_CAN_POST_VIDEOS",
+            "in": "query",
+            "name": "setting",
+            "required": true,
+            "schema": {
+              "enum": [
+                "USERS_CAN_POST",
+                "USERS_CAN_POST_PHOTOS",
+                "USERS_CAN_TAG_PHOTOS",
+                "USERS_CAN_POST_VIDEOS"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "value",
+            "required": true,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{page}/statuses": {
+      "get": {
+        "description": "The page's status updates",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/page"
+        },
+        "operationId": "getpagestatuses",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the page object.",
+          "in": "path",
+          "name": "page",
+          "required": true,
+          "schema": {
+            "default": "platform",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Posts a status message on the page",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/page"
+        },
+        "operationId": "postpagestatuses",
+        "parameters": [
+          {
+            "description": "Status Message content",
+            "in": "query",
+            "name": "message",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{page}/tabs": {
+      "get": {
+        "description": "The page's profile tabs",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/page"
+        },
+        "operationId": "getpagetabs",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the page object.",
+          "in": "path",
+          "name": "page",
+          "required": true,
+          "schema": {
+            "default": "platform",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Installs a profile tab at the end of the current list of installed tabs for the page",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/page"
+        },
+        "operationId": "postpagetabs",
+        "parameters": [
+          {
+            "description": "ID of the application for which to install the tab",
+            "in": "query",
+            "name": "app_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{page}/tabs/{tab}": {
+      "delete": {
+        "description": "Deletes an installed profile tab (where is_permanent is not true) for a page",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/page"
+        },
+        "operationId": "deletepagetabs",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the page object.",
+          "in": "path",
+          "name": "page",
+          "required": true,
+          "schema": {
+            "default": "platform",
+            "type": "string"
+          }
+        },
+        {
+          "description": "Represents the ID of the tab.",
+          "in": "path",
+          "name": "tab",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Updates an installed profile tab for a page",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/page"
+        },
+        "operationId": "postpagetabstab",
+        "parameters": [
+          {
+            "description": "Order in which the tab will appear on the profile. Must be after permanent tabs and less than the number of installed tabs. Index starts at 0",
+            "in": "query",
+            "name": "position",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Name to be used for the tab. If this is set to an empty string, the tab will use the application’s default tab name.",
+            "in": "query",
+            "name": "custom_name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Set this tab as the default landing tab for users who have not liked and are not admins of the Page. If provided, value must be true.",
+            "in": "query",
+            "name": "is_non_connection_landing_tab",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{page}/tagged": {
+      "get": {
+        "description": "The photos, videos, and posts in which this page has been tagged",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/page"
+        },
+        "operationId": "getpagetagged",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the page object.",
+          "in": "path",
+          "name": "page",
+          "required": true,
+          "schema": {
+            "default": "platform",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{page}/videos": {
+      "get": {
+        "description": "The videos contained on this page",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/page"
+        },
+        "operationId": "getpagevideos",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the page object.",
+          "in": "path",
+          "name": "page",
+          "required": true,
+          "schema": {
+            "default": "platform",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Publishes a video to the page",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/page"
+        },
+        "operationId": "postpagevideos",
+        "parameters": [
+          {
+            "description": "Video title",
+            "in": "query",
+            "name": "title",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Video description",
+            "in": "query",
+            "name": "description",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{photo}": {
+      "get": {
+        "description": "An individual photo",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/photo"
+        },
+        "operationId": "getphoto",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the photo object.",
+          "in": "path",
+          "name": "photo",
+          "required": true,
+          "schema": {
+            "default": "98423808305",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{photo}/comments": {
+      "get": {
+        "description": "All of the comments on this photo.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/photo"
+        },
+        "operationId": "getphotocomments",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the photo object.",
+          "in": "path",
+          "name": "photo",
+          "required": true,
+          "schema": {
+            "default": "98423808305",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Posts a comment to this photo.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/photo"
+        },
+        "operationId": "postphotocomments",
+        "parameters": [
+          {
+            "description": "Comment text",
+            "in": "query",
+            "name": "message",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{photo}/likes": {
+      "delete": {
+        "description": "Unlikes this photo.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/photo"
+        },
+        "operationId": "deletephotolikes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "get": {
+        "description": "Users who like this photo.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/photo"
+        },
+        "operationId": "getphotolikes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the photo object.",
+          "in": "path",
+          "name": "photo",
+          "required": true,
+          "schema": {
+            "default": "98423808305",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Likes this photo.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/photo"
+        },
+        "operationId": "postphotolikes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{photo}/picture": {
+      "get": {
+        "description": "The album-sized view of the photo",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/photo"
+        },
+        "operationId": "getphotopicture",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the photo object.",
+          "in": "path",
+          "name": "photo",
+          "required": true,
+          "schema": {
+            "default": "98423808305",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{photo}/tags": {
+      "get": {
+        "description": "Tags for this photo.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/photo"
+        },
+        "operationId": "getphototags",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the photo object.",
+          "in": "path",
+          "name": "photo",
+          "required": true,
+          "schema": {
+            "default": "98423808305",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Creates a tag on this photo.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/photo"
+        },
+        "operationId": "postphototags",
+        "parameters": [
+          {
+            "description": "USER_ID of the User to tag; can also be provided in URL path",
+            "in": "query",
+            "name": "to",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "x coordinate of tag, as a percentage offset from the left edge of the picture",
+            "in": "query",
+            "name": "x",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "y coordinate of tag, as a percentage offset from the top edge of the picture",
+            "in": "query",
+            "name": "y",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{photo}/tags/{user}": {
+      "parameters": [
+        {
+          "description": "Represents the ID of the photo object.",
+          "in": "path",
+          "name": "photo",
+          "required": true,
+          "schema": {
+            "default": "98423808305",
+            "type": "string"
+          }
+        },
+        {
+          "description": "Represents the ID of the user.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Updates the position of a tag on this photo for the user.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/photo"
+        },
+        "operationId": "postphototagsuser",
+        "parameters": [
+          {
+            "description": "x coordinate of tag, as a percentage offset from the left edge of the picture",
+            "in": "query",
+            "name": "x",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "y coordinate of tag, as a percentage offset from the top edge of the picture",
+            "in": "query",
+            "name": "y",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{post}": {
+      "get": {
+        "description": "A Facebook post",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/post"
+        },
+        "operationId": "getpost",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the post object.",
+          "in": "path",
+          "name": "post",
+          "required": true,
+          "schema": {
+            "default": "122788341354",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{post}/comments": {
+      "get": {
+        "description": "All of the comments on this post.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/post"
+        },
+        "operationId": "getpostcomments",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the post object.",
+          "in": "path",
+          "name": "post",
+          "required": true,
+          "schema": {
+            "default": "122788341354",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Posts a comment to this post.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/post"
+        },
+        "operationId": "postpostcomments",
+        "parameters": [
+          {
+            "description": "Comment text",
+            "in": "query",
+            "name": "message",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{post}/likes": {
+      "delete": {
+        "description": "Unlikes this post.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/post"
+        },
+        "operationId": "deletepostlikes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "get": {
+        "description": "Users who like this post.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/post"
+        },
+        "operationId": "getpostlikes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the post object.",
+          "in": "path",
+          "name": "post",
+          "required": true,
+          "schema": {
+            "default": "122788341354",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Likes this post.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/post"
+        },
+        "operationId": "postpostlikes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{status}": {
+      "get": {
+        "description": "A Facebook status",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/status"
+        },
+        "operationId": "getstatus",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the status object.",
+          "in": "path",
+          "name": "status",
+          "required": true,
+          "schema": {
+            "default": "122788341354",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{status}/comments": {
+      "get": {
+        "description": "All of the comments on this status.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/status"
+        },
+        "operationId": "getstatuscomments",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the status object.",
+          "in": "path",
+          "name": "status",
+          "required": true,
+          "schema": {
+            "default": "122788341354",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Posts a comment to this status.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/status"
+        },
+        "operationId": "poststatuscomments",
+        "parameters": [
+          {
+            "description": "Comment text",
+            "in": "query",
+            "name": "message",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{status}/likes": {
+      "delete": {
+        "description": "Unlikes this status.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/status"
+        },
+        "operationId": "deletestatuslikes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "get": {
+        "description": "Users who like this status.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/status"
+        },
+        "operationId": "getstatuslikes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the status object.",
+          "in": "path",
+          "name": "status",
+          "required": true,
+          "schema": {
+            "default": "122788341354",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Likes this status.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/status"
+        },
+        "operationId": "poststatuslikes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}": {
+      "get": {
+        "description": "A user profile.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getuser",
+        "parameters": [
+          {
+            "description": "The fields to return",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "{user}",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{user}/accounts": {
+      "get": {
+        "description": "The Facebook apps and pages owned by the current user",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getuseraccounts",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "{user}",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{user}/achievements": {
+      "delete": {
+        "description": "Deletes an achievement for the user",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "deleteuserachievements",
+        "parameters": [
+          {
+            "description": "The unique URL of the achievement you wish to delete.",
+            "in": "query",
+            "name": "achievement",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "{user}",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Posts an achievement for the user",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "postuserachievements",
+        "parameters": [
+          {
+            "description": "The unique URL of the achievement which the user achieved.",
+            "in": "query",
+            "name": "achievement",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/activities": {
+      "get": {
+        "description": "The activities listed on the user's profile",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getuseractivities",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "{user}",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{user}/albums": {
+      "get": {
+        "description": "The photo albums this user has created",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getuseralbums",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "{user}",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Creates an album for the user",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "postuseralbums",
+        "parameters": [
+          {
+            "description": "Album name",
+            "in": "query",
+            "name": "name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Album description",
+            "in": "query",
+            "name": "message",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Privacy settings for the Album. Format: A JSON-encoded object that defines the privacy setting for the album, for example: {\"value\":\"SELF\"}. Only the user can specify the privacy settings for the post.",
+            "in": "query",
+            "name": "privacy",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/apprequests": {
+      "get": {
+        "description": "The user's outstanding requests from an app.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getuserapprequests",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "{user}",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{user}/books": {
+      "get": {
+        "description": "The books listed on the user's profile.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getuserbooks",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "{user}",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{user}/checkins": {
+      "get": {
+        "description": "The places that the user has checked-into",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/api#places"
+        },
+        "operationId": "getusercheckins",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "{user}",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Checks the user into a place",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/api#places"
+        },
+        "operationId": "postusercheckins",
+        "parameters": [
+          {
+            "description": "Checkin Place ID; for example 110506962309835 for Facebook HQ",
+            "in": "query",
+            "name": "place",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "The user's location, as a string containing latitude and longitude: {\"latitude\":\"...\", \"longitude\": \"...\"}",
+            "in": "query",
+            "name": "coordinates",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Comma-separated list of tagged friends' user IDs",
+            "in": "query",
+            "name": "tags",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Checkin description",
+            "in": "query",
+            "name": "message",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Checkin link",
+            "in": "query",
+            "name": "link",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Checkin picture",
+            "in": "query",
+            "name": "picture",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/events": {
+      "get": {
+        "description": "The events this user is attending.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getuserevents",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "{user}",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Creates an event for the user",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "postuserevents",
+        "parameters": [
+          {
+            "description": "Event name",
+            "in": "query",
+            "name": "name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Event start time",
+            "in": "query",
+            "name": "start_time",
+            "required": true,
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Event end time",
+            "in": "query",
+            "name": "end_time",
+            "required": false,
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Event description",
+            "in": "query",
+            "name": "message",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Event location",
+            "in": "query",
+            "name": "location",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Event privacy setting",
+            "in": "query",
+            "name": "privacy_type",
+            "required": false,
+            "schema": {
+              "default": "OPEN",
+              "enum": [
+                "OPEN",
+                "CLOSED",
+                "SECRET"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/feed": {
+      "get": {
+        "description": "This user's wall",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getuserfeed",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "2204501798",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Posts a status message on this user's wall",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "postuserfeedstatus",
+        "parameters": [
+          {
+            "description": "Status Message content",
+            "in": "query",
+            "name": "message",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/friendlists": {
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "2204501798",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Creates a FriendList for the user",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "postuserfriendlists",
+        "parameters": [
+          {
+            "description": "Friend list name",
+            "in": "query",
+            "name": "name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/friends": {
+      "get": {
+        "description": "The user's friends",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getuserfriends",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "{user}",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{user}/friends/{friend}": {
+      "get": {
+        "description": "Checks if the given user is a friend of the current user",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getuserfriendsfriend",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "{user}",
+            "type": "string"
+          }
+        },
+        {
+          "description": "Represents the ID of the user's friend.",
+          "in": "path",
+          "name": "friend",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{user}/games": {
+      "get": {
+        "description": "Games the user has added to the Arts and Entertainment section of their profile.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getusergames",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "{user}",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{user}/groups": {
+      "get": {
+        "description": "The Groups that the user belongs to.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getusergroups",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "{user}",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{user}/home": {
+      "get": {
+        "description": "The user's news feed",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getusersearch",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "{user}",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{user}/inbox": {
+      "get": {
+        "description": "The threads in this user's inbox.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getuserinbox",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "{user}",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{user}/interests": {
+      "get": {
+        "description": "The interests listed on the user's profile",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getuserinterests",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "{user}",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{user}/likes": {
+      "get": {
+        "description": "All the pages this user has liked.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getuserlikes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "{user}",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{user}/likes/{page}": {
+      "get": {
+        "description": "Checks if the user likes the given page.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getuserlikespage",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "{user}",
+            "type": "string"
+          }
+        },
+        {
+          "description": "Represents the ID of the page.",
+          "in": "path",
+          "name": "page",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{user}/links": {
+      "get": {
+        "description": "The user's posted links.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getuserlinks",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "{user}",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Posts a link on the user's profile page",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "postuserlinks",
+        "parameters": [
+          {
+            "description": "Link URL",
+            "in": "query",
+            "name": "link",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Link message",
+            "in": "query",
+            "name": "message",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/movies": {
+      "get": {
+        "description": "The movies listed on the user's profile",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getusermovies",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "{user}",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{user}/music": {
+      "get": {
+        "description": "The music listed on the user's profile",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getusermusic",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "{user}",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{user}/notes": {
+      "get": {
+        "description": "The user's notes",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getusernotes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "platform",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Creates a note on behalf of the user",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "postusernotes",
+        "parameters": [
+          {
+            "description": "The subject of the Note",
+            "in": "query",
+            "name": "subject",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Note content",
+            "in": "query",
+            "name": "message",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/notifications": {
+      "get": {
+        "description": "The user's notifications",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getusernotifications",
+        "parameters": [
+          {
+            "description": "Enables you to see notifications that the user has already read in addition to the ones which are unread",
+            "in": "query",
+            "name": "include_read",
+            "required": false,
+            "schema": {
+              "default": false,
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "platform",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{user}/outbox": {
+      "get": {
+        "description": "The messages in this user's outbox.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getuseroutbox",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "{user}",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{user}/payments": {
+      "get": {
+        "description": "The transactions the user placed with an application.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getuserpayments",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "{user}",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{user}/permissions": {
+      "delete": {
+        "description": "De-authorizes an application or revokes a specific extended permissions on behalf of a user",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "deleteuserpermissions",
+        "parameters": [
+          {
+            "description": "The permission you wish to revoke. If you don't specify a permission then this will de-authorize the application completely.",
+            "in": "query",
+            "name": "permission",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "get": {
+        "description": "The permissions that user has granted the application.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getuserpermissions",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "platform",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{user}/photos": {
+      "get": {
+        "description": "The photos the user is tagged in",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getuserphotos",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "99394368305",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Posts a photo to the user's Wall",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "postuserphotos",
+        "parameters": [
+          {
+            "description": "Photo description",
+            "in": "query",
+            "name": "message",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/picture": {
+      "get": {
+        "description": "The user's profile picture",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getuserpicture",
+        "parameters": [
+          {
+            "description": "One of square (50x50), small (50 pixels wide, variable height), and large (about 200 pixels wide,\n                            variable height)",
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "schema": {
+              "default": "small",
+              "enum": [
+                "square",
+                "small",
+                "large"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "{user}",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{user}/pokes": {
+      "get": {
+        "description": "The user's pokes",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getuserpokes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "{user}",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{user}/posts": {
+      "get": {
+        "description": "The user's posts",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getuserposts",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "{user}",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Creates a post on behalf of the user",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "postuserposts",
+        "parameters": [
+          {
+            "description": "Post message",
+            "in": "query",
+            "name": "message",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Post URL",
+            "in": "query",
+            "name": "link",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Post thumbnail image",
+            "in": "query",
+            "name": "picture",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Post name",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Post caption",
+            "in": "query",
+            "name": "caption",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Post description",
+            "in": "query",
+            "name": "description",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Post actions",
+            "in": "query",
+            "name": "actions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Post privacy settings",
+            "in": "query",
+            "name": "privacy",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Facebook ID for an existing picture in the User's photo albums to use as the thumbnail image. The User must be the owner of the photo, and the photo cannot be part of a message attachment.",
+            "in": "query",
+            "name": "object_attachment",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/scores": {
+      "get": {
+        "description": "The scores for the user",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getuserscores",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "{user}",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Posts a score for the user",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "postuserscores",
+        "parameters": [
+          {
+            "description": "Numeric score with value < 0.",
+            "in": "query",
+            "name": "score",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/statuses": {
+      "get": {
+        "description": "The user's status updates",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getuserstatuses",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "{user}",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Posts a status message on the user",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "postuserstatuses",
+        "parameters": [
+          {
+            "description": "Status Message content",
+            "in": "query",
+            "name": "message",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{user}/tagged": {
+      "get": {
+        "description": "Posts the user is tagged in",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getusertagged",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "{user}",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{user}/television": {
+      "get": {
+        "description": "The television listed on the user's profile",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getusertelevision",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "{user}",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{user}/updates": {
+      "get": {
+        "description": "The updates in this user's inbox.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getuserupdates",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "{user}",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{user}/videos": {
+      "get": {
+        "description": "The videos this user has been tagged in",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "getuservideos",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the user object.",
+          "in": "path",
+          "name": "user",
+          "required": true,
+          "schema": {
+            "default": "{user}",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Publishes a video on behalf of the user",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/user"
+        },
+        "operationId": "postuservideos",
+        "parameters": [
+          {
+            "description": "Video title",
+            "in": "query",
+            "name": "title",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Video description",
+            "in": "query",
+            "name": "description",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{video}": {
+      "get": {
+        "description": "An individual video",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/video"
+        },
+        "operationId": "getvideo",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the video object.",
+          "in": "path",
+          "name": "video",
+          "required": true,
+          "schema": {
+            "default": "2031763147233",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/{video}/comments": {
+      "get": {
+        "description": "All of the comments on this video.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/video"
+        },
+        "operationId": "getvideocomments",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the video object.",
+          "in": "path",
+          "name": "video",
+          "required": true,
+          "schema": {
+            "default": "2031763147233",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Posts a comment to this video.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/video"
+        },
+        "operationId": "postvideocomments",
+        "parameters": [
+          {
+            "description": "Comment text",
+            "in": "query",
+            "name": "message",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{video}/likes": {
+      "delete": {
+        "description": "Unlikes this video.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/video"
+        },
+        "operationId": "deletevideolikes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "get": {
+        "description": "Users who like this video.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/video"
+        },
+        "operationId": "getvideolikes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the video object.",
+          "in": "path",
+          "name": "video",
+          "required": true,
+          "schema": {
+            "default": "2031763147233",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "description": "Likes this video.",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/video"
+        },
+        "operationId": "postvideolikes",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/{video}/picture": {
+      "get": {
+        "description": "The image which represents the content of the video",
+        "externalDocs": {
+          "url": "http://developers.facebook.com/docs/reference/api/video"
+        },
+        "operationId": "getvideopicture",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "description": "Represents the ID of the video object.",
+          "in": "path",
+          "name": "video",
+          "required": true,
+          "schema": {
+            "default": "2031763147233",
+            "type": "string"
+          }
+        }
+      ]
+    }
+  },
+  "servers": [
+    {
+      "url": "https://graph.facebook.com/"
+    }
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "info": {
+    "title": "Partner API v2",
+    "version": ""
+  },
+  "openapi": "3.0.0",
+  "paths": {
+    "/identity.json/gp/{google_plus_id}": {
+      "get": {
+        "parameters": [
+          {
+            "description": "A Google+ ID (e.g. 112620727907435773834)",
+            "in": "path",
+            "name": "google_plus_id",
+            "required": true,
+            "schema": {
+              "default": "112620727907435773834",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/identity.json/ig/{instagram_id}": {
+      "get": {
+        "parameters": [
+          {
+            "description": "An Instagram ID (e.g. 816029)",
+            "in": "path",
+            "name": "instagram_id",
+            "required": true,
+            "schema": {
+              "default": "816029",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/identity.json/klout/{klout_id}/tw": {
+      "get": {
+        "parameters": [
+          {
+            "description": "A KloutId (like 635263)",
+            "in": "path",
+            "name": "klout_id",
+            "required": true,
+            "schema": {
+              "default": "635263",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/identity.json/tw/{twitter_id}": {
+      "get": {
+        "parameters": [
+          {
+            "description": "A twitter ID (e.g. 500042487)",
+            "in": "query",
+            "name": "twitter_id",
+            "schema": {
+              "default": "500042487",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/identity.json/twitter": {
+      "get": {
+        "parameters": [
+          {
+            "description": "A twitter screen name (e.g. jtimberlake)",
+            "in": "query",
+            "name": "screenName",
+            "schema": {
+              "default": "jtimberlake",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/user.json/{kloutId}": {
+      "get": {
+        "parameters": [
+          {
+            "description": "A kloutId (like 635263)",
+            "in": "path",
+            "name": "kloutId",
+            "required": true,
+            "schema": {
+              "default": "635263",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/user.json/{kloutId}/influence": {
+      "get": {
+        "parameters": [
+          {
+            "description": "A kloutId (like 635263)",
+            "in": "path",
+            "name": "kloutId",
+            "required": true,
+            "schema": {
+              "default": "635263",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/user.json/{kloutId}/score": {
+      "get": {
+        "parameters": [
+          {
+            "description": "A kloutId (like 635263)",
+            "in": "path",
+            "name": "kloutId",
+            "required": true,
+            "schema": {
+              "default": "635263",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/user.json/{kloutId}/topics": {
+      "get": {
+        "parameters": [
+          {
+            "description": "A kloutId (like 635263)",
+            "in": "path",
+            "name": "kloutId",
+            "required": true,
+            "schema": {
+              "default": "635263",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "http:://api.klout.com/v2"
+    }
+  ]
+}
