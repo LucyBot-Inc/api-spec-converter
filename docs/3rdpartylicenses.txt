@@ -1,3 +1,7 @@
+babel-polyfill@6.26.0
+MIT
+MIT
+
 core-js@2.5.1
 MIT
 Copyright (c) 2014-2017 Denis Pushkarev
