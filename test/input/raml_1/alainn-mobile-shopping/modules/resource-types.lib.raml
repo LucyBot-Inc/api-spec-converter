@@ -1,0 +1,52 @@
+#%RAML 1.0 Library
+
+uses:
+  tra: traits.lib.raml
+  typ: types.lib.raml
+
+
+resourceTypes:
+  base:
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: typ.Get<<resourcePathName | !uppercamelcase>>Response
+  read-only-collection:
+    type: base
+    get:
+      is: [tra.pageable]
+  collection:
+    type: read-only-collection
+    post:
+      body:
+        type: typ.Post<<resourcePathName | !uppercamelcase>>Request
+      responses:
+        201:
+          description: Created!
+          headers:
+            Location:
+              description: uri of new resource
+              type: string
+              required: true
+  controller:
+    post:
+      responses:
+        204:
+          description: Done!
+  member:
+    type: base
+    put?:
+      body:
+        type: typ.Put<<resourcePathName | !uppercamelcase>>Request
+      responses:
+        204:
+          description: Modified
+    patch?:
+      body:
+        type: typ.Patch<<resourcePathName | !uppercamelcase>>Request
+    delete?:
+      responses:
+        204:
+          description: Delete

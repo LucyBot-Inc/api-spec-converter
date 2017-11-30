@@ -1,0 +1,23 @@
+#%RAML 1.0
+title: Hello world # required title
+
+/helloworld: # optional resource
+  get: # HTTP method declaration
+    responses: # declare a response
+      200: # HTTP status code
+        body: # declare content of response
+          application/json: # media type
+            type: | # structural definition of a response (schema or type)
+              {
+                "title": "Hello world Response",
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            example: | # example how a response looks like
+              {
+                "message": "Hello world"
+              }

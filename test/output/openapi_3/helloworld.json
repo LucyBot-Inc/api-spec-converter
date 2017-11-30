@@ -1,0 +1,29 @@
+{
+  "info": {
+    "title": "Hello world",
+    "version": ""
+  },
+  "openapi": "3.0.0",
+  "paths": {
+    "/helloworld": {
+      "get": {
+        "operationId": "GET_helloworld",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "message": "Hello world"
+                  }
+                }
+              }
+            },
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "servers": []
+}

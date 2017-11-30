@@ -59,6 +59,21 @@ TestCases.push({
 })
 
 TestCases.push({
+  in: {format: 'raml_1', directory: 'helloworld', file: 'helloworld.raml'},
+  out: {format: 'swagger_2', file: 'helloworld.json'},
+})
+
+TestCases.push({
+  in: {format: 'raml_1', directory: 'world-music-api', file: 'api.raml'},
+  out: {format: 'swagger_2', file: 'world-music.json'},
+})
+
+TestCases.push({
+  in: {format: 'raml_1', directory: 'alainn-mobile-shopping', file: 'api.raml'},
+  out: {format: 'swagger_2', file: 'alainn-mobile-shopping'},
+})
+
+TestCases.push({
   in: {format: 'swagger_2', file: 'petstore.json'},
   out: {format: 'openapi_3', file: 'petstore2.json'}
 })

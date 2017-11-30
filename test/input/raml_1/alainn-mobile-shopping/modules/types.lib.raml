@@ -1,0 +1,267 @@
+#%RAML 1.0 Library
+
+uses:
+  ano: annotations.lib.raml
+
+types:
+  ResourceLink:
+    properties:
+      href: string
+      rel:
+        enum: [self, next, prev]
+      method?:
+        default: get
+  ImageLink:
+    properties:
+      href: string
+      rel:
+        enum: [SmallImage, MediumImage, LargeImage]
+  Item:
+    properties:
+      id: string
+      type?: string
+      name: string
+      summary?: string
+      brand?: string
+      links: (ResourceLink | ImageLink)[]
+  Sku:
+    type: Item
+    properties:
+      price: number
+      sku: string
+      stockQuantity: integer
+
+  GetItemsResponse:
+    properties:
+      links: ResourceLink[]
+      collection:
+        properties:
+          size: integer
+          items: Item[]
+    example:
+      links:
+        - href: https://alainn-customer-mobile-v1.cloudhub.io/api/items?pageIndex=30&pageSize=10
+          rel: next
+        - href: https://alainn-customer-mobile-v1.cloudhub.io/api/items?pageIndex=10&pageSize=10
+          rel: prev
+        - href: https://alainn-customer-mobile-v1.cloudhub.io/api/items?pageIndex=20&pageSize=10
+          rel: self
+      collection:
+        size: 2
+        items:
+          - id: B003Y60XCC
+            type: Chemical Hair Dyes
+            name: L'Oreal Oreor 30 Volume Creme Developer
+            brand: L'Oreal Paris
+            links:
+              - href: https://alainn-customer-mobile-v1.cloudhub.io/api/items/B003Y60XCC
+                rel: self
+              - href: http://ecx.images-amazon.com/images/I/41MWX6KNAuL._SL75_.jpg
+                rel: SmallImage
+          - id: B0042YK9F6
+            type: Bath Pearls & Flakes
+            name: Pearlcium Pearl Powder
+            brand: TheraPure Health Essentials
+            links:
+              - href: https://alainn-customer-mobile-v1.cloudhub.io/api/items/B0042YK9F6
+                rel: self
+              - href: http://ecx.images-amazon.com/images/I/316RsE4g09L._SL75_.jpg
+                rel: SmallImage
+
+
+
+
+  GetItemResponse:
+    type: Item
+    properties:
+      skus:
+        properties:
+          size: integer
+          items: Sku[]
+    example:
+      links:
+        - href: https://localhost:8082/omni-channel-api/v1.0/items/B0044D30Z6
+          rel: self
+      id: B0044D30Z6
+      type: Chemical Hair Dyes
+      name: Garnier HerbaShine Color Creme with Bamboo Extract
+      brand: Garnier
+      skus:
+        size: 2
+        items:
+          - id: B003JTE8JS
+            name: Garnier Herbashine Haircolor, 630 Light Golden Brown
+            summary: Only 10 minutes
+            price: 15.98
+            sku: B003JTE8JS
+            stockQuantity: 3
+            links:
+              - href: https://localhost:8082/omni-channel-api/v1.0/items/B003JTE8JS
+                rel: self
+              - href: http://ecx.images-amazon.com/images/I/517QdA0lU9L._SL75_.jpg
+                rel: SmallImage
+          - id: B003JTGCRE
+            name: Garnier HerbaShine Color Creme, with Bamboo Extract, Dark Natural, Brown 400
+            summary: Used For Hair Color
+            price: 12.98
+            sku: B003JTGCRE
+            stockQuantity: 3
+            links:
+              - href: https://localhost:8082/omni-channel-api/v1.0/items/B003JTGCRE
+                rel: self
+              - href: http://ecx.images-amazon.com/images/I/610m3duxPEL._SL75_.jpg
+                rel: SmallImage
+
+
+
+  GetMyWishListResponse:
+    type: GetItemsResponse
+  PostMyWishListRequest:
+    properties:
+      sku: string
+    example:
+      sku: B004GW14E4
+
+
+  GetMyBasketResponse:
+    properties:
+      links: ResourceLink[]
+      items:
+        type: array
+        items:
+          type: Sku
+          properties:
+            quantity: integer
+    example:
+      links:
+        - href: https://localhost:8082/omni-channel-api/v1.0/items/B0044D30Z6
+          rel: self
+      items:
+        - id: B003JTE8JS
+          name: Garnier Herbashine Haircolor, 630 Light Golden Brown
+          summary: Only 10 minutes
+          price: 15.98
+          sku: B003JTE8JS
+          stockQuantity: 3
+          links:
+            - href: https://localhost:8082/omni-channel-api/v1.0/items/B003JTE8JS
+              rel: self
+            - href: http://ecx.images-amazon.com/images/I/517QdA0lU9L._SL75_.jpg
+              rel: SmallImage
+          quantity: 5
+        - id: B003JTGCRE
+          name: Garnier HerbaShine Color Creme, with Bamboo Extract, Dark Natural, Brown 400
+          summary: Used For Hair Color
+          price: 12.98
+          sku: B003JTGCRE
+          stockQuantity: 3
+          links:
+            - href: https://localhost:8082/omni-channel-api/v1.0/items/B003JTGCRE
+              rel: self
+            - href: http://ecx.images-amazon.com/images/I/610m3duxPEL._SL75_.jpg
+              rel: SmallImage
+          quantity: 1
+
+  PostMyBasketRequest:
+    properties:
+      sku: string
+      quantity: integer
+      price: number
+    example:
+      sku: B0000530ED
+      quantity: 2
+      price: 10.99
+
+  PostCheckoutRequest:
+    properties:
+      pickupLocation: string
+      items:
+        type: array
+        items:
+          properties:
+            sku: string
+            price: number
+            quantity: integer
+    example:
+      pickupLocation: Dublin
+      items:
+        - sku: B003JTE8JS
+          price: 10.99
+          quantity: 1
+        - sku: B0000530ED
+          price: 5.99
+          quantity: 3
+
+  GetMyProfileResponse:
+    properties:
+      firstName: string
+      lastName: string
+      notificationPreferences:
+        type: array
+        items:
+          type: string
+          enum: [email, mobilePush, sms]
+    example:
+      firstName: Nial
+      lastName: Darbey
+      notificationPreferences:
+        - sms
+        - mobilePush
+
+  GetBrandsResponse:
+    properties:
+      links: ResourceLink[]
+      items: string[]
+    example:
+      links:
+        - href: https://alainn-customer-mobile-v1.cloudhub.io/api/brands/dsf23
+          rel: self
+      items:
+        - Jerome Russell
+        - Now Foods
+
+  GetCategoriesResponse:
+    properties:
+      links: ResourceLink[]
+      items: string[]
+    example:
+      links:
+        - href: https://alainn-customer-mobile-v1.cloudhub.io/api/categories/xx22
+          rel: self
+      items:
+        - Soaps
+        - Perfumes
+  GetMyOrdersResponse:
+    properties:
+      links: ResourceLink[]
+      orders:
+        type: array
+        items:
+          properties:
+            date: datetime
+            items:
+              type: array
+              items:
+                type: Sku
+                properties:
+                  quantity: integer
+  GetRecommendationsResponse:
+    type: GetItemsResponse
+
+  GetTrendingItemsResponse:
+    type: GetItemsResponse
+
+  GetPromotionsResponse:
+    type: GetItemsResponse
+
+  GetReviewsResponse:
+    properties:
+      collection:
+        properties:
+          size: integer
+          items:
+            type: array
+            items:
+              properties:
+                user: string
+                review: string

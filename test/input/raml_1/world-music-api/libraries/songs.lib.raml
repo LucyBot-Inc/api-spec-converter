@@ -1,0 +1,24 @@
+#%RAML 1.0 Library
+
+types:
+  Song:
+    properties:
+      title: string
+      length: number
+    examples:
+      song1:
+        strict: false
+        value:
+          title: "My Song"
+          length: 12
+      song2:
+        title: "Last"
+        length: 3
+  Album:
+    properties:
+      title: string
+      songs: Song[]
+  Musician:
+    properties:
+      name: string
+      discography: (Song | Album)[]

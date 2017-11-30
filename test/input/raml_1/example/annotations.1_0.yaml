@@ -1,0 +1,22 @@
+#%RAML 1.0 Library
+
+annotationTypes:
+  raml08:
+    description: "This indicates the example is to be included in the 08 raml file."
+    allowedTargets: Example
+  test-scenario:
+    description: "This identifes the test scenario so that a request and response can be associated."
+    type: string
+    allowedTargets: Example
+  test-type:
+    allowedTargets: Example
+    description: "This identifes the test as a positive or negative test"
+    properties:
+      expect:
+        enum: [ positive, negative ]
+  header:
+    allowedTargets: Example
+    description: "A name value pair"
+    properties:
+      headerName:
+      headerValue:

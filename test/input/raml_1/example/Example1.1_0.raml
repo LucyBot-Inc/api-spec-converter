@@ -1,0 +1,72 @@
+#%RAML 1.0
+title: A CRUD API for Users and Groups
+
+schemas:
+  creditcard:
+    type: !include CreditCard.json
+
+uses:
+  example: annotations.1_0.yaml
+
+/things:
+  description: All the users
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            examples:
+              example1:
+                description: "An example with a structured example"
+                type: application-json
+                displayName: an example
+                value: {
+                        foo: bar
+                       }
+              example2:
+                type: application-json
+                description: "An example with a schema"
+                displayName: an example
+                value: !include visa-sample.CreditCard.json
+                schema: creditcard
+                strict: true
+              example3:
+                description: A name value pair example
+                type: application-json
+                displayName: an example
+                value:
+                    foo: bar,
+                    foo2: bar2
+              example4:
+                description: An xml example
+                type: application-xml
+                displayName: an example
+                value:
+                    <root><body/><root>
+              example5:
+                description: An example with annotations
+                (example.test-scenario): scenario1
+                (example.test-type):
+                  expect: positive
+                type: application-xml
+                isAnnotation: false
+                displayName: an example
+                value:
+                    <root><body/><root>
+              example6:
+                description: "An negative example where the value doesnt conform to the sample"
+                type: application-json
+                value: {
+                        foo: bar
+                       }
+                strict: false
+              example7:
+                description: "An example with the header values"
+                type: application-json
+                (example.header):
+                  headerName: Authorization
+                  headerValue: Bearer 123
+                value: {
+                        foo: ba
+                       }
+                strict: false

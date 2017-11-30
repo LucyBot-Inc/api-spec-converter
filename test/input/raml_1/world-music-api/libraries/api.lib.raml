@@ -1,0 +1,67 @@
+#%RAML 1.0 Library
+
+types:
+  RamlDataType:
+    type: object
+    properties:
+      propString: string
+      propStringArray1: string[]
+      ideas:
+        type: array
+        items: !include ../schemas/idea.dataType.raml
+      extIdeas:
+        type: !include ../schemas/idea.dataType.raml
+        properties:
+          createdBy: string
+      feedback:
+        type: string
+        default: "very nice"
+        example: "very well made"
+        minLength: 1
+        maxLength: 255
+        pattern: "[a-zA-Z\\s]*"
+      propNumber:
+        type: number
+        minimum: 0
+        maximum: 32
+        format: int32
+        multipleOf: 2
+      propInteger:
+        type: integer
+        minimum: 3
+        maximum: 5
+        format: int8
+        multipleOf: 1
+      propBoolean: boolean
+      propDate:
+        type: date-only
+        example: 2015-05-23
+      userPicture:
+        type: file
+        fileTypes: ['image/jpeg', 'image/png']
+        maxLength: 307200
+      NilValue:
+        type: object
+        properties:
+          name:
+          comment: string?
+      CatOrDog: Cat | Dog
+      CatAndDog: [ Cat, Dog ]
+      PossibleMeetingDate:
+        type: CustomDate
+        noHolidays: true
+  Cat:
+    type: object
+    properties:
+      name: string
+      color: string
+  Dog:
+    type: object
+    properties:
+      name: string
+      fangs: string
+  CustomDate:
+    type: date-only
+    facets:
+      onlyFutureDates?: boolean # optional  in `PossibleMeetingDate`
+      noHolidays: boolean # required in `PossibleMeetingDate`

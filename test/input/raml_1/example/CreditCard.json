@@ -1,0 +1,49 @@
+{
+  "title": "CreditCard",
+  "description": "",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "CardType": {
+      "title": "CardType",
+      "description": " VISA, MASTERCARD, AMERICANEXPRESS, DINERS,",
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "type": "string",
+      "additionalProperties": false,
+      "additionalItems": false,
+      "enum": [
+        "VISA",
+        "MASTERCARD",
+        "AMERICANEXPRESS",
+        "DINERS"
+      ]
+    },
+    "CreditCard": {
+      "$ref": "#"
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "cardNumber": {
+      "description": "The masked number of a credit card.",
+      "type": "string"
+    },
+    "cardName": {
+      "description": "The name on the credit card.",
+      "type": "string"
+    },
+    "cardExpirationDate": {
+      "type": "string",
+      "pattern": "^\\d{4}$"
+    },
+    "cardType": {
+      "$ref": "#/definitions/CardType"
+    }
+  },
+  "required": [
+    "cardNumber",
+    "cardName",
+    "cardExpirationDate",
+    "cardType"
+  ]
+}

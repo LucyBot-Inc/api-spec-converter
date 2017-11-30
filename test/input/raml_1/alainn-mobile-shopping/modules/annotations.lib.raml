@@ -1,0 +1,36 @@
+#%RAML 1.0 Library
+
+annotationTypes:
+  hypermedia-plan:
+    allowedTargets: [ API, Resource ]
+    properties:
+      controls:
+        description: Inform the (client / client developer) where in the message hypermedia is to be found
+        properties: 
+          url?: 
+            default: href
+          semantic?: 
+            default: rel
+          ui?:
+            default: label
+          property: string
+      permanentUri?:
+        type: boolean
+        default: true
+  hypermedia-control:
+    allowedTargets: [ TypeDeclaration, Method ]
+    properties:
+      method?: 
+        description: Which method should be executed on resource?
+        default: get
+      visible?:
+        type: boolean
+        description:  Should client should provide link to user?
+        default: true
+      targetResource?: 
+        type: string
+        description: Resource as defined in this API
+      follow?:
+        type: boolean
+        description: Should client invoke the url upon reception?
+        default: false

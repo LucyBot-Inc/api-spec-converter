@@ -1,0 +1,409 @@
+{
+  "consumes": [
+    "application/json"
+  ],
+  "definitions": {
+    "AnotherEntry": {
+      "$ref": "#/definitions/Entry",
+      "description": "This is just another entry to simulate that you can add facets also on JSON\nschema defined types. Although you can only add documentation-based facets.\n"
+    },
+    "ApiLib.Cat": {
+      "properties": {
+        "color": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "color"
+      ],
+      "type": "object"
+    },
+    "ApiLib.CustomDate": {
+      "format": "date",
+      "type": "string"
+    },
+    "ApiLib.Dog": {
+      "properties": {
+        "fangs": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "fangs"
+      ],
+      "type": "object"
+    },
+    "ApiLib.RamlDataType": {
+      "properties": {
+        "CatAndDog": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/ApiLib.Cat"
+            },
+            {
+              "$ref": "#/definitions/ApiLib.Dog"
+            }
+          ]
+        },
+        "CatOrDog": {
+          "type": "object"
+        },
+        "NilValue": {
+          "properties": {
+            "comment": {
+              "type": "object"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "comment"
+          ],
+          "type": "object"
+        },
+        "PossibleMeetingDate": {
+          "$ref": "#/definitions/ApiLib.CustomDate"
+        },
+        "extIdeas": {
+          "properties": {
+            "comment": {
+              "type": "string"
+            },
+            "createdBy": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "createdBy",
+            "comment"
+          ],
+          "type": "object"
+        },
+        "feedback": {
+          "default": "very nice",
+          "example": "very well made",
+          "maxLength": 255,
+          "minLength": 1,
+          "pattern": "[a-zA-Z\\s]*",
+          "type": "string"
+        },
+        "ideas": {
+          "items": {
+            "properties": {
+              "comment": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "comment"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "propBoolean": {
+          "type": "boolean"
+        },
+        "propDate": {
+          "example": "2015-05-23",
+          "format": "date",
+          "type": "string"
+        },
+        "propInteger": {
+          "format": "int8",
+          "maximum": 5,
+          "minimum": 3,
+          "multipleOf": 1,
+          "type": "integer"
+        },
+        "propNumber": {
+          "format": "int32",
+          "maximum": 32,
+          "minimum": 0,
+          "multipleOf": 2,
+          "type": "number"
+        },
+        "propString": {
+          "type": "string"
+        },
+        "propStringArray1": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "userPicture": {
+          "maxLength": 307200,
+          "type": "string"
+        }
+      },
+      "required": [
+        "propString",
+        "propStringArray1",
+        "ideas",
+        "extIdeas",
+        "feedback",
+        "propNumber",
+        "propInteger",
+        "propBoolean",
+        "propDate",
+        "userPicture",
+        "NilValue",
+        "CatOrDog",
+        "CatAndDog",
+        "PossibleMeetingDate"
+      ],
+      "type": "object"
+    },
+    "Entry": {
+      "items": {
+        "$ref": "#/definitions/song"
+      },
+      "type": "array"
+    },
+    "SongsLib.Song": {
+      "example": {
+        "length": 12,
+        "strict": false,
+        "title": "My Song"
+      },
+      "properties": {
+        "length": {
+          "type": "number"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "length"
+      ],
+      "type": "object"
+    },
+    "User": {
+      "example": {
+        "firstname": "John"
+      },
+      "properties": {
+        "firstname": {
+          "type": "string"
+        },
+        "lastname": {
+          "example": "Doe",
+          "type": "string"
+        }
+      },
+      "required": [
+        "firstname"
+      ],
+      "type": "object"
+    },
+    "song": {
+      "properties": {
+        "artist": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "artist"
+      ],
+      "type": "object"
+    }
+  },
+  "info": {
+    "description": "This is an example of a music API.",
+    "title": "World Music API",
+    "version": "v1"
+  },
+  "parameters": {
+    "trait:secured:access_token": {
+      "in": "query",
+      "name": "access_token",
+      "required": true,
+      "type": "string"
+    }
+  },
+  "paths": {
+    "/api": {
+      "get": {
+        "operationId": "GET_api",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "start",
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "page-size",
+            "type": "number"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "operationId": "POST_api",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ApiLib.RamlDataType"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/entry": {
+      "get": {
+        "description": "returns a list of entry",
+        "operationId": "GET_entry",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Entry"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "POST_entry",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/AnotherEntry"
+            }
+          }
+        }
+      }
+    },
+    "/songs": {
+      "get": {
+        "operationId": "GET_songs",
+        "parameters": [
+          {
+            "description": "filter the songs by genre",
+            "in": "query",
+            "name": "genre",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/trait:secured:access_token"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "oauth_2_0": []
+          }
+        ],
+        "x-annotation-monitoringInterval": 30
+      },
+      "post": {
+        "operationId": "POST_songs",
+        "parameters": [
+          {
+            "$ref": "#/parameters/trait:secured:access_token"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/songs/{songId}": {
+      "get": {
+        "operationId": "GET_songs-songId",
+        "produces": [
+          "application/xml"
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object"
+            }
+          }
+        },
+        "x-annotation-deprecated": {
+          "comment": "no comment",
+          "date": "2016-02-28T16:41:41.090Z",
+          "deprecatedBy": {
+            "firstname": "Christian"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "songId",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    }
+  },
+  "produces": [
+    "application/json"
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "securityDefinitions": {
+    "custom_scheme": {
+      "description": "A custom security scheme for authenticating requests.\n",
+      "in": "header",
+      "name": "SpecialToken",
+      "type": "apiKey"
+    },
+    "oauth_2_0": {
+      "authorizationUrl": "https://www.dropbox.com/1/oauth2/authorize",
+      "description": "Dropbox supports OAuth 2.0 for authenticating all API requests.\n",
+      "flow": "accessCode",
+      "scopes": {},
+      "tokenUrl": "https://api.dropbox.com/1/oauth2/token",
+      "type": "oauth2"
+    }
+  },
+  "swagger": "2.0",
+  "x-annotation-info": {
+    "license": "MIT"
+  },
+  "x-annotation-rediractable": true,
+  "x-basePath": "{environment}.musicapi.com/{version}"
+}

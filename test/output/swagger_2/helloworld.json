@@ -1,0 +1,27 @@
+{
+  "info": {
+    "title": "Hello world",
+    "version": ""
+  },
+  "paths": {
+    "/helloworld": {
+      "get": {
+        "operationId": "GET_helloworld",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "example": {
+                "message": "Hello world"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "swagger": "2.0"
+}

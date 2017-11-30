@@ -1,0 +1,201 @@
+#%RAML 1.0
+title: World Music API
+description: This is an example of a music API.
+version: v1
+baseUri:
+  value: http://{environment}.musicapi.com/{version}
+  (rediractable): true
+baseUriParameters:
+  environment:
+    type: string
+    enum: [ "stg", "dev", "test", "prod" ]
+protocols: [  HTTP, HTTPS ]
+mediaType: [ application/json ]
+documentation:
+  - title: Getting Started
+    content: |
+      This is a getting started guide for the World Music API.
+  - title: Legal
+    content: See http://legal.musicapi.com
+
+types:
+  Entry: |
+    {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/song"
+      },
+      "definitions": {
+        "song": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "artist": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  AnotherEntry:
+    type: Entry
+    description: |
+      This is just another entry to simulate that you can add facets also on JSON
+      schema defined types. Although you can only add documentation-based facets.
+  User:
+    properties:
+      firstname: string
+      lastname:
+        type: string
+        example: Doe
+        required: false
+    example:
+      firstname: John
+
+traits:
+  secured: !include secured/accessToken.trait.raml
+
+resourceTypes:
+  collection:
+    get:
+      description: returns a list of <<resourcePathName|!singularize>>
+      responses:
+        200:
+          body:
+            application/json:
+              schema: <<resourcePathName|!singularize|!uppercamelcase>>
+
+
+annotationTypes:
+  deprecated:
+    properties:
+      date: datetime
+      deprecatedBy: User
+      comment: nil | string
+  monitoringInterval:
+    type: integer
+    description: interval in seconds
+    example: 2
+  ready:
+    type: nil
+    description: markes a resource as ready
+    allowedTargets: Resource
+  info:
+    properties:
+      license:
+        type: string
+        enum: [ "MIT", "Apache 2.0" ]
+    allowedTargets: API
+  rediractable: boolean
+
+(info):
+  license: MIT
+
+securitySchemes:
+  oauth_1_0:
+    description: |
+      OAuth 1.0 continues to be supported for all API requests, but OAuth 2.0 is now preferred.
+    type: OAuth 1.0
+    settings:
+      requestTokenUri: https://api.mysampleapi.com/1/oauth/request_token
+      authorizationUri: https://api.mysampleapi.com/1/oauth/authorize
+      tokenCredentialsUri: https://api.mysampleapi.com/1/oauth/access_token
+      signatures: [ 'HMAC-SHA1', 'PLAINTEXT' ]
+  oauth_2_0:
+    description: |
+      Dropbox supports OAuth 2.0 for authenticating all API requests.
+    type: OAuth 2.0
+    describedBy:
+      headers:
+        Authorization:
+          description: |
+             Used to send a valid OAuth 2 access token. Do not use
+             with the "access_token" query string parameter.
+          type: string
+      queryParameters:
+        access_token:
+          description: |
+             Used to send a valid OAuth 2 access token. Do not use with
+             the "Authorization" header.
+          type: string
+      responses:
+        401:
+          description: |
+              Bad or expired token. This can happen if the user or Dropbox
+              revoked or expired an access token. To fix, re-authenticate
+              the user.
+        403:
+          description: |
+              Bad OAuth request (wrong consumer key, bad nonce, expired
+              timestamp...). Unfortunately, re-authenticating the user won't help here.
+    settings:
+      authorizationUri: https://www.dropbox.com/1/oauth2/authorize
+      accessTokenUri: https://api.dropbox.com/1/oauth2/token
+      authorizationGrants: [ authorization_code, implicit, 'urn:ietf:params:oauth:grant-type:saml2-bearer' ]
+  custom_scheme:
+    description: |
+      A custom security scheme for authenticating requests.
+    type: x-custom
+    describedBy:
+      headers:
+        SpecialToken:
+          description: |
+            Used to send a custom token.
+          type: string
+      responses:
+        401:
+          description: |
+            Bad token.
+        403:
+
+securedBy: custom_scheme
+
+uses:
+  SongsLib: libraries/songs.lib.raml
+  ApiLib: libraries/api.lib.raml
+
+/api:
+  get:
+    queryString:
+      properties:
+        start?: number
+        page-size?: number
+  post:
+    body:
+      application/json:
+        type: ApiLib.RamlDataType
+/entry:
+  type:  collection
+  post:
+    responses:
+      200:
+        body: AnotherEntry
+/songs:
+  displayName: Songs
+  description:  Access to all songs inside the music world library.
+  (ready):
+  is: [ secured ]
+  get:
+    securedBy: [ oauth_2_0, null ]
+    (monitoringInterval): 30
+    queryParameters:
+      genre:
+        description: filter the songs by genre
+  post:
+  /{songId}:
+    get:
+      (deprecated):
+        date: 2016-02-28T16:41:41.090Z
+        deprecatedBy:
+          firstname: Christian
+        comment: no comment
+      responses:
+        200:
+          body:
+            application/json:
+              type: SongsLib.Song
+            application/xml:
+              type: !include schemas/songs.xsd
+              example: !include examples/songs.xml

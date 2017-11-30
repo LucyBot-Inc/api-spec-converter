@@ -1,0 +1,37 @@
+#%RAML 1.0 Library
+
+traits:
+  pageable:
+    queryParameters:
+      pageIndex:
+        type: integer
+        default: 0
+        example: 1
+        required: false
+      pageSize:
+        type: integer
+        default: 10
+        example: 10
+        required: false
+  searchable:
+    queryParameters:
+      name:
+        type: string
+        required: false
+        example: Deep Steep Honey Bubble Bath
+      type:
+        type: string
+        required: false
+        example: Oils
+      brand:
+        type: string
+        required: false
+        example: Naturtint
+  imageable:
+      queryParameters:
+        imageType:
+          description: Comma , separated list just like in example. One alone may be present
+          type: string
+          required: false
+          default: SmallImage
+          example: TinyImage,SwatchImage,SmallImage,MediumImage,LargeImage

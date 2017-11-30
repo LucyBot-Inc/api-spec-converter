@@ -1,0 +1,1121 @@
+{
+  "components": {
+    "parameters": {
+      "trait_tra.imageable_imageType": {
+        "description": "Comma , separated list just like in example. One alone may be present",
+        "in": "query",
+        "name": "imageType",
+        "schema": {
+          "default": "SmallImage",
+          "type": "string"
+        }
+      },
+      "trait_tra.pageable_pageIndex": {
+        "in": "query",
+        "name": "pageIndex",
+        "schema": {
+          "default": 0,
+          "type": "integer"
+        }
+      },
+      "trait_tra.pageable_pageSize": {
+        "in": "query",
+        "name": "pageSize",
+        "schema": {
+          "default": 10,
+          "type": "integer"
+        }
+      },
+      "trait_tra.searchable_brand": {
+        "in": "query",
+        "name": "brand",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "trait_tra.searchable_name": {
+        "in": "query",
+        "name": "name",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "trait_tra.searchable_type": {
+        "in": "query",
+        "name": "type",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    "schemas": {
+      "res.typ.GetBrandsResponse": {
+        "example": {
+          "items": {
+            "anyOf": [
+              "Jerome Russell",
+              "Now Foods"
+            ]
+          },
+          "links": [
+            {
+              "href": "https://alainn-customer-mobile-v1.cloudhub.io/api/brands/dsf23",
+              "rel": "self"
+            }
+          ]
+        },
+        "properties": {
+          "items": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "links": {
+            "items": {
+              "$ref": "#/components/schemas/res.typ.ResourceLink"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "links",
+          "items"
+        ],
+        "type": "object"
+      },
+      "res.typ.GetCategoriesResponse": {
+        "example": {
+          "items": {
+            "anyOf": [
+              "Soaps",
+              "Perfumes"
+            ]
+          },
+          "links": [
+            {
+              "href": "https://alainn-customer-mobile-v1.cloudhub.io/api/categories/xx22",
+              "rel": "self"
+            }
+          ]
+        },
+        "properties": {
+          "items": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "links": {
+            "items": {
+              "$ref": "#/components/schemas/res.typ.ResourceLink"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "links",
+          "items"
+        ],
+        "type": "object"
+      },
+      "res.typ.GetItemsResponse": {
+        "example": {
+          "collection": {
+            "items": {
+              "anyOf": [
+                {
+                  "brand": "L'Oreal Paris",
+                  "id": "B003Y60XCC",
+                  "links": [
+                    {
+                      "href": "https://alainn-customer-mobile-v1.cloudhub.io/api/items/B003Y60XCC",
+                      "rel": "self"
+                    },
+                    {
+                      "href": "http://ecx.images-amazon.com/images/I/41MWX6KNAuL._SL75_.jpg",
+                      "rel": "SmallImage"
+                    }
+                  ],
+                  "name": "L'Oreal Oreor 30 Volume Creme Developer",
+                  "type": "Chemical Hair Dyes"
+                },
+                {
+                  "brand": "TheraPure Health Essentials",
+                  "id": "B0042YK9F6",
+                  "links": [
+                    {
+                      "href": "https://alainn-customer-mobile-v1.cloudhub.io/api/items/B0042YK9F6",
+                      "rel": "self"
+                    },
+                    {
+                      "href": "http://ecx.images-amazon.com/images/I/316RsE4g09L._SL75_.jpg",
+                      "rel": "SmallImage"
+                    }
+                  ],
+                  "name": "Pearlcium Pearl Powder",
+                  "type": "Bath Pearls & Flakes"
+                }
+              ]
+            },
+            "size": 2
+          },
+          "links": [
+            {
+              "href": "https://alainn-customer-mobile-v1.cloudhub.io/api/items?pageIndex=30&pageSize=10",
+              "rel": "next"
+            },
+            {
+              "href": "https://alainn-customer-mobile-v1.cloudhub.io/api/items?pageIndex=10&pageSize=10",
+              "rel": "prev"
+            },
+            {
+              "href": "https://alainn-customer-mobile-v1.cloudhub.io/api/items?pageIndex=20&pageSize=10",
+              "rel": "self"
+            }
+          ]
+        },
+        "properties": {
+          "collection": {
+            "properties": {
+              "items": {
+                "items": {
+                  "$ref": "#/components/schemas/res.typ.Item"
+                },
+                "type": "array"
+              },
+              "size": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "size",
+              "items"
+            ],
+            "type": "object"
+          },
+          "links": {
+            "items": {
+              "$ref": "#/components/schemas/res.typ.ResourceLink"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "links",
+          "collection"
+        ],
+        "type": "object"
+      },
+      "res.typ.GetMyBasketResponse": {
+        "example": {
+          "items": {
+            "anyOf": [
+              {
+                "id": "B003JTE8JS",
+                "links": [
+                  {
+                    "href": "https://localhost:8082/omni-channel-api/v1.0/items/B003JTE8JS",
+                    "rel": "self"
+                  },
+                  {
+                    "href": "http://ecx.images-amazon.com/images/I/517QdA0lU9L._SL75_.jpg",
+                    "rel": "SmallImage"
+                  }
+                ],
+                "name": "Garnier Herbashine Haircolor, 630 Light Golden Brown",
+                "price": 15.98,
+                "quantity": 5,
+                "sku": "B003JTE8JS",
+                "stockQuantity": 3,
+                "summary": "Only 10 minutes"
+              },
+              {
+                "id": "B003JTGCRE",
+                "links": [
+                  {
+                    "href": "https://localhost:8082/omni-channel-api/v1.0/items/B003JTGCRE",
+                    "rel": "self"
+                  },
+                  {
+                    "href": "http://ecx.images-amazon.com/images/I/610m3duxPEL._SL75_.jpg",
+                    "rel": "SmallImage"
+                  }
+                ],
+                "name": "Garnier HerbaShine Color Creme, with Bamboo Extract, Dark Natural, Brown 400",
+                "price": 12.98,
+                "quantity": 1,
+                "sku": "B003JTGCRE",
+                "stockQuantity": 3,
+                "summary": "Used For Hair Color"
+              }
+            ]
+          },
+          "links": [
+            {
+              "href": "https://localhost:8082/omni-channel-api/v1.0/items/B0044D30Z6",
+              "rel": "self"
+            }
+          ]
+        },
+        "properties": {
+          "items": {
+            "items": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/res.typ.Sku"
+                },
+                {
+                  "properties": {
+                    "quantity": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "quantity"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "type": "array"
+          },
+          "links": {
+            "items": {
+              "$ref": "#/components/schemas/res.typ.ResourceLink"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "links",
+          "items"
+        ],
+        "type": "object"
+      },
+      "res.typ.GetMyOrdersResponse": {
+        "properties": {
+          "links": {
+            "items": {
+              "$ref": "#/components/schemas/res.typ.ResourceLink"
+            },
+            "type": "array"
+          },
+          "orders": {
+            "items": {
+              "properties": {
+                "date": {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                "items": {
+                  "items": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/res.typ.Sku"
+                      },
+                      {
+                        "properties": {
+                          "quantity": {
+                            "type": "integer"
+                          }
+                        },
+                        "required": [
+                          "quantity"
+                        ],
+                        "type": "object"
+                      }
+                    ]
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "date",
+                "items"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "links",
+          "orders"
+        ],
+        "type": "object"
+      },
+      "res.typ.GetMyProfileResponse": {
+        "example": {
+          "firstName": "Nial",
+          "lastName": "Darbey",
+          "notificationPreferences": [
+            "sms",
+            "mobilePush"
+          ]
+        },
+        "properties": {
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "notificationPreferences": {
+            "items": {
+              "enum": [
+                "email",
+                "mobilePush",
+                "sms"
+              ],
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "firstName",
+          "lastName",
+          "notificationPreferences"
+        ],
+        "type": "object"
+      },
+      "res.typ.GetMyWishListResponse": {
+        "$ref": "#/components/schemas/res.typ.GetItemsResponse"
+      },
+      "res.typ.GetPromotionsResponse": {
+        "$ref": "#/components/schemas/res.typ.GetItemsResponse"
+      },
+      "res.typ.GetRecommendationsResponse": {
+        "$ref": "#/components/schemas/res.typ.GetItemsResponse"
+      },
+      "res.typ.GetReviewsResponse": {
+        "properties": {
+          "collection": {
+            "properties": {
+              "items": {
+                "items": {
+                  "properties": {
+                    "review": {
+                      "type": "string"
+                    },
+                    "user": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "user",
+                    "review"
+                  ],
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              "size": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "size",
+              "items"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "collection"
+        ],
+        "type": "object"
+      },
+      "res.typ.GetTrendingItemsResponse": {
+        "$ref": "#/components/schemas/res.typ.GetItemsResponse"
+      },
+      "res.typ.ImageLink": {
+        "properties": {
+          "href": {
+            "type": "string"
+          },
+          "rel": {
+            "enum": [
+              "SmallImage",
+              "MediumImage",
+              "LargeImage"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "href",
+          "rel"
+        ],
+        "type": "object"
+      },
+      "res.typ.Item": {
+        "properties": {
+          "brand": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "links": {
+            "items": {
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "name": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "links"
+        ],
+        "type": "object"
+      },
+      "res.typ.PostMyBasketRequest": {
+        "example": {
+          "price": 10.99,
+          "quantity": 2,
+          "sku": "B0000530ED"
+        },
+        "properties": {
+          "price": {
+            "type": "number"
+          },
+          "quantity": {
+            "type": "integer"
+          },
+          "sku": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "sku",
+          "quantity",
+          "price"
+        ],
+        "type": "object"
+      },
+      "res.typ.PostMyWishListRequest": {
+        "example": {
+          "sku": "B004GW14E4"
+        },
+        "properties": {
+          "sku": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "sku"
+        ],
+        "type": "object"
+      },
+      "res.typ.ResourceLink": {
+        "properties": {
+          "href": {
+            "type": "string"
+          },
+          "method": {
+            "default": "get",
+            "type": "string"
+          },
+          "rel": {
+            "enum": [
+              "self",
+              "next",
+              "prev"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "href",
+          "rel"
+        ],
+        "type": "object"
+      },
+      "res.typ.Sku": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/res.typ.Item"
+          },
+          {
+            "properties": {
+              "price": {
+                "type": "number"
+              },
+              "sku": {
+                "type": "string"
+              },
+              "stockQuantity": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "price",
+              "sku",
+              "stockQuantity"
+            ],
+            "type": "object"
+          }
+        ]
+      }
+    },
+    "securitySchemes": {
+      "sec.oauth_2_0": {
+        "description": "Dropbox supports OAuth 2.0 for authenticating all API requests.\n",
+        "flows": {
+          "authorizationCode": {
+            "authorizationUrl": "http://test-alainn-cosmetics.cloudhub.io/authorize",
+            "scopes": {},
+            "tokenUrl": "http://test-alainn-cosmetics.cloudhub.io/access-token"
+          }
+        },
+        "type": "oauth2"
+      }
+    }
+  },
+  "info": {
+    "title": "Álainn Cosmetics Mobile Orders API",
+    "version": "1"
+  },
+  "openapi": "3.0.0",
+  "paths": {
+    "/brands": {
+      "get": {
+        "operationId": "GET_brands",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/trait_tra.pageable_pageIndex"
+          },
+          {
+            "$ref": "#/components/parameters/trait_tra.pageable_pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/res.typ.GetBrandsResponse"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/categories": {
+      "get": {
+        "operationId": "GET_categories",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/trait_tra.pageable_pageIndex"
+          },
+          {
+            "$ref": "#/components/parameters/trait_tra.pageable_pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/res.typ.GetCategoriesResponse"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/items": {
+      "get": {
+        "operationId": "GET_items",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/trait_tra.searchable_name"
+          },
+          {
+            "$ref": "#/components/parameters/trait_tra.searchable_type"
+          },
+          {
+            "$ref": "#/components/parameters/trait_tra.searchable_brand"
+          },
+          {
+            "$ref": "#/components/parameters/trait_tra.imageable_imageType"
+          },
+          {
+            "$ref": "#/components/parameters/trait_tra.pageable_pageIndex"
+          },
+          {
+            "$ref": "#/components/parameters/trait_tra.pageable_pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/res.typ.GetItemsResponse"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/items/{item}": {
+      "get": {
+        "operationId": "GET_items-item",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/trait_tra.imageable_imageType"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/res.typ.GetItemsResponse"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "item",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/mobile-tokens/{mobileType}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "mobileType",
+          "required": true,
+          "schema": {
+            "enum": [
+              "ios",
+              "android"
+            ],
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "operationId": "POST_mobile-tokens-mobileType",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "example": {
+                  "token": "afdasfas23lkesf"
+                },
+                "properties": {
+                  "token": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "token"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        }
+      }
+    },
+    "/my-basket": {
+      "get": {
+        "operationId": "GET_my-basket",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/trait_tra.pageable_pageIndex"
+          },
+          {
+            "$ref": "#/components/parameters/trait_tra.pageable_pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/res.typ.GetMyBasketResponse"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "Add an Item to my Basket. Of course I may add more than 1 of the same Item.",
+        "operationId": "POST_my-basket",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/res.typ.PostMyBasketRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created!",
+            "headers": {
+              "Location": {
+                "description": "uri of new resource",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/my-basket/checkout": {
+      "post": {
+        "operationId": "POST_my-basket-checkout",
+        "responses": {
+          "204": {
+            "description": "Done!"
+          }
+        }
+      }
+    },
+    "/my-basket/{item}": {
+      "delete": {
+        "description": "Remove item from basket",
+        "operationId": "DELETE_my-basket-item",
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "item",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/my-orders": {
+      "delete": {
+        "description": "Cancel order",
+        "operationId": "DELETE_my-orders",
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        }
+      },
+      "get": {
+        "operationId": "GET_my-orders",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/trait_tra.pageable_pageIndex"
+          },
+          {
+            "$ref": "#/components/parameters/trait_tra.pageable_pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/res.typ.GetMyOrdersResponse"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        }
+      },
+      "patch": {
+        "description": "Modify part of Order: quantity of items, delivery address",
+        "operationId": "PATCH_my-orders",
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        }
+      }
+    },
+    "/my-profile": {
+      "get": {
+        "operationId": "GET_my-profile",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/res.typ.GetMyProfileResponse"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/my-wish-list": {
+      "get": {
+        "operationId": "GET_my-wish-list",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/trait_tra.pageable_pageIndex"
+          },
+          {
+            "$ref": "#/components/parameters/trait_tra.pageable_pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/res.typ.GetMyWishListResponse"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "Add an Item to my Wish List.",
+        "operationId": "POST_my-wish-list",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/res.typ.PostMyWishListRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created!",
+            "headers": {
+              "Location": {
+                "description": "uri of new resource",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/my-wish-list/{wish}": {
+      "delete": {
+        "description": "Remove from wish list",
+        "operationId": "DELETE_my-wish-list-wish",
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "wish",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/promotions": {
+      "get": {
+        "operationId": "GET_promotions",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/trait_tra.searchable_name"
+          },
+          {
+            "$ref": "#/components/parameters/trait_tra.searchable_type"
+          },
+          {
+            "$ref": "#/components/parameters/trait_tra.searchable_brand"
+          },
+          {
+            "$ref": "#/components/parameters/trait_tra.pageable_pageIndex"
+          },
+          {
+            "$ref": "#/components/parameters/trait_tra.pageable_pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/res.typ.GetPromotionsResponse"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/recommendations": {
+      "get": {
+        "operationId": "GET_recommendations",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/trait_tra.pageable_pageIndex"
+          },
+          {
+            "$ref": "#/components/parameters/trait_tra.pageable_pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/res.typ.GetRecommendationsResponse"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/trending-items": {
+      "get": {
+        "operationId": "GET_trending-items",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/trait_tra.searchable_name"
+          },
+          {
+            "$ref": "#/components/parameters/trait_tra.searchable_type"
+          },
+          {
+            "$ref": "#/components/parameters/trait_tra.searchable_brand"
+          },
+          {
+            "$ref": "#/components/parameters/trait_tra.pageable_pageIndex"
+          },
+          {
+            "$ref": "#/components/parameters/trait_tra.pageable_pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/res.typ.GetTrendingItemsResponse"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/trending-items/{item}/reviews": {
+      "get": {
+        "operationId": "GET_trending-items-item-reviews",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/trait_tra.pageable_pageIndex"
+          },
+          {
+            "$ref": "#/components/parameters/trait_tra.pageable_pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/res.typ.GetReviewsResponse"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "item",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    }
+  },
+  "servers": [
+    {
+      "url": "https://ec2-52-201-242-128.compute-1.amazonaws.com/mocks/1201bcdf-f1a0-4eb3-a002-4f6f817d44cc/api"
+    }
+  ]
+}

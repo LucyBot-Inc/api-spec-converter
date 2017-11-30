@@ -1,0 +1,92 @@
+#%RAML 1.0
+title: Álainn Cosmetics Mobile Orders API
+#baseUri: https://alainn-customer-mobile-v1.cloudhub.io/api
+baseUri: https://ec2-52-201-242-128.compute-1.amazonaws.com/mocks/1201bcdf-f1a0-4eb3-a002-4f6f817d44cc/api
+version: 1
+mediaType: application/json
+documentation:
+  - !include docs/intro.doc.raml
+  - !include docs/security.doc.raml
+uses:
+  res: modules/resource-types.lib.raml
+  tra: modules/traits.lib.raml
+  sec: modules/security.lib.raml
+
+securedBy: [sec.oauth_2_0]
+/items:
+  type: res.read-only-collection
+  description: List of all items on sale
+  get:
+    is: [tra.searchable, tra.imageable]
+  /{item}:
+    type: res.member
+    get:
+      is: [tra.imageable]
+/my-wish-list:
+  type: res.collection
+  post:
+    description: Add an Item to my Wish List.
+  /{wish}:
+    delete:
+      description: Remove from wish list
+/my-basket:
+  type: res.collection
+  description: All items ready for purchase
+  post:
+    description: Add an Item to my Basket. Of course I may add more than 1 of the same Item.
+  /checkout:
+    type: res.controller
+    description: Orders both pending and fulfilled
+  /{item}:
+    delete:
+      description: Remove item from basket
+/mobile-tokens/{mobileType}:
+  uriParameters:
+    mobileType:
+      type: string
+      enum: [ios, android]
+  post:
+    body:
+      type:
+        properties:
+          token: string
+        example:
+          token: afdasfas23lkesf
+/my-profile:
+  type: res.base
+/brands:
+  type: res.read-only-collection
+  get:
+    queryParameters:
+      name:
+        type: string
+        required: false
+        example: Deep Steep Honey Bubble Bath
+/categories:
+  type: res.read-only-collection
+  get:
+    queryParameters:
+      name:
+        type: string
+        required: false
+        example: Oils
+
+/my-orders:
+  type: res.read-only-collection
+  delete:
+    description: Cancel order
+  patch:
+    description: 'Modify part of Order: quantity of items, delivery address'
+/trending-items:
+  type: res.read-only-collection
+  get:
+    is: [tra.searchable]
+  /{item}/reviews:
+    type: res.read-only-collection
+/recommendations:
+  type: res.read-only-collection
+  description: Recommended Products based on previous purchases
+/promotions:
+  type: res.read-only-collection
+  get:
+    is: [tra.searchable]

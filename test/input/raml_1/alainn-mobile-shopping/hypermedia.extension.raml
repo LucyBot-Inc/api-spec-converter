@@ -1,0 +1,13 @@
+#%RAML 1.0 Extension
+extends: api.raml
+
+uses:
+  ano: modules/annotations.lib.raml
+
+(ano.hypermedia-plan):
+  controls:
+    property: links
+/items:
+  get:
+    (ano.hypermedia-control):
+      follow: true
