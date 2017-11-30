@@ -63,10 +63,15 @@ TestCases.push({
   out: {format: 'openapi_3', file: 'petstore2.json'}
 })
 
+TestCases.push({
+  in: {format: 'openapi_3', file: 'petstore.json'},
+  out: {format: 'swagger_2', file: 'petstore_from_oas3.json'}
+})
+
 var openapi3Cases = [];
 
 TestCases.forEach(function(testCase) {
-  if (testCase.out.format === 'swagger_2') {
+  if (testCase.out.format === 'swagger_2' && testCase.in.format !== 'openapi_3') {
     var newCase = JSON.parse(JSON.stringify(testCase));
     newCase.out.format = 'openapi_3';
     openapi3Cases.push(newCase);
