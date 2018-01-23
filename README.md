@@ -19,6 +19,7 @@ You can also use the online version at https://lucybot-inc.github.io/api-spec-co
 ## Installation
 
 ### Command Line
+> Problems? See [issue #132](https://github.com/LucyBot-Inc/api-spec-converter/issues/132)
 ```bash
 npm install -g api-spec-converter
 ```
