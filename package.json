@@ -67,6 +67,7 @@
     "raml-parser": "^0.8.18",
     "raml-to-swagger": "^1.1.0",
     "request": "^2.81.0",
+    "source-map": "0.6.0",
     "swagger-converter": "^1.4.1",
     "swagger2openapi": "2.9.2",
     "sway": "^1.0.0",
