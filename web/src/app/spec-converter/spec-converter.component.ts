@@ -45,7 +45,7 @@ export class SpecConverterComponent {
   examples = [
     {from: 'swagger_1', source: 'https://raw.githubusercontent.com/LucyBot-Inc/api-spec-converter/master/test/input/swagger_1/petstore/index.json'},
     {from: 'swagger_2', to: 'openapi_3', source: 'https://api.apis.guru/v2/specs/bufferapp.com/1/swagger.json'},
-    {from: 'wadl', source: 'http://api.apigee.com/v1/consoles/facebook/apidescription?format=wadl'},
+    {from: 'wadl', source: 'https://api.apigee.com/v1/consoles/facebook/apidescription?format=wadl'},
     {from: 'raml', source: 'https://raw.githubusercontent.com/raml-apis/XKCD/master/api.raml'},
     {from: 'google', source: 'https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest'},
     //{from: 'api_blueprint', source: 'https://raw.githubusercontent.com/apiaryio/api-blueprint/master/examples/Polls%20API.md'},
