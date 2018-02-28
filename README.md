@@ -3,10 +3,8 @@
 
 [![Chat on gitter][gitter-image]][gitter-link]
 [![NPM version][npm-image]][npm-link]
-[![Bower version][bower-image]][bower-link]
 [![Build status][travis-image]][travis-link]
 
-[![Code climate][climate-image]][climate-link]
 [![Dependency status][deps-image]][deps-link]
 [![devDependency status][devdeps-image]][devdeps-link]
 
@@ -207,12 +205,8 @@ Contributions are welcome and encouraged. See [docs/Contributing.md](docs/Contri
 [gitter-link]: https://gitter.im/lucybot/api-spec-converter
 [npm-image]: https://img.shields.io/npm/v/api-spec-converter.svg
 [npm-link]: https://npmjs.org/package/api-spec-converter
-[bower-image]: https://img.shields.io/bower/v/api-spec-converter.svg
-[bower-link]: http://bower.io/
 [travis-image]: https://img.shields.io/travis/LucyBot-Inc/api-spec-converter.svg
 [travis-link]: https://travis-ci.org/LucyBot-Inc/api-spec-converter
-[climate-image]: https://img.shields.io/codeclimate/github/lucybot/api-spec-converter.svg
-[climate-link]: https://codeclimate.com/github/lucybot/api-spec-converter
 [deps-image]: https://img.shields.io/david/lucybot/api-spec-converter.svg
 [deps-link]: https://david-dm.org/lucybot/api-spec-converter
 [devdeps-image]: https://img.shields.io/david/dev/lucybot/api-spec-converter.svg
