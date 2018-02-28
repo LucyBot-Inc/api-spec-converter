@@ -2,7 +2,7 @@
   "name": "api-spec-converter",
   "version": "2.6.3",
   "engines": {
-    "node": "^4.2.0"
+    "node": "^6.0.0"
   },
   "description": "Convert API descriptions between popular formats such as OpenAPI(fka Swagger), RAML, API Blueprint, WADL, etc.",
   "main": "index.js",

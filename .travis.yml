@@ -1,7 +1,7 @@
 language: node_js
 node_js:
   - "node"
-  - "4.2"
+  - "6"
 deploy:
   provider: npm
   email: ivan.goncharov.ua@gmail.com
