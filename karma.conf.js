@@ -1,7 +1,14 @@
+process.env.CHROME_BIN = require('puppeteer').executablePath()
+console.log(process.env.CHROME_BIN);
 module.exports = function (config) {
-    var browsers = ['PhantomJS'];
-
     config.set({
+        browsers: ['ChromeHeadlessNoSandbox'],
+        customLaunchers: {
+          ChromeHeadlessNoSandbox: {
+          base: 'ChromeHeadless',
+          flags: ['--no-sandbox']
+          }
+        },
         frameworks: ['mocha', 'chai'],
         files: [
           { pattern: 'node_modules/babel-polyfill/browser.js', instrument: false},
@@ -18,8 +25,6 @@ module.exports = function (config) {
         },
 
         reporters: ['mocha'],
-
-        browsers: browsers,
 
         browserNoActivityTimeout: 30000
     });
