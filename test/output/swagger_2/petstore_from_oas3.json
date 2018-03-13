@@ -191,7 +191,7 @@
     "/pet": {
       "put": {
         "consumes": [
-          "application/json"
+          "application/vnd.api+json"
         ],
         "operationId": "updatePet",
         "parameters": [
