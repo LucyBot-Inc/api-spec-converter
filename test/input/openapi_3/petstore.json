@@ -237,7 +237,7 @@
         "operationId": "updatePet",
         "requestBody": {
           "content": {
-            "application/json": {
+            "application/vnd.api+json": {
               "schema": {
                 "$ref": "#/components/schemas/Pet"
               }
@@ -552,12 +552,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/json": {
+            "application/xml": {
               "schema": {
                 "$ref": "#/components/schemas/Pet"
               }
             },
-            "application/xml": {
+            "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Pet"
               }
