@@ -197,7 +197,23 @@ APISpecConverter.convert(...)
 * :eight_spoked_asterisk: - conversion via swagger_2
 
 ## Contributing
-Contributions are welcome and encouraged. See [docs/Contributing.md](docs/Contributing.md) for instructions, tips, and starter projects.
+Contributions are welcome and encouraged.
+
+### Testing
+Please add a test case if you're adding features or fixing bugs. To run the tests:
+
+```bash
+WRITE_GOLDEN=true npm test
+```
+
+### Releases
+```
+npm run browserify
+git commit -a -m "Build browser distribution"
+npm version minor # or major/patch
+npm publish
+git push --follow-tags
+```
 
 [twitter-image]: https://img.shields.io/twitter/url/http/lucybot.github.io/api-spec-converter.svg?style=social
 [twitter-link]: https://twitter.com/intent/tweet?text=Convert+between+API+description+formats+such+as+Swagger+and+RAML:&url=http%3A%2F%2Flucybot.github.io%2Fapi-spec-converter
