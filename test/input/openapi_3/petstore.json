@@ -1,5 +1,28 @@
 {
   "components": {
+    "headers": {
+      "X-RateLimit-Limit": {
+        "description": "The number of allowed requests in the current period",
+        "schema": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "X-RateLimit-Remaining": {
+        "description": "The number of remaining requests in the current period",
+        "schema": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "X-RateLimit-Reset": {
+        "description": "The number of seconds left in the current period",
+        "schema": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
     "requestBodies": {
       "UserArray": {
         "content": {
@@ -1048,7 +1071,25 @@
         },
         "responses": {
           "200": {
-            "description": "No response was specified"
+            "description": "No response was specified",
+            "headers": {
+              "Retry-After": {
+                "description": "Retry contacting the endpoint *at least* after seconds.",
+                "schema": {
+                  "format": "int32",
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "$ref": "#/components/headers/X-RateLimit-Limit"
+              },
+              "X-RateLimit-Remaining": {
+                "$ref": "#/components/headers/X-RateLimit-Remaining"
+              },
+              "X-RateLimit-Reset": {
+                "$ref": "#/components/headers/X-RateLimit-Reset"
+              }
+            }
           },
           "400": {
             "description": "Invalid username supplied"
