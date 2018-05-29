@@ -969,6 +969,9 @@
     "http"
   ],
   "securityDefinitions": {
+    "httpBasic": {
+      "type": "basic"
+    },
     "oauth2_accessCode": {
       "authorizationUrl": "http://petstore.swagger.wordnik.com/api/oauth/requestToken",
       "flow": "accessCode",

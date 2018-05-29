@@ -213,6 +213,10 @@
       }
     },
     "securitySchemes": {
+      "httpBasic": {
+        "type": "http",
+        "scheme": "basic"
+      },
       "oauth2_accessCode": {
         "flows": {
           "authorizationCode": {
