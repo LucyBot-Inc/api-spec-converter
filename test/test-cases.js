@@ -68,6 +68,11 @@ TestCases.push({
   out: {format: 'swagger_2', file: 'petstore_from_oas3.json'}
 })
 
+TestCases.push({
+  in: {format: 'openapi_3', file: 'minimal.json'},
+  out: {format: 'swagger_2', file: 'minimal.json'}
+})
+
 var openapi3Cases = [];
 
 TestCases.forEach(function(testCase) {

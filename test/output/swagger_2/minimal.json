@@ -1,0 +1,27 @@
+{
+  "info": {
+    "title": "Nodejs",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/articles": {
+      "get": {
+        "operationId": "ArticleController.getAll",
+        "parameters": [],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "summary": "Get all",
+        "tags": [
+          "Article"
+        ]
+      }
+    }
+  },
+  "swagger": "2.0"
+}
