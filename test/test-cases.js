@@ -73,6 +73,12 @@ TestCases.push({
   out: {format: 'swagger_2', file: 'minimal.json'}
 })
 
+TestCases.push({
+  in: {format: 'openapi_3', file: 'has_external_ref.json'},
+  out: {format: 'swagger_2', file: 'has_external_ref.json'},
+  skipBrowser: true,
+})
+
 var openapi3Cases = [];
 
 TestCases.forEach(function(testCase) {

@@ -1,4 +1,6 @@
-if (typeof window !== "object") {
+var isBrowser = typeof window === 'object';
+
+if (!isBrowser) {
   require('./setup/node');
 }
 
@@ -18,9 +20,9 @@ function convertFile(testCase) {
 describe('Converter', function() {
   this.timeout(10000);
   TestCases.forEach(function(testCase) {
+    if (isBrowser && testCase.skipBrowser) return;
     var testName = 'should convert ' + testCase.in.file +
       ' from ' + testCase.in.format + ' to ' + testCase.out.format;
-
     it(testName, function(done) {
       convertFile(testCase)
         .then(function(spec) {
