@@ -1,0 +1,69 @@
+{
+  "definitions": {
+    "DefaultResponseObject": {
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "message"
+      ]
+    },
+    "accountLevel": {
+      "enum": [
+        "one",
+        "two",
+        "three",
+        "four"
+      ],
+      "type": "string"
+    }
+  },
+  "info": {
+    "title": "testsickle",
+    "version": "0.0.1"
+  },
+  "paths": {
+    "/user/account/{accountLevel}": {
+      "post": {
+        "parameters": [
+          {
+            "enum": [
+              "one",
+              "two",
+              "three",
+              "four"
+            ],
+            "in": "path",
+            "name": "accountLevel",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/DefaultResponseObject"
+            }
+          }
+        }
+      }
+    }
+  },
+  "swagger": "2.0",
+  "x-components": {
+    "responses": {
+      "defaultResponse": {
+        "description": "Success",
+        "schema": {
+          "$ref": "#/definitions/DefaultResponseObject"
+        }
+      }
+    }
+  }
+}
