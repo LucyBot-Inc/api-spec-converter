@@ -15,7 +15,7 @@
           "200": {
             "description": "Successful response",
             "schema": {
-              "$ref": "./external_ref.json"
+              "type": "string"
             }
           }
         },
