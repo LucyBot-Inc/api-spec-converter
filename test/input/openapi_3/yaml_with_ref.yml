@@ -1,0 +1,16 @@
+openapi: 3.0.0
+info:
+  version: 0.0.1
+  title: testsickle
+paths:
+  '/api/v2/user/{id}':
+    get:
+      tags:
+        - User
+      summary: Get user
+      operationId: user.get
+      parameters:
+        - name: id
+          in: path
+          schema:
+            $ref: 'yaml_ref.yml'

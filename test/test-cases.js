@@ -84,6 +84,12 @@ TestCases.push({
   skipBrowser: true,
 })
 
+TestCases.push({
+  in: {format: 'openapi_3', file: 'yaml_with_ref.yml'},
+  out: {format: 'swagger_2', file: 'yaml_with_ref.yml', syntax: 'yaml'},
+  skipBrowser: true,
+})
+
 var openapi3Cases = [];
 
 TestCases.forEach(function(testCase) {
