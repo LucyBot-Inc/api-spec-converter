@@ -74,6 +74,11 @@ TestCases.push({
 })
 
 TestCases.push({
+  in: {format: 'openapi_3', file: 'produces.yml'},
+  out: {format: 'swagger_2', file: 'produces.json'}
+})
+
+TestCases.push({
   in: {format: 'openapi_3', file: 'param_schema_ref.yml'},
   out: {format: 'swagger_2', file: 'param_schema_ref.json'}
 })
