@@ -87,14 +87,7 @@ $ api-spec-converter -h
 
 Example:
 ```bash
-# Json output
-$ api-spec-converter https://api.gettyimages.com/swagger/api-docs --from=swagger_1 --to=swagger_2 > swagger.json
-
-# Yaml output
-$ api-spec-converter https://api.gettyimages.com/swagger/api-docs --from=swagger_1 --to=swagger_2 --syntax=yaml > swagger.yaml
-
-# Json output with alpha field order
-$ api-spec-converter https://raw.githubusercontent.com/LucyBot-Inc/api-spec-converter/master/test/input/swagger_1/petstore/pet.json --from=swagger_1 --to=swagger_2 --order=alpha > swagger.json
+$ api-spec-converter --from=swagger_1 --to=swagger_2 --syntax=yaml --order=alpha https://raw.githubusercontent.com/LucyBot-Inc/api-spec-converter/master/test/input/swagger_1/petstore/pet.json > swagger.json
 ```
 
 ### NodeJS
