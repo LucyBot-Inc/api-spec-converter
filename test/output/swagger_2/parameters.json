@@ -18,7 +18,8 @@
             "in": "path",
             "name": "id",
             "required": true,
-            "type": "number"
+            "type": "number",
+            "x-example": "1"
           }
         ],
         "produces": [
@@ -49,12 +50,16 @@
             "in": "path",
             "name": "id",
             "required": true,
-            "type": "number"
+            "type": "number",
+            "x-example": "1"
           },
           {
             "in": "body",
             "name": "body",
             "schema": {
+              "example": {
+                "message": "All your base are belong to us."
+              },
               "properties": {
                 "message": {
                   "type": "string"

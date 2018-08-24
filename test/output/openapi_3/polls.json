@@ -44,6 +44,7 @@
         "parameters": [
           {
             "description": "The page of questions to return",
+            "example": "1",
             "in": "query",
             "name": "page",
             "required": false,
@@ -105,6 +106,7 @@
         "parameters": [
           {
             "description": "The page of questions to return",
+            "example": "1",
             "in": "query",
             "name": "page",
             "required": false,
@@ -117,6 +119,15 @@
           "content": {
             "application/json": {
               "schema": {
+                "example": {
+                  "choices": [
+                    "Swift",
+                    "Python",
+                    "Objective-C",
+                    "Ruby"
+                  ],
+                  "question": "Favourite programming language?"
+                },
                 "properties": {
                   "choices": {
                     "items": {
@@ -186,6 +197,7 @@
         "parameters": [
           {
             "description": "ID of the Question in form of an integer",
+            "example": "1",
             "in": "path",
             "name": "question_id",
             "required": true,
@@ -247,6 +259,7 @@
         "parameters": [
           {
             "description": "ID of the Question in form of an integer",
+            "example": "1",
             "in": "path",
             "name": "question_id",
             "required": true,
@@ -256,6 +269,7 @@
           },
           {
             "description": "ID of the Choice in form of an integer",
+            "example": "1",
             "in": "path",
             "name": "choice_id",
             "required": true,

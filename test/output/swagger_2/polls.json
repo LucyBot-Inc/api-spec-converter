@@ -44,7 +44,8 @@
             "in": "query",
             "name": "page",
             "required": false,
-            "type": "number"
+            "type": "number",
+            "x-example": "1"
           }
         ],
         "produces": [
@@ -100,12 +101,22 @@
             "in": "query",
             "name": "page",
             "required": false,
-            "type": "number"
+            "type": "number",
+            "x-example": "1"
           },
           {
             "in": "body",
             "name": "body",
             "schema": {
+              "example": {
+                "choices": [
+                  "Swift",
+                  "Python",
+                  "Objective-C",
+                  "Ruby"
+                ],
+                "question": "Favourite programming language?"
+              },
               "properties": {
                 "choices": {
                   "items": {
@@ -174,7 +185,8 @@
             "in": "path",
             "name": "question_id",
             "required": true,
-            "type": "number"
+            "type": "number",
+            "x-example": "1"
           }
         ],
         "produces": [
@@ -230,14 +242,16 @@
             "in": "path",
             "name": "question_id",
             "required": true,
-            "type": "number"
+            "type": "number",
+            "x-example": "1"
           },
           {
             "description": "ID of the Choice in form of an integer",
             "in": "path",
             "name": "choice_id",
             "required": true,
-            "type": "number"
+            "type": "number",
+            "x-example": "1"
           }
         ],
         "responses": {
