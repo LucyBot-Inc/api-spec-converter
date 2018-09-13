@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "browserify": "node node_modules/mkdirp/bin/cmd dist && browserify -s APISpecConverter -o dist/api-spec-converter.js .",
-    "test": "mocha && npm run browserify && karma start --single-run"
+    "test": "mocha && npm run browserify && karma start --single-run && git checkout -- dist"
   },
   "repository": {
     "type": "git",
@@ -55,9 +55,9 @@
     ]
   },
   "dependencies": {
-    "apib2swagger": "^1.1.1",
-    "bluebird": "^3.5.0",
-    "commander": "^2.17.1",
+    "apib2swagger": "^1.2.0",
+    "bluebird": "^3.5.2",
+    "commander": "^2.18.0",
     "composite-error": "^0.1.1",
     "deep-sort-object": "^1.0.2",
     "drafter.js": "^2.6.6",
@@ -90,6 +90,6 @@
     "karma-phantomjs-launcher": "^1.0.4",
     "mkdirp": "^0.5.1",
     "mocha": "^2.5.3",
-    "puppeteer": "^1.7.0"
+    "puppeteer": "^1.8.0"
   }
 }
