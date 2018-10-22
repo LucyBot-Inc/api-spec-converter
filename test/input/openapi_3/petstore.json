@@ -303,6 +303,7 @@
             "in": "query",
             "name": "status",
             "required": true,
+            "style": "simple",
             "schema": {
               "items": {
                 "enum": [
