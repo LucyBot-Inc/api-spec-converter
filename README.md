@@ -122,8 +122,7 @@ Converter.convert({
         if (result.warnings)
           return console.error(JSON.stringify(warnings, null, 2));
 
-        console.log(converted.stringify());
-        FS.writeFileSync('swagger2.json', converted.stringify());
+        fs.writeFileSync('swagger2.json', converted.stringify());
       });
   });
 ```
