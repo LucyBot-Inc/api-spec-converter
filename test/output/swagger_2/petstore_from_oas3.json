@@ -244,7 +244,6 @@
             },
             "name": "status",
             "required": true,
-            "style": "simple",
             "type": "array"
           }
         ],
@@ -278,6 +277,7 @@
         "operationId": "findPetsByTags",
         "parameters": [
           {
+            "collectionFormat": "multi",
             "description": "Tags to filter by",
             "in": "query",
             "items": {
