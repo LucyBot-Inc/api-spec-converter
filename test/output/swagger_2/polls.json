@@ -271,5 +271,11 @@
   "schemes": [
     "http"
   ],
-  "swagger": "2.0"
+  "swagger": "2.0",
+  "tags": [
+    {
+      "description": "Resources related to questions in the API.",
+      "name": "Question"
+    }
+  ]
 }

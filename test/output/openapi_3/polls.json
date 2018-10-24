@@ -295,5 +295,11 @@
     {
       "url": "http://polls.apiblueprint.org/"
     }
+  ],
+  "tags": [
+    {
+      "description": "Resources related to questions in the API.",
+      "name": "Question"
+    }
   ]
 }

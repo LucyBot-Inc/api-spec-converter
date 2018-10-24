@@ -127,5 +127,11 @@
       }
     }
   },
-  "swagger": "2.0"
+  "swagger": "2.0",
+  "tags": [
+    {
+      "description": "Group of all messages-related resources.",
+      "name": "Messages"
+    }
+  ]
 }

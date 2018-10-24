@@ -29,5 +29,6 @@
       }
     }
   },
-  "servers": []
+  "servers": [],
+  "tags": []
 }
