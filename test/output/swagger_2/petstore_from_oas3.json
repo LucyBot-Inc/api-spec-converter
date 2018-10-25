@@ -320,7 +320,7 @@
         "parameters": [
           {
             "in": "formData",
-            "name": "body",
+            "name": "uploadFile-body",
             "type": "file"
           }
         ],
@@ -440,7 +440,7 @@
           {
             "description": "Pet object that needs to be added to the store",
             "in": "body",
-            "name": "body",
+            "name": "partialUpdate-body",
             "required": true,
             "schema": {
               "$ref": "#/definitions/Pet"
@@ -543,7 +543,7 @@
           {
             "description": "order placed for purchasing the pet",
             "in": "body",
-            "name": "body",
+            "name": "placeOrder-body",
             "required": true,
             "schema": {
               "$ref": "#/definitions/Order"
@@ -663,7 +663,7 @@
           {
             "description": "Created user object",
             "in": "body",
-            "name": "body",
+            "name": "createUser-body",
             "required": true,
             "schema": {
               "$ref": "#/definitions/User"
@@ -703,7 +703,7 @@
           {
             "description": "List of user object",
             "in": "body",
-            "name": "body",
+            "name": "createUsersWithListInput-body",
             "required": true,
             "schema": {
               "items": {
@@ -908,7 +908,7 @@
           {
             "description": "Updated user object",
             "in": "body",
-            "name": "body",
+            "name": "updateUser-body",
             "required": true,
             "schema": {
               "$ref": "#/definitions/User"
@@ -1031,7 +1031,7 @@
       "UserArray": {
         "description": "List of user object",
         "in": "body",
-        "name": "body",
+        "name": "createUsersWithListInput-body",
         "required": true,
         "schema": {
           "items": {
