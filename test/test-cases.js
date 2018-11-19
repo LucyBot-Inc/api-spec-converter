@@ -95,6 +95,12 @@ TestCases.push({
   skipBrowser: true,
 })
 
+TestCases.push({
+  in: {format: 'openapi_3', file: 'common_params.json'},
+  out: {format: 'swagger_2', file: 'common_params.json'},
+  skipBrowser: true,
+})
+
 var openapi3Cases = [];
 
 TestCases.forEach(function(testCase) {
