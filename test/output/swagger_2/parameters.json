@@ -93,6 +93,13 @@
             "name": "limit",
             "required": false,
             "type": "number"
+          },
+          {
+            "description": "Which page of results to return",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
           }
         ],
         "produces": [
