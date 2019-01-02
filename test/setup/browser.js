@@ -12,6 +12,7 @@ window.getFile = function(file, cb) {
   var xobj = new XMLHttpRequest();
   xobj.open('GET', file, true);
   xobj.onload = function () {
+    // TODO: handle YAML
     if (xobj.status === 200)
       cb(null, JSON.parse(xobj.response));
     else

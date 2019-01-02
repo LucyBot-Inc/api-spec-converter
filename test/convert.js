@@ -9,7 +9,7 @@ function convertFile(testCase) {
   return Converter.convert({
     from: testCase.in.format,
     to: testCase.out.format,
-    source: infile
+    source: infile,
   })
   .then(function (spec) {
     spec.fillMissing();
@@ -29,7 +29,7 @@ describe('Converter', function() {
           var outfile = getFileName('output', testCase.out);
           var order = testCase.out.order || 'alpha';
           if (WRITE_GOLDEN)
-            FS.writeFileSync(outfile, spec.stringify({order: order}) + '\n');
+            FS.writeFileSync(outfile, spec.stringify({order: order, syntax: testCase.out.syntax}) + '\n');
 
           getFile(outfile, function(err, golden) {
             try {

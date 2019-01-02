@@ -1,25 +1,16 @@
-{
-  "info": {
-    "title": "testsickle",
-    "version": "0.0.1"
-  },
-  "paths": {
-    "/api/v2/user/{id}": {
-      "get": {
-        "operationId": "user.get",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "id",
-            "type": "string"
-          }
-        ],
-        "summary": "Get user",
-        "tags": [
-          "User"
-        ]
-      }
-    }
-  },
-  "swagger": "2.0"
-}
+info:
+  title: testsickle
+  version: 0.0.1
+paths:
+  '/api/v2/user/{id}':
+    get:
+      operationId: user.get
+      parameters:
+        - in: path
+          name: id
+          type: string
+      summary: Get user
+      tags:
+        - User
+swagger: '2.0'
+

@@ -1,5 +1,6 @@
 var fs = require('fs');
 var path = require('path');
+var YAML = require('js-yaml');
 
 global.getFileName = function(dir, testCase) {
   return path.join(__dirname, '..', dir, testCase.format, testCase.directory || '', testCase.file);
@@ -7,8 +8,9 @@ global.getFileName = function(dir, testCase) {
 
 // returns file content as a JavaScript
 global.getFile = function(file, cb) {
-  var res = JSON.parse(fs.readFileSync(file, 'utf8'));
-  cb(null, res);
+  var content = fs.readFileSync(file, 'utf8');
+  var parsed = file.endsWith('json') ? JSON.parse(content) : YAML.safeLoad(content);
+  cb(null, parsed);
 }
 
 // returns file content as a string
