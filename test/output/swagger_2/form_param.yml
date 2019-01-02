@@ -1,0 +1,28 @@
+info:
+  title: test
+  version: 0.0.1
+paths:
+  /foo:
+    post:
+      consumes:
+        - multipart/form-data
+      operationId: getFoo
+      parameters:
+        - in: formData
+          name: name
+          type: string
+        - format: binary
+          in: formData
+          name: image
+          type: string
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Foo
+          schema:
+            type: object
+      tags:
+        - Foos
+swagger: '2.0'
+

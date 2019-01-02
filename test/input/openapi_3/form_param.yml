@@ -1,0 +1,29 @@
+openapi: 3.0.0
+info:
+  version: 0.0.1
+  title: test
+paths:
+  /foo:
+    post:
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                image:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Foo
+          content:
+            application/json:
+              schema:
+                type: object
+      tags:
+        - Foos
+      operationId: getFoo
