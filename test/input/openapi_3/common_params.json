@@ -10,6 +10,7 @@
         {
           "name": "id",
           "in": "path",
+          "example": 0,
           "schema": {
             "type": "integer"
           }

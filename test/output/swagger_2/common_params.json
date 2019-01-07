@@ -9,7 +9,8 @@
         {
           "in": "path",
           "name": "id",
-          "type": "integer"
+          "type": "integer",
+          "x-example": 0
         }
       ]
     }
