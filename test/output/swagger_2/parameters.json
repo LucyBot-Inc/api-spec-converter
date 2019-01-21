@@ -134,6 +134,7 @@
       }
     }
   },
+  "securityDefinitions": {},
   "swagger": "2.0",
   "tags": [
     {
