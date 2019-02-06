@@ -6,7 +6,7 @@ info:
 servers:
   - url: 'https://api.example.com'
 paths:
-  /users:
+  /users~:
     get:
       summary: Returns a list of users.
       description: Optional extended description in Markdown.
@@ -14,4 +14,4 @@ paths:
         '200':
           description: OK
   /other_users:
-    $ref: '#/paths/~1users'
+    $ref: '#/paths/~1users~0'

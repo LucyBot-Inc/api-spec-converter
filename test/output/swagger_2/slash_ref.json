@@ -19,7 +19,7 @@
         "summary": "Returns a list of users."
       }
     },
-    "/users": {
+    "/users~": {
       "get": {
         "description": "Optional extended description in Markdown.",
         "parameters": [],
