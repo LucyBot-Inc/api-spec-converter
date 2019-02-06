@@ -1,0 +1,39 @@
+{
+  "basePath": "/",
+  "host": "api.example.com",
+  "info": {
+    "description": "API description in Markdown.",
+    "title": "Sample API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/other_users": {
+      "get": {
+        "description": "Optional extended description in Markdown.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "Returns a list of users."
+      }
+    },
+    "/users": {
+      "get": {
+        "description": "Optional extended description in Markdown.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "Returns a list of users."
+      }
+    }
+  },
+  "schemes": [
+    "https"
+  ],
+  "swagger": "2.0"
+}

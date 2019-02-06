@@ -84,6 +84,11 @@ TestCases.push({
 })
 
 TestCases.push({
+  in: {format: 'openapi_3', file: 'slash_ref.yml'},
+  out: {format: 'swagger_2', file: 'slash_ref.json'}
+})
+
+TestCases.push({
   in: {format: 'openapi_3', file: 'has_external_ref.json'},
   out: {format: 'swagger_2', file: 'has_external_ref.json'},
   skipBrowser: true,
