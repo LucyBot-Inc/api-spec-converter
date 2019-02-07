@@ -20,6 +20,14 @@
             "required": true,
             "type": "number",
             "x-example": "1"
+          },
+          {
+            "description": "e.g. text/plain",
+            "in": "header",
+            "name": "Accept",
+            "required": false,
+            "type": "string",
+            "x-example": "text/plain"
           }
         ],
         "produces": [

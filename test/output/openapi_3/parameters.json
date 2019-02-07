@@ -25,6 +25,16 @@
             "schema": {
               "type": "number"
             }
+          },
+          {
+            "description": "e.g. text/plain",
+            "example": "text/plain",
+            "in": "header",
+            "name": "Accept",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
