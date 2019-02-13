@@ -69,7 +69,7 @@ $ api-spec-converter --from=swagger_1 --to=swagger_2 --syntax=yaml --order=alpha
 ### Options
 * `from` - source format (see formats below)
 * `to` - desired format (see formats below)
-* `source` - Filename or URL for the source
+* `source` - Filename, URL, or JS object for the source
 ### Simple example:
 ```js
 var Converter = require('api-spec-converter');
