@@ -33,7 +33,9 @@
         {
           "$ref": "#/definitions/Animal"
         }
-      ]
+      ],
+      "x-discriminator-value": "Feline",
+      "x-ms-discriminator-value": "Feline"
     },
     "Category": {
       "properties": {
