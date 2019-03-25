@@ -2,9 +2,7 @@
   "basePath": "/api",
   "definitions": {
     "Animal": {
-      "discriminator": {
-        "propertyName": "type"
-      },
+      "discriminator": "type",
       "properties": {
         "id": {
           "type": "integer"
@@ -35,7 +33,9 @@
         {
           "$ref": "#/definitions/Animal"
         }
-      ]
+      ],
+      "x-discriminator-value": "Feline",
+      "x-ms-discriminator-value": "Feline"
     },
     "Category": {
       "properties": {

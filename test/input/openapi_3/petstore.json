@@ -42,7 +42,10 @@
     "schemas": {
       "Animal": {
         "discriminator": {
-          "propertyName": "type"
+          "propertyName": "type",
+          "mapping": {
+            "Feline": "#/components/schemas/Cat"
+          }
         },
         "properties": {
           "id": {
