@@ -311,7 +311,7 @@
         ]
       }
     },
-    "/pet/uploadImage": {
+    "/pet/uploadFile": {
       "post": {
         "consumes": [
           "application/octet-stream"
@@ -319,9 +319,54 @@
         "operationId": "uploadFile",
         "parameters": [
           {
-            "in": "formData",
+            "in": "body",
             "name": "body",
-            "type": "file"
+            "schema": {
+              "format": "binary",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No response was specified"
+          }
+        },
+        "security": [
+          {
+            "oauth2_accessCode": [
+              "write:pets",
+              "read:pets"
+            ]
+          },
+          {
+            "oauth2_implicit": [
+              "write:pets",
+              "read:pets"
+            ]
+          }
+        ],
+        "summary": "uploads a file",
+        "tags": [
+          "pet"
+        ]
+      }
+    },
+    "/pet/uploadImage": {
+      "post": {
+        "consumes": [
+          "image/jpeg",
+          "image/png"
+        ],
+        "operationId": "uploadImage",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "format": "binary",
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -426,6 +471,7 @@
       },
       "patch": {
         "consumes": [
+          "application/xml",
           "application/json"
         ],
         "operationId": "partialUpdate",
