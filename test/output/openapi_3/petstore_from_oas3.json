@@ -404,12 +404,56 @@
         ]
       }
     },
-    "/pet/uploadImage": {
+    "/pet/uploadFile": {
       "post": {
         "operationId": "uploadFile",
         "requestBody": {
           "content": {
             "application/octet-stream": {
+              "schema": {
+                "format": "binary",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "No response was specified"
+          }
+        },
+        "security": [
+          {
+            "oauth2_accessCode": [
+              "write:pets",
+              "read:pets"
+            ]
+          },
+          {
+            "oauth2_implicit": [
+              "write:pets",
+              "read:pets"
+            ]
+          }
+        ],
+        "summary": "uploads a file",
+        "tags": [
+          "pet"
+        ]
+      }
+    },
+    "/pet/uploadImage": {
+      "post": {
+        "operationId": "uploadImage",
+        "requestBody": {
+          "content": {
+            "image/jpeg": {
+              "schema": {
+                "format": "binary",
+                "type": "string"
+              }
+            },
+            "image/png": {
               "schema": {
                 "format": "binary",
                 "type": "string"
