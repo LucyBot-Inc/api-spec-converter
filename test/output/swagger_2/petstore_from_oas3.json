@@ -319,9 +319,12 @@
         "operationId": "uploadFile",
         "parameters": [
           {
-            "in": "formData",
+            "in": "body",
             "name": "body",
-            "type": "file"
+            "schema": {
+              "format": "binary",
+              "type": "string"
+            }
           }
         ],
         "responses": {
