@@ -471,6 +471,7 @@
       },
       "patch": {
         "consumes": [
+          "application/xml",
           "application/json"
         ],
         "operationId": "partialUpdate",
