@@ -56,13 +56,13 @@
   },
   "dependencies": {
     "apib2swagger": "^1.8.0",
-    "bluebird": "^3.5.3",
-    "commander": "^2.19.0",
+    "bluebird": "^3.5.4",
+    "commander": "^2.20.0",
     "composite-error": "^0.1.1",
     "deep-sort-object": "^1.0.2",
     "drafter.js": "^2.6.6",
     "google-discovery-to-swagger": "^2.0.0",
-    "js-yaml": "^3.12.1",
+    "js-yaml": "^3.13.1",
     "lodash": "^4.17.11",
     "raml-parser": "^0.8.18",
     "raml-to-swagger": "^1.1.0",
@@ -90,6 +90,6 @@
     "karma-phantomjs-launcher": "^1.0.4",
     "mkdirp": "^0.5.1",
     "mocha": "^5.2.0",
-    "puppeteer": "^1.12.2"
+    "puppeteer": "^1.14.0"
   }
 }
