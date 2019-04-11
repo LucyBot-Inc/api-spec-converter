@@ -248,7 +248,10 @@
           }
         ],
         "produces": [
-          "application/json"
+          "application/json",
+          "application/xml",
+          "text/html",
+          "text/plain"
         ],
         "responses": {
           "200": {
@@ -289,7 +292,10 @@
           }
         ],
         "produces": [
-          "application/json"
+          "application/json",
+          "application/xml",
+          "text/html",
+          "text/plain"
         ],
         "responses": {
           "200": {
@@ -448,7 +454,10 @@
           }
         ],
         "produces": [
-          "application/json"
+          "application/json",
+          "application/xml",
+          "text/html",
+          "text/plain"
         ],
         "responses": {
           "200": {
@@ -494,7 +503,8 @@
           }
         ],
         "produces": [
-          "application/json"
+          "application/json",
+          "application/xml"
         ],
         "responses": {
           "200": {
