@@ -7,6 +7,14 @@ var Program = require('commander');
 var Package = require(__dirname + '/../package.json');
 var Converter = require('..');
 
+function keyValue (keyvalue, result) {
+  const pair = keyvalue.split('=', 2);
+  const key = pair[0];
+  const value = JSON.parse(pair[1]);
+  result[key] = value;
+  return result;
+}
+
 Program
   .version(Package.version)
   .description('Convert API descriptions between popular formats.\n\n  ' +
@@ -19,6 +27,7 @@ Program
   .option('-o, --order [sortOrder]', 'Specifies top fields ordering: alpha or default openapi')
   .option('-c, --check', 'Check if result is valid spec')
   .option('-d, --dummy', 'Fill missing required fields with dummy data')
+  .option('--passthrough <keyvalue>', 'Pass an option to the underlying converter', keyValue, {})
   .arguments('<URL|filename>')
   .action(main)
   .parse(process.argv);
@@ -29,11 +38,11 @@ function main(url, options) {
 
   if (!options.to)
     options.to = options.from;
-
   Converter.convert({
     source: url,
     from: options.from,
-    to: options.to
+    to: options.to,
+    passthrough: options.passthrough
   }).then(function (spec) {
     console.log(spec.stringify({syntax: options.syntax, order: options.order}))
     if (!options.check)

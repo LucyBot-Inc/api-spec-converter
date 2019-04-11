@@ -30,6 +30,6 @@ Converter.getFormatName = function (name, version) {
 
 Converter.convert = function(options, callback) {
   return Converter.getSpec(options.source, options.from)
-    .then(fromSpec => fromSpec.convertTo(options.to))
+    .then(fromSpec => fromSpec.convertTo(options.to, options.passthrough))
     .asCallback(callback);
 }
