@@ -44,6 +44,7 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
+            "Canine": "Dog",
             "Feline": "#/components/schemas/Cat"
           }
         },
@@ -71,6 +72,24 @@
             },
             "required": [
               "likesMilk"
+            ],
+            "type": "object"
+          },
+          {
+            "$ref": "#/components/schemas/Animal"
+          }
+        ]
+      },
+      "Dog": {
+        "allOf": [
+          {
+            "properties": {
+              "chasesMailman": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "chasesMailman"
             ],
             "type": "object"
           },
