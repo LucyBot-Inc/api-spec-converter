@@ -37,6 +37,26 @@
       "x-discriminator-value": "Feline",
       "x-ms-discriminator-value": "Feline"
     },
+    "Dog": {
+      "allOf": [
+        {
+          "properties": {
+            "chasesMailman": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "chasesMailman"
+          ],
+          "type": "object"
+        },
+        {
+          "$ref": "#/definitions/Animal"
+        }
+      ],
+      "x-discriminator-value": "Canine",
+      "x-ms-discriminator-value": "Canine"
+    },
     "Category": {
       "properties": {
         "id": {
