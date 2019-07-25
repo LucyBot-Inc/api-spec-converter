@@ -59,7 +59,6 @@
     "commander": "^2.20.0",
     "composite-error": "^0.1.1",
     "deep-sort-object": "^1.0.2",
-    "drafter.js": "^2.6.6",
     "js-yaml": "^3.13.1",
     "lodash": "^4.17.11",
     "request": "^2.88.0",
@@ -88,6 +87,7 @@
   },
   "optionalDependencies": {
     "apib2swagger": "^1.9.0",
+    "drafter.js": "^2.6.7",
     "google-discovery-to-swagger": "^2.0.0",
     "raml-parser": "^0.8.18",
     "raml-to-swagger": "^1.1.0",
