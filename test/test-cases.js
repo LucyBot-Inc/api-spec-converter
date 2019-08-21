@@ -112,6 +112,24 @@ TestCases.push({
   skipBrowser: true,
 })
 
+TestCases.push({
+  in: {format: 'openapi_3', file: 'nullable.yml'},
+  out: {format: 'swagger_2', file: 'nullable.yml', syntax: 'yaml'},
+  skipBrowser: true,
+})
+
+TestCases.push({
+  in: {format: 'openapi_3', file: 'nested_oneof.yml'},
+  out: {format: 'swagger_2', file: 'nested_oneof.yml', syntax: 'yaml'},
+  skipBrowser: true,
+})
+
+TestCases.push({
+  in: {format: 'openapi_3', file: 'request_response_ref.yml'},
+  out: {format: 'swagger_2', file: 'request_response_ref.yml', syntax: 'yaml'},
+  skipBrowser: true,
+})
+
 var openapi3Cases = [];
 
 TestCases.forEach(function(testCase) {
