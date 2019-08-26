@@ -37,6 +37,18 @@
       "x-discriminator-value": "Feline",
       "x-ms-discriminator-value": "Feline"
     },
+    "Category": {
+      "properties": {
+        "id": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "Dog": {
       "allOf": [
         {
@@ -56,18 +68,6 @@
       ],
       "x-discriminator-value": "Canine",
       "x-ms-discriminator-value": "Canine"
-    },
-    "Category": {
-      "properties": {
-        "id": {
-          "format": "int64",
-          "type": "integer"
-        },
-        "name": {
-          "type": "string"
-        }
-      },
-      "type": "object"
     },
     "Order": {
       "properties": {

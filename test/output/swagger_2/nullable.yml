@@ -1,0 +1,24 @@
+definitions:
+  Foo:
+    type: string
+    x-nullable: true
+info:
+  title: test
+  version: 0.0.1
+paths:
+  /foo:
+    get:
+      operationId: getFoo
+      parameters: []
+      produces:
+        - application/hal+json
+      responses:
+        '200':
+          description: Foo
+          schema:
+            $ref: '#/definitions/Foo'
+      tags:
+        - Foos
+swagger: '2.0'
+x-components: {}
+

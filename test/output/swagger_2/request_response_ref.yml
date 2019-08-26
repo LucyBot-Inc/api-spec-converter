@@ -1,0 +1,88 @@
+definitions:
+  PetName:
+    properties:
+      name:
+        type: string
+      nickname:
+        type: string
+        x-nullable: true
+    type: object
+info:
+  title: test
+  version: 0.0.1
+paths:
+  /foo:
+    post:
+      consumes:
+        - application/json
+      operationId: getFoo
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            properties:
+              name:
+                type: string
+                x-nullable: true
+              pet:
+                allOf:
+                  - $ref: '#/definitions/PetName'
+                  - properties:
+                      favorite_foods:
+                        items:
+                          type: string
+                          x-nullable: true
+                        type: array
+                    type: object
+            type: object
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Foo
+          schema:
+            allOf:
+              - $ref: '#/definitions/PetName'
+              - properties:
+                  name:
+                    type: string
+                    x-nullable: true
+                type: object
+      tags:
+        - Foos
+swagger: '2.0'
+x-components:
+  requestBodies:
+    FooRequest:
+      in: body
+      name: body
+      required: true
+      schema:
+        properties:
+          name:
+            type: string
+            x-nullable: true
+          pet:
+            allOf:
+              - $ref: '#/definitions/PetName'
+              - properties:
+                  favorite_foods:
+                    items:
+                      type: string
+                      x-nullable: true
+                    type: array
+                type: object
+        type: object
+  responses:
+    FooResponse:
+      description: Foo
+      schema:
+        allOf:
+          - $ref: '#/definitions/PetName'
+          - properties:
+              name:
+                type: string
+                x-nullable: true
+            type: object
+
