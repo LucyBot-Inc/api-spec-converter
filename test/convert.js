@@ -45,6 +45,10 @@ describe('Converter', function() {
         });
     })
   })
+
+  it('should not pull in transitive dependency mutating Object prototype', function () {
+    expect({}.should).to.be.undefined;
+  });
 });
 
 
