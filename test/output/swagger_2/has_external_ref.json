@@ -17,6 +17,9 @@
             "schema": {
               "type": "string"
             }
+          },
+          "default": {
+            "description": "Error response"
           }
         },
         "summary": "Get all",
