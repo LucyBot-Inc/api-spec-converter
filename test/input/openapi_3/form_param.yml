@@ -16,6 +16,10 @@ paths:
                   type: string
                 format:
                   $ref: '#/components/schemas/ImageFormat'
+                uploadDate:
+                  type: string
+                  format: date-time
+                  readOnly: true
                 image:
                   type: string
                   format: binary
