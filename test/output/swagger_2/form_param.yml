@@ -5,6 +5,9 @@ definitions:
       - gif
       - jpeg
       - png
+    x-ms-enum:
+      name: ImageType
+      modelAsString: true
 info:
   title: test
   version: 0.0.1
@@ -25,6 +28,9 @@ paths:
             - gif
             - jpeg
             - png
+          x-ms-enum:
+            name: ImageType
+            modelAsString: true
         - format: binary
           in: formData
           name: image
