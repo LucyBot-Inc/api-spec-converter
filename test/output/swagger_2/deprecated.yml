@@ -1,0 +1,82 @@
+definitions:
+  Schema1:
+    x-deprecated: true
+    type: object
+    properties:
+      prop1:
+        x-deprecated:
+          description: Prop deprecation info
+        type: string
+      prop2:
+        x-deprecated:
+          description: Prop also deprecated
+        type: string
+      prop3:
+        x-deprecated: false
+        type: integer
+  Schema2:
+    x-deprecated:
+      replaced-by: Schema1
+    type: object
+    properties:
+      prop4:
+        x-deprecated: true
+        type: string
+      prop5:
+        type: array
+        items:
+          x-deprecated: true
+          type: string
+  Schema3:
+    x-deprecated: false
+    type: array
+    items:
+      type: string
+info:
+  title: >-
+    API with deprecated schemas and operations
+
+    See https://github.com/Azure/autorest/tree/master/Samples/test/deprecated
+    for description of x-deprecated as supported by Autorest
+  version: 0.0.1
+paths:
+  /path1:
+    get:
+      deprecated: true
+      operationId: getPath1
+      parameters: []
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Deprecated operation 1
+          schema:
+            $ref: '#/definitions/Schema1'
+  /path2:
+    get:
+      deprecated: true
+      operationId: getPath2
+      parameters: []
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Deprecated operation 2
+          schema:
+            $ref: '#/definitions/Schema2'
+      x-deprecated:
+        description: Deprecation info
+  /path3:
+    get:
+      responses:
+        '200':
+          description: Operation 3
+          schema:
+            $ref: '#/definitions/Schema3'
+      operationId: getPath3
+      parameters: []
+      produces:
+      - application/json
+swagger: '2.0'
+x-components: {}
+
