@@ -1,3 +1,10 @@
+definitions:
+  ImageFormat:
+    type: string
+    enum:
+      - gif
+      - jpeg
+      - png
 info:
   title: test
   version: 0.0.1
@@ -11,6 +18,13 @@ paths:
         - in: formData
           name: name
           type: string
+        - in: formData
+          name: format
+          type: string
+          enum:
+            - gif
+            - jpeg
+            - png
         - format: binary
           in: formData
           name: image
@@ -25,4 +39,4 @@ paths:
       tags:
         - Foos
 swagger: '2.0'
-
+x-components: {}

@@ -14,6 +14,8 @@ paths:
               properties:
                 name:
                   type: string
+                format:
+                  $ref: '#/components/schemas/ImageFormat'
                 image:
                   type: string
                   format: binary
@@ -27,3 +29,11 @@ paths:
       tags:
         - Foos
       operationId: getFoo
+components:
+  schemas:
+    ImageFormat:
+      type: string
+      enum:
+        - gif
+        - jpeg
+        - png
