@@ -23,6 +23,8 @@ paths:
                 image:
                   type: string
                   format: binary
+              required:
+              - image
       responses:
         '200':
           description: Foo
