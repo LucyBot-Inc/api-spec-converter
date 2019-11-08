@@ -35,6 +35,7 @@ paths:
           in: formData
           name: image
           type: string
+          required: true
       produces:
         - application/json
       responses:
