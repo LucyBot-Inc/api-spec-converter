@@ -37,3 +37,6 @@ components:
         - gif
         - jpeg
         - png
+      x-ms-enum:
+        name: ImageType
+        modelAsString: true
