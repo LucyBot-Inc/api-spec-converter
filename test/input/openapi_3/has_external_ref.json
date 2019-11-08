@@ -18,6 +18,9 @@
                             }
                         },
                         "description": "Successful response"
+                    },
+                    "default": {
+                        "$ref": "./external_ref_fragment.json#/responses/Error"
                     }
                 },
                 "summary": "Get all",

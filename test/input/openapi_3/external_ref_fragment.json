@@ -1,0 +1,9 @@
+{
+  "openapi": "3.0.0",
+  "responses": {
+    "Error": {
+      "description": "Error response"
+    }
+  }
+}
+

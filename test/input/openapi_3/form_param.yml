@@ -14,9 +14,17 @@ paths:
               properties:
                 name:
                   type: string
+                format:
+                  $ref: '#/components/schemas/ImageFormat'
+                uploadDate:
+                  type: string
+                  format: date-time
+                  readOnly: true
                 image:
                   type: string
                   format: binary
+              required:
+              - image
       responses:
         '200':
           description: Foo
@@ -27,3 +35,14 @@ paths:
       tags:
         - Foos
       operationId: getFoo
+components:
+  schemas:
+    ImageFormat:
+      type: string
+      enum:
+        - gif
+        - jpeg
+        - png
+      x-ms-enum:
+        name: ImageType
+        modelAsString: true

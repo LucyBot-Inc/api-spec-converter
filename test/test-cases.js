@@ -59,6 +59,12 @@ TestCases.push({
 })
 
 TestCases.push({
+  in: {format: 'openapi_3', file: 'deprecated.yml'},
+  out: {format: 'swagger_2', file: 'deprecated.yml'},
+  skipBrowser: true,
+})
+
+TestCases.push({
   in: {format: 'swagger_2', file: 'petstore.json'},
   out: {format: 'openapi_3', file: 'petstore2.json'}
 })
