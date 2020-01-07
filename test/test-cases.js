@@ -90,6 +90,11 @@ TestCases.push({
 })
 
 TestCases.push({
+  in: {format: 'openapi_3', file: 'servers.yml'},
+  out: {format: 'swagger_2', file: 'servers.json'}
+})
+
+TestCases.push({
   in: {format: 'openapi_3', file: 'slash_ref.yml'},
   out: {format: 'swagger_2', file: 'slash_ref.json'}
 })
