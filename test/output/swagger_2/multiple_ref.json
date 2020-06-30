@@ -1,0 +1,83 @@
+{
+  "basePath": "/",
+  "host": "somewhere.test",
+  "info": {
+    "description": "test",
+    "title": "test",
+    "version": "2"
+  },
+  "paths": {
+    "/testBodyRefIsResolved": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "test",
+        "parameters": [
+          {
+            "description": "Some content",
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "example": {},
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "summary": "test"
+      }
+    },
+    "/testSameBodyRefIsResolvedAgain": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "test",
+        "parameters": [
+          {
+            "description": "Some content",
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "example": {},
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "summary": "test"
+      }
+    }
+  },
+  "schemes": [
+    "https"
+  ],
+  "swagger": "2.0",
+  "x-components": {
+    "requestBodies": {
+      "Value": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "example": {},
+              "type": "object"
+            }
+          }
+        },
+        "description": "Some content",
+        "required": true
+      }
+    }
+  }
+}
