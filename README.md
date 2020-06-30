@@ -169,9 +169,13 @@ Contributions are welcome and encouraged.
 Please add a test case if you're adding features or fixing bugs. To run the tests:
 
 ```bash
-WRITE_GOLDEN=true npm test
+npm test
 ```
 
+In case you need to override the expected outputs, due to a justified and verified change, run this:
+```bash
+WRITE_GOLDEN=true npm test
+```
 ### Releases
 ```
 npm run browserify
