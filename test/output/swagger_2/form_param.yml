@@ -1,13 +1,13 @@
 definitions:
   ImageFormat:
-    type: string
     enum:
       - gif
       - jpeg
       - png
+    type: string
     x-ms-enum:
-      name: ImageType
       modelAsString: true
+      name: ImageType
 info:
   title: test
   version: 0.0.1
@@ -21,21 +21,21 @@ paths:
         - in: formData
           name: name
           type: string
-        - in: formData
-          name: format
-          type: string
-          enum:
+        - enum:
             - gif
             - jpeg
             - png
+          in: formData
+          name: format
+          type: string
           x-ms-enum:
-            name: ImageType
             modelAsString: true
+            name: ImageType
         - format: binary
           in: formData
           name: image
-          type: string
           required: true
+          type: string
       produces:
         - application/json
       responses:
@@ -47,3 +47,4 @@ paths:
         - Foos
 swagger: '2.0'
 x-components: {}
+

@@ -1,13 +1,13 @@
 {
   "basePath": "/api",
   "host": "api.example.com",
-  "schemes": [
-    "https"
-  ],
   "info": {
     "description": "API description in Markdown.",
     "title": "Sample API",
     "version": "1.0.0"
   },
+  "schemes": [
+    "https"
+  ],
   "swagger": "2.0"
 }

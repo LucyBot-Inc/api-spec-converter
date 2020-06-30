@@ -11,6 +11,9 @@
           "name": "id",
           "type": "integer",
           "x-example": 0
+        },
+        {
+          "name": "name"
         }
       ]
     }
