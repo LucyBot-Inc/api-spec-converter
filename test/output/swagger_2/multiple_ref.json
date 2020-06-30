@@ -7,7 +7,7 @@
     "version": "2"
   },
   "paths": {
-    "/testPathOnlyOneRefIsResolved": {
+    "/testBodyRefIsResolved": {
       "post": {
         "consumes": [
           "application/json"
@@ -33,7 +33,7 @@
         "summary": "test"
       }
     },
-    "/testPathRefIsNotResolvedASecondTime": {
+    "/testSameBodyRefIsResolvedAgain": {
       "post": {
         "consumes": [
           "application/json"

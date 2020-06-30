@@ -5,7 +5,7 @@ info:
     test
   version: "2"
 paths:
-  /testPathOnlyOneRefIsResolved:
+  /testBodyRefIsResolved:
     post:
       summary: test
       description: |-
@@ -16,7 +16,7 @@ paths:
             ok
       requestBody:
         $ref: '#/components/requestBodies/Value'
-  /testPathRefIsNotResolvedASecondTime:
+  /testSameBodyRefIsResolvedAgain:
     post:
       summary: test
       description: |-
