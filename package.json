@@ -61,6 +61,7 @@
     "deep-sort-object": "^1.0.2",
     "js-yaml": "^3.14.0",
     "lodash": "^4.17.11",
+    "lodash.clonedeep": "^4.5.0",
     "request": "^2.88.2",
     "source-map": "0.6.0",
     "sway": "^2.0.5",
