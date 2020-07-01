@@ -814,8 +814,24 @@
     },
     "/user/createWithList": {
       "post": {
+        "consumes": [
+          "application/json"
+        ],
         "operationId": "createUsersWithListInput",
-        "parameters": [],
+        "parameters": [
+          {
+            "description": "List of user object",
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/User"
+              },
+              "type": "array"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "No response was specified"
@@ -1089,32 +1105,40 @@
     "headers": {
       "X-RateLimit-Limit": {
         "description": "The number of allowed requests in the current period",
-        "format": "int32",
-        "type": "integer"
+        "schema": {
+          "format": "int32",
+          "type": "integer"
+        }
       },
       "X-RateLimit-Remaining": {
         "description": "The number of remaining requests in the current period",
-        "format": "int32",
-        "type": "integer"
+        "schema": {
+          "format": "int32",
+          "type": "integer"
+        }
       },
       "X-RateLimit-Reset": {
         "description": "The number of seconds left in the current period",
-        "format": "int32",
-        "type": "integer"
+        "schema": {
+          "format": "int32",
+          "type": "integer"
+        }
       }
     },
     "requestBodies": {
       "UserArray": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/User"
+              },
+              "type": "array"
+            }
+          }
+        },
         "description": "List of user object",
-        "in": "body",
-        "name": "body",
-        "required": true,
-        "schema": {
-          "items": {
-            "$ref": "#/definitions/User"
-          },
-          "type": "array"
-        }
+        "required": true
       }
     }
   }
