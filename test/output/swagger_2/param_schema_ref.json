@@ -59,14 +59,10 @@
   "x-components": {
     "responses": {
       "defaultResponse": {
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/definitions/DefaultResponseObject"
-            }
-          }
-        },
-        "description": "Success"
+        "description": "Success",
+        "schema": {
+          "$ref": "#/definitions/DefaultResponseObject"
+        }
       }
     }
   }

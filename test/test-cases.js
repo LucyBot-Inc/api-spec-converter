@@ -141,12 +141,6 @@ TestCases.push({
   skipBrowser: true,
 })
 
-TestCases.push({
-  in: {format: 'openapi_3', file: 'multiple_ref.yml'},
-  out: {format: 'swagger_2', file: 'multiple_ref.json', syntax: 'json'},
-  skipBrowser: true,
-})
-
 var openapi3Cases = [];
 
 TestCases.forEach(function(testCase) {
