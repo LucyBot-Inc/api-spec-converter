@@ -55,36 +55,34 @@ swagger: '2.0'
 x-components:
   requestBodies:
     FooRequest:
-      content:
-        application/json:
-          schema:
-            properties:
-              name:
-                nullable: true
-                type: string
-              pet:
-                allOf:
-                  - $ref: '#/definitions/PetName'
-                  - properties:
-                      favorite_foods:
-                        items:
-                          nullable: true
-                          type: string
-                        type: array
-                    type: object
-            type: object
+      in: body
+      name: body
       required: true
-  responses:
-    FooResponse:
-      content:
-        application/json:
-          schema:
+      schema:
+        properties:
+          name:
+            type: string
+            x-nullable: true
+          pet:
             allOf:
               - $ref: '#/definitions/PetName'
               - properties:
-                  name:
-                    nullable: true
-                    type: string
+                  favorite_foods:
+                    items:
+                      type: string
+                      x-nullable: true
+                    type: array
                 type: object
+        type: object
+  responses:
+    FooResponse:
       description: Foo
+      schema:
+        allOf:
+          - $ref: '#/definitions/PetName'
+          - properties:
+              name:
+                type: string
+                x-nullable: true
+            type: object
 
