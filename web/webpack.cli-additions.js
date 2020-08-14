@@ -30,9 +30,6 @@ fs.readFile(commonCliConfig, (err, data) => {
 
   const position = configText.indexOf('rules: [') + 8;
   const output = [configText.slice(0, position), addition_rules, configText.slice(position)].join('');
-  const file = fs.openSync(commonCliConfig, 'r+');
-
-  fs.writeFile(file, output);
-  fs.close(file);
+  fs.writeFileSync(commonCliConfig, output);
 });
 
