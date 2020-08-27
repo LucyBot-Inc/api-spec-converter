@@ -1,6 +1,6 @@
 {
   "name": "api-spec-converter",
-  "version": "2.11.1",
+  "version": "2.11.2",
   "engines": {
     "node": ">=6.0.0"
   },
