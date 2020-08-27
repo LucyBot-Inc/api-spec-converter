@@ -83,7 +83,7 @@
     "karma-mocha-reporter": "^2.2.3",
     "karma-phantomjs-launcher": "^1.0.4",
     "mkdirp": "^0.5.1",
-    "mocha": "^8.0.1",
+    "mocha": "^8.1.2",
     "puppeteer": "^1.20.0"
   },
   "optionalDependencies": {
