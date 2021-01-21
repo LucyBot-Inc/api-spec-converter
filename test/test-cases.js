@@ -180,8 +180,8 @@ SyntaxTestCases.push({
 
 SyntaxTestCases.push({
   in: {format: 'openapi_3', file: 'param_schema_ref.yml'},
-  out: {format: 'swagger_2', file: 'param_schema_unordered_ref.json', order: 'false '}
-})
+  out: {format: 'swagger_2', file: 'param_schema_unordered_ref.json', order: 'false'}
+})  
 
 //---- exports ----
 
