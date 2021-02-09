@@ -178,6 +178,11 @@ SyntaxTestCases.push({
   out: {format: 'swagger_2', file: 'petstore-oa.yaml', syntax: 'yaml', order: 'openapi'}
 })
 
+SyntaxTestCases.push({
+  in: {format: 'openapi_3', file: 'param_schema_ref.yml'},
+  out: {format: 'swagger_2', file: 'param_schema_unordered_ref.json', order: 'false'}
+})  
+
 //---- exports ----
 
 if (typeof module !== 'undefined') {
