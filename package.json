@@ -1,5 +1,5 @@
 {
-  "name": "api-spec-converter",
+  "name": "metauro-api-spec-converter",
   "version": "2.13.0",
   "engines": {
     "node": ">=6.0.0"
