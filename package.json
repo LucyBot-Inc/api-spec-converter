@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lucybot/api-spec-converter.git"
+    "url": "https://github.com/metauro/api-spec-converter.git"
   },
   "keywords": [
     "API",
@@ -31,14 +31,14 @@
     "I/O Docs"
   ],
   "contributors": [
-    "Bobby Brennan <bobby@lucybot.com> (https://lucybot.com)",
+    "Bobby Brennan <bobby@metauro.com> (https://metauro.com)",
     "Ivan Goncharov <ivan.goncharov.ua@gmail.com> (http://apis.guru)"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lucybot/api-spec-converter/issues"
+    "url": "https://github.com/metauro/api-spec-converter/issues"
   },
-  "homepage": "https://github.com/lucybot/api-spec-converter",
+  "homepage": "https://github.com/metauro/api-spec-converter",
   "bin": {
     "api-spec-converter": "./bin/api-spec-converter"
   },
