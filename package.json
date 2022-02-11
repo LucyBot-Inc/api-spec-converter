@@ -76,7 +76,7 @@
     "babelify": "^7.3.0",
     "browserify": "^16.5.1",
     "chai": "^3.5.0",
-    "karma": "^5.1.0",
+    "karma": "^6.3.14",
     "karma-chai-plugins": "^0.7.0",
     "karma-chrome-launcher": "^2.2.0",
     "karma-mocha": "^2.0.1",
