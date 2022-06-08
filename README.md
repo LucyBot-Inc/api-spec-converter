@@ -1,4 +1,6 @@
 # api-spec-converter
+> This project is looking for a new maintainer! Let us know if you're interested in taking it over.
+
 [![Share on Twitter][twitter-image]][twitter-link]
 
 [![Chat on gitter][gitter-image]][gitter-link]
