@@ -247,7 +247,8 @@
               "read:pets": "Read your pets",
               "write:pets": "Modify pets in your account"
             },
-            "tokenUrl": "http://petstore.swagger.wordnik.com/api/oauth/token"
+            "tokenUrl": "http://petstore.swagger.wordnik.com/api/oauth/token",
+            "x-pet-lover-validator": "On"
           }
         },
         "type": "oauth2"
