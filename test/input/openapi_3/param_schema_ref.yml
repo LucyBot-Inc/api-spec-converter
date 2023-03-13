@@ -11,6 +11,20 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/accountLevel"
+        - in: query
+          name: accountLevelArray
+          schema:
+            type: array
+            items:
+              $ref: "#/components/schemas/accountLevel"
+        - in: query
+          name: accountLevelNestedArray
+          schema:
+            type: array
+            items:
+              type: array
+              items:
+                $ref: "#/components/schemas/accountLevel"
       responses:
         200:
           $ref: "#/components/responses/defaultResponse"
