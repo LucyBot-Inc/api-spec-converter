@@ -39,6 +39,39 @@
             "name": "accountLevel",
             "required": true,
             "type": "string"
+          },
+          {
+            "collectionFormat": "multi",
+            "in": "query",
+            "items": {
+              "enum": [
+                "one",
+                "two",
+                "three",
+                "four"
+              ],
+              "type": "string"
+            },
+            "name": "accountLevelArray",
+            "type": "array"
+          },
+          {
+            "collectionFormat": "multi",
+            "in": "query",
+            "items": {
+              "items": {
+                "enum": [
+                  "one",
+                  "two",
+                  "three",
+                  "four"
+                ],
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "name": "accountLevelNestedArray",
+            "type": "array"
           }
         ],
         "produces": [
