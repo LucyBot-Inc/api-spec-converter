@@ -1,0 +1,925 @@
+host: api.trafficland.com
+basePath: /v2.2/json
+schemes:
+  - https:
+openapi: 3.0.1
+info:
+  title: TrafficLandAPI
+  description: to view traffic content around the world
+  version: 1.5.3
+  contact:
+    name: Trafficland Support
+    url: http://trafficland.com/contact
+    email: support@trafficland.com
+servers:
+  - url: https://api.trafficland.comhost: api.trafficland.com
+basePath: /v2.2/json
+schemes:
+  - https:
+openapi: 3.0.1
+info:
+  title: TrafficLandAPI
+  description: to view traffic content around the world
+  version: 1.5.3
+  contact:
+    name: Trafficland Support
+    url: http://trafficland.com/contact
+    email: support@trafficland.com
+servers:
+  - url: 'https://api.trafficland.com'
+paths:
+  /states/NJ/children:
+    get:
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: system
+          in: query
+          schema:
+            type: string
+          example: johnDoe
+        - name: key
+          in: query
+          schema:
+            type: string
+          example: 0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              examples:
+                '0':
+                  value: >-
+                    [{"parentRegion":"NJ","name":"Newark","regionType":"CITY","alert":null,"centerPoint":{"latitude":40.738413,"longitude":-74.177284,"zoomLevel":10},"code":"EWR","fullname":"Newark"},{"parentRegion":"NJ","name":"Trenton","regionType":"CITY","alert":null,"centerPoint":{"latitude":40.229218,"longitude":-74.74823,"zoomLevel":10},"code":"TTN","fullname":"Trenton"},{"parentRegion":"NJ","name":"Morristown","regionType":"CITY","alert":null,"centerPoint":{"latitude":40.799257,"longitude":-74.483099,"zoomLevel":10},"code":"MMU","fullname":"Morristown"},{"parentRegion":"NJ","name":"Paterson","regionType":"CITY","alert":null,"centerPoint":{"latitude":40.916107,"longitude":-74.162436,"zoomLevel":10},"code":"NYC2","fullname":"Paterson"},{"parentRegion":"NJ","name":"Vineland","regionType":"CITY","alert":null,"centerPoint":{"latitude":39.482845,"longitude":-75.024261,"zoomLevel":9},"code":"MIV","fullname":"Vineland"},{"parentRegion":"NJ","name":"Atlantic
+                    City","regionType":"CITY","alert":null,"centerPoint":{"latitude":39.374118,"longitude":-74.501724,"zoomLevel":11},"code":"ACY","fullname":"Atlantic
+                    City"},{"parentRegion":"NJ","name":"Ocean
+                    City","regionType":"CITY","alert":null,"centerPoint":{"latitude":39.286217,"longitude":-74.60231,"zoomLevel":11},"code":"OAZ","fullname":"Ocean
+                    City"},{"parentRegion":"NJ","name":"Woodbridge","regionType":"CITY","alert":null,"centerPoint":{"latitude":40.554715,"longitude":-74.285797,"zoomLevel":10},"code":"LDJ","fullname":"Woodbridge"}]
+      servers:
+        - url: 'https://api.trafficland.com'
+    servers:
+      - url: 'https://api.trafficland.com'
+  /video_feeds:
+    get:
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: system
+          in: query
+          schema:
+            type: string
+          example: johnDoe
+        - name: key
+          in: query
+          schema:
+            type: string
+          example: 0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+      servers:
+        - url: 'https://api.trafficland.com'
+    servers:
+      - url: 'https://api.trafficland.com'
+  /stream/30:
+    get:
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: duration
+          in: query
+          schema:
+            type: string
+          example: '1'
+        - name: system
+          in: query
+          schema:
+            type: string
+          example: johnDoe
+        - name: key
+          in: query
+          schema:
+            type: string
+          example: 0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  duration:
+                    type: integer
+                  urls:
+                    type: object
+                    properties:
+                      lq:
+                        type: object
+                        properties:
+                          rtsp:
+                            type: string
+                          hls:
+                            type: string
+                  startBy:
+                    type: number
+              examples:
+                '0':
+                  value: >-
+                    {"urls":{"lq":{"rtsp":"rtsp://restream-1.trafficland.com:1935/live/30.stream?token=38049ddcef27520b02cecb69333fc987d5822240de35a29010102a77130168f7&system=johnDoe&startBy=1620852672809&sessionId=HTK2OrGi&quotas=g:5&duration=1","hls":"https://restream-1.trafficland.com/live/30.stream/playlist.m3u8?token=38049ddcef27520b02cecb69333fc987d5822240de35a29010102a77130168f7&system=johnDoe&startBy=1620852672809&sessionId=HTK2OrGi&quotas=g:5&duration=1"}},"startBy":1620852672809,"duration":1}
+      servers:
+        - url: 'https://api.trafficland.com'
+    servers:
+      - url: 'https://api.trafficland.com'
+  /cities:
+    get:
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: system
+          in: query
+          schema:
+            type: string
+          example: johnDoe
+        - name: key
+          in: query
+          schema:
+            type: string
+          example: 0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+      servers:
+        - url: 'https://api.trafficland.com'
+    servers:
+      - url: 'https://api.trafficland.com'
+  /cities/RSW:
+    get:
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: system
+          in: query
+          schema:
+            type: string
+          example: johnDoe
+        - name: key
+          in: query
+          schema:
+            type: string
+          example: 0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  regionType:
+                    type: string
+                  alert:
+                    type: string
+                  name:
+                    type: string
+                  parentRegion:
+                    type: string
+                  fullname:
+                    type: string
+                  centerPoint:
+                    type: object
+                    properties:
+                      zoomLevel:
+                        type: integer
+                      latitude:
+                        type: number
+                      longitude:
+                        type: number
+              examples:
+                '0':
+                  value: >-
+                    {"parentRegion":"FL","name":"Fort
+                    Meyers","regionType":"CITY","alert":"","centerPoint":{"latitude":26.640628,"longitude":-81.872308,"zoomLevel":10},"code":"RSW","fullname":"Fort
+                    Meyers"}
+      servers:
+        - url: 'https://api.trafficland.com'
+    servers:
+      - url: 'https://api.trafficland.com'
+  /countries/HK:
+    get:
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: system
+          in: query
+          schema:
+            type: string
+          example: johnDoe
+        - name: key
+          in: query
+          schema:
+            type: string
+          example: 0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  regionType:
+                    type: string
+                  alert: {}
+                  name:
+                    type: string
+                  parentRegion: {}
+                  fullname:
+                    type: string
+                  centerPoint:
+                    type: object
+                    properties:
+                      zoomLevel:
+                        type: integer
+                      latitude:
+                        type: integer
+                      longitude:
+                        type: integer
+              examples:
+                '0':
+                  value: >-
+                    {"parentRegion":null,"name":"Hong
+                    Kong","regionType":"COUNTRY","alert":null,"centerPoint":{"latitude":90,"longitude":90,"zoomLevel":0},"code":"HK","fullname":"Hong
+                    Kong"}
+      servers:
+        - url: 'https://api.trafficland.com'
+    servers:
+      - url: 'https://api.trafficland.com'
+  /video_feeds/bbox:
+    get:
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: system
+          in: query
+          schema:
+            type: string
+          example: johnDoe
+        - name: nelat
+          in: query
+          schema:
+            type: string
+          example: '40.7128'
+        - name: includeWeather
+          in: query
+          schema:
+            type: boolean
+          example: 'false'
+        - name: swlat
+          in: query
+          schema:
+            type: string
+          example: '39.2795111'
+        - name: nelon
+          in: query
+          schema:
+            type: string
+          example: '-74.0431'
+        - name: swlon
+          in: query
+          schema:
+            type: string
+          example: '-76.6491119'
+        - name: key
+          in: query
+          schema:
+            type: string
+          example: 0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+      servers:
+        - url: 'https://api.trafficland.com'
+    servers:
+      - url: 'https://api.trafficland.com'
+  /video_feeds/poi:
+    get:
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: uom
+          in: query
+          schema:
+            type: string
+          example: mi
+        - name: system
+          in: query
+          schema:
+            type: string
+          example: johnDoe
+        - name: includeWeather
+          in: query
+          schema:
+            type: boolean
+          example: 'false'
+        - name: lon
+          in: query
+          schema:
+            type: string
+          example: '-74.0431'
+        - name: radius
+          in: query
+          schema:
+            type: string
+          example: '10'
+        - name: lat
+          in: query
+          schema:
+            type: string
+          example: '40.7178'
+        - name: key
+          in: query
+          schema:
+            type: string
+          example: 0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+      servers:
+        - url: 'https://api.trafficland.com'
+    servers:
+      - url: 'https://api.trafficland.com'
+  /states/NJ:
+    get:
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: system
+          in: query
+          schema:
+            type: string
+          example: johnDoe
+        - name: key
+          in: query
+          schema:
+            type: string
+          example: 0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  regionType:
+                    type: string
+                  alert: {}
+                  name:
+                    type: string
+                  parentRegion:
+                    type: string
+                  fullname:
+                    type: string
+                  centerPoint:
+                    type: object
+                    properties:
+                      zoomLevel:
+                        type: integer
+                      latitude:
+                        type: integer
+                      longitude:
+                        type: integer
+              examples:
+                '0':
+                  value: >-
+                    {"parentRegion":"US","name":"New
+                    Jersey","regionType":"STATE","alert":null,"centerPoint":{"latitude":90,"longitude":90,"zoomLevel":0},"code":"NJ","fullname":"New
+                    Jersey"}
+      servers:
+        - url: 'https://api.trafficland.com'
+    servers:
+      - url: 'https://api.trafficland.com'
+  /countries/HK/children:
+    get:
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: system
+          in: query
+          schema:
+            type: string
+          example: johnDoe
+        - name: key
+          in: query
+          schema:
+            type: string
+          example: 0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              examples:
+                '0':
+                  value: >-
+                    [{"parentRegion":"HK","name":"Hong
+                    Kong","regionType":"CITY","alert":null,"centerPoint":{"latitude":22.316506,"longitude":114.175941,"zoomLevel":10},"code":"HKG","fullname":"Hong
+                    Kong"}]
+      servers:
+        - url: 'https://api.trafficland.com'
+    servers:
+      - url: 'https://api.trafficland.com'
+  /countries:
+    get:
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: system
+          in: query
+          schema:
+            type: string
+          example: johnDoe
+        - name: key
+          in: query
+          schema:
+            type: string
+          example: 0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+      servers:
+        - url: 'https://api.trafficland.com'
+    servers:
+      - url: 'https://api.trafficland.com'
+  /states:
+    get:
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: system
+          in: query
+          schema:
+            type: string
+          example: johnDoe
+        - name: key
+          in: query
+          schema:
+            type: string
+          example: 0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+      servers:
+        - url: 'https://api.trafficland.com'
+    servers:
+      - url: 'https://api.trafficland.com'
+paths:
+  /states/NJ/children:
+    get:
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: system
+          in: query
+          schema:
+            type: string
+          example: johnDoe
+        - name: key
+          in: query
+          schema:
+            type: string
+          example: 0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              examples:
+                '0':
+                  value: >-
+                    [{"parentRegion":"NJ","name":"Newark","regionType":"CITY","alert":null,"centerPoint":{"latitude":40.738413,"longitude":-74.177284,"zoomLevel":10},"code":"EWR","fullname":"Newark"},{"parentRegion":"NJ","name":"Trenton","regionType":"CITY","alert":null,"centerPoint":{"latitude":40.229218,"longitude":-74.74823,"zoomLevel":10},"code":"TTN","fullname":"Trenton"},{"parentRegion":"NJ","name":"Morristown","regionType":"CITY","alert":null,"centerPoint":{"latitude":40.799257,"longitude":-74.483099,"zoomLevel":10},"code":"MMU","fullname":"Morristown"},{"parentRegion":"NJ","name":"Paterson","regionType":"CITY","alert":null,"centerPoint":{"latitude":40.916107,"longitude":-74.162436,"zoomLevel":10},"code":"NYC2","fullname":"Paterson"},{"parentRegion":"NJ","name":"Vineland","regionType":"CITY","alert":null,"centerPoint":{"latitude":39.482845,"longitude":-75.024261,"zoomLevel":9},"code":"MIV","fullname":"Vineland"},{"parentRegion":"NJ","name":"Atlantic
+                    City","regionType":"CITY","alert":null,"centerPoint":{"latitude":39.374118,"longitude":-74.501724,"zoomLevel":11},"code":"ACY","fullname":"Atlantic
+                    City"},{"parentRegion":"NJ","name":"Ocean
+                    City","regionType":"CITY","alert":null,"centerPoint":{"latitude":39.286217,"longitude":-74.60231,"zoomLevel":11},"code":"OAZ","fullname":"Ocean
+                    City"},{"parentRegion":"NJ","name":"Woodbridge","regionType":"CITY","alert":null,"centerPoint":{"latitude":40.554715,"longitude":-74.285797,"zoomLevel":10},"code":"LDJ","fullname":"Woodbridge"}]
+      servers:
+        - url: 'https://api.trafficland.com'
+    servers:
+      - url: 'https://api.trafficland.com'
+  /video_feeds:
+    get:
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: system
+          in: query
+          schema:
+            type: string
+          example: johnDoe
+        - name: key
+          in: query
+          schema:
+            type: string
+          example: 0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+      servers:
+        - url: 'https://api.trafficland.com'
+    servers:
+      - url: 'https://api.trafficland.com'
+  /stream/30:
+    get:
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: duration
+          in: query
+          schema:
+            type: string
+          example: '1'
+        - name: system
+          in: query
+          schema:
+            type: string
+          example: johnDoe
+        - name: key
+          in: query
+          schema:
+            type: string
+          example: 0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  duration:
+                    type: integer
+                  urls:
+                    type: object
+                    properties:
+                      lq:
+                        type: object
+                        properties:
+                          rtsp:
+                            type: string
+                          hls:
+                            type: string
+                  startBy:
+                    type: number
+              examples:
+                '0':
+                  value: >-
+                    {"urls":{"lq":{"rtsp":"rtsp://restream-1.trafficland.com:1935/live/30.stream?token=38049ddcef27520b02cecb69333fc987d5822240de35a29010102a77130168f7&system=johnDoe&startBy=1620852672809&sessionId=HTK2OrGi&quotas=g:5&duration=1","hls":"https://restream-1.trafficland.com/live/30.stream/playlist.m3u8?token=38049ddcef27520b02cecb69333fc987d5822240de35a29010102a77130168f7&system=johnDoe&startBy=1620852672809&sessionId=HTK2OrGi&quotas=g:5&duration=1"}},"startBy":1620852672809,"duration":1}
+      servers:
+        - url: 'https://api.trafficland.com'
+    servers:
+      - url: 'https://api.trafficland.com'
+  /cities:
+    get:
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: system
+          in: query
+          schema:
+            type: string
+          example: johnDoe
+        - name: key
+          in: query
+          schema:
+            type: string
+          example: 0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+      servers:
+        - url: 'https://api.trafficland.com'
+    servers:
+      - url: 'https://api.trafficland.com'
+  /cities/RSW:
+    get:
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: system
+          in: query
+          schema:
+            type: string
+          example: johnDoe
+        - name: key
+          in: query
+          schema:
+            type: string
+          example: 0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  regionType:
+                    type: string
+                  alert:
+                    type: string
+                  name:
+                    type: string
+                  parentRegion:
+                    type: string
+                  fullname:
+                    type: string
+                  centerPoint:
+                    type: object
+                    properties:
+                      zoomLevel:
+                        type: integer
+                      latitude:
+                        type: number
+                      longitude:
+                        type: number
+              examples:
+                '0':
+                  value: >-
+                    {"parentRegion":"FL","name":"Fort
+                    Meyers","regionType":"CITY","alert":"","centerPoint":{"latitude":26.640628,"longitude":-81.872308,"zoomLevel":10},"code":"RSW","fullname":"Fort
+                    Meyers"}
+      servers:
+        - url: 'https://api.trafficland.com'
+    servers:
+      - url: 'https://api.trafficland.com'
+  /countries/HK:
+    get:
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: system
+          in: query
+          schema:
+            type: string
+          example: johnDoe
+        - name: key
+          in: query
+          schema:
+            type: string
+          example: 0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  regionType:
+                    type: string
+                  alert: {}
+                  name:
+                    type: string
+                  parentRegion: {}
+                  fullname:
+                    type: string
+                  centerPoint:
+                    type: object
+                    properties:
+                      zoomLevel:
+                        type: integer
+                      latitude:
+                        type: integer
+                      longitude:
+                        type: integer
+              examples:
+                '0':
+                  value: >-
+                    {"parentRegion":null,"name":"Hong
+                    Kong","regionType":"COUNTRY","alert":null,"centerPoint":{"latitude":90,"longitude":90,"zoomLevel":0},"code":"HK","fullname":"Hong
+                    Kong"}
+      servers:
+        - url: 'https://api.trafficland.com'
+    servers:
+      - url: 'https://api.trafficland.com'
+  /video_feeds/bbox:
+    get:
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: system
+          in: query
+          schema:
+            type: string
+          example: johnDoe
+        - name: nelat
+          in: query
+          schema:
+            type: string
+          example: '40.7128'
+        - name: includeWeather
+          in: query
+          schema:
+            type: boolean
+          example: 'false'
+        - name: swlat
+          in: query
+          schema:
+            type: string
+          example: '39.2795111'
+        - name: nelon
+          in: query
+          schema:
+            type: string
+          example: '-74.0431'
+        - name: swlon
+          in: query
+          schema:
+            type: string
+          example: '-76.6491119'
+        - name: key
+          in: query
+          schema:
+            type: string
+          example: 0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+      servers:
+        - url: 'https://api.trafficland.com'
+    servers:
+      - url: 'https://api.trafficland.com'
+  /video_feeds/poi:
+    get:
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: uom
+          in: query
+          schema:
+            type: string
+          example: mi
+        - name: system
+          in: query
+          schema:
+            type: string
+          example: johnDoe
+        - name: includeWeather
+          in: query
+          schema:
+            type: boolean
+          example: 'false'
+        - name: lon
+          in: query
+          schema:
+            type: string
+          example: '-74.0431'
+        - name: radius
+          in: query
+          schema:
+            type: string
+          example: '10'
+        - name: lat
+          in: query
+          schema:
+            type: string
+          example: '40.7178'
+        - name: key
+          in: query
+          schema:
+            type: string
+          example: 0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+      servers:
+        - url: 'https://api.trafficland.com'
+    servers:
+      - url: 'https://api.trafficland.com'
+  /states/NJ:
+    get:
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: system
+          in: query
+          schema:
+            type: string
+          example: johnDoe
+        - name: key
+          in: query
+          schema:
+            type: string
+          example: 0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  regionType:
+                    type: string
+                  alert: {}
+                  name:
+                    type: string
+                  parentRegion:
+                    type: string
+                  fullname:
+                    type: string
+                  centerPoint:
+                    type: object
+                    properties:
+                      zoomLevel:
+                        type: integer
+                      latitude:
+                        type: integer
+                      longitude:
+                        type: integer
+              examples:
+                '0':
+                  value: >-
+                    {"parentRegion":"US","name":"New
+                    Jersey","regionType":"STATE","alert":null,"centerPoint":{"latitude":90,"longitude":90,"zoomLevel":0},"code":"NJ","fullname":"New
+                    Jersey"}
+      servers:
+        - url: 'https://api.trafficland.com'
+    servers:
+      - url: 'https://api.trafficland.com'
+  /countries/HK/children:
+    get:
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: system
+          in: query
+          schema:
+            type: string
+          example: johnDoe
+        - name: key
+          in: query
+          schema:
+            type: string
+          example: 0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              examples:
+                '0':
+                  value: >-
+                    [{"parentRegion":"HK","name":"Hong
+                    Kong","regionType":"CITY","alert":null,"centerPoint":{"latitude":22.316506,"longitude":114.175941,"zoomLevel":10},"code":"HKG","fullname":"Hong
+                    Kong"}]
+      servers:
+        - url: 'https://api.trafficland.com'
+    servers:
+      - url: 'https://api.trafficland.com'
+  /countries:
+    get:
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: system
+          in: query
+          schema:
+            type: string
+          example: johnDoe
+        - name: key
+          in: query
+          schema:
+            type: string
+          example: 0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+      servers:
+        - url: 'https://api.trafficland.com'
+    servers:
+      - url: 'https://api.trafficland.com'
+  /states:
+    get:
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: system
+          in: query
+          schema:
+            type: string
+          example: johnDoe
+        - name: key
+          in: query
+          schema:
+            type: string
+          example: 0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+      servers:
+        - url: 'https://api.trafficland.com'
+    servers:
+      - url: 'https://api.trafficland.com'
